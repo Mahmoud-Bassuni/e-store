@@ -18,6 +18,9 @@
 		B62D386029BA61EE00179020 /* network in Frameworks */ = {isa = PBXBuildFile; productRef = B62D385F29BA61EE00179020 /* network */; };
 		B62D387629BA638C00179020 /* Shared_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D387529BA638C00179020 /* Shared_UI.framework */; };
 		B62D387729BA638C00179020 /* Shared_UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B62D387529BA638C00179020 /* Shared_UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B62D387929BA678300179020 /* GoogleService-Info.plist */; };
+		B62D387D29BA690C00179020 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B62D387C29BA690C00179020 /* FirebaseAnalytics */; };
+		B62D387F29BA690D00179020 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B62D387E29BA690D00179020 /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +50,7 @@
 		B62D385429BA609100179020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B62D385629BA609100179020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B62D387529BA638C00179020 /* Shared_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B62D387929BA678300179020 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				B62D386029BA61EE00179020 /* network in Frameworks */,
 				6610888700CD7CF6D7FB3AB0 /* Pods_e_store.framework in Frameworks */,
 				B62D385D29BA614C00179020 /* e-store_foundation in Frameworks */,
+				B62D387F29BA690D00179020 /* FirebaseCrashlytics in Frameworks */,
+				B62D387D29BA690C00179020 /* FirebaseAnalytics in Frameworks */,
 				B62D387629BA638C00179020 /* Shared_UI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +91,7 @@
 		B62D383C29BA608F00179020 = {
 			isa = PBXGroup;
 			children = (
+				B62D387929BA678300179020 /* GoogleService-Info.plist */,
 				B62D384729BA608F00179020 /* e-store */,
 				B62D384629BA608F00179020 /* Products */,
 				642276AD4B1ECEC35FF695A4 /* Pods */,
@@ -126,6 +133,7 @@
 				B62D384229BA608F00179020 /* Frameworks */,
 				B62D384329BA608F00179020 /* Resources */,
 				B62D387829BA638C00179020 /* Embed Frameworks */,
+				B62D388029BA69C100179020 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -135,6 +143,8 @@
 			packageProductDependencies = (
 				B62D385C29BA614C00179020 /* e-store_foundation */,
 				B62D385F29BA61EE00179020 /* network */,
+				B62D387C29BA690C00179020 /* FirebaseAnalytics */,
+				B62D387E29BA690D00179020 /* FirebaseCrashlytics */,
 			);
 			productName = "e-store";
 			productReference = B62D384529BA608F00179020 /* e-store.app */;
@@ -164,6 +174,9 @@
 				Base,
 			);
 			mainGroup = B62D383C29BA608F00179020;
+			packageReferences = (
+				B62D387B29BA690C00179020 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = B62D384629BA608F00179020 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */,
+				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
 				B62D385229BA609100179020 /* Assets.xcassets in Resources */,
 				B62D385029BA608F00179020 /* Main.storyboard in Resources */,
 			);
@@ -208,6 +222,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B62D388029BA69C100179020 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -366,6 +399,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = RY3FFY2392;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "e-store/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -373,6 +408,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,6 +430,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RY3FFY2392;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "e-store/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -401,6 +438,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +475,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B62D387B29BA690C00179020 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		B62D385C29BA614C00179020 /* e-store_foundation */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -445,6 +494,16 @@
 		B62D385F29BA61EE00179020 /* network */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = network;
+		};
+		B62D387C29BA690C00179020 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B62D387B29BA690C00179020 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		B62D387E29BA690D00179020 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B62D387B29BA690C00179020 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
