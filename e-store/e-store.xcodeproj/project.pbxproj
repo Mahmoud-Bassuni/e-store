@@ -15,7 +15,24 @@
 		B62D385229BA609100179020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B62D385129BA609100179020 /* Assets.xcassets */; };
 		B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D385329BA609100179020 /* LaunchScreen.storyboard */; };
 		B62D385D29BA614C00179020 /* e-store_foundation in Frameworks */ = {isa = PBXBuildFile; productRef = B62D385C29BA614C00179020 /* e-store_foundation */; };
+		B62D386029BA61EE00179020 /* network in Frameworks */ = {isa = PBXBuildFile; productRef = B62D385F29BA61EE00179020 /* network */; };
+		B62D387629BA638C00179020 /* Shared_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62D387529BA638C00179020 /* Shared_UI.framework */; };
+		B62D387729BA638C00179020 /* Shared_UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B62D387529BA638C00179020 /* Shared_UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B62D387829BA638C00179020 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B62D387729BA638C00179020 /* Shared_UI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		16FF4A26161027477B9A2A73 /* Pods-e-store.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-store.debug.xcconfig"; path = "Target Support Files/Pods-e-store/Pods-e-store.debug.xcconfig"; sourceTree = "<group>"; };
@@ -29,6 +46,7 @@
 		B62D385129BA609100179020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B62D385429BA609100179020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B62D385629BA609100179020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B62D387529BA638C00179020 /* Shared_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,8 +54,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62D386029BA61EE00179020 /* network in Frameworks */,
 				6610888700CD7CF6D7FB3AB0 /* Pods_e_store.framework in Frameworks */,
 				B62D385D29BA614C00179020 /* e-store_foundation in Frameworks */,
+				B62D387629BA638C00179020 /* Shared_UI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +76,7 @@
 		911AE0FD3918430F9EE658DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B62D387529BA638C00179020 /* Shared_UI.framework */,
 				2547A06BC3209AEBE93BE894 /* Pods_e_store.framework */,
 			);
 			name = Frameworks;
@@ -104,6 +125,7 @@
 				B62D384129BA608F00179020 /* Sources */,
 				B62D384229BA608F00179020 /* Frameworks */,
 				B62D384329BA608F00179020 /* Resources */,
+				B62D387829BA638C00179020 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -112,6 +134,7 @@
 			name = "e-store";
 			packageProductDependencies = (
 				B62D385C29BA614C00179020 /* e-store_foundation */,
+				B62D385F29BA61EE00179020 /* network */,
 			);
 			productName = "e-store";
 			productReference = B62D384529BA608F00179020 /* e-store.app */;
@@ -418,6 +441,10 @@
 		B62D385C29BA614C00179020 /* e-store_foundation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "e-store_foundation";
+		};
+		B62D385F29BA61EE00179020 /* network */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = network;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

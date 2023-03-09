@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../Shared_UI/Shared_UI.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:../network">
    </FileRef>
    <FileRef
