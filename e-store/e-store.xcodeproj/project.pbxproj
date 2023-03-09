@@ -14,6 +14,7 @@
 		B62D385029BA608F00179020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D384E29BA608F00179020 /* Main.storyboard */; };
 		B62D385229BA609100179020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B62D385129BA609100179020 /* Assets.xcassets */; };
 		B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D385329BA609100179020 /* LaunchScreen.storyboard */; };
+		B62D385D29BA614C00179020 /* e-store_foundation in Frameworks */ = {isa = PBXBuildFile; productRef = B62D385C29BA614C00179020 /* e-store_foundation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6610888700CD7CF6D7FB3AB0 /* Pods_e_store.framework in Frameworks */,
+				B62D385D29BA614C00179020 /* e-store_foundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +50,6 @@
 				16FF4A26161027477B9A2A73 /* Pods-e-store.debug.xcconfig */,
 				45B4BBB262FBD9092798FAFD /* Pods-e-store.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -109,6 +110,9 @@
 			dependencies = (
 			);
 			name = "e-store";
+			packageProductDependencies = (
+				B62D385C29BA614C00179020 /* e-store_foundation */,
+			);
 			productName = "e-store";
 			productReference = B62D384529BA608F00179020 /* e-store.app */;
 			productType = "com.apple.product-type.application";
@@ -409,6 +413,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B62D385C29BA614C00179020 /* e-store_foundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "e-store_foundation";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B62D383D29BA608F00179020 /* Project object */;
 }
