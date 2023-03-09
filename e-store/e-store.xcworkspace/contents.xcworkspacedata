@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../network">
+   </FileRef>
+   <FileRef
       location = "group:../e-store_foundation">
    </FileRef>
    <FileRef
