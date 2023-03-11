@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class ViewController: UIViewController {
 
     @IBAction func fire_btn_action(_ sender: Any) {
@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      //  AF.delegate = self
         // Do any additional setup after loading the view.
     }
 
