@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class mainUiViewController: UIViewController {
 
     override func viewDidLoad() {
