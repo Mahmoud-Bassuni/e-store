@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        var value: String? = "s"
+        print(value!)
         
         // Do any additional setup after loading the view.
     }
