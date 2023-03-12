@@ -1,9 +1,6 @@
 # e-store
 An educational project for Banque Misr Mentorship Program team.
-<img src='cover.jpeg' width=100% alt='Cover Photo'>
-
-## Layers
-<img src='screenshots/layers-image.jpg' width=100% alt='Layers Image'>
+<img src='https://github.com/Mahmoud-Bassuni/e-store/blob/Attachment/cover.jpeg' width=100% alt='Cover Photo'>
 
 ## Hotlinks
 - Documentation: Please check [Wiki](https://github.com/Mahmoud-Bassuni/e-store/wiki) for more conceptual details, advanced topics and tutorials.
