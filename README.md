@@ -1,6 +1,6 @@
 # e-store
 An educational project for Banque Misr Mentorship Program team.
-<img src='screenshots/cover.jpeg' width=100% alt='Cover Photo'>
+<img src='cover.jpeg' width=100% alt='Cover Photo'>
 
 ## Layers
 <img src='screenshots/layers-image.jpg' width=100% alt='Layers Image'>
