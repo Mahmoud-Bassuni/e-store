@@ -8,11 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		B62D386F29BA635400179020 /* Shared_UI.h in Headers */ = {isa = PBXBuildFile; fileRef = B62D386E29BA635400179020 /* Shared_UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C909427529BD34B6007EDC10 /* Pods_e_store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C909427429BD34B6007EDC10 /* Pods_e_store.framework */; };
+		C909427629BD34B6007EDC10 /* Pods_e_store.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C909427429BD34B6007EDC10 /* Pods_e_store.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C909427729BD34B6007EDC10 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C909427629BD34B6007EDC10 /* Pods_e_store.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B62D386B29BA635400179020 /* Shared_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D386E29BA635400179020 /* Shared_UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared_UI.h; sourceTree = "<group>"; };
+		C909427429BD34B6007EDC10 /* Pods_e_store.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_e_store.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -20,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C909427529BD34B6007EDC10 /* Pods_e_store.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -31,6 +49,7 @@
 			children = (
 				B62D386D29BA635400179020 /* Shared_UI */,
 				B62D386C29BA635400179020 /* Products */,
+				C909427329BD34B6007EDC10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,6 +67,14 @@
 				B62D386E29BA635400179020 /* Shared_UI.h */,
 			);
 			path = Shared_UI;
+			sourceTree = "<group>";
+		};
+		C909427329BD34B6007EDC10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C909427429BD34B6007EDC10 /* Pods_e_store.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +99,7 @@
 				B62D386729BA635400179020 /* Sources */,
 				B62D386829BA635400179020 /* Frameworks */,
 				B62D386929BA635400179020 /* Resources */,
+				C909427729BD34B6007EDC10 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 //! Project version number for Shared_UI.
 FOUNDATION_EXPORT double Shared_UIVersionNumber;
 
