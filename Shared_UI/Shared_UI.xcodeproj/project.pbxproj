@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C64BB1B29C10B1600FB0904 /* SwiftlintTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C64BB1A29C10B1600FB0904 /* SwiftlintTest.swift */; };
 		B62D386F29BA635400179020 /* Shared_UI.h in Headers */ = {isa = PBXBuildFile; fileRef = B62D386E29BA635400179020 /* Shared_UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C64BB1A29C10B1600FB0904 /* SwiftlintTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftlintTest.swift; sourceTree = "<group>"; };
 		B62D386B29BA635400179020 /* Shared_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D386E29BA635400179020 /* Shared_UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared_UI.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				B62D386E29BA635400179020 /* Shared_UI.h */,
+				4C64BB1A29C10B1600FB0904 /* SwiftlintTest.swift */,
 			);
 			path = Shared_UI;
 			sourceTree = "<group>";
@@ -72,6 +75,7 @@
 				B62D386729BA635400179020 /* Sources */,
 				B62D386829BA635400179020 /* Frameworks */,
 				B62D386929BA635400179020 /* Resources */,
+				4C64BB1C29C1106E00FB0904 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -93,6 +97,7 @@
 				TargetAttributes = {
 					B62D386A29BA635400179020 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -124,11 +129,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4C64BB1C29C1106E00FB0904 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B62D386729BA635400179020 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C64BB1B29C10B1600FB0904 /* SwiftlintTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +285,7 @@
 		B62D387329BA635400179020 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -277,6 +305,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,6 +314,7 @@
 		B62D387429BA635400179020 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
