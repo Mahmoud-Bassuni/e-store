@@ -24,7 +24,11 @@
       "location" : "https://github.com/firebase/firebase-ios-sdk",
       "state" : {
         "branch" : "master",
+
         "revision" : "3b8e5553b52eaff141ba67bd7c34f05b40a0c933"
+
+        
+
       }
     },
     {
