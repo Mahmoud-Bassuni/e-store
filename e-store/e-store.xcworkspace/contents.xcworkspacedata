@@ -16,4 +16,7 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../shared_UI/shared_UI.xcodeproj">
+   </FileRef>
 </Workspace>
