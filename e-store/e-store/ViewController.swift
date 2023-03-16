@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class ViewController: UIViewController {
 
     @IBAction func fire_btn_action(_ sender: Any) {
