@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1A192429C36C1200EDE3FD /* UIButton + Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A192329C36C1200EDE3FD /* UIButton + Style.swift */; };
+		4C1A192729C3719A00EDE3FD /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A192629C3719A00EDE3FD /* UIColor + Extension.swift */; };
+		4C1A192B29C37D7900EDE3FD /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A192A29C37D7900EDE3FD /* UIFont + Extension.swift */; };
 		A8FBC98FAF112228399A8A4B /* libPods-Shared_UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A42D814593A895034622F1 /* libPods-Shared_UI.a */; };
 		B62D386F29BA635400179020 /* Shared_UI.h in Headers */ = {isa = PBXBuildFile; fileRef = B62D386E29BA635400179020 /* Shared_UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -14,6 +17,9 @@
 /* Begin PBXFileReference section */
 		0F7F013CA1D212ABB3A3F185 /* Pods-Shared_UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared_UI.debug.xcconfig"; path = "Target Support Files/Pods-Shared_UI/Pods-Shared_UI.debug.xcconfig"; sourceTree = "<group>"; };
 		35BC811A1A219933E5882A5C /* Pods-Shared_UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared_UI.release.xcconfig"; path = "Target Support Files/Pods-Shared_UI/Pods-Shared_UI.release.xcconfig"; sourceTree = "<group>"; };
+		4C1A192329C36C1200EDE3FD /* UIButton + Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Style.swift"; sourceTree = "<group>"; };
+		4C1A192629C3719A00EDE3FD /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		4C1A192A29C37D7900EDE3FD /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		B62D386B29BA635400179020 /* Shared_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D386E29BA635400179020 /* Shared_UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared_UI.h; sourceTree = "<group>"; };
 		D7A42D814593A895034622F1 /* libPods-Shared_UI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shared_UI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +37,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C1A192229C36A8800EDE3FD /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				4C1A192329C36C1200EDE3FD /* UIButton + Style.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		4C1A192529C3717300EDE3FD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4C1A192629C3719A00EDE3FD /* UIColor + Extension.swift */,
+				4C1A192A29C37D7900EDE3FD /* UIFont + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B62D386129BA635400179020 = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +75,8 @@
 		B62D386D29BA635400179020 /* Shared_UI */ = {
 			isa = PBXGroup;
 			children = (
+				4C1A192529C3717300EDE3FD /* Extension */,
+				4C1A192229C36A8800EDE3FD /* Style */,
 				B62D386E29BA635400179020 /* Shared_UI.h */,
 			);
 			path = Shared_UI;
@@ -181,6 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1A192B29C37D7900EDE3FD /* UIFont + Extension.swift in Sources */,
+				4C1A192429C36C1200EDE3FD /* UIButton + Style.swift in Sources */,
+				4C1A192729C3719A00EDE3FD /* UIColor + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
