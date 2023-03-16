@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A6991244F262651573CADC0 /* libPods-e-store.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B49575E65FE76E7CB37BDD90 /* libPods-e-store.a */; };
+		4CD6D05129C3C758006F52F8 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 4CD6D05029C3C758006F52F8 /* Core */; };
+		4CD6D05329C3D298006F52F8 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 4CD6D05229C3D298006F52F8 /* Domain */; };
 		B62D384929BA608F00179020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384829BA608F00179020 /* AppDelegate.swift */; };
 		B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384A29BA608F00179020 /* SceneDelegate.swift */; };
 		B62D384D29BA608F00179020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384C29BA608F00179020 /* ViewController.swift */; };
@@ -63,6 +65,8 @@
 				B62D387F29BA690D00179020 /* FirebaseCrashlytics in Frameworks */,
 				B62D387D29BA690C00179020 /* FirebaseAnalytics in Frameworks */,
 				B62D387629BA638C00179020 /* Shared_UI.framework in Frameworks */,
+				4CD6D05129C3C758006F52F8 /* Core in Frameworks */,
+				4CD6D05329C3D298006F52F8 /* Domain in Frameworks */,
 				0A6991244F262651573CADC0 /* libPods-e-store.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +149,8 @@
 				B62D385F29BA61EE00179020 /* network */,
 				B62D387C29BA690C00179020 /* FirebaseAnalytics */,
 				B62D387E29BA690D00179020 /* FirebaseCrashlytics */,
+				4CD6D05029C3C758006F52F8 /* Core */,
+				4CD6D05229C3D298006F52F8 /* Domain */,
 			);
 			productName = "e-store";
 			productReference = B62D384529BA608F00179020 /* e-store.app */;
@@ -487,6 +493,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4CD6D05029C3C758006F52F8 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		4CD6D05229C3D298006F52F8 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
 		B62D385C29BA614C00179020 /* e-store_foundation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "e-store_foundation";
