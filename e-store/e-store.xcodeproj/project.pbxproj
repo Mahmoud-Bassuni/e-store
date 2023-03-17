@@ -12,8 +12,6 @@
 		4CD6D05329C3D298006F52F8 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 4CD6D05229C3D298006F52F8 /* Domain */; };
 		B62D384929BA608F00179020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384829BA608F00179020 /* AppDelegate.swift */; };
 		B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384A29BA608F00179020 /* SceneDelegate.swift */; };
-		B62D384D29BA608F00179020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384C29BA608F00179020 /* ViewController.swift */; };
-		B62D385029BA608F00179020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D384E29BA608F00179020 /* Main.storyboard */; };
 		B62D385229BA609100179020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B62D385129BA609100179020 /* Assets.xcassets */; };
 		B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D385329BA609100179020 /* LaunchScreen.storyboard */; };
 		B62D385D29BA614C00179020 /* e-store_foundation in Frameworks */ = {isa = PBXBuildFile; productRef = B62D385C29BA614C00179020 /* e-store_foundation */; };
@@ -46,8 +44,6 @@
 		B62D384529BA608F00179020 /* e-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384829BA608F00179020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B62D384A29BA608F00179020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B62D384C29BA608F00179020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B62D384F29BA608F00179020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B62D385129BA609100179020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B62D385429BA609100179020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B62D385629BA609100179020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,8 +112,6 @@
 			children = (
 				B62D384829BA608F00179020 /* AppDelegate.swift */,
 				B62D384A29BA608F00179020 /* SceneDelegate.swift */,
-				B62D384C29BA608F00179020 /* ViewController.swift */,
-				B62D384E29BA608F00179020 /* Main.storyboard */,
 				B62D385129BA609100179020 /* Assets.xcassets */,
 				B62D385329BA609100179020 /* LaunchScreen.storyboard */,
 				B62D385629BA609100179020 /* Info.plist */,
@@ -200,7 +194,6 @@
 				B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */,
 				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
 				B62D385229BA609100179020 /* Assets.xcassets in Resources */,
-				B62D385029BA608F00179020 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B62D384D29BA608F00179020 /* ViewController.swift in Sources */,
 				B62D384929BA608F00179020 /* AppDelegate.swift in Sources */,
 				B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */,
 			);
@@ -264,14 +256,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B62D384E29BA608F00179020 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B62D384F29BA608F00179020 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B62D385329BA609100179020 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
