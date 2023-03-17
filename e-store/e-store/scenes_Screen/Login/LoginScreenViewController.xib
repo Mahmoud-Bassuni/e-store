@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginScreenViewController" customModule="e_store" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTxt" destination="Yb0-4v-G4z" id="uEN-go-alO"/>
+                <outlet property="password_txt" destination="sQh-bv-avP" id="HIa-1n-gBN"/>
+                <outlet property="submitBtn" destination="LYh-uB-4Df" id="Koj-M6-ivQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d9b-om-KoV">
+                    <rect key="frame" x="20" y="79" width="353" height="143"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yb0-4v-G4z">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sQh-bv-avP">
+                            <rect key="frame" x="0.0" y="54.333333333333343" width="353" height="34.333333333333343"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYh-uB-4Df">
+                            <rect key="frame" x="0.0" y="108.66666666666666" width="353" height="34.333333333333343"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemYellowColor"/>
+            <constraints>
+                <constraint firstItem="d9b-om-KoV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="EcR-qX-wtg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d9b-om-KoV" secondAttribute="trailing" constant="20" id="Jmf-F9-ece"/>
+                <constraint firstItem="d9b-om-KoV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="OrI-XC-eqW"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
