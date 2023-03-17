@@ -6,10 +6,18 @@
 //
 
 import Foundation
-import Domain
-
-class UserRepository: UserRepositoryProtocol{
-    func fetchUser() -> User {
-        User()
+public protocol UserRepositoryProtocol {
+    func fetchUser() -> User
+}
+public class UserRepository: UserRepositoryProtocol{
+    public init() {
+        
+    }
+    public required init(name: String) {
+        print(name)
+    }
+    public func fetchUser() -> User {
+        let hassan = User(id: "123", email: "hassan")
+        return hassan
     }
 }

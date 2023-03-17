@@ -6,15 +6,16 @@
 //
 
 import Foundation
+import Core
 
- public protocol UserRepositoryProtocol {
-    func fetchUser() -> User
-}
-
-struct FetchUserUseCase {
-    let userProtocol: UserRepositoryProtocol
-    func fetchUserData() -> User {
-        userProtocol.fetchUser()
+public struct FetchUserUseCase {
+    let userProtocol = UserRepository()
+    public init() {
+        
+    }
+    public func fetchUserData() -> User  {
+        let user =  userProtocol.fetchUser()
+        return user
     }
 }
 
