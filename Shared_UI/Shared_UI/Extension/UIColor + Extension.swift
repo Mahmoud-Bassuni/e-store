@@ -4,7 +4,6 @@
 //
 //  Created by Ahmed Atef on 16/03/2023.
 //
-
 import Foundation
 import UIKit
 
@@ -27,6 +26,4 @@ extension UIColor {
     static var navyBlackColor: UIColor {
         UIColor(named: "navyBlack") ?? .black
     }
-    
-    
 }
