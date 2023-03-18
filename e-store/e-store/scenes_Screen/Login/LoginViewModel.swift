@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Domain
 // View -----> Action ----> ViewModel
 // ViewModel -----> update ----> view
 
@@ -21,12 +21,13 @@ protocol LoginViewModelOutput {
 
 //MARK:LoginViewModel
 class LoginViewModel {
-
+    private let user = FetchUserUseCase().fetchUserData()
     private var email = ""
     private var password = ""
     private var checkButtonEable : (Bool) -> Void = { _ in }
 
     func updateButtonState() {
+
         let isEmailValid = !email.isEmpty
         let isPasswordValid = !password.isEmpty
         let isButtonEnable = isEmailValid && isPasswordValid
@@ -53,7 +54,15 @@ extension LoginViewModel: LoginViewModelInput {
 extension LoginViewModel: LoginViewModelOutput {
 
     func checkConfigButton(callback: @escaping (Bool) -> Void) {
+        
         self.checkButtonEable = callback
+        
         self.updateButtonState()
+    }
+}
+//MARK:- get data from domain
+extension LoginViewModel{
+    func getdata()->(email:String,id:String){
+        (email: user.email,id: user.id)
     }
 }

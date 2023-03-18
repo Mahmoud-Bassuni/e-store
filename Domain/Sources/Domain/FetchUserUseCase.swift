@@ -14,8 +14,7 @@ public struct FetchUserUseCase {
         
     }
     public func fetchUserData() -> User  {
-        let user =  userProtocol.fetchUser()
-        return user
-    }
+        userProtocol.fetchUser()
+        }
 }
 

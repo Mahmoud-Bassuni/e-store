@@ -15,6 +15,9 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet weak var password_txt: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
 
+    @IBOutlet weak var emailLbl: UILabel!
+    
+    @IBOutlet weak var IdLbl: UILabel!
     //MARK: Proprites
     var loginViewModel: LoginViewModel
 
@@ -35,6 +38,7 @@ class LoginScreenViewController: UIViewController {
         super.viewDidLoad()
         bindViewModel()
         bindTextFields()
+        updatedata()
     }
 }
 
@@ -50,6 +54,12 @@ extension LoginScreenViewController {
     private func bindTextFields() {
         emailTxt.addTarget(self, action: #selector(UpdateEmailTextField), for: .editingChanged)
         password_txt.addTarget(self, action: #selector(UpdatePasswordTextField), for: .editingChanged)
+        
+    }
+    private func updatedata(){
+        let user = loginViewModel.getdata()
+        IdLbl.text = user.id
+        emailLbl.text = user.email
     }
 }
 
