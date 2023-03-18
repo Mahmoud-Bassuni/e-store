@@ -30,10 +30,7 @@ extension UIButton {
         case .whiteButton:
             setupWhiteButtonStyle()
         }
-        
     }
-    
-    
 }
 //MARK: - setup button styles
 extension UIButton {
@@ -48,7 +45,7 @@ extension UIButton {
     }
     private func setupBlueButtonStyle() {
         configureCommonStyles()
-        tintColor = UIColor.whiteColor
+        tintColor = UIColor.white
         backgroundColor = UIColor.blueColor
     }
     private func setupLightBlueButtonStyle() {
@@ -58,20 +55,19 @@ extension UIButton {
     }
     private func setupGrayButtonStyle() {
         configureCommonStyles()
-        tintColor = UIColor.whiteColor
+        tintColor = UIColor.white
         backgroundColor = UIColor.grayColor
     }
     private func setupRedButtonStyle() {
         configureCommonStyles()
-        tintColor = UIColor.whiteColor
+        tintColor = UIColor.white
         backgroundColor = UIColor.redColor
     }
     private func setupWhiteButtonStyle() {
         configureCommonStyles()
         tintColor = UIColor.navyBlackColor
-        backgroundColor = UIColor.whiteColor
+        backgroundColor = UIColor.white
         layer.borderWidth = 1
         layer.borderColor = UIColor.navyBlackColor.cgColor
     }
-    
 }
