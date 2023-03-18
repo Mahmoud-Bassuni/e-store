@@ -46,22 +46,22 @@ extension UIButton {
     private func setupBlueButtonStyle() {
         configureCommonStyles()
         tintColor = UIColor.white
-        backgroundColor = UIColor.blueColor
+        backgroundColor = UIColor.mediumBlueColor
     }
     private func setupLightBlueButtonStyle() {
         configureCommonStyles()
-        tintColor = UIColor.blueColor
+        tintColor = UIColor.mediumBlueColor
         backgroundColor = UIColor.lightBlueColor
     }
     private func setupGrayButtonStyle() {
         configureCommonStyles()
         tintColor = UIColor.white
-        backgroundColor = UIColor.grayColor
+        backgroundColor = UIColor.silverColor
     }
     private func setupRedButtonStyle() {
         configureCommonStyles()
         tintColor = UIColor.white
-        backgroundColor = UIColor.redColor
+        backgroundColor = UIColor.red
     }
     private func setupWhiteButtonStyle() {
         configureCommonStyles()
