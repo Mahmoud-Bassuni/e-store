@@ -19,9 +19,9 @@ protocol LoginViewModelOutput {
     func checkConfigButton(callback: @escaping (Bool) -> Void)
 }
 
-// MARK:LoginViewModel
+// MARK: LoginViewModel
 class LoginViewModel {
-    private let user = FetchUserUseCase().fetchUserData()
+    private let user = FetchUserUseCase()
     private var email = ""
     private var password = ""
     private var checkButtonEable : (Bool) -> Void = { _ in }
@@ -35,7 +35,7 @@ class LoginViewModel {
     }
 }
 
-// MARK:LoginViewModelInput
+// MARK: LoginViewModelInput
 extension LoginViewModel: LoginViewModelInput {
 
     func updateEmail(email: String) {
@@ -49,20 +49,19 @@ extension LoginViewModel: LoginViewModelInput {
     }
 
 }
-//MARK:LoginViewModelInput
+// MARK: LoginViewModelInput
 extension LoginViewModel: LoginViewModelOutput {
 
     func checkConfigButton(callback: @escaping (Bool) -> Void) {
-        
         self.checkButtonEable = callback
-        
         self.updateButtonState()
     }
 }
-//MARK:- get data from domain
-extension LoginViewModel{
-    func getdata()->(email:String,id:Int){
-        print("Data111 id: \(user.id), email: \(user.email)")
-        return (email: user.email,id: user.id)
+// MARK: get data from domain
+extension LoginViewModel {
+    func getdata() -> (email: String, id: Int) {
+        let user1 = user.fetchUserData()
+        print("Data111 id: \(user1.id), email: \(user1.email)")
+        return (email: user1.email,id: user1.id)
     }
 }

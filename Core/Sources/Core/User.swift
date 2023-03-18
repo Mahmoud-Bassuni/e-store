@@ -13,5 +13,4 @@ public struct User {
         self.id = id
         self.email = email
     }
-    
 }

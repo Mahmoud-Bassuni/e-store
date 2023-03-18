@@ -6,9 +6,8 @@
 //
 
 import Foundation
-public enum UserEndPoint: ServiceLayer{
+public enum UserEndPoint: ServiceLayer {
   case getSingleUser
-    
     public  var path: String {
         switch self {
         case .getSingleUser:

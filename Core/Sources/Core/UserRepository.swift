@@ -13,24 +13,21 @@ public protocol UserRepositoryProtocol {
 public class UserRepository: UserRepositoryProtocol {
     var userTest : UserCodable?
     public init() {
-        fetchTest()
     }
     public required init(name: String) {
         print(name)
     }
     public func fetchUser() -> User {
-       
+        print("Data111upove closure")
         fetchUserCodable { user, _ in
-            print("Data111\(user)")
+            //                print("Data111\(user)")
             self.userTest = user
         }
-        print("Data111 user test = \(self.userTest)")
+        print("Data111above closure")
+        print("Data1112 user test = \(self.userTest)")
         return User(id: userTest?.id ?? 0 , email: userTest?.email ?? "")
     }
-    private func fetchTest() {
-       
-    }
-    func fetchUserCodable(compilition:  @escaping (UserCodable?,Error?) -> Void) {
+    private func fetchUserCodable(compilition:  @escaping (UserCodable?,Error?) -> Void) {
         DispatchQueue.main.async {
             let route = UserEndPoint.getSingleUser
             BaseRequest.shared.request(route: route, completion: compilition)
