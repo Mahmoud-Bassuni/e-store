@@ -7,11 +7,9 @@
 
 import Foundation
 public struct User {
-    public let id: String
+    public let id: Int
     public let email: String
-    let fakeUser = (id : "123", email : " hassan")
-    public init(id: String , email: String ) {
-//        let user = fakeUser
+    public init(id: Int , email: String ) {
         self.id = id
         self.email = email
     }

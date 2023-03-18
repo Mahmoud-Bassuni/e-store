@@ -14,7 +14,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-      //  .package(name: "Domain", path:"/Users/a1softech/data/projects/e-store/Domain" )
+        .package(name: "network", path:"../network" )
         
     ],
     targets: [
@@ -23,7 +23,7 @@ let package = Package(
         .target(
             name: "Core",
             dependencies: [
-               // "Domain"
+              "network"
             ]),
         .testTarget(
             name: "CoreTests",

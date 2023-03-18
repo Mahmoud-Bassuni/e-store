@@ -12,12 +12,12 @@ class LoginScreenViewController: UIViewController {
     //MARK: Outlets
 
     @IBOutlet weak var emailTxt: UITextField!
-    @IBOutlet weak var password_txt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
 
     @IBOutlet weak var emailLbl: UILabel!
     
-    @IBOutlet weak var IdLbl: UILabel!
+    @IBOutlet weak var idLbl: UILabel!
     //MARK: Proprites
     var loginViewModel: LoginViewModel
 
@@ -52,13 +52,13 @@ extension LoginScreenViewController {
     }
 
     private func bindTextFields() {
-        emailTxt.addTarget(self, action: #selector(UpdateEmailTextField), for: .editingChanged)
-        password_txt.addTarget(self, action: #selector(UpdatePasswordTextField), for: .editingChanged)
+        emailTxt.addTarget(self, action: #selector(updateEmailTextField), for: .editingChanged)
+        passwordTxt.addTarget(self, action: #selector(updatePasswordTextField), for: .editingChanged)
         
     }
     private func updatedata(){
         let user = loginViewModel.getdata()
-        IdLbl.text = user.id
+        idLbl.text = "\(user.id)"
         emailLbl.text = user.email
     }
 }
@@ -66,12 +66,12 @@ extension LoginScreenViewController {
 //MARK: Actions
 extension LoginScreenViewController {
     @objc
-    func UpdateEmailTextField(textField: UITextField) {
+    func updateEmailTextField(textField: UITextField) {
         loginViewModel.updateEmail(email: textField.text ?? "")
     }
 
     @objc
-    func UpdatePasswordTextField(textField: UITextField) {
+    func updatePasswordTextField(textField: UITextField) {
         loginViewModel.updatePassword(password: textField.text ?? "")
     }
 }

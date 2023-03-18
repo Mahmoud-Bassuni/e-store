@@ -19,7 +19,7 @@ protocol LoginViewModelOutput {
     func checkConfigButton(callback: @escaping (Bool) -> Void)
 }
 
-//MARK:LoginViewModel
+// MARK:LoginViewModel
 class LoginViewModel {
     private let user = FetchUserUseCase().fetchUserData()
     private var email = ""
@@ -35,8 +35,7 @@ class LoginViewModel {
     }
 }
 
-
-//MARK:LoginViewModelInput
+// MARK:LoginViewModelInput
 extension LoginViewModel: LoginViewModelInput {
 
     func updateEmail(email: String) {
@@ -62,7 +61,8 @@ extension LoginViewModel: LoginViewModelOutput {
 }
 //MARK:- get data from domain
 extension LoginViewModel{
-    func getdata()->(email:String,id:String){
-        (email: user.email,id: user.id)
+    func getdata()->(email:String,id:Int){
+        print("Data111 id: \(user.id), email: \(user.email)")
+        return (email: user.email,id: user.id)
     }
 }

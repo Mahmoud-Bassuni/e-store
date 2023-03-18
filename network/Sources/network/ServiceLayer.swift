@@ -10,7 +10,7 @@ public protocol ServiceLayer {
 
 public extension ServiceLayer {
     var baseUrl: String {
-        "https://yummie.glitch.me"
+        "https://fakestoreapi.com"
     }
 }
 

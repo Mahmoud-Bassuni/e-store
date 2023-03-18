@@ -11,10 +11,9 @@ import Core
 public struct FetchUserUseCase {
     let userProtocol = UserRepository()
     public init() {
-        
+
     }
-    public func fetchUserData() -> User  {
+    public func fetchUserData() -> User {
         userProtocol.fetchUser()
         }
 }
-
