@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6610888700CD7CF6D7FB3AB0 /* Pods_e_store.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2547A06BC3209AEBE93BE894 /* Pods_e_store.framework */; };
+		315B01FA0863D2AD94EF818F /* libPods-e-store.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEEBB5E269BBAD67666D56 /* libPods-e-store.a */; };
+		5C2CC69D29C7292900718838 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 4CD6D05029C3C758006F52F8 /* Core */; };
+		5C2CC69E29C7292900718838 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 4CD6D05229C3D298006F52F8 /* Domain */; };
 		B614A1D929C39B2A0023A667 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614A1D729C39B2A0023A667 /* LoginScreenViewController.swift */; };
 		B614A1DA29C39B2A0023A667 /* LoginScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614A1D829C39B2A0023A667 /* LoginScreenViewController.xib */; };
 		B614A1DC29C39DB60023A667 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B614A1DB29C39DB60023A667 /* LoginViewModel.swift */; };
@@ -41,6 +43,7 @@
 /* Begin PBXFileReference section */
 		16FF4A26161027477B9A2A73 /* Pods-e-store.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-store.debug.xcconfig"; path = "Target Support Files/Pods-e-store/Pods-e-store.debug.xcconfig"; sourceTree = "<group>"; };
 		45B4BBB262FBD9092798FAFD /* Pods-e-store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-store.release.xcconfig"; path = "Target Support Files/Pods-e-store/Pods-e-store.release.xcconfig"; sourceTree = "<group>"; };
+		58EEEBB5E269BBAD67666D56 /* libPods-e-store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-e-store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B614A1D729C39B2A0023A667 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		B614A1D829C39B2A0023A667 /* LoginScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginScreenViewController.xib; sourceTree = "<group>"; };
 		B614A1DB29C39DB60023A667 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -59,14 +62,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2CC69E29C7292900718838 /* Domain in Frameworks */,
+				5C2CC69D29C7292900718838 /* Core in Frameworks */,
 				B62D386029BA61EE00179020 /* network in Frameworks */,
 				B62D385D29BA614C00179020 /* e-store_foundation in Frameworks */,
 				B62D387F29BA690D00179020 /* FirebaseCrashlytics in Frameworks */,
 				B62D387D29BA690C00179020 /* FirebaseAnalytics in Frameworks */,
 				B62D387629BA638C00179020 /* Shared_UI.framework in Frameworks */,
-				4CD6D05129C3C758006F52F8 /* Core in Frameworks */,
-				4CD6D05329C3D298006F52F8 /* Domain in Frameworks */,
-				0A6991244F262651573CADC0 /* libPods-e-store.a in Frameworks */,
+				315B01FA0863D2AD94EF818F /* libPods-e-store.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				B62D387529BA638C00179020 /* Shared_UI.framework */,
-				B49575E65FE76E7CB37BDD90 /* libPods-e-store.a */,
+				58EEEBB5E269BBAD67666D56 /* libPods-e-store.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -343,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -397,7 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

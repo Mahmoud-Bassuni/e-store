@@ -39,11 +39,9 @@ class LoginScreenViewController: UIViewController {
         bindTextFields()
        // updatedata()
     }
-    
     @IBAction func getUserData(_ sender: UIButton) {
         updatedata()
     }
-    
 }
 
 // MARK: Bind view model
