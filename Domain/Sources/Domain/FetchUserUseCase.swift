@@ -13,10 +13,9 @@ public struct FetchUserUseCase {
     public init() {
 
     }
-    public func fetchUserData( compeletion:  ((User)->Void)? ) {
+    public func fetchUserData( completion:  ((User) -> Void)? ) {
         userRepo.fetchUserCodable {  inuser, _ in
-           print("fetchUserData\(inuser)")
-            compeletion?(User(id: inuser?.id ?? 2, email: inuser?.email ?? "ff"))
+            completion?(User(id: inuser?.id ?? 0, email: inuser?.email ?? " "))
         }
         }
 }

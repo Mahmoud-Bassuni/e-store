@@ -37,7 +37,7 @@ class LoginScreenViewController: UIViewController {
         super.viewDidLoad()
         bindViewModel()
         bindTextFields()
-       // updatedata()
+        updatedata()
     }
     @IBAction func getUserData(_ sender: UIButton) {
         updatedata()
@@ -59,9 +59,11 @@ extension LoginScreenViewController {
 
     }
     private func updatedata() {
-        loginViewModel.getdata()
-        idLbl.text = "\(loginViewModel.id)"
-//        emailLbl.text = user.email
+        loginViewModel.getdata {user in
+            self.idLbl.text = "\(user.id)"
+            self.emailLbl.text = user.email
+        }
+
     }
 }
 
