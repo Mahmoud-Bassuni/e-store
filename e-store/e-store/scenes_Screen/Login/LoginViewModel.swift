@@ -21,7 +21,8 @@ protocol LoginViewModelOutput {
 
 // MARK: LoginViewModel
 class LoginViewModel {
-    private var user = FetchUserUseCase()
+    private var domain = FetchUserUseCase()
+    public var id :Int = 3
     private var email = ""
     private var password = ""
     private var checkButtonEable : (Bool) -> Void = { _ in }
@@ -59,14 +60,9 @@ extension LoginViewModel: LoginViewModelOutput {
 }
 // MARK: get data from domain
 extension LoginViewModel {
-    func getdata() -> (email: String, id: Int) {
-        var user1 = User(id: 0, email: "d")
-        user.closure { item in
-            user1 = User(id: item?.id ?? 1, email: item?.email ?? "tt")
-            print("Data11133\(user1)")
-            return user1
+    func getdata() {
+        domain.fetchUserData { user in
+            self.id = user.id
         }
-        print("Data111 id: \(user1.id), email: \(user1.email)")
-        return (email: user1.email,id: user1.id)
     }
 }

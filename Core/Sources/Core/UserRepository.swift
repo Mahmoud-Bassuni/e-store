@@ -27,10 +27,8 @@ public class UserRepository: UserRepositoryProtocol {
 //        return userTest
 //    }
     public func fetchUserCodable(compilition:  @escaping (UserCodable?,Error?) -> Void) {
-        DispatchQueue.main.async {
             let route = UserEndPoint.getSingleUser
             BaseRequest.shared.request(route: route, completion: compilition)
-        }
     }
 }
  public struct UserCodable: Decodable {

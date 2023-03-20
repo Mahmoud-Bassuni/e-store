@@ -59,9 +59,9 @@ extension LoginScreenViewController {
 
     }
     private func updatedata() {
-        let user = loginViewModel.getdata()
-        idLbl.text = "\(user.id)"
-        emailLbl.text = user.email
+        loginViewModel.getdata()
+        idLbl.text = "\(loginViewModel.id)"
+//        emailLbl.text = user.email
     }
 }
 
