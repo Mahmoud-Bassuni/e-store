@@ -1,10 +1,10 @@
 target 'e-store' do
-  
+  pod 'Alamofire'
   workspace 'e-store.xcworkspace'
 end
 target 'Shared_UI' do
   xcodeproj '../shared_UI/shared_UI'
-  
+  pod 'Alamofire'
 end
 
 
