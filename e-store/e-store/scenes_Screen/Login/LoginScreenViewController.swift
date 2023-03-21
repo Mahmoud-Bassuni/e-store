@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Domain
 
 class LoginScreenViewController: UIViewController {
 
@@ -15,11 +16,12 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var idLbl: UILabel!
     // MARK: Proprites
-    var loginViewModel: LoginViewModel
-
+    var loginViewModel : LoginViewModel
+    var arrayOfUsersName : [User] = []
     // MARK: Init
 
     init(loginViewModel: LoginViewModel) {
@@ -37,10 +39,18 @@ class LoginScreenViewController: UIViewController {
         super.viewDidLoad()
         bindViewModel()
         bindTextFields()
-        updatedata()
+        updatedataUser()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "ShowUserData", bundle: nil), forCellReuseIdentifier: "ShowUserData")
+
     }
     @IBAction func getUserData(_ sender: UIButton) {
-        updatedata()
+        updatedataUser()
+        loginViewModel.getAllUsers { users in
+            self.arrayOfUsersName = users
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -58,12 +68,11 @@ extension LoginScreenViewController {
         passwordTxt.addTarget(self, action: #selector(updatePasswordTextField), for: .editingChanged)
 
     }
-    private func updatedata() {
-        loginViewModel.getdata {user in
+    private func updatedataUser() {
+        loginViewModel.getSingleUser {user in
             self.idLbl.text = "\(user.id)"
             self.emailLbl.text = user.email
         }
-
     }
 }
 
@@ -77,5 +86,21 @@ extension LoginScreenViewController {
     @objc
     func updatePasswordTextField(textField: UITextField) {
         loginViewModel.updatePassword(password: textField.text ?? "")
+    }
+}
+
+// MARK: TableView Delegate and DataSource
+extension LoginScreenViewController: UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        arrayOfUsersName.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ShowUserData", for: indexPath) as! ShowUserData
+        cell.idLbl.text = "\(arrayOfUsersName[indexPath.row].id)"
+        cell.emailLbl.text = arrayOfUsersName[indexPath.row].email
+        cell.passLbl.text = arrayOfUsersName[indexPath.row].password
+        cell.phoneLbl.text = arrayOfUsersName[indexPath.row].phone
+        cell.userNameLbl.text = arrayOfUsersName[indexPath.row].username
+        return cell
     }
 }

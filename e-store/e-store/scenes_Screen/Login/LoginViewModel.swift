@@ -59,8 +59,13 @@ extension LoginViewModel: LoginViewModelOutput {
 }
 // MARK: get data from domain
 extension LoginViewModel {
-    func getdata(completion: ((User) -> Void)?) {
+    func getSingleUser(completion: ((User) -> Void)?) {
         domain.fetchUserData { user in
+            completion?(user)
+        }
+    }
+    func getAllUsers(completion: (([User]) -> Void)?) {
+        domain.fetchUsersData { user in
             completion?(user)
         }
     }

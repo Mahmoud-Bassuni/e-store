@@ -9,6 +9,7 @@ import Foundation
 import network
 public protocol UserRepositoryProtocol {
     func fetchUserCodable(completion:  @escaping (UserCodable?,Error?) -> Void)
+    func fetchUsersCodable(completion:  @escaping ([UserCodable]?,Error?) -> Void)
 }
 public class UserRepository: UserRepositoryProtocol {
     public init() {
@@ -20,11 +21,8 @@ public class UserRepository: UserRepositoryProtocol {
             let route = UserEndPoint.getSingleUser
             BaseRequest.shared.request(route: route, completion: completion)
     }
+    public func fetchUsersCodable(completion:  @escaping ([UserCodable]?,Error?) -> Void) {
+            let route = UserEndPoint.getAllUsers
+            BaseRequest.shared.request(route: route, completion: completion)
+    }
 }
-
-// extension Array where Element == UserCodable {
-//    func toUser() -> [User] {
-//        map {item in
-//            User(id: item.id, email: item.email)}
-//    }
-// }
