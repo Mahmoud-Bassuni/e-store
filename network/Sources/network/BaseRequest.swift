@@ -9,20 +9,20 @@ import Foundation
 import Alamofire
 
 public protocol Networkable {
-    func request<T: Decodable>(route: ServiceLayer, completion: @escaping (T?, Error?) -> Void)
+    func request<T: Decodable>(route: ServiceLayer, method: HTTPMethod, completion: @escaping (T?, Error?) -> Void)
 }
 
 public class BaseRequest: Networkable {
     public static let shared = BaseRequest()
     
-    public func request<T: Decodable>(route: ServiceLayer, completion: @escaping (T?, Error?) -> Void)  {
-        let method = Alamofire.HTTPMethod(rawValue: route.httpMethod.rawValue)
+    public func request<T: Decodable>(route: ServiceLayer, method: HTTPMethod, completion: @escaping (T?, Error?) -> Void)  {
+      //  let method = Alamofire.HTTPMethod(rawValue: route.httpMethod.rawValue)
         let headers = Alamofire.HTTPHeaders(route.headers ?? [:])
         let parameters = extractParameters(task: route.task)
         
-        AF.request(route.baseUrl + route.path, method: method, parameters: parameters.params, encoding: parameters.encoding, headers: headers).responseString { response in
-            guard let data = response.data else { return }
-            switch response.result {
+        AF.request(route.baseUrl + route.path, method : method, parameters: parameters.params, encoding: parameters.encoding, headers: headers).responseString { result in
+            guard let data = result.data else { return }
+            switch result.result {
             case .success(_):
                 do {
                     let jsonDecoded = try JSONDecoder().decode(T.self, from: data)
