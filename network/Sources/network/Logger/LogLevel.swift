@@ -18,5 +18,4 @@ enum LogLevel {
         case .error:   return "ERROR ❌"
         }
     }
-    
 }
