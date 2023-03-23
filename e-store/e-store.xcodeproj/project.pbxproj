@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A6991244F262651573CADC0 /* libPods-e-store.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B49575E65FE76E7CB37BDD90 /* libPods-e-store.a */; };
+		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
 		B62D384929BA608F00179020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384829BA608F00179020 /* AppDelegate.swift */; };
 		B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384A29BA608F00179020 /* SceneDelegate.swift */; };
 		B62D384D29BA608F00179020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384C29BA608F00179020 /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62D386029BA61EE00179020 /* network in Frameworks */,
+				5CA58B7929CCFF5100102C1C /* Domain in Frameworks */,
 				B62D385D29BA614C00179020 /* e-store_foundation in Frameworks */,
 				B62D387F29BA690D00179020 /* FirebaseCrashlytics in Frameworks */,
 				B62D387D29BA690C00179020 /* FirebaseAnalytics in Frameworks */,
@@ -145,6 +147,7 @@
 				B62D385F29BA61EE00179020 /* network */,
 				B62D387C29BA690C00179020 /* FirebaseAnalytics */,
 				B62D387E29BA690D00179020 /* FirebaseCrashlytics */,
+				5CA58B7829CCFF5100102C1C /* Domain */,
 			);
 			productName = "e-store";
 			productReference = B62D384529BA608F00179020 /* e-store.app */;
@@ -488,6 +491,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5CA58B7829CCFF5100102C1C /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
+		};
 		B62D385C29BA614C00179020 /* e-store_foundation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "e-store_foundation";

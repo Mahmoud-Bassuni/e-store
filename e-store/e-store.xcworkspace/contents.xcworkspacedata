@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../Shared_UI/Shared_UI.xcodeproj">
+      location = "group:../Domain">
    </FileRef>
    <FileRef
       location = "group:../network">
@@ -15,5 +15,8 @@
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../shared_UI/shared_UI.xcodeproj">
    </FileRef>
 </Workspace>
