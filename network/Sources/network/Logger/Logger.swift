@@ -15,7 +15,7 @@ public class Logger<T: Codable> {
                                                responseUrl: String,
                                                response: T?,
                                                error: Error?) {
-        let description = "\(level.level) \(message) Line : \(line) URL : \(responseUrl) Function: \(function) Response : \(response) Error : \(error)"
+        let description = "\(level.level) File: \(file) \(message) Line : \(line) URL : \(responseUrl) Function: \(function) Response : \(response) Error : \(error)"
         #if DEBUG
         print(description)
         #endif
