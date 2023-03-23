@@ -15,7 +15,6 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
-
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emailLbl: UILabel!
     @IBOutlet weak var idLbl: UILabel!

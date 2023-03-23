@@ -8,7 +8,7 @@
 import Foundation
 public enum UserEndPoint: ServiceLayer {
   case getSingleUser
-    case getAllUsers
+  case getAllUsers
     public  var path: String {
         switch self {
         case .getSingleUser:

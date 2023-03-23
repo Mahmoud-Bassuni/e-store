@@ -11,18 +11,18 @@ public struct UserCodable: Decodable {
     public var email:String
     public var username:String
     public var password:String
-//    public var name:Name
-//    public var address:Address
+    public var name:Name
+    public var address:Address
     public var phone:String
 }
-public struct Name {
+public struct Name: Decodable {
     public var firstname:String
     public var lastname:String
 }
-public  struct Address {
+public  struct Address: Decodable {
     public var city:String
     public var street:String
     public var number:Int
     public var zipcode:String
-    public var geolocation:( lat: String,long: String)
+//    public var geolocation:( lat: String,long: String)
 }

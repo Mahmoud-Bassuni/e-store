@@ -82,7 +82,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MB9-DM-4HO">
                     <rect key="frame" x="20" y="350.66666666666669" width="353" height="34.333333333333314"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="get all user"/>
                     <connections>
                         <action selector="getUserData:" destination="-1" eventType="touchUpInside" id="DcP-rg-Qw5"/>
                     </connections>

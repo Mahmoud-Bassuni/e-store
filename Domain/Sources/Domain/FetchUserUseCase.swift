@@ -12,11 +12,10 @@ public struct FetchUserUseCase {
     let userRepo = UserRepository()
     let defaultUser = User(id: 0, email: "error", username: "error", password: "error", phone: "error")
     public init() {
-
     }
-    public func fetchUserData( completion:  ((User) -> Void)? ) {
+    public func fetchUserData( completion: @escaping ((User) -> Void) ) {
         userRepo.fetchUserCodable {  inuser, _ in
-            completion?(User(
+            completion(User(
                 id: inuser?.id ?? defaultUser.id
                 , email: inuser?.email ?? defaultUser.email
                 , username: inuser?.username ?? defaultUser.username

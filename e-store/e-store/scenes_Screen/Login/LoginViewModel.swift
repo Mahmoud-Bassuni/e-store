@@ -59,14 +59,14 @@ extension LoginViewModel: LoginViewModelOutput {
 }
 // MARK: get data from domain
 extension LoginViewModel {
-    func getSingleUser(completion: ((User) -> Void)?) {
+    func getSingleUser(completion: @escaping((User) -> Void)) {
         domain.fetchUserData { user in
-            completion?(user)
+            completion(user)
         }
     }
-    func getAllUsers(completion: (([User]) -> Void)?) {
+    func getAllUsers(completion:  @escaping (([User]) -> Void)) {
         domain.fetchUsersData { user in
-            completion?(user)
+            completion(user)
         }
     }
 }
