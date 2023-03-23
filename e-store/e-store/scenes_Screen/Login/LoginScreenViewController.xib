@@ -42,6 +42,9 @@
                             <rect key="frame" x="0.0" y="108.66666666666666" width="353" height="34.333333333333343"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                            <connections>
+                                <action selector="loginBtn:" destination="-1" eventType="touchUpInside" id="cFF-dG-0D2"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="l24-eF-ctw">
                             <rect key="frame" x="0.0" y="163" width="353" height="34.333333333333343"/>

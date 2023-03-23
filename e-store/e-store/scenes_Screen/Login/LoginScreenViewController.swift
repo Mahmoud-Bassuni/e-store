@@ -51,6 +51,17 @@ class LoginScreenViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    @IBAction func loginBtn(_ sender: UIButton) {
+        if let userName = emailTxt.text , let pass = passwordTxt.text {
+            loginViewModel.getTokenLogin(loginInfo: (userName: userName, passWord: pass)){ toke, error in
+                guard let token = toke else {
+//                    print("dataToken error \(error)")
+                    return
+                }
+//                print("dataToken\(token)")
+            }
+        }
+    }
 }
 
 // MARK: Bind view model

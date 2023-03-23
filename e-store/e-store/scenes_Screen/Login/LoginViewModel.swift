@@ -69,4 +69,9 @@ extension LoginViewModel {
             completion(user)
         }
     }
+    func getTokenLogin(loginInfo localLoginInfo: (userName:String,passWord:String), completion: @escaping (String?, Error?) -> Void){
+        domain.fetchTokenLoginUser(loginInfo: localLoginInfo){ token, error in
+            completion(token?.token,error)
+        }
+    }
 }
