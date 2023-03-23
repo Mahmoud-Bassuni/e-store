@@ -7,7 +7,6 @@
 
 import Foundation
 import network
-import Alamofire
 public protocol UserRepositoryProtocol {
     func fetchUserCodable(completion:  @escaping (UserCodable?,Error?) -> Void)
     func fetchUsersCodable(completion:  @escaping ([UserCodable]?,Error?) -> Void)

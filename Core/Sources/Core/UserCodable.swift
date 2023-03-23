@@ -24,5 +24,9 @@ public  struct Address: Decodable {
     public var street:String
     public var number:Int
     public var zipcode:String
-//    public var geolocation:( lat: String,long: String)
+    public var geolocation:Geolocation
+}
+public struct Geolocation: Decodable {
+    public var lat: String
+    public var long: String
 }

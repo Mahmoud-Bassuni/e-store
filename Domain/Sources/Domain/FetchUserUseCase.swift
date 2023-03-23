@@ -10,22 +10,18 @@ import Core
 
 public struct FetchUserUseCase {
     let userRepo = UserRepository()
-    let defaultUser = User(id: 0, email: "error", username: "error", password: "error", phone: "error")
     public init() {
     }
     public func fetchUserData( completion: @escaping ((User) -> Void) ) {
-        userRepo.fetchUserCodable {  inuser, _ in
-            completion(User(
-                id: inuser?.id ?? defaultUser.id
-                , email: inuser?.email ?? defaultUser.email
-                , username: inuser?.username ?? defaultUser.username
-                , password: inuser?.password ?? defaultUser.password
-                , phone: inuser?.phone ?? defaultUser.phone))
+        userRepo.fetchUserCodable {  userCodable, _ in
+            if let userCodable {
+                completion(userCodable.toUser(userCodable))
+            }
         }
 }
     public func fetchUsersData( completion: @escaping (([User]) -> Void) ) {
         userRepo.fetchUsersCodable {  inuser, _ in
-            completion(inuser?.toUser() ?? [defaultUser])
+            completion(inuser?.toUser() ?? [User()])
         }
     }
     public func fetchTokenLoginUser(loginInfo localLoginInfo: (userName:String,passWord:String), completion: @escaping (Token?, Error?) -> Void) {

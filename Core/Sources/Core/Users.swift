@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import network
 public enum UserEndPoint: ServiceLayer {
   case getSingleUser
   case getAllUsers
