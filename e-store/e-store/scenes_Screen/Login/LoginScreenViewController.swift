@@ -15,12 +15,9 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var emailLbl: UILabel!
-    @IBOutlet weak var idLbl: UILabel!
+
     // MARK: Proprites
     var loginViewModel : LoginViewModel
-    var arrayOfUsersName : [User] = []
     // MARK: Init
 
     init(loginViewModel: LoginViewModel) {
@@ -31,36 +28,33 @@ class LoginScreenViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    func showAlert(msg:String, vc1:UIViewController) {
+        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        vc1.present(alert,animated: true,completion: nil)
+    }
+    
+    @IBAction func submitBtnAction(_ sender: Any) {
+        var emailValid :Bool = loginViewModel.isValidEmail(emailTxt.text ?? "")
+        var passwordValid :Bool = loginViewModel.isValidPassword(passwordTxt.text ?? "")
+        if( (emailValid || passwordValid) == false) {
+            showAlert(msg: "Email & Password are incorrect", vc1: self)
+        }
+        else if(emailValid == false) {
+            showAlert(msg: "Email is incorrect", vc1: self)
+        }
+        else if(passwordValid == false) {
+            showAlert(msg: "Password is incorrect", vc1: self)
+        }
+        
+    }
+    
 
     // MARK: LifeCycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
         bindTextFields()
-        updatedataUser()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: "ShowUserData", bundle: nil), forCellReuseIdentifier: "ShowUserData")
-
-    }
-    @IBAction func getUserData(_ sender: UIButton) {
-        updatedataUser()
-        loginViewModel.getAllUsers { users in
-            self.arrayOfUsersName = users
-            self.tableView.reloadData()
-        }
-    }
-    @IBAction func loginBtn(_ sender: UIButton) {
-        if let userName = emailTxt.text , let pass = passwordTxt.text {
-            loginViewModel.getTokenLogin(loginInfo: (userName: userName, passWord: pass)){ token, error in
-                guard let token else {
-//                    print("dataToken error \(error)")
-                    return
-                }
-//                print("dataToken\(token)")
-            }
-        }
     }
 }
 
@@ -78,13 +72,6 @@ extension LoginScreenViewController {
         passwordTxt.addTarget(self, action: #selector(updatePasswordTextField), for: .editingChanged)
 
     }
-    private func updatedataUser() {
-        loginViewModel.getSingleUser {user in
-            print("dataaa \(user)")
-            self.idLbl.text = "\(user.id)"
-            self.emailLbl.text = user.email
-        }
-    }
 }
 
 // MARK: Actions
@@ -98,20 +85,7 @@ extension LoginScreenViewController {
     func updatePasswordTextField(textField: UITextField) {
         loginViewModel.updatePassword(password: textField.text ?? "")
     }
-}
-
-// MARK: TableView Delegate and DataSource
-extension LoginScreenViewController: UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        arrayOfUsersName.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ShowUserData", for: indexPath) as! ShowUserData
-        cell.idLbl.text = "\(arrayOfUsersName[indexPath.row].id)"
-        cell.emailLbl.text = arrayOfUsersName[indexPath.row].email
-        cell.passLbl.text = arrayOfUsersName[indexPath.row].password
-        cell.phoneLbl.text = arrayOfUsersName[indexPath.row].phone
-        cell.userNameLbl.text = arrayOfUsersName[indexPath.row].username
-        return cell
-    }
+    
+    
+    
 }
