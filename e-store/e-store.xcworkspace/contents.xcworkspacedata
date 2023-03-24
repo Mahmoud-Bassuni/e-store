@@ -5,6 +5,9 @@
       location = "group:../Domain">
    </FileRef>
    <FileRef
+      location = "group:../Core">
+   </FileRef>
+   <FileRef
       location = "group:../network">
    </FileRef>
    <FileRef

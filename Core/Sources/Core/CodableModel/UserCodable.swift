@@ -26,7 +26,6 @@ public  struct Address: Codable {
     public var zipcode:String?
     public var geolocation:Geolocation?
 }
-
 public struct Geolocation: Codable {
     public var lat: String?
     public var long: String?

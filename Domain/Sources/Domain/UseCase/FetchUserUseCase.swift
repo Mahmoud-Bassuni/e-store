@@ -12,7 +12,7 @@ public struct FetchUserUseCase {
     public init() {
     }
     public func fetchUserData( completion: @escaping ((User) -> Void) ) {
-        userRepo.fetchUserCodable { result in
+        userRepo.fetchUser { result in
             switch result {
             case .failure(let error):
                 print("Failure \(error)")
@@ -22,7 +22,7 @@ public struct FetchUserUseCase {
         }
     }
     public func fetchUsersData( completion: @escaping (([User]) -> Void) ) {
-        userRepo.fetchUsersCodable { result in
+        userRepo.fetchUsers { result in
             switch result {
             case .success(let usersCodable):
                 completion(usersCodable.toUser())
@@ -31,13 +31,13 @@ public struct FetchUserUseCase {
             }
         }
     }
-    public func fetchTokenLoginUser(loginInfo localLoginInfo: (userName:String,passWord:String), completion: @escaping (Token?, Error?) -> Void) {
+    public func fetchTokenLoginUser(loginInfo localLoginInfo: (userName:String,passWord:String), completion: @escaping (Token) -> Void) {
         userRepo.loginUser(loginInfo: localLoginInfo) { result in
             switch result {
             case .success(let token):
-                completion(token, nil)
+                completion(token)
             case .failure(let error):
-                completion(nil, error)
+                print("failure \(error)")
             }
         }
     }
