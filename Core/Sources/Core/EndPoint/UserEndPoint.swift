@@ -24,9 +24,7 @@ public enum UserEndPoint: ServiceLayer {
     }
     public var task: Task {
         switch self {
-        case .getSingleUser:
-            return .plainRequest
-        case .getAllUsers:
+        case .getSingleUser , .getAllUsers:
             return .plainRequest
         case .loginUser(let username,let passWord):
             return .requestWithParameters(parameters: ["username": username, "password": passWord], encoding: URLEncoding.default)

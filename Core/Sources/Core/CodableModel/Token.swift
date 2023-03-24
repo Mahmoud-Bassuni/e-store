@@ -7,5 +7,5 @@
 
 import Foundation
 public struct Token: Codable {
-    public var token: String
+    public var token: String?
 }

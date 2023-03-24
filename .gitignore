@@ -11,6 +11,7 @@ Gemfile.lock
 
 ## CocoaPods
 Pods/
+Podfile.lock
 
 ## Various settings
 *.pbxuser

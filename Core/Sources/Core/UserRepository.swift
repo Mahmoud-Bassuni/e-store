@@ -8,8 +8,8 @@
 import Foundation
 import network
 public protocol UserRepositoryProtocol {
-    func fetchUserCodable(completion: @escaping (Result<UserCodable, RequestException>) -> Void)
-    func fetchUsersCodable(completion: @escaping (Result<[UserCodable], RequestException>) -> Void)
+    func fetchUser(completion: @escaping (Result<UserCodable, RequestException>) -> Void)
+    func fetchUsers(completion: @escaping (Result<[UserCodable], RequestException>) -> Void)
     func loginUser(loginInfo: (userName:String,passWord:String),completion: @escaping (Result<Token, RequestException>) -> Void)
 }
 public class UserRepository: UserRepositoryProtocol {
@@ -17,11 +17,11 @@ public class UserRepository: UserRepositoryProtocol {
     }
     public required init(coder: NSCoder) {
     }
-    public func fetchUserCodable(completion: @escaping (Result<UserCodable, RequestException>) -> Void) {
+    public func fetchUser(completion: @escaping (Result<UserCodable, RequestException>) -> Void) {
         let route = UserEndPoint.getSingleUser
         BaseRequest.shared.request(route: route, method: .get, completion: completion)
     }
-    public func fetchUsersCodable(completion: @escaping (Result<[UserCodable], RequestException>) -> Void) {
+    public func fetchUsers(completion: @escaping (Result<[UserCodable], RequestException>) -> Void) {
         let route = UserEndPoint.getAllUsers
         BaseRequest.shared.request(route: route,method: .get, completion: completion)
     }
