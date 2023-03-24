@@ -7,6 +7,7 @@
 
 import UIKit
 import Domain
+import Shared_UI
 
 class LoginScreenViewController: UIViewController {
 
@@ -15,7 +16,7 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
-
+    
     // MARK: Proprites
     var loginViewModel : LoginViewModel
     // MARK: Init
@@ -53,6 +54,7 @@ class LoginScreenViewController: UIViewController {
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        submitBtn.backgroundColor = UIColor.mediumBlueColor
         bindViewModel()
         bindTextFields()
     }
