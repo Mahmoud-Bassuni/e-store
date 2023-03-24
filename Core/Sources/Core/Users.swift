@@ -22,16 +22,6 @@ public enum UserEndPoint: ServiceLayer {
             return "/auth/login"
         }
     }
-    public var httpMethod: HttpMethod {
-        switch self {
-        case .getSingleUser:
-            return .gett
-        case .getAllUsers:
-              return  .gett
-        case .loginUser:
-            return .post
-        }
-    }
     public var task: Task {
         switch self {
         case .getSingleUser:

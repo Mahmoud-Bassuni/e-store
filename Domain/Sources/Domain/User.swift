@@ -56,8 +56,9 @@ public struct Geolocation {
     }
 }
 extension UserCodable {
-    public func toUser(_ inuser: UserCodable) -> User {
-        User(
+    public func toUser() -> User {
+        let inuser = self
+      return  User(
             id: inuser.id
             , email: inuser.email
             , username: inuser.username

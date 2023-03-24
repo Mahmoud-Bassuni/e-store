@@ -6,6 +6,6 @@
 //
 
 import Foundation
-public struct Token: Decodable {
+public struct Token: Codable {
     public var token: String
 }
