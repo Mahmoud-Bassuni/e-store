@@ -6,7 +6,7 @@
 //
 
 import Foundation
-public struct UserCodable: Decodable {
+public struct UserCodable: Codable {
     public var id:Int
     public var email:String
     public var username:String
@@ -15,11 +15,11 @@ public struct UserCodable: Decodable {
     public var address:Address
     public var phone:String
 }
-public struct Name: Decodable {
+public struct Name: Codable {
     public var firstname:String
     public var lastname:String
 }
-public  struct Address: Decodable {
+public  struct Address: Codable {
     public var city:String
     public var street:String
     public var number:Int
@@ -27,7 +27,7 @@ public  struct Address: Decodable {
     public var geolocation:Geolocation
 }
 
-public struct Geolocation: Decodable {
+public struct Geolocation: Codable {
     public var lat: String
     public var long: String
 }

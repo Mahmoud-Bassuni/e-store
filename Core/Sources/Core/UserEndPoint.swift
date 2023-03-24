@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 import network
 public enum UserEndPoint: ServiceLayer {
-  case getSingleUser
-  case getAllUsers
+    case getSingleUser
+    case getAllUsers
     case loginUser(String , String)
     public  var path: String {
         switch self {
@@ -20,16 +20,6 @@ public enum UserEndPoint: ServiceLayer {
             return "/users"
         case .loginUser:
             return "/auth/login"
-        }
-    }
-    public var httpMethod: HttpMethod {
-        switch self {
-        case .getSingleUser:
-            return .gett
-        case .getAllUsers:
-              return  .gett
-        case .loginUser:
-            return .post
         }
     }
     public var task: Task {
@@ -43,6 +33,6 @@ public enum UserEndPoint: ServiceLayer {
         }
     }
     public var headers: [String: String]? {
-    return nil
+        return nil
     }
 }
