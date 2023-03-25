@@ -54,7 +54,7 @@ class LoginScreenViewController: UIViewController {
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        submitBtn.backgroundColor = UIColor.mediumBlueColor
+        submitBtn.selectStyle(style: .blueButton)
         bindViewModel()
         bindTextFields()
     }
