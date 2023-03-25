@@ -7,10 +7,9 @@
 
 import Foundation
 import Core
-extension UserCodable {
-    public func toUser() -> User {
-        let inuser = self
-        return  User(
+public struct UserMapper {
+    public func userCodableToUser(_ inuser: UserCodable) -> User {
+          User(
             id: inuser.id
             , email: inuser.email
             , username: inuser.username

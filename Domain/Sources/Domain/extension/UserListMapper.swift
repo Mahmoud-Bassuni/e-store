@@ -10,7 +10,7 @@ import Core
 extension Array where Element == UserCodable {
    func toUser() -> [User] {
        map {item in
-           item.toUser()
+           UserMapper().userCodableToUser(item)
        }
    }
 }

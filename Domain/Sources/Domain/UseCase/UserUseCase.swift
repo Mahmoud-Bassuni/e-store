@@ -7,7 +7,7 @@
 
 import Foundation
 import Core
-public struct FetchUserUseCase {
+public struct UserUseCase {
     let userRepo = UserRepository()
     public init() {
     }
@@ -17,7 +17,7 @@ public struct FetchUserUseCase {
             case .failure(let error):
                 print("Failure \(error)")
             case .success(let userCodable):
-                completion(userCodable.toUser())
+                completion(UserMapper().userCodableToUser(userCodable))
             }
         }
     }
@@ -31,7 +31,7 @@ public struct FetchUserUseCase {
             }
         }
     }
-    public func fetchTokenLoginUser(loginInfo localLoginInfo: (userName:String,passWord:String), completion: @escaping (Token) -> Void) {
+    public func login(loginInfo localLoginInfo: (userName:String,passWord:String), completion: @escaping (Token) -> Void) {
         userRepo.loginUser(loginInfo: localLoginInfo) { result in
             switch result {
             case .success(let token):
