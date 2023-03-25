@@ -17,7 +17,7 @@ public struct UserUseCase {
             case .failure(let error):
                 print("Failure \(error)")
             case .success(let userCodable):
-                completion(UserMapper().userCodableToUser(userCodable))
+                completion(UserMapper().transformCodableToUser(userCodable))
             }
         }
     }
