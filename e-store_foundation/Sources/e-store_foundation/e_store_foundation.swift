@@ -3,4 +3,5 @@ public struct E_store_foundation {
 
     public init() {
     }
+    
 }

@@ -11,8 +11,6 @@
 		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
 		B62D384929BA608F00179020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384829BA608F00179020 /* AppDelegate.swift */; };
 		B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384A29BA608F00179020 /* SceneDelegate.swift */; };
-		B62D384D29BA608F00179020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384C29BA608F00179020 /* ViewController.swift */; };
-		B62D385029BA608F00179020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D384E29BA608F00179020 /* Main.storyboard */; };
 		B62D385229BA609100179020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B62D385129BA609100179020 /* Assets.xcassets */; };
 		B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D385329BA609100179020 /* LaunchScreen.storyboard */; };
 		B62D385D29BA614C00179020 /* e-store_foundation in Frameworks */ = {isa = PBXBuildFile; productRef = B62D385C29BA614C00179020 /* e-store_foundation */; };
@@ -22,7 +20,23 @@
 		B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B62D387929BA678300179020 /* GoogleService-Info.plist */; };
 		B62D387D29BA690C00179020 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B62D387C29BA690C00179020 /* FirebaseAnalytics */; };
 		B62D387F29BA690D00179020 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B62D387E29BA690D00179020 /* FirebaseCrashlytics */; };
+		C9BE6A1529CF86C80025A28C /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE6A1329CF86C80025A28C /* LoginScreenViewController.swift */; };
+		C9BE6A1629CF86C80025A28C /* LoginScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BE6A1429CF86C80025A28C /* LoginScreenViewController.xib */; };
+		C9BE6A1829CF86DD0025A28C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BE6A1729CF86DD0025A28C /* LoginViewModel.swift */; };
+		C9F1CC4329CF971F00C158BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F1CC4229CF971F00C158BC /* Main.storyboard */; };
+		C9F1CC4E29CF9CF400C158BC /* LoginVMTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F1CC4D29CF9CF400C158BC /* LoginVMTestCases.swift */; };
+		C9F1CC5529CF9DA600C158BC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C9F1CC5429CF9DA600C158BC /* FirebaseAnalytics */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9F1CC4F29CF9CF400C158BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B62D383D29BA608F00179020 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B62D384429BA608F00179020;
+			remoteInfo = "e-store";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B62D387829BA638C00179020 /* Embed Frameworks */ = {
@@ -45,13 +59,17 @@
 		B62D384529BA608F00179020 /* e-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384829BA608F00179020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B62D384A29BA608F00179020 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B62D384C29BA608F00179020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B62D384F29BA608F00179020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B62D385129BA609100179020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B62D385429BA609100179020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B62D385629BA609100179020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B62D387529BA638C00179020 /* Shared_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D387929BA678300179020 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C9BE6A1329CF86C80025A28C /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		C9BE6A1429CF86C80025A28C /* LoginScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginScreenViewController.xib; sourceTree = "<group>"; };
+		C9BE6A1729CF86DD0025A28C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C9F1CC4229CF971F00C158BC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C9F1CC4B29CF9CF400C158BC /* e-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "e-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9F1CC4D29CF9CF400C158BC /* LoginVMTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVMTestCases.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +84,14 @@
 				B62D387D29BA690C00179020 /* FirebaseAnalytics in Frameworks */,
 				B62D387629BA638C00179020 /* Shared_UI.framework in Frameworks */,
 				0A6991244F262651573CADC0 /* libPods-e-store.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9F1CC4829CF9CF400C158BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9F1CC5529CF9DA600C158BC /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +121,7 @@
 			children = (
 				B62D387929BA678300179020 /* GoogleService-Info.plist */,
 				B62D384729BA608F00179020 /* e-store */,
+				C9F1CC4C29CF9CF400C158BC /* e-storeTests */,
 				B62D384629BA608F00179020 /* Products */,
 				642276AD4B1ECEC35FF695A4 /* Pods */,
 				911AE0FD3918430F9EE658DB /* Frameworks */,
@@ -105,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				B62D384529BA608F00179020 /* e-store.app */,
+				C9F1CC4B29CF9CF400C158BC /* e-storeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,15 +140,41 @@
 		B62D384729BA608F00179020 /* e-store */ = {
 			isa = PBXGroup;
 			children = (
+				C9BE6A1129CF86700025A28C /* Scenes_Screen */,
 				B62D384829BA608F00179020 /* AppDelegate.swift */,
+				C9F1CC4229CF971F00C158BC /* Main.storyboard */,
 				B62D384A29BA608F00179020 /* SceneDelegate.swift */,
-				B62D384C29BA608F00179020 /* ViewController.swift */,
-				B62D384E29BA608F00179020 /* Main.storyboard */,
 				B62D385129BA609100179020 /* Assets.xcassets */,
 				B62D385329BA609100179020 /* LaunchScreen.storyboard */,
 				B62D385629BA609100179020 /* Info.plist */,
 			);
 			path = "e-store";
+			sourceTree = "<group>";
+		};
+		C9BE6A1129CF86700025A28C /* Scenes_Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C9BE6A1229CF86A50025A28C /* Login */,
+			);
+			path = Scenes_Screen;
+			sourceTree = "<group>";
+		};
+		C9BE6A1229CF86A50025A28C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C9BE6A1329CF86C80025A28C /* LoginScreenViewController.swift */,
+				C9BE6A1429CF86C80025A28C /* LoginScreenViewController.xib */,
+				C9BE6A1729CF86DD0025A28C /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C9F1CC4C29CF9CF400C158BC /* e-storeTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9F1CC4D29CF9CF400C158BC /* LoginVMTestCases.swift */,
+			);
+			path = "e-storeTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +207,27 @@
 			productReference = B62D384529BA608F00179020 /* e-store.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C9F1CC4A29CF9CF400C158BC /* e-storeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9F1CC5129CF9CF400C158BC /* Build configuration list for PBXNativeTarget "e-storeTests" */;
+			buildPhases = (
+				C9F1CC4729CF9CF400C158BC /* Sources */,
+				C9F1CC4829CF9CF400C158BC /* Frameworks */,
+				C9F1CC4929CF9CF400C158BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9F1CC5029CF9CF400C158BC /* PBXTargetDependency */,
+			);
+			name = "e-storeTests";
+			packageProductDependencies = (
+				C9F1CC5429CF9DA600C158BC /* FirebaseAnalytics */,
+			);
+			productName = "e-storeTests";
+			productReference = C9F1CC4B29CF9CF400C158BC /* e-storeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -160,11 +235,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					B62D384429BA608F00179020 = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					C9F1CC4A29CF9CF400C158BC = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = B62D384429BA608F00179020;
 					};
 				};
 			};
@@ -185,6 +264,7 @@
 			projectRoot = "";
 			targets = (
 				B62D384429BA608F00179020 /* e-store */,
+				C9F1CC4A29CF9CF400C158BC /* e-storeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -195,9 +275,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */,
+				C9F1CC4329CF971F00C158BC /* Main.storyboard in Resources */,
 				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
+				C9BE6A1629CF86C80025A28C /* LoginScreenViewController.xib in Resources */,
 				B62D385229BA609100179020 /* Assets.xcassets in Resources */,
-				B62D385029BA608F00179020 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9F1CC4929CF9CF400C158BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,23 +341,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B62D384D29BA608F00179020 /* ViewController.swift in Sources */,
+				C9BE6A1829CF86DD0025A28C /* LoginViewModel.swift in Sources */,
 				B62D384929BA608F00179020 /* AppDelegate.swift in Sources */,
 				B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */,
+				C9BE6A1529CF86C80025A28C /* LoginScreenViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9F1CC4729CF9CF400C158BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9F1CC4E29CF9CF400C158BC /* LoginVMTestCases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		B62D384E29BA608F00179020 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B62D384F29BA608F00179020 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		C9F1CC5029CF9CF400C158BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B62D384429BA608F00179020 /* e-store */;
+			targetProxy = C9F1CC4F29CF9CF400C158BC /* PBXContainerItemProxy */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		B62D385329BA609100179020 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -412,7 +509,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,7 +539,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +550,42 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C9F1CC5229CF9CF400C158BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sultan.e-storeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/e-store.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/e-store";
+			};
+			name = Debug;
+		};
+		C9F1CC5329CF9CF400C158BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "sultan.e-storeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/e-store.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/e-store";
 			};
 			name = Release;
 		};
@@ -473,6 +606,15 @@
 			buildConfigurations = (
 				B62D385A29BA609100179020 /* Debug */,
 				B62D385B29BA609100179020 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9F1CC5129CF9CF400C158BC /* Build configuration list for PBXNativeTarget "e-storeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9F1CC5229CF9CF400C158BC /* Debug */,
+				C9F1CC5329CF9CF400C158BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -512,6 +654,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B62D387B29BA690C00179020 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		C9F1CC5429CF9DA600C158BC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B62D387B29BA690C00179020 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
