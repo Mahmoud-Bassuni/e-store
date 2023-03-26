@@ -13,7 +13,7 @@ class LoginScreenViewController: UIViewController {
 
     // MARK: Outlets
 
-    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var submitBtn: UIButton!
     
@@ -37,23 +37,26 @@ class LoginScreenViewController: UIViewController {
     }
     
     @IBAction func submitBtnAction(_ sender: Any) {
-        var emailValid :Bool = loginViewModel.isValidEmail(emailTxt.text ?? "")
+        var emailValid :Bool = loginViewModel.isValidUsername(usernameTxt.text ?? "")
         var passwordValid :Bool = loginViewModel.isValidPassword(passwordTxt.text ?? "")
         if( (emailValid || passwordValid) == false) {
             showAlert(msg: "Email & Password are incorrect", vc1: self)
-        }
-        else if(emailValid == false) {
+        } else if(emailValid == false) {
             showAlert(msg: "Email is incorrect", vc1: self)
-        }
-        else if(passwordValid == false) {
+        } else if(passwordValid == false) {
             showAlert(msg: "Password is incorrect", vc1: self)
         }
-        
+        loginViewModel.checkUser(username: usernameTxt.text ?? "", password: passwordTxt.text ?? "") { isTrue in
+            if(isTrue) {
+                print("Vvvvvvaliiiiiiiiid")
+            } else {
+                print("Not Vvvvvvvaaaaaaallllllliiiiiiddddd")
+            }
+        }
     }
-    
-
     // MARK: LifeCycle
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         submitBtn.selectStyle(style: .blueButton)
         bindViewModel()
@@ -71,7 +74,7 @@ extension LoginScreenViewController {
     }
 
     private func bindTextFields() {
-        emailTxt.addTarget(self, action: #selector(updateEmailTextField), for: .editingChanged)
+        usernameTxt.addTarget(self, action: #selector(updateEmailTextField), for: .editingChanged)
         passwordTxt.addTarget(self, action: #selector(updatePasswordTextField), for: .editingChanged)
 
     }

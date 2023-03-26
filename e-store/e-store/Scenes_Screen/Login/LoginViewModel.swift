@@ -40,35 +40,19 @@ extension LoginViewModel: LoginViewModelInput {
         self.email = email
         updateButtonState()
     }
-    
-    func isValidEmail(_ email: String) -> Bool {
-        guard !email.isEmpty, email.contains("@") else {
-            return false
-        }
-        let emailParts = email.split(separator: "@")
-        
-        guard emailParts.count == 2 else {
-            return false
-        }
-        let localPart = emailParts[0]
-        guard !localPart.isEmpty else {
-            return false
-        }
-        let domainPart = emailParts[1]
-        guard domainPart.contains(".") else {
-            return false
-        }
-        return true
+    func isValidUsername(_ username: String) -> Bool {
+        let allowedCharacters = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._-")
+        let usernameCharacterSet = CharacterSet(charactersIn: username)
+        return allowedCharacters.isSuperset(of: usernameCharacterSet) && username.count >= 3
     }
-    
+
     func updatePassword(password: String) {
         self.password = password
         updateButtonState()
     }
-    
     func isValidPassword(_ password: String) -> Bool {
         // Check that the password is at least 8 characters long
-        guard password.count >= 8 else {
+        guard password.count >= 6 else {
             return false
         }
         // Check that the password contains at least one letter and one digit
@@ -78,7 +62,6 @@ extension LoginViewModel: LoginViewModelInput {
         let hasDigit = password.rangeOfCharacter(from: digitCharacterSet) != nil
         return hasLetter && hasDigit
     }
-    
 }
 // MARK: LoginViewModelInput
 extension LoginViewModel: LoginViewModelOutput {
@@ -98,6 +81,15 @@ extension LoginViewModel {
     func getAllUsers(completion:  @escaping (([User]) -> Void)) {
         domain.fetchUsersData { user in
             completion(user)
+        }
+    }
+    func checkUser(username: String, password:String, completion: @escaping((Bool) -> Void)) {
+        domain.login(loginInfo: (username, password)) { token in
+            if let token {
+                completion(true)
+            } else {
+                completion(false)
+            }
         }
     }
 }

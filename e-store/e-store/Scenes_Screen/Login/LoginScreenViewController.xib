@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,9 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginScreenViewController" customModule="e_store" customModuleProvider="target">
             <connections>
-                <outlet property="emailTxt" destination="ceP-4f-0u6" id="Yxj-iC-BkU"/>
                 <outlet property="passwordTxt" destination="0ZR-fS-w6h" id="pRd-Kg-tOL"/>
                 <outlet property="submitBtn" destination="QB4-oA-aIS" id="SNQ-ot-ckV"/>
+                <outlet property="usernameTxt" destination="ceP-4f-0u6" id="Yxj-iC-BkU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back to Mega Mall" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwi-wS-FjF">
-                    <rect key="frame" x="16" y="131" width="357" height="81.666666666666686"/>
+                    <rect key="frame" x="16" y="72" width="357" height="81.666666666666686"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ffA-2T-lvj">
-                    <rect key="frame" x="16" y="292.66666666666669" width="361" height="223.00000000000006"/>
+                    <rect key="frame" x="16" y="233.66666666666663" width="361" height="223"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email/Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGg-Nc-dOx">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="20.333333333333332"/>
@@ -38,25 +36,25 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceP-4f-0u6">
-                            <rect key="frame" x="0.0" y="40.333333333333314" width="361" height="34"/>
+                            <rect key="frame" x="0.0" y="40.333333333333343" width="361" height="34"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaW-ak-QVV">
-                            <rect key="frame" x="0.0" y="94.333333333333314" width="361" height="20.333333333333329"/>
+                            <rect key="frame" x="0.0" y="94.333333333333343" width="361" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ZR-fS-w6h">
-                            <rect key="frame" x="0.0" y="134.66666666666663" width="361" height="34"/>
+                            <rect key="frame" x="0.0" y="134.66666666666666" width="361" height="34"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QB4-oA-aIS">
-                            <rect key="frame" x="0.0" y="188.66666666666663" width="361" height="34.333333333333343"/>
+                            <rect key="frame" x="0.0" y="188.66666666666666" width="361" height="34.333333333333343"/>
                             <color key="backgroundColor" systemColor="linkColor"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
@@ -68,7 +66,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="125" translatesAutoresizingMaskIntoConstraints="NO" id="QLI-Rd-jbf">
-                    <rect key="frame" x="16" y="773.66666666666663" width="361" height="34.333333333333371"/>
+                    <rect key="frame" x="16" y="807.66666666666663" width="361" height="34.333333333333371"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0h-A3-hjk">
                             <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="34.333333333333336"/>
