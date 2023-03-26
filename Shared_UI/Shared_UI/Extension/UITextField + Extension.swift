@@ -20,7 +20,7 @@ extension UITextField {
         eyeButton.setImage(.hidePassswordIcon, for: .normal)
         eyeButton.tintColor = .black
         if #available(iOS 15.0, *) {
-            var eyeButtonConfiguration = UIButton.Configuration.bordered()
+            var eyeButtonConfiguration = UIButton.Configuration.plain()
             eyeButtonConfiguration.buttonSize = .small
             eyeButton.configuration = eyeButtonConfiguration
         } else {
