@@ -24,7 +24,7 @@ extension UITextField {
             eyeButtonConfiguration.buttonSize = .small
             eyeButton.configuration = eyeButtonConfiguration
         } else {
-            eyeButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 8)
+            eyeButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 16)
         }
         eyeButton.addTarget(self, action: #selector(toggleIconTapped), for: .touchUpInside)
         return eyeButton
