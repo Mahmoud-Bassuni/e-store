@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UITextField {
-    public func applyPaswwordTextField() {
+    public func applyPasswordTextField() {
         isSecureTextEntry = true
         rightView = createToggleButton()
         rightViewMode = .always

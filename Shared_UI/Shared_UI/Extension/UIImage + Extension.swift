@@ -15,6 +15,4 @@ extension UIImage {
     static var hidePassswordIcon: UIImage {
         return UIImage(systemName: "eye.slash") ?? UIImage()
     }
-    
-    
 }
