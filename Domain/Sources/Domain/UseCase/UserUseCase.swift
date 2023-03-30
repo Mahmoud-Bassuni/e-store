@@ -31,7 +31,7 @@ public struct UserUseCase {
             }
         }
     }
-    public func login(loginInfo localLoginInfo: (userName:String,passWord:String), completion: @escaping (Token) -> Void) {
+    public func login(loginInfo localLoginInfo: (userName:String,passWord:String), completion: @escaping (Auth) -> Void) {
         userRepo.loginUser(loginInfo: localLoginInfo) { result in
             switch result {
             case .success(let token):
