@@ -39,6 +39,7 @@ extension LoginViewModel: LoginViewModelInput {
         self.email = email
         updateButtonState()
     }
+    
     func validUsername(_ username: String) -> Bool {
         Validator.isValidUsername(username: username)
     }
@@ -47,6 +48,7 @@ extension LoginViewModel: LoginViewModelInput {
         self.password = password
         updateButtonState()
     }
+    
     func validPassword(_ password: String) -> Bool {
         Validator.isValidPassword(password: password)
     }
