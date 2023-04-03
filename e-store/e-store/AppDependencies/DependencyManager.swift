@@ -11,6 +11,7 @@ import Swinject
 class DependencyManager {
     
     // MARK: - Properties
+    static let shared = DependencyManager()
     let sharedContainer: Container
     private var soreAssempler: Assembler!
     // MARK: - Lifecycle

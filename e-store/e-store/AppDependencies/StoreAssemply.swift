@@ -11,7 +11,7 @@ import Swinject
 class StoreAssemply: Assembly {
     
     // MARK: - Properties
-    let sharedContainer: Container
+    private let sharedContainer: Container
     // MARK: - Lifecycle
     init(sharedContainer: Container) {
         self.sharedContainer = sharedContainer
