@@ -10,17 +10,16 @@ import Swinject
 
 class StoreAssemply: Assembly {
     
-    //MARK: - Properties
+    // MARK: - Properties
     let sharedContainer: Container
-        //MARK: - Lifecycle
+    // MARK: - Lifecycle
     init(sharedContainer: Container) {
         self.sharedContainer = sharedContainer
     }
-    //MARK: - Functions
+    // MARK: - Functions
     func assemble(container: Swinject.Container) {
         sharedContainer.register(LoginViewModel.self) { _ in
             LoginViewModel()
         }
     }
-    
 }

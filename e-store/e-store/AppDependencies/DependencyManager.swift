@@ -14,8 +14,8 @@ class DependencyManager {
     let sharedContainer: Container
     private var soreAssempler: Assembler!
     // MARK: - Lifecycle
-    init(sharedContainer: Container) {
-        self.sharedContainer = sharedContainer
+    init() {
+        self.sharedContainer = Container()
     }
     // MARK: - Functions
     func setupAssemplers() {
