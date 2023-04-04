@@ -82,13 +82,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C3557D129DB8DCC00703789 /* AppDependencies */ = {
+		4C3557DB29DBA56E00703789 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4C3557D929DB917400703789 /* DependencyManager.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4C3557DC29DBA58900703789 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
 				4C3557D229DB8E0F00703789 /* StoreAssemply.swift */,
-				4C3557D929DB917400703789 /* DependencyManager.swift */,
 			);
-			path = AppDependencies;
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		642276AD4B1ECEC35FF695A4 /* Pods */ = {
@@ -131,7 +138,8 @@
 		B62D384729BA608F00179020 /* e-store */ = {
 			isa = PBXGroup;
 			children = (
-				4C3557D129DB8DCC00703789 /* AppDependencies */,
+				4C3557DB29DBA56E00703789 /* App */,
+				4C3557DC29DBA58900703789 /* Assembly */,
 				C9E9EB0329D8FBD200400853 /* Utilities */,
 				C9E9EAFF29D8FB9900400853 /* ScenesScreen */,
 				B62D384829BA608F00179020 /* AppDelegate.swift */,
