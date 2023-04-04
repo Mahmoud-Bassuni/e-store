@@ -7,13 +7,14 @@
 
 import Foundation
 
-struct LoggerAttributes<T: Codable> {
-    let level: LogLevel
-    let message: String
-    let file: String
-    let function: String
-    let line: Int
-    let responseUrl: String
-    let response: T?
-    let error: Error?
+public struct LoggerAttributes<T: Codable>: Error {
+    var level: LogLevel?
+    var message: String?
+    var file: String? 
+    var function: String?
+    var line: Int?
+    var responseUrl: String?
+    var response: T?
+    var error: Error?
 }
+
