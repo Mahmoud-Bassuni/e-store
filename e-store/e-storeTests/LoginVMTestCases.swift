@@ -59,7 +59,7 @@ final class LoginVMTestCases: XCTestCase {
         XCTAssertFalse(isEnable ?? true)
     }
 
-    func test_check_config_button_when_email_is_empty_it_should_be_disabled() throws {
+    func test_check_config_button_when_email_and_password_is_empty_it_should_be_disabled() throws {
         // Given
         var isEnable : Bool?
         sut.checkConfigButton{isenable in
@@ -67,17 +67,6 @@ final class LoginVMTestCases: XCTestCase {
         }
         // When
         sut.updateEmail(email: "")
-        // Then
-        XCTAssertFalse(isEnable ?? true)
-    }
-    
-    func test_check_config_button_when_password_is_empty_it_should_be_disabled() throws {
-        // Given
-        var isEnable : Bool?
-        sut.checkConfigButton{isenable in
-            isEnable = isenable
-        }
-        // When
         sut.updatePassword(password: "")
         // Then
         XCTAssertFalse(isEnable ?? true)
