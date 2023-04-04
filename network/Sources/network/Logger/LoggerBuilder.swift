@@ -9,46 +9,46 @@ import Foundation
 
 public class LoggerBuilder<T: Codable> {
     
+    // MARK: - Properties
     private var loggerAttributes: LoggerAttributes<T>
+    // MARK: - Lifecycle
     init() {
         self.loggerAttributes = LoggerAttributes()
     }
-    
+    // MARK: - Functions
     func set(level: LogLevel) -> LoggerBuilder {
         loggerAttributes.level = level
         return self
     }
-    func set(message: String) -> LoggerBuilder {
+    func setMessage(message: String) -> LoggerBuilder {
         loggerAttributes.message = message
         return self
     }
-    func set(file: String) -> LoggerBuilder {
+    func setFile(file: String) -> LoggerBuilder {
         loggerAttributes.file = file
         return self
     }
-    func set(function: String) -> LoggerBuilder {
+    func setFunction(function: String) -> LoggerBuilder {
         loggerAttributes.function = function
         return self
     }
-    func set(line: Int) -> LoggerBuilder {
+    func setLine(line: Int) -> LoggerBuilder {
         loggerAttributes.line = line
         return self
     }
-    func set(response: T) -> LoggerBuilder {
+    func setResponse(response: T) -> LoggerBuilder {
         loggerAttributes.response = response
         return self
     }
-    func set(error: Error) -> LoggerBuilder {
+    func setError(error: String) -> LoggerBuilder {
         loggerAttributes.error = error
         return self
     }
-    func set(responseUrl: String) -> LoggerBuilder {
+    func setResponseUrl(responseUrl: String) -> LoggerBuilder {
         loggerAttributes.responseUrl = responseUrl
         return self
     }
-    
     func build() -> LoggerAttributes<T> {
         self.loggerAttributes
     }
-    
 }

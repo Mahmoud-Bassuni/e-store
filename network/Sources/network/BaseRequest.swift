@@ -24,14 +24,17 @@ public class BaseRequest: Networkable {
                 do {
                     let jsonDecoded = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(jsonDecoded))
-                    Logger<T>.info(message: "SUCCESS", responseUrl: "\(route.baseUrl + route.path)", response: jsonDecoded, error: nil)
+                    let loggerAttributes = LoggerAttributes(level: .info, message: "Success", file: #file, function: #function, line: #line, responseUrl: "\(route.baseUrl + route.path)", response: jsonDecoded)
+                    Logger<T>.info(attributes: loggerAttributes)
                 } catch(let error) {
                     completion(.failure(.invalidData))
-                    Logger<T>.error(message: "SOME ERROR OCCURRED", responseUrl: "\(route.baseUrl + route.path)", response: nil, error: error)
+                    let loggerAttributes = LoggerAttributes<T>(level: .error, message: "FAILURE", file: #file, function: #function, line: #line, responseUrl: "\(route.baseUrl + route.path)", error: error.localizedDescription)
+                    Logger<T>.error(attributes: loggerAttributes)
                 }
             case .failure(let error):
                 completion(.failure(.unableToComplete))
-                Logger<T>.error(message: "FAILURE", responseUrl: "\(route.baseUrl + route.path)", response: nil, error: error)
+                let loggerAttributes = LoggerAttributes<T>(level: .error, message: "FAILURE", file: #file, function: #function, line: #line, responseUrl: "\(route.baseUrl + route.path)", error: error.localizedDescription)
+                Logger<T>.error(attributes: loggerAttributes)
             }
         }
     }
