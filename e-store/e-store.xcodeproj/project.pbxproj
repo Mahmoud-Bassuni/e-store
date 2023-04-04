@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0A6991244F262651573CADC0 /* libPods-e-store.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B49575E65FE76E7CB37BDD90 /* libPods-e-store.a */; };
+		4C3557D329DB8E0F00703789 /* StoreAssemply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3557D229DB8E0F00703789 /* StoreAssemply.swift */; };
+		4C3557D629DB8E7700703789 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3557D529DB8E7700703789 /* Swinject */; };
+		4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3557D929DB917400703789 /* DependencyManager.swift */; };
 		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
 		B62D384929BA608F00179020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384829BA608F00179020 /* AppDelegate.swift */; };
 		B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384A29BA608F00179020 /* SceneDelegate.swift */; };
@@ -43,6 +46,8 @@
 /* Begin PBXFileReference section */
 		16FF4A26161027477B9A2A73 /* Pods-e-store.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-store.debug.xcconfig"; path = "Target Support Files/Pods-e-store/Pods-e-store.debug.xcconfig"; sourceTree = "<group>"; };
 		45B4BBB262FBD9092798FAFD /* Pods-e-store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-store.release.xcconfig"; path = "Target Support Files/Pods-e-store/Pods-e-store.release.xcconfig"; sourceTree = "<group>"; };
+		4C3557D229DB8E0F00703789 /* StoreAssemply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAssemply.swift; sourceTree = "<group>"; };
+		4C3557D929DB917400703789 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		B49575E65FE76E7CB37BDD90 /* libPods-e-store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-e-store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384529BA608F00179020 /* e-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384829BA608F00179020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,12 +75,29 @@
 				B62D387D29BA690C00179020 /* FirebaseAnalytics in Frameworks */,
 				B62D387629BA638C00179020 /* Shared_UI.framework in Frameworks */,
 				0A6991244F262651573CADC0 /* libPods-e-store.a in Frameworks */,
+				4C3557D629DB8E7700703789 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C3557DB29DBA56E00703789 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4C3557D929DB917400703789 /* DependencyManager.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4C3557DC29DBA58900703789 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				4C3557D229DB8E0F00703789 /* StoreAssemply.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		642276AD4B1ECEC35FF695A4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +138,8 @@
 		B62D384729BA608F00179020 /* e-store */ = {
 			isa = PBXGroup;
 			children = (
+				4C3557DB29DBA56E00703789 /* App */,
+				4C3557DC29DBA58900703789 /* Assembly */,
 				C9E9EB0329D8FBD200400853 /* Utilities */,
 				C9E9EAFF29D8FB9900400853 /* ScenesScreen */,
 				B62D384829BA608F00179020 /* AppDelegate.swift */,
@@ -178,6 +202,7 @@
 				B62D387C29BA690C00179020 /* FirebaseAnalytics */,
 				B62D387E29BA690D00179020 /* FirebaseCrashlytics */,
 				5CA58B7829CCFF5100102C1C /* Domain */,
+				4C3557D529DB8E7700703789 /* Swinject */,
 			);
 			productName = "e-store";
 			productReference = B62D384529BA608F00179020 /* e-store.app */;
@@ -209,6 +234,7 @@
 			mainGroup = B62D383C29BA608F00179020;
 			packageReferences = (
 				B62D387B29BA690C00179020 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4C3557D429DB8E7700703789 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = B62D384629BA608F00179020 /* Products */;
 			projectDirPath = "";
@@ -288,6 +314,8 @@
 				C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */,
 				B62D384929BA608F00179020 /* AppDelegate.swift in Sources */,
 				B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */,
+				4C3557D329DB8E0F00703789 /* StoreAssemply.swift in Sources */,
+				4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +540,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4C3557D429DB8E7700703789 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
 		B62D387B29BA690C00179020 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -523,6 +559,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4C3557D529DB8E7700703789 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C3557D429DB8E7700703789 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
 		5CA58B7829CCFF5100102C1C /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
