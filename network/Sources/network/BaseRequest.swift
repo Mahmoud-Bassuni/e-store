@@ -9,12 +9,12 @@ import Foundation
 import Alamofire
 
 public protocol Networkable {
-    func request<T: Codable>(route: ServiceLayer, method: HTTPMethod, completion: @escaping (Result<T, RequestException>) -> Void)
+    func request<T: Codable>(route: ServiceLayer, method: HTTPMethod, completion: @escaping (Result<T, Error>) -> Void)
 }
 
 public class BaseRequest: Networkable {
     public static let shared = BaseRequest()
-    public func request<T: Codable>(route: ServiceLayer, method: HTTPMethod, completion: @escaping (Result<T, RequestException>) -> Void) {
+    public func request<T: Codable>(route: ServiceLayer, method: HTTPMethod, completion: @escaping (Result<T, Error>) -> Void) {
         let headers = Alamofire.HTTPHeaders(route.headers ?? [:])
         let parameters = extractParameters(task: route.task)
         AF.request(route.baseUrl + route.path, method : method, parameters: parameters.params, encoding:parameters.encoding, headers: headers).responseString { response in
@@ -22,15 +22,18 @@ public class BaseRequest: Networkable {
             switch response.result {
             case .success:
                 do {
+                    if let remoteError = RemoteValidator.error(from: data) {
+                        completion(.failure(remoteError))
+                    }
                     let jsonDecoded = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(jsonDecoded))
                     Logger<T>.info(message: "SUCCESS", responseUrl: "\(route.baseUrl + route.path)", response: jsonDecoded, error: nil)
                 } catch(let error) {
-                    completion(.failure(.invalidData))
+                    completion(.failure(RemoteError.genericError(message: "there is some data wrong during processing")))
                     Logger<T>.error(message: "SOME ERROR OCCURRED", responseUrl: "\(route.baseUrl + route.path)", response: nil, error: error)
                 }
             case .failure(let error):
-                completion(.failure(.unableToComplete))
+                completion(.failure(RemoteError.genericError(message: "some error")))
                 Logger<T>.error(message: "FAILURE", responseUrl: "\(route.baseUrl + route.path)", response: nil, error: error)
             }
         }
