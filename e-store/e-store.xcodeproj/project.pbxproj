@@ -24,6 +24,7 @@
 		B62D387F29BA690D00179020 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B62D387E29BA690D00179020 /* FirebaseCrashlytics */; };
 		C9A2A79329DBADF800988B24 /* LoginVMTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2A79229DBADF800988B24 /* LoginVMTestCases.swift */; };
 		C9A2A79A29DBAE5000988B24 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2A79929DBAE5000988B24 /* FirebaseAnalytics */; };
+		C9DED96929DF504D00423681 /* ValidatorTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DED96829DF504D00423681 /* ValidatorTestCases.swift */; };
 		C9E9EB0229D8FBB300400853 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E9EB0129D8FBB300400853 /* LoginViewModel.swift */; };
 		C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E9EB0429D8FBF300400853 /* Validator.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		B62D387929BA678300179020 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9A2A79029DBADF800988B24 /* e-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "e-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A2A79229DBADF800988B24 /* LoginVMTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVMTestCases.swift; sourceTree = "<group>"; };
+		C9DED96829DF504D00423681 /* ValidatorTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTestCases.swift; sourceTree = "<group>"; };
 		C9E9EB0129D8FBB300400853 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		C9E9EB0429D8FBF300400853 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A2A79229DBADF800988B24 /* LoginVMTestCases.swift */,
+				C9DED96829DF504D00423681 /* ValidatorTestCases.swift */,
 			);
 			path = "e-storeTests";
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9DED96929DF504D00423681 /* ValidatorTestCases.swift in Sources */,
 				C9A2A79329DBADF800988B24 /* LoginVMTestCases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
