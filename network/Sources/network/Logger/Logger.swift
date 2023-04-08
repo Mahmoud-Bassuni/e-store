@@ -6,32 +6,34 @@
 //
 
 import Foundation
+import UIKit
 public class Logger<T: Codable> {
     
-    private static func logHandler<T: Codable>(attributes: LoggerAttributes<T>) {
-         let buildedLogger = LoggerBuilder().set(level: attributes.level)
+    private static func logHandler<T: Codable>(attributes: LoggerModel<T>) {
+        let buildedLogger = LoggerBuilder().setLevel(level: attributes.level)
             .setMessage(message: attributes.message)
             .setFile(file: attributes.file)
             .setFunction(function: attributes.function)
             .setLine(line: attributes.line)
             .setResponse(response: attributes.response)
             .setError(error: attributes.error)
-            .setResponseUrl(responseUrl: attributes.responseUrl)
+            .setRequestUrl(responseUrl: attributes.requestUrl)
             .build()
-let description = "\(buildedLogger.level.level) File: \((buildedLogger.file as? NSString)?.lastPathComponent ?? #file) \(buildedLogger.message) Line : \(buildedLogger.line) URL : \(buildedLogger.responseUrl) Function: \(buildedLogger.function) Response : \(buildedLogger.response) Error : \(buildedLogger.error)"
+        let description = "\(buildedLogger.level.level) File: \((buildedLogger.file as? NSString)?.lastPathComponent ?? #file) \(buildedLogger.message) Line : \(buildedLogger.line) URL : \(buildedLogger.requestUrl) Function: \(buildedLogger.function) Response : \(buildedLogger.response) Error : \(buildedLogger.error)"
 #if DEBUG
         print(description)
 #endif
     }
 }
 extension Logger {
-    public static func info(attributes: LoggerAttributes<T>) {
+    
+    public static func info(attributes: LoggerModel<T>) {
         logHandler(attributes: attributes)
     }
-    public static func warning(attributes: LoggerAttributes<T>) {
+    public static func warning(attributes: LoggerModel<T>) {
         logHandler(attributes: attributes)
     }
-    public static func error(attributes: LoggerAttributes<T>) {
+    public static func error(attributes: LoggerModel<T>) {
         logHandler(attributes: attributes)
     }
 }
