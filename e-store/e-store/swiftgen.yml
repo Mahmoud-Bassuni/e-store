@@ -1,0 +1,12 @@
+strings:
+  inputs: Resources/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Resources/Strings.swift
+xcassets:
+  inputs:
+    - Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Resources/Assets.swift
+
