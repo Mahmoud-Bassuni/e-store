@@ -6,34 +6,47 @@
 //
 
 import Foundation
-import UIKit
 public class Logger<T: Codable> {
-    
-    private static func logHandler<T: Codable>(attributes: LoggerModel<T>) {
-        let buildedLogger = LoggerBuilder().setLevel(level: attributes.level)
-            .setMessage(message: attributes.message)
-            .setFile(file: attributes.file)
-            .setFunction(function: attributes.function)
-            .setLine(line: attributes.line)
-            .setResponse(response: attributes.response)
-            .setError(error: attributes.error)
-            .setRequestUrl(responseUrl: attributes.requestUrl)
-            .build()
-        let description = "\(buildedLogger.level.level) File: \((buildedLogger.file as? NSString)?.lastPathComponent ?? #file) \(buildedLogger.message) Line : \(buildedLogger.line) URL : \(buildedLogger.requestUrl) Function: \(buildedLogger.function) Response : \(buildedLogger.response) Error : \(buildedLogger.error)"
-#if DEBUG
+    private static func logHandler<T: Codable>(level: LogLevel,
+                                               message: String,
+                                               file: String,
+                                               function: String,
+                                               line: Int,
+                                               responseUrl: String,
+                                               response: T?,
+                                               error: Error?) {
+        let description = "\(level.level) File: \(file) \(message) Line : \(line) URL : \(responseUrl) Function: \(function) Response : \(response) Error : \(error)"
+        #if DEBUG
         print(description)
-#endif
+        #endif
     }
-}
+    }
 extension Logger {
-    
-    public static func info(attributes: LoggerModel<T>) {
-        logHandler(attributes: attributes)
+    public static func info(message: String,
+                            file: String = (#file as NSString).lastPathComponent,
+                            function: String = #function,
+                            line: Int = #line,
+                            responseUrl: String,
+                            response: T? = nil,
+                            error: Error?) {
+        logHandler(level: .info, message: message, file: file, function: function, line: line, responseUrl: responseUrl, response: response, error: error)
     }
-    public static func warning(attributes: LoggerModel<T>) {
-        logHandler(attributes: attributes)
+    public static func warning(message: String,
+                               file: String = (#file as NSString).lastPathComponent,
+                               function: String = #function,
+                               line: Int = #line,
+                               responseUrl: String,
+                               response: T?,
+                               error: Error?) {
+        logHandler(level: .warning, message: message, file: file, function: function, line: line, responseUrl: responseUrl, response: response, error: error)
     }
-    public static func error(attributes: LoggerModel<T>) {
-        logHandler(attributes: attributes)
+    public static func error(message: String,
+                             file: String = (#file as NSString).lastPathComponent,
+                             function: String = #function,
+                             line: Int = #line,
+                             responseUrl: String,
+                             response: T?,
+                             error: Error?) {
+        logHandler(level: .error, message: message, file: file, function: function, line: line, responseUrl: responseUrl, response: response, error: error)
     }
 }

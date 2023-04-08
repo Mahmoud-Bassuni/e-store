@@ -24,38 +24,14 @@ public class BaseRequest: Networkable {
                 do {
                     let jsonDecoded = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(jsonDecoded))
-                    let loggerAttributes = LoggerBuilder().setLevel(level: .info)
-                        .setMessage(message: "Success")
-                        .setFile(file: #file)
-                        .setFunction(function: #function)
-                        .setLine(line: #line)
-                        .setRequestUrl(responseUrl: "\(route.baseUrl + route.path)")
-                        .setResponse(response: jsonDecoded)
-                        .build()
-                    Logger<T>.info(attributes: loggerAttributes)
+                    Logger<T>.info(message: "SUCCESS", responseUrl: "\(route.baseUrl + route.path)", response: jsonDecoded, error: nil)
                 } catch(let error) {
                     completion(.failure(.invalidData))
-                    let loggerAttributes = LoggerBuilder<T>().setLevel(level: .error)
-                        .setMessage(message: "FAILURE")
-                        .setFile(file: #file)
-                        .setFunction(function: #function)
-                        .setLine(line: #line)
-                        .setRequestUrl(responseUrl: "\(route.baseUrl + route.path)")
-                        .setError(error: error.localizedDescription)
-                        .build()
-                    Logger<T>.error(attributes: loggerAttributes)
+                    Logger<T>.error(message: "SOME ERROR OCCURRED", responseUrl: "\(route.baseUrl + route.path)", response: nil, error: error)
                 }
             case .failure(let error):
                 completion(.failure(.unableToComplete))
-                let loggerAttributes = LoggerBuilder<T>().setLevel(level: .error)
-                    .setMessage(message: "FAILURE")
-                    .setFile(file: #file)
-                    .setFunction(function: #function)
-                    .setLine(line: #line)
-                    .setRequestUrl(responseUrl: "\(route.baseUrl + route.path)")
-                    .setError(error: error.localizedDescription)
-                    .build()
-                Logger<T>.error(attributes: loggerAttributes)
+                Logger<T>.error(message: "FAILURE", responseUrl: "\(route.baseUrl + route.path)", response: nil, error: error)
             }
         }
     }

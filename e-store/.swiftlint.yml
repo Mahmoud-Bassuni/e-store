@@ -3,7 +3,6 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
   - colon
   - comma
   - control_statement
-  - trailing_whitespace
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
   - empty_count # Find all the available rules by running: `swiftlint rules`
   - force_unwrapping
@@ -35,8 +34,7 @@ force_try:
   severity: warning # explicitly
 # rules that have both warning and error levels, can set just the warning level
 # implicitly
-line_length:
-  ignores_function_declarations: true
+line_length: 180
 # they can set both implicitly with an array
 type_body_length:
   - 300 # warning
