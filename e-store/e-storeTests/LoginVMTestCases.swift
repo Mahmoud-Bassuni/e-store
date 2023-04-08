@@ -13,12 +13,10 @@ final class LoginVMTestCases: XCTestCase {
     var sut: LoginViewModel!
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         sut = LoginViewModel()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         sut = nil
     }
     
