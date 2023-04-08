@@ -5,7 +5,7 @@ strings:
       output: Resources/Strings.swift
 xcassets:
   inputs:
-    - Assets.xcassets
+    - Resources/Assets.xcassets
   outputs:
     - templateName: swift5
       output: Resources/Assets.swift
