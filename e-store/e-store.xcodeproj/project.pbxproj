@@ -11,9 +11,9 @@
 		4C3557D329DB8E0F00703789 /* StoreAssemply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3557D229DB8E0F00703789 /* StoreAssemply.swift */; };
 		4C3557D629DB8E7700703789 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3557D529DB8E7700703789 /* Swinject */; };
 		4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3557D929DB917400703789 /* DependencyManager.swift */; };
-		4C6816FE29E1AC2300794096 /* RoutingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6816FD29E1AC2300794096 /* RoutingManager.swift */; };
+		4C6816FE29E1AC2300794096 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6816FD29E1AC2300794096 /* BaseRouter.swift */; };
 		4C68170029E1AFD700794096 /* StoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6816FF29E1AFD700794096 /* StoreRouter.swift */; };
-		4C6E35EE29E19839003A1241 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E35ED29E19839003A1241 /* BaseRouter.swift */; };
+		4C6E35EE29E19839003A1241 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E35ED29E19839003A1241 /* ViewControllerType.swift */; };
 		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
 		B62D384929BA608F00179020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384829BA608F00179020 /* AppDelegate.swift */; };
 		B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384A29BA608F00179020 /* SceneDelegate.swift */; };
@@ -51,9 +51,9 @@
 		45B4BBB262FBD9092798FAFD /* Pods-e-store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-store.release.xcconfig"; path = "Target Support Files/Pods-e-store/Pods-e-store.release.xcconfig"; sourceTree = "<group>"; };
 		4C3557D229DB8E0F00703789 /* StoreAssemply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAssemply.swift; sourceTree = "<group>"; };
 		4C3557D929DB917400703789 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
-		4C6816FD29E1AC2300794096 /* RoutingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingManager.swift; sourceTree = "<group>"; };
+		4C6816FD29E1AC2300794096 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		4C6816FF29E1AFD700794096 /* StoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRouter.swift; sourceTree = "<group>"; };
-		4C6E35ED29E19839003A1241 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		4C6E35ED29E19839003A1241 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
 		B49575E65FE76E7CB37BDD90 /* libPods-e-store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-e-store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384529BA608F00179020 /* e-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384829BA608F00179020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 		4C6E35EC29E197F7003A1241 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				4C6E35ED29E19839003A1241 /* BaseRouter.swift */,
-				4C6816FD29E1AC2300794096 /* RoutingManager.swift */,
+				4C6E35ED29E19839003A1241 /* ViewControllerType.swift */,
+				4C6816FD29E1AC2300794096 /* BaseRouter.swift */,
 				4C6816FF29E1AFD700794096 /* StoreRouter.swift */,
 			);
 			path = Router;
@@ -329,13 +329,13 @@
 				C9E9EB0229D8FBB300400853 /* LoginViewModel.swift in Sources */,
 				B62D384D29BA608F00179020 /* ViewController.swift in Sources */,
 				4C68170029E1AFD700794096 /* StoreRouter.swift in Sources */,
-				4C6816FE29E1AC2300794096 /* RoutingManager.swift in Sources */,
+				4C6816FE29E1AC2300794096 /* BaseRouter.swift in Sources */,
 				C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */,
 				B62D384929BA608F00179020 /* AppDelegate.swift in Sources */,
 				B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */,
 				4C3557D329DB8E0F00703789 /* StoreAssemply.swift in Sources */,
 				4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */,
-				4C6E35EE29E19839003A1241 /* BaseRouter.swift in Sources */,
+				4C6E35EE29E19839003A1241 /* ViewControllerType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

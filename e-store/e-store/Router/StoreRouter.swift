@@ -10,22 +10,9 @@ import Swinject
 import UIKit
 
 protocol StoreRouterProtocol {
-    func showLogin() -> BaseRouter
+    //TODO: Navigation function here.
 }
 
-class StoreRouter: StoreRouterProtocol, BaseRouter {
-    var navigationController: UINavigationController {
-        UINavigationController()
-    }
-    private var resolver: Resolver
-    init(resolver: Resolver) {
-        self.resolver = resolver
-    }
-//    func showLogin() -> BaseRouter {
-//        let viewModel = (resolver.resolve(LoginViewModel.self)) ?? LoginViewModel()
-//        return ViewController()
-//    }
+class StoreRouter {
+    //TODO: Implement navigation functoin here
 }
-
-
-
