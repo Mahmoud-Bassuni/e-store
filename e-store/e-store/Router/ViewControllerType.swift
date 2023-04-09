@@ -23,7 +23,6 @@ extension UIViewController: ViewControllerType {
     }
     
     func push(_ viewToPresent: ViewControllerType, animated: Bool = true) {
-        //guard let nav = (self as? UINavigationController) ?? self.navigationController else { return }
         guard let viewToPresent = viewToPresent as? UIViewController else {return}
         navigationController.pushViewController(viewToPresent, animated: animated)
     }
