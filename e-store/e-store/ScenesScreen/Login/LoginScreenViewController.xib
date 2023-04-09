@@ -69,7 +69,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qB-IF-Yjo">
-                    <rect key="frame" x="28" y="79" width="55" height="55"/>
+                    <rect key="frame" x="10" y="79" width="55" height="55"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="AXi-zv-Zam"/>
                         <constraint firstAttribute="width" constant="55" id="oQ0-GD-m3W"/>
@@ -95,7 +95,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7hI-SG-G8V" secondAttribute="trailing" constant="20" id="bZB-Yp-W4T"/>
                 <constraint firstItem="ffA-2T-lvj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dnc-ax-yhd"/>
                 <constraint firstItem="wwi-wS-FjF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fyw-lK-wAm"/>
-                <constraint firstItem="4qB-IF-Yjo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="lrS-5k-iTv"/>
+                <constraint firstItem="4qB-IF-Yjo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="lrS-5k-iTv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7hI-SG-G8V" secondAttribute="bottom" constant="30" id="n9A-td-Qoi"/>
             </constraints>
             <point key="canvasLocation" x="46.564885496183201" y="20.422535211267608"/>
