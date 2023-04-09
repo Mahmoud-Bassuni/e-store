@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            let window = UIWindow(windowScene: sceneWindow)
         let viewModel = RegisterAccountViewModel()
 
-        window.rootViewController = RegisterAccountScreenViewController(registerViewModel: viewModel)
+        window.rootViewController = VerificationScreenViewController()
            window.makeKeyAndVisible()
            self.window = window
         guard  (scene as? UIWindowScene) != nil else { return }
