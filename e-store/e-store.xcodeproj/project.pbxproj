@@ -28,6 +28,8 @@
 		B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B62D387929BA678300179020 /* GoogleService-Info.plist */; };
 		B62D387D29BA690C00179020 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B62D387C29BA690C00179020 /* FirebaseAnalytics */; };
 		B62D387F29BA690D00179020 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B62D387E29BA690D00179020 /* FirebaseCrashlytics */; };
+		C9508C3829E23346008E8C37 /* LoginScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9508C3629E23346008E8C37 /* LoginScreenViewController.xib */; };
+		C9508C3929E23346008E8C37 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9508C3729E23346008E8C37 /* LoginScreenViewController.swift */; };
 		C9A2A79329DBADF800988B24 /* LoginVMTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A2A79229DBADF800988B24 /* LoginVMTestCases.swift */; };
 		C9A2A79A29DBAE5000988B24 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C9A2A79929DBAE5000988B24 /* FirebaseAnalytics */; };
 		C9DED96929DF504D00423681 /* ValidatorTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DED96829DF504D00423681 /* ValidatorTestCases.swift */; };
@@ -79,6 +81,8 @@
 		B62D385629BA609100179020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B62D387529BA638C00179020 /* Shared_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D387929BA678300179020 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C9508C3629E23346008E8C37 /* LoginScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginScreenViewController.xib; sourceTree = "<group>"; };
+		C9508C3729E23346008E8C37 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		C9A2A79029DBADF800988B24 /* e-storeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "e-storeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A2A79229DBADF800988B24 /* LoginVMTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVMTestCases.swift; sourceTree = "<group>"; };
 		C9DED96829DF504D00423681 /* ValidatorTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTestCases.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 		C9E9EB0029D8FBA200400853 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C9508C3729E23346008E8C37 /* LoginScreenViewController.swift */,
+				C9508C3629E23346008E8C37 /* LoginScreenViewController.xib */,
 				C9E9EB0129D8FBB300400853 /* LoginViewModel.swift */,
 			);
 			path = Login;
@@ -334,6 +340,7 @@
 				B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */,
 				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
 				B62D385229BA609100179020 /* Assets.xcassets in Resources */,
+				C9508C3829E23346008E8C37 /* LoginScreenViewController.xib in Resources */,
 				B62D385029BA608F00179020 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +412,7 @@
 				C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */,
 				B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */,
 				4C3557D329DB8E0F00703789 /* StoreAssemply.swift in Sources */,
+				C9508C3929E23346008E8C37 /* LoginScreenViewController.swift in Sources */,
 				4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
