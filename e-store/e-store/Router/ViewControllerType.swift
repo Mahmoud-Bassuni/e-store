@@ -35,10 +35,10 @@ extension UIViewController: ViewControllerType {
     }
     
     func present(viewToPresent: ViewControllerType, animated: Bool = true, completion: (() -> Void)? = {}) {
-        navigationController.present(viewToPresent.navigationController, animated: animated, completion: completion)
+        self.present(viewToPresent.navigationController, animated: animated, completion: completion)
     }
     
     func dismissView(animated: Bool = true, completion: (() -> Void)? = {}) {
-        navigationController.dismiss(animated: animated, completion: completion)
+        self.dismiss(animated: animated, completion: completion)
     }
 }
