@@ -14,9 +14,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let sceneWindow = (scene as? UIWindowScene) else { return }
            let window = UIWindow(windowScene: sceneWindow)
-        let viewModel = RegisterAccountViewModel()
+        let viewModel = ProfilePasswordScreenViewController()
 
-        window.rootViewController = RegisterAccountScreenViewController(registerViewModel: viewModel)
+        window.rootViewController = ProfilePasswordScreenViewController()
            window.makeKeyAndVisible()
            self.window = window
         guard  (scene as? UIWindowScene) != nil else { return }
