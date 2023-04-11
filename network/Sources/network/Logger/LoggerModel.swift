@@ -15,6 +15,6 @@ public struct LoggerModel<T: Codable>: Error {
     var function: String = ""
     var line: Int = 0
     var requestUrl: String = ""
-    var response: T? = nil
+    var response: T?
     var error: String = ""
 }
