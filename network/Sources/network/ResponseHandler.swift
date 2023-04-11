@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class ResponseHandler<T: Codable> {
-    static func handle(response: AFDataResponse<String>, route: ServiceLayer, completion: @escaping (Result<T, ApiError>) -> Void) {
+    static func responseData(response: AFDataResponse<String>, route: ServiceLayer, completion: @escaping (Result<T, RemoteError>) -> Void) {
         switch response.result {
         case .success:
             handleSuccessState(response: response, route: route, completion: completion)
@@ -18,7 +18,7 @@ class ResponseHandler<T: Codable> {
         }
     }
     
-    private static func handleSuccessState(response: AFDataResponse<String>, route: ServiceLayer, completion: @escaping (Result<T, ApiError>) -> Void) {
+    private static func handleSuccessState(response: AFDataResponse<String>, route: ServiceLayer, completion: @escaping (Result<T, RemoteError>) -> Void) {
         guard let data = response.data else { return }
 
         do {
@@ -41,13 +41,13 @@ class ResponseHandler<T: Codable> {
                 .setFunction(function: #function)
                 .setLine(line: #line)
                 .setRequestUrl(responseUrl: "\(route.baseUrl + route.path)")
-                .setError(error: ApiError.detectError(statusCode: response.response?.statusCode ?? 400).description)
+                .setError(error: RemoteError.detectError(statusCode: response.response?.statusCode ?? 400).description)
                 .build()
             Logger<T>.error(attributes: loggerAttributes)
         }
     }
     
-    private static func handleFailureState(response: AFDataResponse<String>, route: ServiceLayer, completion: @escaping (Result<T, ApiError>) -> Void) {
+    private static func handleFailureState(response: AFDataResponse<String>, route: ServiceLayer, completion: @escaping (Result<T, RemoteError>) -> Void) {
         completion(.failure(.detectError(statusCode: response.response?.statusCode ?? 400)))
         let loggerAttributes = LoggerBuilder<T>().setLevel(level: .error)
             .setMessage(message: "FAILURE")
@@ -55,7 +55,7 @@ class ResponseHandler<T: Codable> {
             .setFunction(function: #function)
             .setLine(line: #line)
             .setRequestUrl(responseUrl: "\(route.baseUrl + route.path)")
-            .setError(error: ApiError.detectError(statusCode: response.response?.statusCode ?? 400).description)
+            .setError(error: RemoteError.detectError(statusCode: response.response?.statusCode ?? 400).description)
             .build()
         Logger<T>.error(attributes: loggerAttributes)
         
