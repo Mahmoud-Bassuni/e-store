@@ -47,24 +47,27 @@ class ProductDetailsViewController: UIViewController {
         productImagesCollectionView.register(UINib(nibName: ProductImagesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ProductImagesCollectionViewCell.identifier)
     }
     private func setupProductImagesList() {
-        productImages.append(UIImage(named: "applewatch-removebg-preview") ?? UIImage())
-        productImages.append(UIImage(named: "headphone-removebg-preview") ?? UIImage())
-        productImages.append(UIImage(named: "airpods-removebg-preview") ?? UIImage())
-        productImages.append(UIImage(named: "flower-removebg-preview") ?? UIImage())
-        productImages.append(UIImage(named: "car-removebg-preview") ?? UIImage())
+        productImages.append(UIImage(named: Asset.applewatchRemovebgPreview.name) ?? UIImage())
+        productImages.append(UIImage(named: Asset.headphoneRemovebgPreview.name) ?? UIImage())
+        productImages.append(UIImage(named: Asset.airpodsRemovebgPreview.name) ?? UIImage())
+        productImages.append(UIImage(named: Asset.flowerRemovebgPreview.name) ?? UIImage())
+        productImages.append(UIImage(named: Asset.carRemovebgPreview.name) ?? UIImage())
     }
     private func setupNavigationItems() {
         navigationItem.title = "Detail Product"
-        let arrow = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.right"), style: .plain, target: self, action: #selector(addTapped))
+        let arrow = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.right"), style: .plain, target: self, action: #selector(arrowTapped))
         arrow.tintColor = UIColor.black
-        let cart = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(addTapped))
+        let cart = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(cartTapped))
         [arrow, cart].forEach {
             $0.tintColor = UIColor.navyBlackColor
         }
         navigationItem.rightBarButtonItems = [cart, arrow]
     }
     
-    @objc private func addTapped() {
+    @objc private func arrowTapped() {
+        // TODO:- Implement me
+    }
+    @objc private func cartTapped() {
         // TODO:- Implement me
     }
     private func setupCollectionViewTimer() {

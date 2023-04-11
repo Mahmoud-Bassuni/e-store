@@ -8,15 +8,15 @@
 import UIKit
 
 class ProductImagesCollectionViewCell: UICollectionViewCell {
-    //MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet private(set)weak var productImage: UIImageView!
     @IBOutlet private(set)weak var imagesCounter: UILabel!
     @IBOutlet private(set)weak var totalImagesNumber: UILabel!
     
-    //MARK: - Properties
+    // MARK: - Properties
     static let identifier = String(describing: ProductImagesCollectionViewCell.self)
     
-    //MARK: - Functions
+    // MARK: - Functions
     func setupCell(productImage: UIImage, imagesCounter: Int, totalImagesNumber: Int) {
         self.productImage.image = productImage
         self.imagesCounter.text = "\(imagesCounter)"
