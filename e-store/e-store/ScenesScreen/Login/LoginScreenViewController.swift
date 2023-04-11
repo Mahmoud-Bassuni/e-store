@@ -30,11 +30,7 @@ class LoginScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func showAlert(msg:String, vc1:UIViewController) {
-        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        vc1.present(alert,animated: true,completion: nil)
-    }
+    
     
     @IBAction func submitBtnAction(_ sender: Any) {
         var emailValid :Bool = loginViewModel.validUsername(usernameTxt.text ?? "")
@@ -57,6 +53,14 @@ class LoginScreenViewController: UIViewController {
         passwordTxt.applyPasswordTextField()
         bindViewModel()
         bindTextFields()
+    }
+}
+
+extension UIViewController{
+    func showAlert(msg:String, vc1:UIViewController) {
+        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        vc1.present(alert,animated: true,completion: nil)
     }
 }
 
