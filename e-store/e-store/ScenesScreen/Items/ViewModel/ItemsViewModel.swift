@@ -7,8 +7,8 @@
 
 import Foundation
 
-class ItemsViewModel{
-    func getData() -> [Item]{
+class ItemsViewModel {
+    func getData() -> [Item] { 
         var items :[Item] = []
         var item = Item(img: ImageAsset(name: "airPods1"), name: "airPods1", price: 1000, rating: 2.5, reviews: 200)
         items.append(item)

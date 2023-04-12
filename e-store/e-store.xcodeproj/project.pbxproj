@@ -662,7 +662,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = RY3FFY2392;
+				DEVELOPMENT_TEAM = 2RJGD37X7K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "e-store/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
