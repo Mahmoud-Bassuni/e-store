@@ -8,9 +8,9 @@
 import Foundation
 
 protocol StoreRouterProtocol {
-    //TODO: - Navigation function here
+    // TODO: - Navigation function here
 }
 
 class StoreRouter {
-    //TODO: - Implement navigation function here
+    // TODO: - Implement navigation function here
 }
