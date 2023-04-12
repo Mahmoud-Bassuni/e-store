@@ -26,6 +26,11 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
   internal static let bm = ImageAsset(name: "BM")
+    internal static let airPods1 = ImageAsset(name: "airPods1")
+    internal static let airPods2 = ImageAsset(name: "airPods2")
+    internal static let airPods3 = ImageAsset(name: "airPods3")
+    internal static let airPods4 = ImageAsset(name: "airPods4")
+    internal static let airPods5 = ImageAsset(name: "airPods5")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
