@@ -13,6 +13,8 @@
 		4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3557D929DB917400703789 /* DependencyManager.swift */; };
 		4C59744229DDB6F7005F7CD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384829BA608F00179020 /* AppDelegate.swift */; };
 		4C6E35E829E1819D003A1241 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E35EA29E1819D003A1241 /* Localizable.strings */; };
+		4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */; };
+		4CEEB41529E2E56400ECCE47 /* StoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */; };
 		4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6F61B29DDAD190019C1C5 /* Assets.swift */; };
 		4CF6F61E29DDAD190019C1C5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6F61C29DDAD190019C1C5 /* Strings.swift */; };
 		5C0EF6D629E22F12004C92CB /* RegisterAccountScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EF6D429E22F11004C92CB /* RegisterAccountScreenViewController.swift */; };
@@ -74,6 +76,8 @@
 		4C3557D929DB917400703789 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		4C6E35E929E1819D003A1241 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C6E35EB29E1819F003A1241 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
+		4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRouter.swift; sourceTree = "<group>"; };
 		4CF6F61B29DDAD190019C1C5 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		4CF6F61C29DDAD190019C1C5 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		5C0EF6D329E22F11004C92CB /* RegisterAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +146,15 @@
 				4C3557D229DB8E0F00703789 /* StoreAssemply.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		4CEEB41129E2E25700ECCE47 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */,
+				4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		4CF6F61229DDAC7F0019C1C5 /* Resources */ = {
@@ -226,6 +239,7 @@
 		B62D384729BA608F00179020 /* e-store */ = {
 			isa = PBXGroup;
 			children = (
+				4CEEB41129E2E25700ECCE47 /* Router */,
 				4CF6F61229DDAC7F0019C1C5 /* Resources */,
 				4C3557DB29DBA56E00703789 /* App */,
 				4C3557DC29DBA58900703789 /* Assembly */,
@@ -456,7 +470,9 @@
 				B62D384D29BA608F00179020 /* ViewController.swift in Sources */,
 				4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */,
 				C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */,
+				4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */,
 				B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */,
+				4CEEB41529E2E56400ECCE47 /* StoreRouter.swift in Sources */,
 				4C3557D329DB8E0F00703789 /* StoreAssemply.swift in Sources */,
 				4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */,
 				5C0EF6D729E22F12004C92CB /* RegisterAccountViewModel.swift in Sources */,

@@ -12,5 +12,3 @@ public extension ServiceLayer {
         "https://fakestoreapi.com"
     }
 }
-
-
