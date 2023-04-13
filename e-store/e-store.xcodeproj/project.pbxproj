@@ -29,6 +29,7 @@
 		5C0EF6F929E2EEB4004C92CB /* VerificationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EF6F629E2EEB4004C92CB /* VerificationScreenViewController.swift */; };
 		5C0EF6FA29E2EEB4004C92CB /* VerificationScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0EF6F729E2EEB4004C92CB /* VerificationScreenViewController.xib */; };
 		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
+		5CBD37A529E844660032EE04 /* IQManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD37A429E844660032EE04 /* IQManager.swift */; };
 		B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384A29BA608F00179020 /* SceneDelegate.swift */; };
 		B62D384D29BA608F00179020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384C29BA608F00179020 /* ViewController.swift */; };
 		B62D385029BA608F00179020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D384E29BA608F00179020 /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 		5C0EF6E629E23B9B004C92CB /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
 		5C0EF6E829E23BAC004C92CB /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
 		5C0EF6EA29E2C34A004C92CB /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		5CBD37A429E844660032EE04 /* IQManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQManager.swift; sourceTree = "<group>"; };
 		5C0EF6F529E2EEB4004C92CB /* VerificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
 		5C0EF6F629E2EEB4004C92CB /* VerificationScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationScreenViewController.swift; sourceTree = "<group>"; };
 		5C0EF6F729E2EEB4004C92CB /* VerificationScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationScreenViewController.xib; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E9EB0429D8FBF300400853 /* Validator.swift */,
+				5CBD37A429E844660032EE04 /* IQManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C59744229DDB6F7005F7CD3 /* AppDelegate.swift in Sources */,
+				5CBD37A529E844660032EE04 /* IQManager.swift in Sources */,
 				5C0EF6D629E22F12004C92CB /* RegisterAccountScreenViewController.swift in Sources */,
 				C9E9EB0229D8FBB300400853 /* LoginViewModel.swift in Sources */,
 				5C0EF6F929E2EEB4004C92CB /* VerificationScreenViewController.swift in Sources */,
