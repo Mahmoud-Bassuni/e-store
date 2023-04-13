@@ -12,13 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let sceneWindow = (scene as? UIWindowScene) else { return }
-           let window = UIWindow(windowScene: sceneWindow)
-        let viewModel = RegisterAccountViewModel()
-
-        window.rootViewController = RegisterAccountScreenViewController(registerViewModel: viewModel)
-           window.makeKeyAndVisible()
-           self.window = window
+       
         guard  (scene as? UIWindowScene) != nil else { return }
     }
 

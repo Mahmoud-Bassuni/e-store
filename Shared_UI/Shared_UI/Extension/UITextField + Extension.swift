@@ -38,15 +38,47 @@ extension UITextField {
 }
 
 // MARK: - Add padding to textField
+
 extension UITextField {
+   
    public func setLeftPaddingPoints(_ amount:CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always
     }
+    
     public func setRightPaddingPoints(_ amount:CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.rightView = paddingView
         self.rightViewMode = .always
     }
+    
+}
+
+// MARK: - custom UITextField
+
+public class CustomTextField : UITextField {
+   
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupDefulat()
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupDefulat()
+    }
+    private func setupDefulat() {
+        
+        self.setLeftPaddingPoints(10)
+        self.setRightPaddingPoints(20)
+        self.layer.cornerRadius = 10
+        self.borderStyle = .none
+        self.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1)
+        self.textColor = UIColor(red: 0.047, green: 0.102, blue: 0.188, alpha: 1)
+        self.font = UIFont(name: "DMSans-Medium", size: 14)
+        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+    }
+
 }
