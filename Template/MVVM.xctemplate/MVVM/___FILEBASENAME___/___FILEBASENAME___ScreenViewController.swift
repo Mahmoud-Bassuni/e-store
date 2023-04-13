@@ -3,22 +3,24 @@ import UIKit
 
 class ___FILEBASENAME___: UIViewController {
 
-    //MARK: Outlets
+    // MARK: Outlets
     
-    //MARK: Proprites
+    // MARK: Proprites
    
-    //MARK: Init
+    // MARK: Init
 
-    //MARK: LifeCycle
+    // MARK: LifeCycle
 
 }
 
-//MARK: Bind view model
+// MARK: - Bind view model
+
 extension ___FILEBASENAME___ {
 
 }
 
-//MARK: Actions
+// MARK: - Actions
+
 extension ___FILEBASENAME___ {
    
 }
