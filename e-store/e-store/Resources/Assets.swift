@@ -28,6 +28,7 @@ internal enum Asset {
   internal static let bmRemovebgPreview = ImageAsset(name: "BM-removebg-preview")
   internal static let airpodsRemovebgPreview = ImageAsset(name: "airpods-removebg-preview")
   internal static let applewatchRemovebgPreview = ImageAsset(name: "applewatch-removebg-preview")
+  internal static let arrow = ImageAsset(name: "arrow")
   internal static let carRemovebgPreview = ImageAsset(name: "car-removebg-preview")
   internal static let flowerRemovebgPreview = ImageAsset(name: "flower-removebg-preview")
   internal static let headphoneRemovebgPreview = ImageAsset(name: "headphone-removebg-preview")

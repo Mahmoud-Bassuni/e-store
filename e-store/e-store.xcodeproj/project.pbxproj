@@ -12,6 +12,8 @@
 		4C3557D629DB8E7700703789 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3557D529DB8E7700703789 /* Swinject */; };
 		4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3557D929DB917400703789 /* DependencyManager.swift */; };
 		4C59744229DDB6F7005F7CD3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384829BA608F00179020 /* AppDelegate.swift */; };
+		4C68C61029E81BAA005A4175 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68C60F29E81BAA005A4175 /* ProductDetailsView.swift */; };
+		4C68C61429E81CEC005A4175 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C68C61329E81CEC005A4175 /* ProductDetailsView.xib */; };
 		4C6E35E829E1819D003A1241 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E35EA29E1819D003A1241 /* Localizable.strings */; };
 		4CEEB40829E2CF6700ECCE47 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB40629E2CF6700ECCE47 /* ProductDetailsViewController.swift */; };
 		4CEEB40929E2CF6700ECCE47 /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB40729E2CF6700ECCE47 /* ProductDetailsViewController.xib */; };
@@ -68,6 +70,8 @@
 		45B4BBB262FBD9092798FAFD /* Pods-e-store.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e-store.release.xcconfig"; path = "Target Support Files/Pods-e-store/Pods-e-store.release.xcconfig"; sourceTree = "<group>"; };
 		4C3557D229DB8E0F00703789 /* StoreAssemply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAssemply.swift; sourceTree = "<group>"; };
 		4C3557D929DB917400703789 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		4C68C60F29E81BAA005A4175 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
+		4C68C61329E81CEC005A4175 /* ProductDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsView.xib; sourceTree = "<group>"; };
 		4C6E35E929E1819D003A1241 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C6E35EB29E1819F003A1241 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4CEEB40629E2CF6700ECCE47 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
@@ -137,12 +141,38 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
+		4C68C60D29E81B47005A4175 /* ProductDetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4CEEB40629E2CF6700ECCE47 /* ProductDetailsViewController.swift */,
+				4CEEB40729E2CF6700ECCE47 /* ProductDetailsViewController.xib */,
+			);
+			path = ProductDetailsViewController;
+			sourceTree = "<group>";
+		};
+		4C68C60E29E81B5C005A4175 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				4C68C61529E82DBB005A4175 /* ProductDetailsView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		4C68C61529E82DBB005A4175 /* ProductDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				4C68C61329E81CEC005A4175 /* ProductDetailsView.xib */,
+				4C68C60F29E81BAA005A4175 /* ProductDetailsView.swift */,
+			);
+			path = ProductDetailsView;
+			sourceTree = "<group>";
+		};
 		4CEEB40529E2CF2D00ECCE47 /* ProductDetails */ = {
 			isa = PBXGroup;
 			children = (
+				4C68C60E29E81B5C005A4175 /* CustomViews */,
 				4CEEB40A29E2D06700ECCE47 /* ProductImagesCollectionViewCell */,
-				4CEEB40629E2CF6700ECCE47 /* ProductDetailsViewController.swift */,
-				4CEEB40729E2CF6700ECCE47 /* ProductDetailsViewController.xib */,
+				4C68C60D29E81B47005A4175 /* ProductDetailsViewController */,
 			);
 			path = ProductDetails;
 			sourceTree = "<group>";
@@ -359,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C6E35E829E1819D003A1241 /* Localizable.strings in Resources */,
+				4C68C61429E81CEC005A4175 /* ProductDetailsView.xib in Resources */,
 				B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */,
 				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
 				4CEEB40E29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib in Resources */,
@@ -432,6 +463,7 @@
 				4CEEB40D29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift in Sources */,
 				4CF6F61E29DDAD190019C1C5 /* Strings.swift in Sources */,
 				4CEEB40829E2CF6700ECCE47 /* ProductDetailsViewController.swift in Sources */,
+				4C68C61029E81BAA005A4175 /* ProductDetailsView.swift in Sources */,
 				B62D384D29BA608F00179020 /* ViewController.swift in Sources */,
 				4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */,
 				C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */,

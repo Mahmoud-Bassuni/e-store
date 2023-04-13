@@ -1,76 +1,75 @@
 //
-//  ProductDetailsViewController.swift
+//  ProductDetailsView.swift
 //  e-store
 //
-//  Created by Ahmed Atef on 09/04/2023.
+//  Created by Ahmed Atef on 13/04/2023.
 //
 
 import UIKit
-import Shared_UI
 
-class ProductDetailsViewController: UIViewController {
+class ProductDetailsView: UIView {
     
     // MARK: - Outlets
-    @IBOutlet private(set) weak var productImagesCollectionView: UICollectionView!
-    @IBOutlet private(set) weak var productName: UILabel!
-    @IBOutlet private(set) weak var productPrice: UILabel!
-    @IBOutlet private(set) weak var productRate: UILabel!
-    @IBOutlet private(set) weak var productReviewsNumber: UILabel!
+    @IBOutlet var contentView: UIView!
+    @IBOutlet weak var productImagesCollectionView: UICollectionView!
+    @IBOutlet weak var productName: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var productRate: UILabel!
+    @IBOutlet weak var productReviewsNumber: UILabel!
+    
     // MARK: - Properties
+    
+    static let nibName = String(describing: ProductDetailsView.self)
     private var productImages: [UIImage] = []
     private var timer: Timer?
     private var currentIndex: Int = 0
     
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        registerCell()
-        setupProductImagesCollectionView()
-        setupNavigationItems()
-        setupProductImagesList()
-        setupCollectionViewTimer()
-        setupUi()
+    // MARK: - Life cycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
     }
     
     // MARK: - Functions
-    private func setupUi() {
+    
+    func commonInit() {
+        Bundle.main.loadNibNamed(ProductDetailsView.nibName, owner: self)
+        addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+    func setupUi() {
         productPrice.textColor = UIColor.scarletColor
         [productRate, productReviewsNumber, productName].forEach {
             $0?.textColor = UIColor.navyBlackColor
         }
     }
-    private func setupProductImagesCollectionView() {
+    
+    func setupProductImagesCollectionView() {
         productImagesCollectionView.dataSource = self
         productImagesCollectionView.delegate = self
     }
-    private func registerCell() {
+    
+    func registerCell() {
         productImagesCollectionView.register(UINib(nibName: ProductImagesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ProductImagesCollectionViewCell.identifier)
     }
-    private func setupProductImagesList() {
+    
+    func setupProductImagesList() {
         productImages.append(UIImage(named: Asset.applewatchRemovebgPreview.name) ?? UIImage())
         productImages.append(UIImage(named: Asset.headphoneRemovebgPreview.name) ?? UIImage())
         productImages.append(UIImage(named: Asset.airpodsRemovebgPreview.name) ?? UIImage())
         productImages.append(UIImage(named: Asset.flowerRemovebgPreview.name) ?? UIImage())
         productImages.append(UIImage(named: Asset.carRemovebgPreview.name) ?? UIImage())
     }
-    private func setupNavigationItems() {
-        navigationItem.title = "Detail Product"
-        let arrow = UIBarButtonItem(image: UIImage(systemName: "arrowshape.turn.up.right"), style: .plain, target: self, action: #selector(arrowTapped))
-        arrow.tintColor = UIColor.black
-        let cart = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(cartTapped))
-        [arrow, cart].forEach {
-            $0.tintColor = UIColor.navyBlackColor
-        }
-        navigationItem.rightBarButtonItems = [cart, arrow]
-    }
     
-    @objc private func arrowTapped() {
-        // TODO:- Implement me
-    }
-    @objc private func cartTapped() {
-        // TODO:- Implement me
-    }
-    private func setupCollectionViewTimer() {
+    func setupCollectionViewTimer() {
         timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
     }
     
@@ -79,8 +78,10 @@ class ProductDetailsViewController: UIViewController {
         productImagesCollectionView.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
     }
 }
-    // MARK: - ProductDetailsViewController extension
-extension ProductDetailsViewController: UICollectionViewDataSource {
+
+// MARK: - ProductDetailsView extension
+
+extension ProductDetailsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         productImages.count
     }
@@ -94,7 +95,7 @@ extension ProductDetailsViewController: UICollectionViewDataSource {
         }
     }
 }
-extension ProductDetailsViewController: UICollectionViewDelegateFlowLayout {
+extension ProductDetailsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
