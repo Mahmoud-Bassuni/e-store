@@ -50,6 +50,7 @@ class ProductDetailsView: UIView {
         [productRate, productReviewsNumber, productName].forEach {
             $0?.textColor = UIColor.navyBlackColor
         }
+        productImagesCollectionView.layer.cornerRadius = 10
     }
     
     func setupProductImagesCollectionView() {
