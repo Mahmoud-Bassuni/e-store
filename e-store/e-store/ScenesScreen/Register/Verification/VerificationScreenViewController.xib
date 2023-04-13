@@ -30,16 +30,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V79-C9-iIx">
-                    <rect key="frame" x="25" y="139" width="343" height="33"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="33" id="Be5-xL-M8O"/>
-                    </constraints>
+                    <rect key="frame" x="25" y="139" width="343" height="32.666666666666657"/>
                     <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="25"/>
                     <color key="textColor" red="0.047058823530000002" green="0.1019607843" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pg4-75-XIf">
-                    <rect key="frame" x="25" y="192" width="343" height="50"/>
+                    <rect key="frame" x="25" y="191.66666666666666" width="343" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kami telah mengirimkan kode verifikasi ke" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an2-3h-uQR">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="25"/>
@@ -73,70 +70,41 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verification Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0x-6L-rma">
-                    <rect key="frame" x="24" y="265" width="115" height="19"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="19" id="I3h-5i-ato"/>
-                    </constraints>
+                    <rect key="frame" x="24" y="264.66666666666669" width="115" height="18.333333333333314"/>
                     <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
                     <color key="textColor" red="0.047058823530000002" green="0.1019607843" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-send Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQU-lu-7nR">
-                    <rect key="frame" x="271.33333333333331" y="262" width="95.666666666666686" height="19"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="19" id="VaK-i3-ICW"/>
-                    </constraints>
+                    <rect key="frame" x="271.33333333333331" y="261.66666666666669" width="95.666666666666686" height="18.333333333333314"/>
                     <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
                     <color key="textColor" red="0.21176470589999999" green="0.41176470590000003" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RbF-6H-KFG">
-                    <rect key="frame" x="25" y="304" width="343" height="50"/>
+                    <rect key="frame" x="25" y="303" width="343" height="34"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klC-xd-N2R">
-                            <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="50"/>
-                            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="vAK-bc-9Ez"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
-                            <color key="textColor" red="0.047058823530000002" green="0.1019607843" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9O-fa-ybq">
-                            <rect key="frame" x="88.333333333333343" y="0.0" width="78.333333333333343" height="50"/>
-                            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Fxa-Sf-z1x"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
-                            <color key="textColor" red="0.047058823530000002" green="0.1019607843" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgw-cr-BQ2">
-                            <rect key="frame" x="176.66666666666666" y="0.0" width="78" height="50"/>
-                            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Dd4-lO-mcF"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
-                            <color key="textColor" red="0.047058823530000002" green="0.1019607843" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y04-gi-iKQ">
-                            <rect key="frame" x="264.66666666666669" y="0.0" width="78.333333333333314" height="50"/>
-                            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="vLy-1V-Mpb"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
-                            <color key="textColor" red="0.047058823530000002" green="0.1019607843" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7h-Os-uIZ" customClass="CustomTextField" customModule="Shared_UI">
+                            <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4w-iK-Oks" customClass="CustomTextField" customModule="Shared_UI">
+                            <rect key="frame" x="88.333333333333343" y="0.0" width="78.333333333333343" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="3" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5qb-38-K4v" customClass="CustomTextField" customModule="Shared_UI">
+                            <rect key="frame" x="176.66666666666666" y="0.0" width="78" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a51-m5-1rG" customClass="CustomTextField" customModule="Shared_UI">
+                            <rect key="frame" x="264.66666666666669" y="0.0" width="78.333333333333314" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="wOZ-z9-kWw"/>
-                    </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zH5-T8-IOX">
                     <rect key="frame" x="25" y="535" width="343" height="50"/>
@@ -155,7 +123,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V79-C9-iIx" secondAttribute="trailing" constant="25" id="3zm-nD-m0b"/>
                 <constraint firstItem="r0x-6L-rma" firstAttribute="top" secondItem="Pg4-75-XIf" secondAttribute="bottom" constant="23" id="53C-MZ-9GU"/>
                 <constraint firstItem="RbF-6H-KFG" firstAttribute="top" secondItem="r0x-6L-rma" secondAttribute="bottom" constant="20" id="753-Qc-yq0"/>
-                <constraint firstItem="V79-C9-iIx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="139" id="GFc-6N-Z7m"/>
+                <constraint firstItem="V79-C9-iIx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="GFc-6N-Z7m"/>
                 <constraint firstItem="r0x-6L-rma" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="PcP-Wa-DF6"/>
                 <constraint firstItem="zH5-T8-IOX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="TBD-gO-ctn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pg4-75-XIf" secondAttribute="trailing" constant="25" id="UtS-rJ-TH5"/>
