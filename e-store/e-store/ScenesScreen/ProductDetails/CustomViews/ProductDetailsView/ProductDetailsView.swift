@@ -10,12 +10,12 @@ import UIKit
 class ProductDetailsView: UIView {
     
     // MARK: - Outlets
-    @IBOutlet var contentView: UIView!
-    @IBOutlet weak var productImagesCollectionView: UICollectionView!
-    @IBOutlet weak var productName: UILabel!
-    @IBOutlet weak var productPrice: UILabel!
-    @IBOutlet weak var productRate: UILabel!
-    @IBOutlet weak var productReviewsNumber: UILabel!
+    @IBOutlet private var contentView: UIView!
+    @IBOutlet private weak var productImagesCollectionView: UICollectionView!
+    @IBOutlet private weak var productName: UILabel!
+    @IBOutlet private weak var productPrice: UILabel!
+    @IBOutlet private weak var productRate: UILabel!
+    @IBOutlet private weak var productReviewsNumber: UILabel!
     
     // MARK: - Properties
     

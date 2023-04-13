@@ -11,7 +11,7 @@ import Shared_UI
 class ProductDetailsViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var productDetailsView: ProductDetailsView!
+    @IBOutlet weak private var productDetailsView: ProductDetailsView!
 
     // MARK: - Properties
     

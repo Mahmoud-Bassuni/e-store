@@ -9,9 +9,9 @@ import UIKit
 
 class ProductImagesCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
-    @IBOutlet private(set)weak var productImage: UIImageView!
-    @IBOutlet private(set)weak var imagesCounter: UILabel!
-    @IBOutlet private(set)weak var totalImagesNumber: UILabel!
+    @IBOutlet private weak var productImage: UIImageView!
+    @IBOutlet private weak var imagesCounter: UILabel!
+    @IBOutlet private weak var totalImagesNumber: UILabel!
     
     // MARK: - Properties
     static let identifier = String(describing: ProductImagesCollectionViewCell.self)
