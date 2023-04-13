@@ -14,6 +14,7 @@
 		4C6A0F1D29D050D400E2B937 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A0F1C29D050D400E2B937 /* UIImage + Extension.swift */; };
 		A8FBC98FAF112228399A8A4B /* libPods-Shared_UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A42D814593A895034622F1 /* libPods-Shared_UI.a */; };
 		B62D386F29BA635400179020 /* Shared_UI.h in Headers */ = {isa = PBXBuildFile; fileRef = B62D386E29BA635400179020 /* Shared_UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C975C2F229E77B00002D8BB8 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C975C2F129E77B00002D8BB8 /* UIViewController + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4C6A0F1C29D050D400E2B937 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage + Extension.swift"; path = "../../../Shared_UI/Shared_UI/Extension/UIImage + Extension.swift"; sourceTree = "<group>"; };
 		B62D386B29BA635400179020 /* Shared_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D386E29BA635400179020 /* Shared_UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shared_UI.h; sourceTree = "<group>"; };
+		C975C2F129E77B00002D8BB8 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController + Extension.swift"; path = "../../../Shared_UI/Shared_UI/Extension/UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		D7A42D814593A895034622F1 /* libPods-Shared_UI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shared_UI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -56,6 +58,7 @@
 				4C1A192A29C37D7900EDE3FD /* UIFont + Extension.swift */,
 				4C6A0F1A29D04ECD00E2B937 /* UITextField + Extension.swift */,
 				4C6A0F1C29D050D400E2B937 /* UIImage + Extension.swift */,
+				C975C2F129E77B00002D8BB8 /* UIViewController + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -154,7 +157,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B62D386529BA635400179020 /* Build configuration list for PBXProject "Shared_UI" */;
+			buildConfigurationList = B62D386529BA635400179020 /* Build configuration list for PBXProject "shared_UI" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -216,6 +219,7 @@
 				4C1A192429C36C1200EDE3FD /* UIButton + Style.swift in Sources */,
 				4C1A192729C3719A00EDE3FD /* UIColor + Extension.swift in Sources */,
 				4C6A0F1D29D050D400E2B937 /* UIImage + Extension.swift in Sources */,
+				C975C2F229E77B00002D8BB8 /* UIViewController + Extension.swift in Sources */,
 				4C6A0F1B29D04ECD00E2B937 /* UITextField + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +413,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B62D386529BA635400179020 /* Build configuration list for PBXProject "Shared_UI" */ = {
+		B62D386529BA635400179020 /* Build configuration list for PBXProject "shared_UI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B62D387029BA635400179020 /* Debug */,

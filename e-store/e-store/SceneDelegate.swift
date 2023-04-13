@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         var appManager = DependencyManager.shared
         appManager.setupAssemplers()
         guard let viewModel = appManager.sharedContainer.resolve(LoginViewModel.self) else { return }
-        
-        window.rootViewController = LoginScreenViewController(loginViewModel: viewModel)
+        let loginScreenUINavigationController = UINavigationController(rootViewController: LoginScreenViewController(loginViewModel: viewModel))
+        window.rootViewController = loginScreenUINavigationController
         window.makeKeyAndVisible()
         self.window = window
         

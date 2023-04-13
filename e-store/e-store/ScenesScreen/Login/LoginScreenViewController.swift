@@ -13,10 +13,10 @@ class LoginScreenViewController: UIViewController {
 
     // MARK: Outlets
 
-    @IBOutlet weak var usernameTxt: UITextField!
-    @IBOutlet weak var passwordTxt: UITextField!
-    @IBOutlet weak var submitBtn: UIButton!
-    @IBOutlet weak var signupBtn: UIButton!
+    @IBOutlet weak var emailPhoneTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     // MARK: Proprites
     var loginViewModel : LoginViewModel
     // MARK: Init
@@ -30,38 +30,53 @@ class LoginScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
     @IBAction func submitBtnAction(_ sender: Any) {
-        var emailValid :Bool = loginViewModel.validUsername(usernameTxt.text ?? "")
-        var passwordValid :Bool = loginViewModel.validPassword(passwordTxt.text ?? "")
+        var emailValid :Bool = loginViewModel.validUsername()
+        var passwordValid :Bool = loginViewModel.validPassword()
+        
         if( (emailValid || passwordValid) == false) {
-            showAlert(msg: "Email & Password are incorrect", vc1: self)
+            showAlert(msg: "Email & Password are incorrect")
         } else if(emailValid == false) {
-            showAlert(msg: "Email is incorrect", vc1: self)
+            showAlert(msg: "Email is incorrect")
         } else if(passwordValid == false) {
-            showAlert(msg: "Password is incorrect", vc1: self)
+            showAlert(msg: "Password is incorrect")
         }
-        loginViewModel.checkUser(username: usernameTxt.text ?? "", password: passwordTxt.text ?? "")
+        loginViewModel.checkUser()
     }
     // MARK: LifeCycle
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        submitBtn.selectStyle(style: .blueButton)
-        signupBtn.tintColor = UIColor.mediumBlueColor
-        passwordTxt.applyPasswordTextField()
+        setupNavigationItems()
+        submitButton.selectStyle(style: .blueButton)
+        signupButton.tintColor = UIColor.white
+        
+        passwordTextField.applyPasswordTextField()
         bindViewModel()
         bindTextFields()
     }
-}
-
-extension UIViewController{
-    func showAlert(msg:String, vc1:UIViewController) {
-        let alert = UIAlertController(title: "Alert", message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        vc1.present(alert,animated: true,completion: nil)
-    }
+    
+    private func setupNavigationItems() {
+         navigationItem.title = "Detail Product"
+         
+         let cart = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(cartTapped))
+        let arrow = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(arrowTapped))
+         
+        [arrow,cart].forEach{
+            $0.tintColor = UIColor.navyBlackColor
+        }
+        navigationItem.rightBarButtonItem = cart
+        navigationItem.leftBarButtonItem = arrow
+     }
+    
+    @objc private func cartTapped() {
+         // TODO:- Implement me
+     }
+    
+    @objc private func arrowTapped() {
+         // TODO:- Implement me
+     }
+    
 }
 
 // MARK: Bind view model
@@ -69,13 +84,13 @@ extension LoginScreenViewController {
 
     private func bindViewModel() {
         loginViewModel.checkConfigButton { [weak self] enable in
-            self?.submitBtn.isEnabled = enable
+            self?.submitButton.isEnabled = enable
         }
     }
 
     private func bindTextFields() {
-        usernameTxt.addTarget(self, action: #selector(updateEmailTextField), for: .editingChanged)
-        passwordTxt.addTarget(self, action: #selector(updatePasswordTextField), for: .editingChanged)
+        emailPhoneTextField.addTarget(self, action: #selector(updateEmailTextField), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(updatePasswordTextField), for: .editingChanged)
 
     }
 }

@@ -19,13 +19,13 @@ protocol LoginViewModelOutput {
 // MARK: LoginViewModel
 class LoginViewModel {
     private var domain = UserUseCase()
-    private var email = ""
+    private var username = ""
     private var password = ""
     private var checkButtonEable : (Bool) -> Void = { _ in }
 
     func updateButtonState() {
 
-        let isEmailValid = !email.isEmpty
+        let isEmailValid = !username.isEmpty
         let isPasswordValid = !password.isEmpty
         let isButtonEnable = isEmailValid && isPasswordValid
         checkButtonEable(isButtonEnable)
@@ -36,12 +36,12 @@ class LoginViewModel {
 extension LoginViewModel: LoginViewModelInput {
 
     func updateEmail(email: String) {
-        self.email = email
+        self.username = email
         updateButtonState()
     }
     
-    func validUsername(_ username: String) -> Bool {
-        Validator.isValidUsername(username: username)
+    func validUsername() -> Bool {
+        Validator.isValidUsername(username: self.username)
     }
 
     func updatePassword(password: String) {
@@ -49,8 +49,8 @@ extension LoginViewModel: LoginViewModelInput {
         updateButtonState()
     }
     
-    func validPassword(_ password: String) -> Bool {
-        Validator.isValidPassword(password: password)
+    func validPassword() -> Bool {
+        Validator.isValidPassword(password: self.password)
     }
 }
 // MARK: LoginViewModelInput
@@ -64,8 +64,9 @@ extension LoginViewModel: LoginViewModelOutput {
 // MARK: get data from domain
 extension LoginViewModel {
     
-    func checkUser(username: String, password:String) {
-        domain.login(loginInfo: (username, password)) { result in
+    func checkUser() {
+        
+        domain.login(loginInfo: (self.username, self.password)) { result in
             switch result {
             case .success(let token):
                 print("Login successful, token: \(token)")
