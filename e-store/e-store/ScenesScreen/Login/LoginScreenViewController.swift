@@ -31,17 +31,11 @@ class LoginScreenViewController: UIViewController {
     }
     
     @IBAction func submitBtnAction(_ sender: Any) {
-        var emailValid :Bool = loginViewModel.validUsername()
-        var passwordValid :Bool = loginViewModel.validPassword()
-        
-        if( (emailValid || passwordValid) == false) {
-            showAlert(msg: "Email & Password are incorrect")
-        } else if(emailValid == false) {
-            showAlert(msg: "Email is incorrect")
-        } else if(passwordValid == false) {
-            showAlert(msg: "Password is incorrect")
+        loginViewModel.checkUser { val in
+            if(!val) {
+                self.showAlert(msg: "Email or Password is invalid!")
+            }
         }
-        loginViewModel.checkUser()
     }
     // MARK: LifeCycle
     override func viewDidLoad() {
