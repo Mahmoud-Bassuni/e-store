@@ -38,7 +38,7 @@ class ProductDetailsView: UIView {
     
     // MARK: - Functions
     
-    func commonInit() {
+    private func commonInit() {
         Bundle.main.loadNibNamed(ProductDetailsView.nibName, owner: self)
         addSubview(contentView)
         contentView.frame = self.bounds
