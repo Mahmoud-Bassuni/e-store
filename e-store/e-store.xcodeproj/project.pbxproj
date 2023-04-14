@@ -15,13 +15,27 @@
 		4C68C61029E81BAA005A4175 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68C60F29E81BAA005A4175 /* ProductDetailsView.swift */; };
 		4C68C61429E81CEC005A4175 /* ProductDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C68C61329E81CEC005A4175 /* ProductDetailsView.xib */; };
 		4C6E35E829E1819D003A1241 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C6E35EA29E1819D003A1241 /* Localizable.strings */; };
+		4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */; };
+		4CEEB41529E2E56400ECCE47 /* StoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */; };
 		4CEEB40829E2CF6700ECCE47 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB40629E2CF6700ECCE47 /* ProductDetailsViewController.swift */; };
 		4CEEB40929E2CF6700ECCE47 /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB40729E2CF6700ECCE47 /* ProductDetailsViewController.xib */; };
 		4CEEB40D29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB40B29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift */; };
 		4CEEB40E29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB40C29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib */; };
 		4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6F61B29DDAD190019C1C5 /* Assets.swift */; };
 		4CF6F61E29DDAD190019C1C5 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6F61C29DDAD190019C1C5 /* Strings.swift */; };
+		5C0EF6D629E22F12004C92CB /* RegisterAccountScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EF6D429E22F11004C92CB /* RegisterAccountScreenViewController.swift */; };
+		5C0EF6D729E22F12004C92CB /* RegisterAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EF6D329E22F11004C92CB /* RegisterAccountViewModel.swift */; };
+		5C0EF6E729E23B9B004C92CB /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C0EF6E629E23B9B004C92CB /* DMSans-Bold.ttf */; };
+		5C0EF6E929E23BAC004C92CB /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C0EF6E829E23BAC004C92CB /* DMSans-Regular.ttf */; };
+		5C0EF6EB29E2C34A004C92CB /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C0EF6EA29E2C34A004C92CB /* DMSans-Medium.ttf */; };
+		5C0EF6EE29E2C631004C92CB /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5C0EF6ED29E2C631004C92CB /* IQKeyboardManagerSwift */; };
+		5C0EF6F029E2CE83004C92CB /* RegisterAccountScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0EF6D529E22F12004C92CB /* RegisterAccountScreenViewController.xib */; };
+		5C0EF6F129E2CE84004C92CB /* RegisterAccountScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0EF6D529E22F12004C92CB /* RegisterAccountScreenViewController.xib */; };
+		5C0EF6F829E2EEB4004C92CB /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EF6F529E2EEB4004C92CB /* VerificationViewModel.swift */; };
+		5C0EF6F929E2EEB4004C92CB /* VerificationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EF6F629E2EEB4004C92CB /* VerificationScreenViewController.swift */; };
+		5C0EF6FA29E2EEB4004C92CB /* VerificationScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0EF6F729E2EEB4004C92CB /* VerificationScreenViewController.xib */; };
 		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
+		5CBD37A529E844660032EE04 /* IQManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD37A429E844660032EE04 /* IQManager.swift */; };
 		B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384A29BA608F00179020 /* SceneDelegate.swift */; };
 		B62D384D29BA608F00179020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384C29BA608F00179020 /* ViewController.swift */; };
 		B62D385029BA608F00179020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D384E29BA608F00179020 /* Main.storyboard */; };
@@ -74,12 +88,24 @@
 		4C68C61329E81CEC005A4175 /* ProductDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsView.xib; sourceTree = "<group>"; };
 		4C6E35E929E1819D003A1241 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C6E35EB29E1819F003A1241 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
+		4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRouter.swift; sourceTree = "<group>"; };
 		4CEEB40629E2CF6700ECCE47 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		4CEEB40729E2CF6700ECCE47 /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
 		4CEEB40B29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4CEEB40C29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImagesCollectionViewCell.xib; sourceTree = "<group>"; };
 		4CF6F61B29DDAD190019C1C5 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		4CF6F61C29DDAD190019C1C5 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		5C0EF6D329E22F11004C92CB /* RegisterAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountViewModel.swift; sourceTree = "<group>"; };
+		5C0EF6D429E22F11004C92CB /* RegisterAccountScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountScreenViewController.swift; sourceTree = "<group>"; };
+		5C0EF6D529E22F12004C92CB /* RegisterAccountScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterAccountScreenViewController.xib; sourceTree = "<group>"; };
+		5C0EF6E629E23B9B004C92CB /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		5C0EF6E829E23BAC004C92CB /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		5C0EF6EA29E2C34A004C92CB /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		5CBD37A429E844660032EE04 /* IQManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQManager.swift; sourceTree = "<group>"; };
+		5C0EF6F529E2EEB4004C92CB /* VerificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
+		5C0EF6F629E2EEB4004C92CB /* VerificationScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationScreenViewController.swift; sourceTree = "<group>"; };
+		5C0EF6F729E2EEB4004C92CB /* VerificationScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationScreenViewController.xib; sourceTree = "<group>"; };
 		B49575E65FE76E7CB37BDD90 /* libPods-e-store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-e-store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384529BA608F00179020 /* e-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384829BA608F00179020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +134,7 @@
 				B62D385D29BA614C00179020 /* e-store_foundation in Frameworks */,
 				B62D387F29BA690D00179020 /* FirebaseCrashlytics in Frameworks */,
 				B62D387D29BA690C00179020 /* FirebaseAnalytics in Frameworks */,
+				5C0EF6EE29E2C631004C92CB /* IQKeyboardManagerSwift in Frameworks */,
 				B62D387629BA638C00179020 /* Shared_UI.framework in Frameworks */,
 				0A6991244F262651573CADC0 /* libPods-e-store.a in Frameworks */,
 				4C3557D629DB8E7700703789 /* Swinject in Frameworks */,
@@ -141,6 +168,13 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
+		4CEEB41129E2E25700ECCE47 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */,
+				4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */,
+			);
+			path = Router;
 		4C68C60D29E81B47005A4175 /* ProductDetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,12 +223,52 @@
 		4CF6F61229DDAC7F0019C1C5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5C0EF6D929E23A8F004C92CB /* fonts */,
 				B62D385129BA609100179020 /* Assets.xcassets */,
 				4CF6F61B29DDAD190019C1C5 /* Assets.swift */,
 				4CF6F61C29DDAD190019C1C5 /* Strings.swift */,
 				4C6E35EA29E1819D003A1241 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		5C0EF6D029E22E49004C92CB /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				5C0EF6F429E2EEA2004C92CB /* Verification */,
+				5C0EF6D829E22F27004C92CB /* RegisterAccount */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		5C0EF6D829E22F27004C92CB /* RegisterAccount */ = {
+			isa = PBXGroup;
+			children = (
+				5C0EF6D429E22F11004C92CB /* RegisterAccountScreenViewController.swift */,
+				5C0EF6D529E22F12004C92CB /* RegisterAccountScreenViewController.xib */,
+				5C0EF6D329E22F11004C92CB /* RegisterAccountViewModel.swift */,
+			);
+			path = RegisterAccount;
+			sourceTree = "<group>";
+		};
+		5C0EF6D929E23A8F004C92CB /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5C0EF6E629E23B9B004C92CB /* DMSans-Bold.ttf */,
+				5C0EF6E829E23BAC004C92CB /* DMSans-Regular.ttf */,
+				5C0EF6EA29E2C34A004C92CB /* DMSans-Medium.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		5C0EF6F429E2EEA2004C92CB /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				5C0EF6F629E2EEB4004C92CB /* VerificationScreenViewController.swift */,
+				5C0EF6F729E2EEB4004C92CB /* VerificationScreenViewController.xib */,
+				5C0EF6F529E2EEB4004C92CB /* VerificationViewModel.swift */,
+			);
+			path = Verification;
 			sourceTree = "<group>";
 		};
 		642276AD4B1ECEC35FF695A4 /* Pods */ = {
@@ -239,6 +313,7 @@
 		B62D384729BA608F00179020 /* e-store */ = {
 			isa = PBXGroup;
 			children = (
+				4CEEB41129E2E25700ECCE47 /* Router */,
 				4CF6F61229DDAC7F0019C1C5 /* Resources */,
 				4C3557DB29DBA56E00703789 /* App */,
 				4C3557DC29DBA58900703789 /* Assembly */,
@@ -266,6 +341,7 @@
 		C9E9EAFF29D8FB9900400853 /* ScenesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				5C0EF6D029E22E49004C92CB /* Register */,
 				4CEEB40529E2CF2D00ECCE47 /* ProductDetails */,
 				C9E9EB0029D8FBA200400853 /* Login */,
 			);
@@ -284,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E9EB0429D8FBF300400853 /* Validator.swift */,
+				5CBD37A429E844660032EE04 /* IQManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -314,6 +391,7 @@
 				B62D387E29BA690D00179020 /* FirebaseCrashlytics */,
 				5CA58B7829CCFF5100102C1C /* Domain */,
 				4C3557D529DB8E7700703789 /* Swinject */,
+				5C0EF6ED29E2C631004C92CB /* IQKeyboardManagerSwift */,
 			);
 			productName = "e-store";
 			productReference = B62D384529BA608F00179020 /* e-store.app */;
@@ -372,6 +450,7 @@
 			packageReferences = (
 				B62D387B29BA690C00179020 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4C3557D429DB8E7700703789 /* XCRemoteSwiftPackageReference "Swinject" */,
+				5C0EF6EC29E2C631004C92CB /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = B62D384629BA608F00179020 /* Products */;
 			projectDirPath = "";
@@ -389,13 +468,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C6E35E829E1819D003A1241 /* Localizable.strings in Resources */,
+				5C0EF6EB29E2C34A004C92CB /* DMSans-Medium.ttf in Resources */,
+				5C0EF6E929E23BAC004C92CB /* DMSans-Regular.ttf in Resources */,
+				5C0EF6E729E23B9B004C92CB /* DMSans-Bold.ttf in Resources */,
 				4C68C61429E81CEC005A4175 /* ProductDetailsView.xib in Resources */,
 				B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */,
+				5C0EF6FA29E2EEB4004C92CB /* VerificationScreenViewController.xib in Resources */,
 				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
 				4CEEB40E29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib in Resources */,
 				B62D385229BA609100179020 /* Assets.xcassets in Resources */,
 				4CEEB40929E2CF6700ECCE47 /* ProductDetailsViewController.xib in Resources */,
 				B62D385029BA608F00179020 /* Main.storyboard in Resources */,
+				5C0EF6F029E2CE83004C92CB /* RegisterAccountScreenViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +487,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C0EF6F129E2CE84004C92CB /* RegisterAccountScreenViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +544,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C59744229DDB6F7005F7CD3 /* AppDelegate.swift in Sources */,
+				5CBD37A529E844660032EE04 /* IQManager.swift in Sources */,
+				5C0EF6D629E22F12004C92CB /* RegisterAccountScreenViewController.swift in Sources */,
 				C9E9EB0229D8FBB300400853 /* LoginViewModel.swift in Sources */,
+				5C0EF6F929E2EEB4004C92CB /* VerificationScreenViewController.swift in Sources */,
 				4CEEB40D29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift in Sources */,
 				4CF6F61E29DDAD190019C1C5 /* Strings.swift in Sources */,
 				4CEEB40829E2CF6700ECCE47 /* ProductDetailsViewController.swift in Sources */,
@@ -467,9 +555,13 @@
 				B62D384D29BA608F00179020 /* ViewController.swift in Sources */,
 				4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */,
 				C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */,
+				4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */,
 				B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */,
+				4CEEB41529E2E56400ECCE47 /* StoreRouter.swift in Sources */,
 				4C3557D329DB8E0F00703789 /* StoreAssemply.swift in Sources */,
+				5C0EF6F829E2EEB4004C92CB /* VerificationViewModel.swift in Sources */,
 				4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */,
+				5C0EF6D729E22F12004C92CB /* RegisterAccountViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,6 +867,14 @@
 				minimumVersion = 2.8.0;
 			};
 		};
+		5C0EF6EC29E2C631004C92CB /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
 		B62D387B29BA690C00179020 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -790,6 +890,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4C3557D429DB8E7700703789 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		5C0EF6ED29E2C631004C92CB /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C0EF6EC29E2C631004C92CB /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		5CA58B7829CCFF5100102C1C /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
