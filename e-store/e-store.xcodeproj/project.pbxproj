@@ -221,16 +221,20 @@
 				5C46EDE229E38CAB00D72406 /* ProfilePasswordViewModel.swift */,
 			);
 			path = ProfilePassword;
-		5C0EF6F429E2EEA2004C92CB /* Verification */ = {
-			isa = PBXGroup;
-			children = (
-				5C0EF6F629E2EEB4004C92CB /* VerificationScreenViewController.swift */,
-				5C0EF6F729E2EEB4004C92CB /* VerificationScreenViewController.xib */,
-				5C0EF6F529E2EEB4004C92CB /* VerificationViewModel.swift */,
-			);
-			path = Verification;
+        
 			sourceTree = "<group>";
 		};
+          
+      5C0EF6F429E2EEA2004C92CB /* Verification */ = {
+            isa = PBXGroup;
+            children = (
+                5C0EF6F629E2EEB4004C92CB /* VerificationScreenViewController.swift */,
+                5C0EF6F729E2EEB4004C92CB /* VerificationScreenViewController.xib */,
+                5C0EF6F529E2EEB4004C92CB /* VerificationViewModel.swift */,
+            );
+            path = Verification;
+            sourceTree = "<group>";
+        };
 		642276AD4B1ECEC35FF695A4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
