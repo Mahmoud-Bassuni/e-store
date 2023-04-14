@@ -51,23 +51,14 @@ class LoginScreenViewController: UIViewController {
     }
     
     private func setupNavigationItems() {
-         navigationItem.title = "Detail Product"
          
-         let cart = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(cartTapped))
-        let arrow = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(arrowTapped))
+        let backArrow = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backArrowTapped))
          
-        [arrow,cart].forEach{
-            $0.tintColor = UIColor.navyBlackColor
-        }
-        navigationItem.rightBarButtonItem = cart
-        navigationItem.leftBarButtonItem = arrow
+        backArrow.tintColor = UIColor.navyBlackColor
+        navigationItem.leftBarButtonItem = backArrow
      }
     
-    @objc private func cartTapped() {
-         // TODO:- Implement me
-     }
-    
-    @objc private func arrowTapped() {
+    @objc private func backArrowTapped() {
          // TODO:- Implement me
      }
     
