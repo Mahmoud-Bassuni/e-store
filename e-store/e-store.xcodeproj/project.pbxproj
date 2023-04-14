@@ -175,6 +175,8 @@
 				4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */,
 			);
 			path = Router;
+            sourceTree = "<group>";
+   };
 		4C68C60D29E81B47005A4175 /* ProductDetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
