@@ -30,8 +30,7 @@ class ItemViewController: UIViewController {
         super.viewDidLoad()
         
         itemsCollectionView.layer.cornerRadius = 10
-        itemsCollectionView.layer.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1).cgColor
-        
+        itemsCollectionView.layer.backgroundColor = Asset.grayColor
         let layout = itemsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
                 layout?.sectionInset = UIEdgeInsets(top: 25, left: 25, bottom: 15, right: 25)
         
@@ -59,11 +58,7 @@ extension ItemViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = itemsCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCollectionViewCell", for: indexPath) as! ItemsCollectionViewCell
         cell.layer.cornerRadius = 10
         let item = items[indexPath.row]
-        cell.itemImg.image = item.img.image
-        cell.itemName.text = item.name
-        cell.itemPrice.text = "Rp. "+String(item.price)
-        cell.itemReviews.text = String(item.reviews) + " Reviews"
-        cell.itemRating.text = "⭐️ " + String(item.rating)
+        cell.setupOutlets(product: item)
         return cell
     }
     
