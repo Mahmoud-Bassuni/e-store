@@ -19,7 +19,16 @@ public class Logger<T: Codable> {
             .setError(error: attributes.error)
             .setRequestUrl(responseUrl: attributes.requestUrl)
             .build()
-        let description = "\(buildedLogger.level.level) File: \((buildedLogger.file as? NSString)?.lastPathComponent ?? #file) \(buildedLogger.message) Line : \(buildedLogger.line) URL : \(buildedLogger.requestUrl) Function: \(buildedLogger.function) Response : \(buildedLogger.response) Error : \(buildedLogger.error)"
+        let description = """
+        \(buildedLogger.level.level)
+        \(buildedLogger.message)
+        File: \((buildedLogger.file as NSString).lastPathComponent)
+        Function: \(buildedLogger.function)
+        Line : \(buildedLogger.line)
+        URL : \(buildedLogger.requestUrl)
+        Response : \(buildedLogger.response)
+        Error : \(buildedLogger.error)
+"""
 #if DEBUG
         print(description)
 #endif

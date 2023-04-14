@@ -17,7 +17,7 @@ extension UIButton {
         case whiteButton
     }
     
-    public func selectStyle(style : ButtonStyle){
+    public func selectStyle(style : ButtonStyle) {
         switch style {
         case .blueButton:
             setupBlueButtonStyle()
@@ -32,7 +32,7 @@ extension UIButton {
         }
     }
 }
-//MARK: - setup button styles
+// MARK: - setup button styles
 extension UIButton {
     
     private func configureCommonStyles() {
