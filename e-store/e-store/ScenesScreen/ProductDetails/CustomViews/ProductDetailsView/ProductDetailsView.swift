@@ -59,7 +59,8 @@ class ProductDetailsView: UIView {
     }
     
     func registerCell() {
-        productImagesCollectionView.register(UINib(nibName: ProductImagesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ProductImagesCollectionViewCell.identifier)
+        productImagesCollectionView.register(UINib(nibName: ProductImagesCollectionViewCell.identifier, bundle: nil)
+                                             , forCellWithReuseIdentifier: ProductImagesCollectionViewCell.identifier)
     }
     
     func setupProductImagesList() {
@@ -71,12 +72,17 @@ class ProductDetailsView: UIView {
     }
     
     func setupCollectionViewTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(moveToNext), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 2, target: self,
+                                     selector: #selector(moveToNext),
+                                     userInfo: nil,
+                                     repeats: true)
     }
     
     @objc private func moveToNext() {
         currentIndex = (currentIndex < productImages.count - 1) ? (currentIndex + 1) :  0
-        productImagesCollectionView.scrollToItem(at: IndexPath(row: currentIndex, section: 0), at: .centeredHorizontally, animated: true)
+        productImagesCollectionView.scrollToItem(at: IndexPath(row: currentIndex, section: 0),
+                                                 at: .centeredHorizontally,
+                                                 animated: true)
     }
 }
 
@@ -88,8 +94,12 @@ extension ProductDetailsView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductImagesCollectionViewCell.identifier, for: indexPath) as? ProductImagesCollectionViewCell {
-            cell.setupCell(productImage: productImages[indexPath.row], imagesCounter: indexPath.row + 1, totalImagesNumber: productImages.count)
+        if let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ProductImagesCollectionViewCell.identifier,
+            for: indexPath) as? ProductImagesCollectionViewCell {
+            cell.setupCell(productImage: productImages[indexPath.row],
+                           imagesCounter: indexPath.row + 1,
+                           totalImagesNumber: productImages.count)
             return cell
         } else {
             return UICollectionViewCell()

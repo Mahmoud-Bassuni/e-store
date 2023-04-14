@@ -34,9 +34,15 @@ class ProductDetailsViewController: UIViewController {
     }
     private func setupNavigationItems() {
         navigationItem.title = "Detail Product"
-        let arrow = UIBarButtonItem(image: UIImage(named: Asset.arrow.name), style: .plain, target: self, action: #selector(arrowTapped))
+        let arrow = UIBarButtonItem(image: UIImage(named: Asset.arrow.name),
+                                    style: .plain,
+                                    target: self,
+                                    action: #selector(arrowTapped))
         arrow.tintColor = UIColor.black
-        let cart = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(cartTapped))
+        let cart = UIBarButtonItem(image: UIImage(systemName: "cart"),
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(cartTapped))
         [arrow, cart].forEach {
             $0.tintColor = UIColor.navyBlackColor
         }
