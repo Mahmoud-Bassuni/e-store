@@ -20,7 +20,7 @@ class ItemsCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    public func setupOutlets(product: Item){
+    public func setupOutlets(product: CategoryItem){
         itemName.text = product.name
         itemImg.image = product.img.image
         itemName.text = product.name

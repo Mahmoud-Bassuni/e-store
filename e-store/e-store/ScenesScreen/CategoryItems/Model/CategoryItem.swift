@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Item {
+class CategoryItem {
     var img:ImageAsset
     var name: String
     var price: Int

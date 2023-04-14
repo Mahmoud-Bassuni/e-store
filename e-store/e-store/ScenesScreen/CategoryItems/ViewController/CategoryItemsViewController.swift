@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ItemViewController: UIViewController {
+class CategoryItemsViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     
     var itemsViewModel: ItemsViewModel
-    var items : [Item] = []
+    var items : [CategoryItem] = []
     
     //MARK: - Init
     init(itemsViewModel: ItemsViewModel) {
@@ -48,7 +48,7 @@ class ItemViewController: UIViewController {
 
 }
 
-extension ItemViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension CategoryItemsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count

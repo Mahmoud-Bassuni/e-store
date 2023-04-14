@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                  appManager.setupAssemplers()
                  guard let viewModel = appManager.sharedContainer.resolve(ItemsViewModel.self) else { return }
 
-        window.rootViewController = ItemViewController(itemsViewModel: viewModel)
+        window.rootViewController = CategoryItemsViewController(itemsViewModel: viewModel)
                  window.makeKeyAndVisible()
                  self.window = window
     }
