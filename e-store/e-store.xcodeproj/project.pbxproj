@@ -28,6 +28,9 @@
 		5C0EF6F829E2EEB4004C92CB /* VerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EF6F529E2EEB4004C92CB /* VerificationViewModel.swift */; };
 		5C0EF6F929E2EEB4004C92CB /* VerificationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0EF6F629E2EEB4004C92CB /* VerificationScreenViewController.swift */; };
 		5C0EF6FA29E2EEB4004C92CB /* VerificationScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C0EF6F729E2EEB4004C92CB /* VerificationScreenViewController.xib */; };
+		5C46EDE429E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C46EDE129E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib */; };
+		5C46EDE529E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C46EDE229E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift */; };
+		5C46EDE629E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C46EDE329E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift */; };
 		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
 		5CBD37A529E844660032EE04 /* IQManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD37A429E844660032EE04 /* IQManager.swift */; };
 		B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384A29BA608F00179020 /* SceneDelegate.swift */; };
@@ -90,10 +93,13 @@
 		5C0EF6E629E23B9B004C92CB /* DMSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Bold.ttf"; sourceTree = "<group>"; };
 		5C0EF6E829E23BAC004C92CB /* DMSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Regular.ttf"; sourceTree = "<group>"; };
 		5C0EF6EA29E2C34A004C92CB /* DMSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMSans-Medium.ttf"; sourceTree = "<group>"; };
-		5CBD37A429E844660032EE04 /* IQManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQManager.swift; sourceTree = "<group>"; };
 		5C0EF6F529E2EEB4004C92CB /* VerificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationViewModel.swift; sourceTree = "<group>"; };
 		5C0EF6F629E2EEB4004C92CB /* VerificationScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationScreenViewController.swift; sourceTree = "<group>"; };
 		5C0EF6F729E2EEB4004C92CB /* VerificationScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerificationScreenViewController.xib; sourceTree = "<group>"; };
+		5C46EDE129E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetUserNameAndPasswordViewController.xib; sourceTree = "<group>"; };
+		5C46EDE229E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUserNameAndPasswordViewModel.swift; sourceTree = "<group>"; };
+		5C46EDE329E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUserNameAndPasswordViewController.swift; sourceTree = "<group>"; };
+		5CBD37A429E844660032EE04 /* IQManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQManager.swift; sourceTree = "<group>"; };
 		B49575E65FE76E7CB37BDD90 /* libPods-e-store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-e-store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384529BA608F00179020 /* e-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384829BA608F00179020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 		5C0EF6D029E22E49004C92CB /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				5C46EDE029E38C9C00D72406 /* ProfilePassword */,
 				5C0EF6F429E2EEA2004C92CB /* Verification */,
 				5C0EF6D829E22F27004C92CB /* RegisterAccount */,
 			);
@@ -214,6 +221,16 @@
 				5C0EF6F529E2EEB4004C92CB /* VerificationViewModel.swift */,
 			);
 			path = Verification;
+			sourceTree = "<group>";
+		};
+		5C46EDE029E38C9C00D72406 /* ProfilePassword */ = {
+			isa = PBXGroup;
+			children = (
+				5C46EDE329E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift */,
+				5C46EDE129E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib */,
+				5C46EDE229E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift */,
+			);
+			path = ProfilePassword;
 			sourceTree = "<group>";
 		};
 		642276AD4B1ECEC35FF695A4 /* Pods */ = {
@@ -415,6 +432,7 @@
 				5C0EF6EB29E2C34A004C92CB /* DMSans-Medium.ttf in Resources */,
 				5C0EF6E929E23BAC004C92CB /* DMSans-Regular.ttf in Resources */,
 				5C0EF6E729E23B9B004C92CB /* DMSans-Bold.ttf in Resources */,
+				5C46EDE429E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib in Resources */,
 				B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */,
 				5C0EF6FA29E2EEB4004C92CB /* VerificationScreenViewController.xib in Resources */,
 				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
@@ -486,12 +504,14 @@
 			files = (
 				4C59744229DDB6F7005F7CD3 /* AppDelegate.swift in Sources */,
 				5CBD37A529E844660032EE04 /* IQManager.swift in Sources */,
+				5C46EDE529E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift in Sources */,
 				5C0EF6D629E22F12004C92CB /* RegisterAccountScreenViewController.swift in Sources */,
 				C9E9EB0229D8FBB300400853 /* LoginViewModel.swift in Sources */,
 				5C0EF6F929E2EEB4004C92CB /* VerificationScreenViewController.swift in Sources */,
 				4CF6F61E29DDAD190019C1C5 /* Strings.swift in Sources */,
 				B62D384D29BA608F00179020 /* ViewController.swift in Sources */,
 				4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */,
+				5C46EDE629E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift in Sources */,
 				C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */,
 				4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */,
 				B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */,
