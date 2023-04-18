@@ -24,5 +24,8 @@ class StoreAssemply: Assembly {
         sharedContainer.register(RegisterAccountViewModel.self) { _ in
             RegisterAccountViewModel()
         }
+        sharedContainer.register(VerificationViewModel.self) { _ in
+            VerificationViewModel()
+        }
     }
 }

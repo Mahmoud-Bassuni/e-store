@@ -51,6 +51,7 @@ extension RegisterAccountViewModel: RegisterAccountViewModelInput {
 // MARK: - RegisterAccountViewModelOutput
 
 extension RegisterAccountViewModel: RegisterAccountViewModelOutput {
+   
     func checkConfigButton(callback: @escaping (Bool) -> Void) {
         checkButtonEnable = callback
         updateButtonState()
