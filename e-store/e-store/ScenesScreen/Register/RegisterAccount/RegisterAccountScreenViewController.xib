@@ -20,6 +20,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterAccountScreenViewController" customModule="e_store" customModuleProvider="target">
             <connections>
+                <outlet property="emailOrPhoneTextField" destination="H55-14-8rg" id="ZuH-4P-Db0"/>
+                <outlet property="submitButton" destination="igD-ph-Yxz" id="goc-oR-IRa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -46,13 +48,8 @@
                     <color key="textColor" red="0.047058823530000002" green="0.1019607843" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igD-ph-Yxz">
-                    <rect key="frame" x="20" y="282.33333333333331" width="353" height="50"/>
-                    <color key="backgroundColor" red="0.76862745099999996" green="0.7725490196" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="xh8-8b-Onb"/>
-                    </constraints>
-                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igD-ph-Yxz">
+                    <rect key="frame" x="20" y="282.33333333333331" width="353" height="34.333333333333314"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Continue"/>
                 </button>

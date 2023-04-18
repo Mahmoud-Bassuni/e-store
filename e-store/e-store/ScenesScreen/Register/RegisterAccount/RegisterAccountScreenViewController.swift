@@ -11,6 +11,9 @@ class RegisterAccountScreenViewController: UIViewController {
 
     // MARK: Outlets
     
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var emailOrPhoneTextField: CustomTextField!
+    
     // MARK: Proprites
     
     var registerViewModel: RegisterAccountViewModel
@@ -30,6 +33,9 @@ class RegisterAccountScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        bindTextField()
+        bindViewModel()
     }
     
 }
@@ -37,11 +43,28 @@ class RegisterAccountScreenViewController: UIViewController {
 // MARK: Bind view model
 
 extension RegisterAccountScreenViewController {
-
+    
+    private func bindViewModel() {
+        registerViewModel.checkConfigButton { [weak self] enable in
+            self?.submitButton.isEnabled = enable
+            if enable {
+                self?.submitButton.selectStyle(style: .blueButton)
+            } else {
+                self?.submitButton.selectStyle(style: .grayButton)
+            }
+        }
+    }
+    
+    private func bindTextField() {
+        emailOrPhoneTextField.addTarget(self, action:#selector(updateEmailOrPhoneTextField), for: .editingChanged)
+    }
 }
 
 // MARK: Actions
 
 extension RegisterAccountScreenViewController {
    
+    @objc func updateEmailOrPhoneTextField (textField: UITextField) {
+        registerViewModel.updateEmailOrPhone(emailOrPhone: textField.text ?? "" )
+    }
 }

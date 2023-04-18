@@ -10,28 +10,50 @@ import Foundation
 
 protocol RegisterAccountViewModelInput {
     
+    func updateEmailOrPhone(emailOrPhone: String )
+    
 }
 
 // MARK: - ProtocolRegisterAccountViewModelOutput
 
 protocol RegisterAccountViewModelOutput {
-    
+   
+    func checkConfigButton(callback: @escaping (Bool) -> Void)
+
 }
 
 // MARK: - RegisterAccountViewModel
 
 class RegisterAccountViewModel {
 
+    private var emailOrPhone = ""
+    private var checkButtonEnable : (Bool) -> Void = { _ in }
+
+    func updateButtonState() {
+        
+        let isEmailOrPhoneValid = !emailOrPhone.isEmpty
+        checkButtonEnable(isEmailOrPhoneValid)
+        
+    }
 }
 
 // MARK: - RegisterAccountViewModelInput
 
 extension RegisterAccountViewModel: RegisterAccountViewModelInput {
-
+    
+    func updateEmailOrPhone(emailOrPhone: String) {
+        self.emailOrPhone = emailOrPhone
+        updateButtonState()
+    }
+    
 }
 
-// MARK: - RegisterAccountViewModelInput
+// MARK: - RegisterAccountViewModelOutput
 
 extension RegisterAccountViewModel: RegisterAccountViewModelOutput {
-
+    func checkConfigButton(callback: @escaping (Bool) -> Void) {
+        checkButtonEnable = callback
+        updateButtonState()
+    }
+    
 }
