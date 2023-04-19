@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailsViewController" customModule="e_store" customModuleProvider="target">
+            <connections>
+                <outlet property="productDetailsView" destination="sXo-z2-0VN" id="OXr-ob-NRD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="976"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcK-SW-zA5">
+                    <rect key="frame" x="0.0" y="84" width="355" height="892"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kz-wu-fPj">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="892"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXo-z2-0VN" customClass="ProductDetailsView" customModule="e_store" customModuleProvider="target">
+                                    <rect key="frame" x="25" y="0.0" width="305" height="405"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="405" id="eDD-5A-NcC"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="sXo-z2-0VN" secondAttribute="trailing" constant="25" id="Aie-AE-TOd"/>
+                                <constraint firstItem="sXo-z2-0VN" firstAttribute="top" secondItem="6kz-wu-fPj" secondAttribute="top" id="fE9-Zt-LUU"/>
+                                <constraint firstItem="sXo-z2-0VN" firstAttribute="leading" secondItem="6kz-wu-fPj" secondAttribute="leading" constant="25" id="gra-nO-DCX"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="6kz-wu-fPj" firstAttribute="width" secondItem="NcK-SW-zA5" secondAttribute="width" id="6k7-h3-Pzt"/>
+                        <constraint firstItem="6kz-wu-fPj" firstAttribute="leading" secondItem="NcK-SW-zA5" secondAttribute="leading" id="Cyo-g5-qfz"/>
+                        <constraint firstAttribute="trailing" secondItem="6kz-wu-fPj" secondAttribute="trailing" id="E2e-SP-fcj"/>
+                        <constraint firstItem="6kz-wu-fPj" firstAttribute="height" secondItem="NcK-SW-zA5" secondAttribute="height" id="kTf-yL-bjT"/>
+                        <constraint firstItem="6kz-wu-fPj" firstAttribute="top" secondItem="NcK-SW-zA5" secondAttribute="top" id="qk1-k8-lrD"/>
+                        <constraint firstAttribute="bottom" secondItem="6kz-wu-fPj" secondAttribute="bottom" id="vhL-aJ-Xl3"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NcK-SW-zA5" secondAttribute="bottom" id="C1R-rp-Mpf"/>
+                <constraint firstItem="NcK-SW-zA5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dli-ZZ-7zf"/>
+                <constraint firstItem="NcK-SW-zA5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PzD-Kb-kgh"/>
+                <constraint firstItem="NcK-SW-zA5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="eaS-Zf-Yyx"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="75.572519083969468" y="-140.84507042253523"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
