@@ -64,17 +64,19 @@ extension LoginViewModel: LoginViewModelOutput {
 // MARK: get data from domain
 extension LoginViewModel {
     
-    func checkUser(completion: (Bool) -> Void) {
+    func checkUser(completion:@escaping (Bool,Error?) -> Void) {
         var checkUsernameAndPassword = checkUsernameAndPassword()
         if(!checkUsernameAndPassword) {
-            completion(false)
+            completion(false,nil)
         } else {
             domain.login(loginInfo: (self.username, self.password)) { result in
                 switch result {
                 case .success(let token):
                     print("Login successful, token: \(token)")
+                    completion(true,nil)
                 case .failure(let error):
                     print("Login failed, error: \(error)")
+                    completion(false,error)
                 }
             }
         }
@@ -86,7 +88,7 @@ extension LoginViewModel {
     func checkUsernameAndPassword() -> Bool {
         var emailValid :Bool = validUsername()
         var passwordValid :Bool = validPassword()
-        if( (emailValid || passwordValid) == false) {
+        if( (emailValid && passwordValid) == false) {
             return false
        }
         return true

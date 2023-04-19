@@ -31,9 +31,13 @@ class LoginScreenViewController: UIViewController {
     }
     
     @IBAction func submitBtnAction(_ sender: Any) {
-        loginViewModel.checkUser { val in
+        loginViewModel.checkUser { val,error in
             if(!val) {
-                self.showAlert(msg: "Email or Password is invalid!")
+                if let err = error {
+                    self.showAlert(msg: err.localizedDescription)
+                } else {
+                    self.showAlert(msg: "Email and Password aren't Valid!")
+                }
             }
         }
     }
@@ -44,7 +48,6 @@ class LoginScreenViewController: UIViewController {
         setupNavigationItems()
         submitButton.selectStyle(style: .blueButton)
         signupButton.tintColor = UIColor.white
-        
         passwordTextField.applyPasswordTextField()
         bindViewModel()
         bindTextFields()
