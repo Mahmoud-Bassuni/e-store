@@ -8,6 +8,7 @@
 import UIKit
 import Shared_UI
 
+@available(iOS 13.0, *)
 class ProductDetailsViewController: UIViewController {
     
     // MARK: - Outlets
@@ -27,10 +28,6 @@ class ProductDetailsViewController: UIViewController {
     
     private func setupproductDetailsView() {
         productDetailsView.setupProductImagesList()
-        productDetailsView.registerCell()
-        productDetailsView.setupProductImagesCollectionView()
-        productDetailsView.setupCollectionViewTimer()
-        productDetailsView.setupUi()
     }
     private func setupNavigationItems() {
         navigationItem.title = "Detail Product"

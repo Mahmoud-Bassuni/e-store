@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Shared_UI
 
 class ProductDetailsView: UIView {
     
     // MARK: - Outlets
+    
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var productImagesCollectionView: UICollectionView!
     @IBOutlet private weak var productName: UILabel!
@@ -19,7 +21,6 @@ class ProductDetailsView: UIView {
     
     // MARK: - Properties
     
-    static let nibName = String(describing: ProductDetailsView.self)
     private var productImages: [UIImage] = []
     private var timer: Timer?
     private var currentIndex: Int = 0
@@ -29,23 +30,28 @@ class ProductDetailsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
+        setupUi()
+        setupProductImagesCollectionView()
+        registerCell()
+        setupCollectionViewTimer()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
+        setupUi()
+        setupProductImagesCollectionView()
+        registerCell()
+        setupCollectionViewTimer()
     }
     
     // MARK: - Functions
     
     private func commonInit() {
-        Bundle.main.loadNibNamed(ProductDetailsView.nibName, owner: self)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        fromNib(type: ProductDetailsView.self)
     }
     
-    func setupUi() {
+    private func setupUi() {
         productPrice.textColor = UIColor.scarletColor
         [productRate, productReviewsNumber, productName].forEach {
             $0?.textColor = UIColor.navyBlackColor
@@ -53,12 +59,12 @@ class ProductDetailsView: UIView {
         productImagesCollectionView.layer.cornerRadius = 10
     }
     
-    func setupProductImagesCollectionView() {
+    private  func setupProductImagesCollectionView() {
         productImagesCollectionView.dataSource = self
         productImagesCollectionView.delegate = self
     }
     
-    func registerCell() {
+    private func registerCell() {
         productImagesCollectionView.register(UINib(nibName: ProductImagesCollectionViewCell.identifier, bundle: nil)
                                              , forCellWithReuseIdentifier: ProductImagesCollectionViewCell.identifier)
     }
@@ -71,7 +77,7 @@ class ProductDetailsView: UIView {
         productImages.append(UIImage(named: Asset.carRemovebgPreview.name) ?? UIImage())
     }
     
-    func setupCollectionViewTimer() {
+    private func setupCollectionViewTimer() {
         timer = Timer.scheduledTimer(timeInterval: 2, target: self,
                                      selector: #selector(moveToNext),
                                      userInfo: nil,

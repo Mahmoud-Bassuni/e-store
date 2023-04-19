@@ -38,7 +38,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Il6-Ta-zLS">
-                    <rect key="frame" x="25" y="330" width="342" height="85"/>
+                    <rect key="frame" x="0.0" y="330" width="392" height="85"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TMA-2HD Wireless" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYG-3P-iTO">
                             <rect key="frame" x="0.0" y="0.0" width="214.33333333333334" height="28.666666666666668"/>
@@ -75,10 +75,10 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Il6-Ta-zLS" secondAttribute="trailing" constant="25" id="AYq-qq-UsW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Il6-Ta-zLS" secondAttribute="trailing" id="AYq-qq-UsW"/>
                 <constraint firstItem="Il6-Ta-zLS" firstAttribute="top" secondItem="vYf-0U-B8i" secondAttribute="bottom" constant="30" id="IRD-wS-pPA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vYf-0U-B8i" secondAttribute="trailing" id="ScL-A4-NMD"/>
-                <constraint firstItem="Il6-Ta-zLS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="ca7-oe-cRm"/>
+                <constraint firstItem="Il6-Ta-zLS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ca7-oe-cRm"/>
                 <constraint firstItem="vYf-0U-B8i" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ebi-7J-Dz4"/>
                 <constraint firstItem="vYf-0U-B8i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qEQ-a3-LUk"/>
             </constraints>
