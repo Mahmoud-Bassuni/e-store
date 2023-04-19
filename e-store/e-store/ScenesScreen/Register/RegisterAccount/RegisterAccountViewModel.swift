@@ -19,7 +19,7 @@ protocol RegisterAccountViewModelInput {
 protocol RegisterAccountViewModelOutput {
    
     func checkConfigButton(callback: @escaping (Bool) -> Void)
-
+    func checkEmailOrPhone()-> Bool
 }
 
 // MARK: - RegisterAccountViewModel
@@ -51,7 +51,10 @@ extension RegisterAccountViewModel: RegisterAccountViewModelInput {
 // MARK: - RegisterAccountViewModelOutput
 
 extension RegisterAccountViewModel: RegisterAccountViewModelOutput {
-   
+    func checkEmailOrPhone() -> Bool {
+        Validator.isValidEmail(email: emailOrPhone) || Validator.isValidPhoneNumber(phoneNumber: emailOrPhone)
+    }
+    
     func checkConfigButton(callback: @escaping (Bool) -> Void) {
         checkButtonEnable = callback
         updateButtonState()

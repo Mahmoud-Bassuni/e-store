@@ -17,6 +17,7 @@ protocol VerificationViewModelInput {
 protocol VerificationViewModelOutput {
     
     func checkConfigButton(callback: @escaping (Bool) -> Void)
+    func checkTextFieldCode() -> Bool
 
 }
 
@@ -32,7 +33,7 @@ class VerificationViewModel {
         let isText2Valid = !text[1].isEmpty
         let isText3Valid = !text[2].isEmpty
         let isText4Valid = !text[3].isEmpty
-let isbuttonEnable = isText1Valid && isText2Valid && isText3Valid && isText4Valid
+        let isbuttonEnable = isText1Valid && isText2Valid && isText3Valid && isText4Valid
         checkButtonEnable(isbuttonEnable)
         
     }
@@ -43,25 +44,19 @@ let isbuttonEnable = isText1Valid && isText2Valid && isText3Valid && isText4Vali
 extension VerificationViewModel: VerificationViewModelInput {
 
     func updateTextFieldCode(_ textField: UITextField ) {
-        let numericCharacterSet = CharacterSet.decimalDigits
-        let currentText = textField.text ?? ""
-        let newText = currentText.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
-        if newText.count > 1 || newText.count == 1 && !numericCharacterSet
-            .isSuperset(of: CharacterSet(charactersIn: newText)) {
-            textField.text = currentText
-        } else {
-            textField.text = newText
-        }
         text[(Int(textField.placeholder ?? "1" ) ?? 1) - 1] = textField.text ?? ""
         updateButtonState()
-        textField.resignFirstResponder()
+       
     }
     
 }
 
 // MARK: - VerificationViewModelInput
 extension VerificationViewModel: VerificationViewModelOutput {
-
+    func checkTextFieldCode() -> Bool {
+        return Validator.hasOneDigit(input: text[0]) && Validator.hasOneDigit(input: text[1]) && Validator.hasOneDigit(input: text[2]) && Validator.hasOneDigit(input: text[3]) 
+    }
+        
     func checkConfigButton(callback: @escaping (Bool) -> Void) {
         checkButtonEnable = callback
         updateButtonState()

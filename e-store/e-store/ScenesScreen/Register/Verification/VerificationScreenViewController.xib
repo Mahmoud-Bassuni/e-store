@@ -112,6 +112,9 @@
                     <rect key="frame" x="25" y="550.66666666666663" width="343" height="34.333333333333371"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Continue"/>
+                    <connections>
+                        <action selector="continueButtonPressed:" destination="-1" eventType="touchUpInside" id="NWQ-F2-zSE"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

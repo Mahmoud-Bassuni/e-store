@@ -55,6 +55,7 @@ extension SetUserNameAndPasswordViewController {
     }
     
     private func bindTextField() {
+        passwordTextField.applyPasswordTextField()
         referalCodeTextField.addTarget(self, action:#selector(updateReferalCodeTextField), for: .editingChanged)
         passwordTextField.addTarget(self, action:#selector(updatePasswordTextField), for: .editingChanged)
         fullNameTextField.addTarget(self, action:#selector(updateFullNameTextField), for: .editingChanged)
@@ -65,7 +66,13 @@ extension SetUserNameAndPasswordViewController {
 
 // MARK: Actions
 extension SetUserNameAndPasswordViewController {
-    
+    @IBAction func continueButtonPressed(_ sender: UIButton) {
+        if setUserNameAndPasswordViewModel.checkTextFieldCode() {
+            // TODO: Add popRoot implementation
+        } else {
+            showAlert(msg: "password or full name syntax wrong ")
+        }
+    }
 }
 // MARK: - Update TextField
 extension SetUserNameAndPasswordViewController {

@@ -17,7 +17,6 @@ class RegisterAccountScreenViewController: UIViewController {
     // MARK: Proprites
     
     var registerViewModel: RegisterAccountViewModel
-    
     // MARK: Init
     
     init(registerViewModel: RegisterAccountViewModel) {
@@ -63,7 +62,18 @@ extension RegisterAccountScreenViewController {
 // MARK: Actions
 
 extension RegisterAccountScreenViewController {
-   
+    @IBAction func continueButtonPressed(_ sender: UIButton) {
+        if registerViewModel.checkEmailOrPhone() {
+            // TODO: Add push implementation
+        }else {
+            showAlert(msg: "username or phoneNumber is wrong syntax")
+        }
+    }
+    
+}
+// MARK: - Update TextField
+extension RegisterAccountScreenViewController {
+  
     @objc func updateEmailOrPhoneTextField (textField: UITextField) {
         registerViewModel.updateEmailOrPhone(emailOrPhone: textField.text ?? "" )
     }

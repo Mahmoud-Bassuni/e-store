@@ -52,6 +52,9 @@
                     <rect key="frame" x="20" y="282.33333333333331" width="353" height="34.333333333333314"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Continue"/>
+                    <connections>
+                        <action selector="continueButtonPressed:" destination="-1" eventType="touchUpInside" id="1za-re-Coa"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="LjE-yO-zmq">
                     <rect key="frame" x="102.99999999999999" y="755.66666666666663" width="186.66666666666663" height="32.333333333333371"/>

@@ -39,6 +39,7 @@ class VerificationScreenViewController: UIViewController {
        
         bindTextField()
         bindViewModel()
+        codeTextField1.becomeFirstResponder()
     }
     
 }
@@ -67,9 +68,33 @@ extension VerificationScreenViewController {
 
 // MARK: Actions
 extension VerificationScreenViewController {
-    
+    @IBAction func continueButtonPressed(_ sender: UIButton) {
+        if verificationViewModel.checkTextFieldCode() {
+            // TODO: Add push implementation
+        } else {
+            showAlert(msg: "code syntax wrong ")
+        }
+    }
+   
+}
+
+// MARK: - Update TextField
+extension VerificationScreenViewController {
+  
     @objc func updateTextField (textField: UITextField) {
         
         verificationViewModel.updateTextFieldCode( textField)
+        switch textField.placeholder {
+            
+        case "1":
+            codeTextField2.becomeFirstResponder()
+        case "2":
+            codeTextField3.becomeFirstResponder()
+        case "3":
+            codeTextField4.becomeFirstResponder()
+        default:
+            codeTextField4.resignFirstResponder()
+        }
+        
     }
 }
