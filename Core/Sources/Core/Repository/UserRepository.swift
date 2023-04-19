@@ -8,14 +8,14 @@
 import Foundation
 import network
 public protocol UserRepositoryProtocol {
-    func loginUser(loginInfo: (userName:String,passWord:String),completion: @escaping (Result<Auth, RequestException>) -> Void)
+    func loginUser(loginInfo: (userName:String,passWord:String),completion: @escaping (Result<Auth, RemoteError>) -> Void)
 }
 public class UserRepository: UserRepositoryProtocol {
     public init() {
     }
     public required init(coder: NSCoder) {
     }
-    public func loginUser(loginInfo: (userName:String,passWord:String),completion: @escaping (Result<Auth, RequestException>) -> Void) {
+    public func loginUser(loginInfo: (userName:String,passWord:String),completion: @escaping (Result<Auth, RemoteError>) -> Void) {
         let route = UserEndPoint.loginUser(loginInfo.userName,loginInfo.passWord)
         BaseRequest.shared.request(route: route,method: .post ,completion: completion)
     }

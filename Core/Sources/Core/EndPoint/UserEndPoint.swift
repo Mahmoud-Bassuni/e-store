@@ -20,7 +20,8 @@ public enum UserEndPoint: ServiceLayer {
     public var task: Task {
         switch self {
         case .loginUser(let username,let passWord):
-            return .requestWithParameters(parameters: ["username": username, "password": passWord], encoding: URLEncoding.default)
+            return .requestWithParameters(parameters: ["username": username, "password": passWord],
+                                          encoding: URLEncoding.default)
         }
     }
     public var headers: [String: String]? {
