@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -79,6 +80,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PcF-fm-Qwh" customClass="ReviewView" customModule="e_store" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="352.33333333333331" width="393" height="249.99999999999994"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="za6-Ue-Tuq"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,12 +94,14 @@
                 <constraint firstItem="eak-vD-n0v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="48y-xC-idl"/>
                 <constraint firstItem="igD-ph-Yxz" firstAttribute="top" secondItem="H55-14-8rg" secondAttribute="bottom" constant="20" id="4Ub-n0-0BY"/>
                 <constraint firstItem="H55-14-8rg" firstAttribute="top" secondItem="fB0-Fe-Tin" secondAttribute="bottom" constant="20" id="7sa-kN-anD"/>
+                <constraint firstItem="PcF-fm-Qwh" firstAttribute="top" secondItem="igD-ph-Yxz" secondAttribute="bottom" constant="20" id="H5h-5g-Ash"/>
                 <constraint firstItem="fB0-Fe-Tin" firstAttribute="top" secondItem="eak-vD-n0v" secondAttribute="bottom" constant="20" id="HFi-MN-UHb"/>
                 <constraint firstItem="igD-ph-Yxz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LJ7-i9-egv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Egs-X2-J9v" secondAttribute="trailing" constant="20" id="NHU-cg-wWr"/>
                 <constraint firstItem="Egs-X2-J9v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Nve-yZ-Vvs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LjE-yO-zmq" secondAttribute="bottom" constant="30" id="PrV-Fh-5fc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="igD-ph-Yxz" secondAttribute="trailing" constant="20" id="RcQ-37-wkA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PcF-fm-Qwh" secondAttribute="trailing" id="Rgn-0Z-N94"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="H55-14-8rg" secondAttribute="trailing" constant="20" id="Ujr-8z-NRh"/>
                 <constraint firstItem="fB0-Fe-Tin" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="a6k-q4-lIn"/>
                 <constraint firstItem="Egs-X2-J9v" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="aVp-Qm-Fpk"/>
@@ -99,8 +109,14 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eak-vD-n0v" secondAttribute="trailing" constant="20" id="cdm-Tf-73s"/>
                 <constraint firstItem="eak-vD-n0v" firstAttribute="top" secondItem="Egs-X2-J9v" secondAttribute="bottom" constant="20" id="eIB-bM-d7z"/>
                 <constraint firstItem="LjE-yO-zmq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="103" id="ewN-ci-8Fi"/>
+                <constraint firstItem="PcF-fm-Qwh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vPr-Ib-015"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="21"/>
+            <point key="canvasLocation" x="138.1679389312977" y="20.422535211267608"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
