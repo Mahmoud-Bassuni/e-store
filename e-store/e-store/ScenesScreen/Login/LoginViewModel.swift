@@ -64,7 +64,7 @@ extension LoginViewModel: LoginViewModelOutput {
 // MARK: get data from domain
 extension LoginViewModel {
     
-    func checkUser(completion:@escaping (loginMessage) -> Void) {
+    func checkUser(completion:@escaping (LoginMessage) -> Void) {
         var checkUsernameAndPassword = checkUsernameAndPassword()
         if(!checkUsernameAndPassword) {
             completion(.validateError)
@@ -83,7 +83,7 @@ extension LoginViewModel {
     }
 }
 
-enum loginMessage {
+enum LoginMessage {
     case validateError
     case failure(String)
     case success
