@@ -17,7 +17,10 @@ public class BaseRequest: Networkable {
     public func request<T: Codable>(route: ServiceLayer, method: HTTPMethod, completion: @escaping (Result<T, RemoteError>) -> Void) {
         let headers = Alamofire.HTTPHeaders(route.headers ?? [:])
         let parameters = extractParameters(task: route.task)
-        AF.request(route.baseUrl + route.path, method : method, parameters: parameters.params, encoding:parameters.encoding, headers: headers).responseString { response in
+        AF.request(route.baseUrl + route.path, method : method,
+                   parameters: parameters.params,
+                   encoding:parameters.encoding,
+                   headers: headers).responseString { response in
             ResponseHandler.responseData(response: response, route: route, completion: completion)
         }
     }

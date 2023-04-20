@@ -25,7 +25,13 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
-  internal static let bm = ImageAsset(name: "BM")
+  internal static let bmRemovebgPreview = ImageAsset(name: "BM-removebg-preview")
+  internal static let airpodsRemovebgPreview = ImageAsset(name: "airpods-removebg-preview")
+  internal static let applewatchRemovebgPreview = ImageAsset(name: "applewatch-removebg-preview")
+  internal static let arrow = ImageAsset(name: "arrow")
+  internal static let carRemovebgPreview = ImageAsset(name: "car-removebg-preview")
+  internal static let flowerRemovebgPreview = ImageAsset(name: "flower-removebg-preview")
+  internal static let headphoneRemovebgPreview = ImageAsset(name: "headphone-removebg-preview")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
