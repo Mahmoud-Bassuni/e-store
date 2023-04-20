@@ -31,13 +31,20 @@ class LoginScreenViewController: UIViewController {
     }
     
     @IBAction func submitBtnAction(_ sender: Any) {
-        loginViewModel.checkUser { val,error in
-            if(!val) {
-                if let err = error {
-                    self.showAlert(msg: err.localizedDescription)
-                } else {
-                    self.showAlert(msg: "Email and Password aren't Valid!")
-                }
+        loginViewModel.checkUser { msg in
+//            if(!val) {
+//                if let err = error {
+//                    self.showAlert(msg: err.localizedDescription)
+//                } else {
+//                    self.showAlert(msg: "Email and Password aren't Valid!")
+//                }
+//            }
+            switch(msg){
+            case .validateError : self.showAlert(msg: "Email and Password aren't Valid!")
+            case .failure(let error):
+                self.showAlert(msg: error)
+            case .success:
+                self.showAlert(msg: "Validated")
             }
         }
     }

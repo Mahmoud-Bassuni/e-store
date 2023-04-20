@@ -64,23 +64,29 @@ extension LoginViewModel: LoginViewModelOutput {
 // MARK: get data from domain
 extension LoginViewModel {
     
-    func checkUser(completion:@escaping (Bool,Error?) -> Void) {
+    func checkUser(completion:@escaping (loginMessage) -> Void) {
         var checkUsernameAndPassword = checkUsernameAndPassword()
         if(!checkUsernameAndPassword) {
-            completion(false,nil)
+            completion(.validateError)
         } else {
             domain.login(loginInfo: (self.username, self.password)) { result in
                 switch result {
                 case .success(let token):
                     print("Login successful, token: \(token)")
-                    completion(true,nil)
+                    completion(.success)
                 case .failure(let error):
                     print("Login failed, error: \(error)")
-                    completion(false,error)
+                    completion(.failure(error.localizedDescription))
                 }
             }
         }
     }
+}
+
+enum loginMessage {
+    case validateError
+    case failure(String)
+    case success
 }
 
 extension LoginViewModel {
