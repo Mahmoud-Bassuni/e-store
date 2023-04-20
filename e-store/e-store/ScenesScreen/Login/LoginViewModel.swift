@@ -39,19 +39,12 @@ extension LoginViewModel: LoginViewModelInput {
         self.username = email
         updateButtonState()
     }
-    
-    func validUsername() -> Bool {
-        Validator.isValidUsername(username: self.username)
-    }
 
     func updatePassword(password: String) {
         self.password = password
         updateButtonState()
     }
     
-    func validPassword() -> Bool {
-        Validator.isValidPassword(password: self.password)
-    }
 }
 // MARK: LoginViewModelInput
 extension LoginViewModel: LoginViewModelOutput {
@@ -59,6 +52,14 @@ extension LoginViewModel: LoginViewModelOutput {
     func checkConfigButton(callback: @escaping (Bool) -> Void) {
         self.checkButtonEable = callback
         self.updateButtonState()
+    }
+    
+    func validUsername() -> Bool {
+        Validator.isValidUsername(username: self.username)
+    }
+    
+    func validPassword() -> Bool {
+        Validator.isValidPassword(password: self.password)
     }
 }
 // MARK: get data from domain
@@ -83,11 +84,7 @@ extension LoginViewModel {
     }
 }
 
-enum LoginMessage {
-    case validateError
-    case failure(String)
-    case success
-}
+
 
 extension LoginViewModel {
     
