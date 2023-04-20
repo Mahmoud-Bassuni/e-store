@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C108D6529EEB76300BC3943 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C108D6429EEB76300BC3943 /* UIView + Extension.swift */; };
 		4C1A192429C36C1200EDE3FD /* UIButton + Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A192329C36C1200EDE3FD /* UIButton + Style.swift */; };
 		4C1A192729C3719A00EDE3FD /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A192629C3719A00EDE3FD /* UIColor + Extension.swift */; };
 		4C1A192B29C37D7900EDE3FD /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A192A29C37D7900EDE3FD /* UIFont + Extension.swift */; };
+		4C516C1529E83AF200D369E1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4C516C1429E83AF200D369E1 /* Kingfisher */; };
+		4C516C1829E844BA00D369E1 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C516C1729E844BA00D369E1 /* UIImageView + Extension.swift */; };
 		4C6A0F1B29D04ECD00E2B937 /* UITextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A0F1A29D04ECD00E2B937 /* UITextField + Extension.swift */; };
 		4C6A0F1D29D050D400E2B937 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A0F1C29D050D400E2B937 /* UIImage + Extension.swift */; };
 		A8FBC98FAF112228399A8A4B /* libPods-Shared_UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7A42D814593A895034622F1 /* libPods-Shared_UI.a */; };
@@ -20,9 +23,11 @@
 /* Begin PBXFileReference section */
 		0F7F013CA1D212ABB3A3F185 /* Pods-Shared_UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared_UI.debug.xcconfig"; path = "Target Support Files/Pods-Shared_UI/Pods-Shared_UI.debug.xcconfig"; sourceTree = "<group>"; };
 		35BC811A1A219933E5882A5C /* Pods-Shared_UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared_UI.release.xcconfig"; path = "Target Support Files/Pods-Shared_UI/Pods-Shared_UI.release.xcconfig"; sourceTree = "<group>"; };
+		4C108D6429EEB76300BC3943 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView + Extension.swift"; path = "../../../Shared_UI/Shared_UI/Extension/UIView + Extension.swift"; sourceTree = "<group>"; };
 		4C1A192329C36C1200EDE3FD /* UIButton + Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Style.swift"; sourceTree = "<group>"; };
 		4C1A192629C3719A00EDE3FD /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		4C1A192A29C37D7900EDE3FD /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
+		4C516C1729E844BA00D369E1 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImageView + Extension.swift"; path = "../../../Shared_UI/Shared_UI/Extension/UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		4C6A0F1A29D04ECD00E2B937 /* UITextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITextField + Extension.swift"; path = "../../../Shared_UI/Shared_UI/Extension/UITextField + Extension.swift"; sourceTree = "<group>"; };
 		4C6A0F1C29D050D400E2B937 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage + Extension.swift"; path = "../../../Shared_UI/Shared_UI/Extension/UIImage + Extension.swift"; sourceTree = "<group>"; };
 		B62D386B29BA635400179020 /* Shared_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shared_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C516C1529E83AF200D369E1 /* Kingfisher in Frameworks */,
 				A8FBC98FAF112228399A8A4B /* libPods-Shared_UI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,6 +64,8 @@
 				4C1A192A29C37D7900EDE3FD /* UIFont + Extension.swift */,
 				4C6A0F1A29D04ECD00E2B937 /* UITextField + Extension.swift */,
 				4C6A0F1C29D050D400E2B937 /* UIImage + Extension.swift */,
+				4C516C1729E844BA00D369E1 /* UIImageView + Extension.swift */,
+				4C108D6429EEB76300BC3943 /* UIView + Extension.swift */,
 				C975C2F129E77B00002D8BB8 /* UIViewController + Extension.swift */,
 			);
 			path = Extension;
@@ -138,6 +146,9 @@
 			dependencies = (
 			);
 			name = Shared_UI;
+			packageProductDependencies = (
+				4C516C1429E83AF200D369E1 /* Kingfisher */,
+			);
 			productName = Shared_UI;
 			productReference = B62D386B29BA635400179020 /* Shared_UI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -166,6 +177,9 @@
 				Base,
 			);
 			mainGroup = B62D386129BA635400179020;
+			packageReferences = (
+				4C516C1329E83AF200D369E1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = B62D386C29BA635400179020 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -215,8 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C516C1829E844BA00D369E1 /* UIImageView + Extension.swift in Sources */,
 				4C1A192B29C37D7900EDE3FD /* UIFont + Extension.swift in Sources */,
 				4C1A192429C36C1200EDE3FD /* UIButton + Style.swift in Sources */,
+				4C108D6529EEB76300BC3943 /* UIView + Extension.swift in Sources */,
 				4C1A192729C3719A00EDE3FD /* UIColor + Extension.swift in Sources */,
 				4C6A0F1D29D050D400E2B937 /* UIImage + Extension.swift in Sources */,
 				C975C2F229E77B00002D8BB8 /* UIViewController + Extension.swift in Sources */,
@@ -352,6 +368,7 @@
 			baseConfigurationReference = 0F7F013CA1D212ABB3A3F185 /* Pods-Shared_UI.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -384,6 +401,7 @@
 			baseConfigurationReference = 35BC811A1A219933E5882A5C /* Pods-Shared_UI.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -432,6 +450,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4C516C1329E83AF200D369E1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C516C1429E83AF200D369E1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C516C1329E83AF200D369E1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B62D386229BA635400179020 /* Project object */;
 }
