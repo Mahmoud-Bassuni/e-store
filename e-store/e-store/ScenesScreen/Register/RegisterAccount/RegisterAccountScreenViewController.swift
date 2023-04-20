@@ -64,8 +64,8 @@ extension RegisterAccountScreenViewController {
 extension RegisterAccountScreenViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
         if registerViewModel.checkEmailOrPhone() {
-            // TODO: Add push implementation
-        }else {
+            push(viewController: StoreRouter.shared.showVerification())
+        } else {
             showAlert(msg: "username or phoneNumber is wrong syntax")
         }
     }

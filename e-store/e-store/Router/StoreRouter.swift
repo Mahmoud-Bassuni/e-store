@@ -23,15 +23,21 @@ struct StoreRouter : StoreRouterProtocol {
         resolver = appManager.sharedContainer
     }
     func showRegisterAccount() -> ViewControllerType {
-        let viewModel = resolver.resolve(RegisterAccountViewModel.self)
-        return RegisterAccountScreenViewController(registerViewModel: viewModel ?? RegisterAccountViewModel())
+        guard let viewModel = resolver.resolve(RegisterAccountViewModel.self)else {
+            fatalError("error resolve RegisterAccountViewModel")
+        }
+        return RegisterAccountScreenViewController(registerViewModel: viewModel )
     }
      func showVerification() -> ViewControllerType {
-         let verificationViewModel = resolver.resolve(VerificationViewModel.self)
-        return VerificationScreenViewController(verificationViewModel: verificationViewModel ?? VerificationViewModel())
+         guard let verificationViewModel = resolver.resolve(VerificationViewModel.self) else {
+             fatalError("error resolve VerificationViewModel")
+         }
+         return VerificationScreenViewController(verificationViewModel: verificationViewModel )
     }
     func showUsernameAndPassword() -> ViewControllerType {
-        let setUserNameAndPasswordViewModel = resolver.resolve(SetUserNameAndPasswordViewModel.self)
-       return SetUserNameAndPasswordViewController(setUserNameAndPasswordViewModel: setUserNameAndPasswordViewModel ?? SetUserNameAndPasswordViewModel() )
+       guard let setUserNameAndPasswordViewModel = resolver.resolve(SetUserNameAndPasswordViewModel.self)else {
+            fatalError("error resolve SetUserNameAndPasswordViewModel")
+        }
+       return SetUserNameAndPasswordViewController(setUserNameAndPasswordViewModel: setUserNameAndPasswordViewModel  )
     }
 }
