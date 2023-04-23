@@ -30,6 +30,7 @@ class RegisterAccountScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
     }
     
 }
