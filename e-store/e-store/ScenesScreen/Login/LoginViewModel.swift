@@ -77,7 +77,7 @@ extension LoginViewModel {
                     completion(.success)
                 case .failure(let error):
                     print("Login failed, error: \(error)")
-                    completion(.failure(error.localizedDescription))
+                    completion(.failure(error.description))
                 }
             }
         }
