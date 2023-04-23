@@ -12,6 +12,6 @@ struct FeaturedProductModel {
     var productImage: UIImage
     var productName: String
     var productPrice: Double
-    var productRate: Double
+    var productRate: Float
     var productReviewsNumber: Int
 }
