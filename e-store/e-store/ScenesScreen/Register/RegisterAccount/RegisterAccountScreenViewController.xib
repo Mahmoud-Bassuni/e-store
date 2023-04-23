@@ -100,7 +100,7 @@
                 <constraint firstItem="eak-vD-n0v" firstAttribute="top" secondItem="Egs-X2-J9v" secondAttribute="bottom" constant="20" id="eIB-bM-d7z"/>
                 <constraint firstItem="LjE-yO-zmq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="103" id="ewN-ci-8Fi"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="21"/>
+            <point key="canvasLocation" x="138.1679389312977" y="20.422535211267608"/>
         </view>
     </objects>
 </document>

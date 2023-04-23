@@ -8,7 +8,6 @@
 import UIKit
 import Shared_UI
 
-@available(iOS 13.0, *)
 class ProductDetailsViewController: UIViewController {
     
     // MARK: - Outlets
