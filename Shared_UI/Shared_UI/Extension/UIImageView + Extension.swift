@@ -13,10 +13,21 @@ protocol ImageDownloadable {
     func setImage(for stringUrl: String, placeHolderImage: UIImage)
 }
 
+// MARK: - Extension for Kingfisher
+
 extension UIImageView: ImageDownloadable {
 
     func setImage(for stringUrl: String, placeHolderImage: UIImage) {
         let url = URL(string: stringUrl)
         kf.setImage(with: url, placeholder: placeHolderImage)
+    }
+}
+
+// MARK: - Extension for rounded images
+
+extension UIImageView {
+    public func makeRounded() {
+        layer.cornerRadius = self.frame.height / 2
+        clipsToBounds = true
     }
 }

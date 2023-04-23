@@ -19,6 +19,8 @@
 		4CEEB40929E2CF6700ECCE47 /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB40729E2CF6700ECCE47 /* ProductDetailsViewController.xib */; };
 		4CEEB40D29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB40B29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift */; };
 		4CEEB40E29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB40C29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib */; };
+		4C92168229F0217D006FA99A /* SellerInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C92168129F0217D006FA99A /* SellerInformationView.xib */; };
+		4C92168429F02191006FA99A /* SellerInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C92168329F02191006FA99A /* SellerInformationView.swift */; };
 		4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */; };
 		4CEEB41529E2E56400ECCE47 /* StoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */; };
 		4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6F61B29DDAD190019C1C5 /* Assets.swift */; };
@@ -95,6 +97,8 @@
 		4CEEB40729E2CF6700ECCE47 /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
 		4CEEB40B29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4CEEB40C29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImagesCollectionViewCell.xib; sourceTree = "<group>"; };
+		4C92168129F0217D006FA99A /* SellerInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellerInformationView.xib; sourceTree = "<group>"; };
+		4C92168329F02191006FA99A /* SellerInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerInformationView.swift; sourceTree = "<group>"; };
 		4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
 		4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRouter.swift; sourceTree = "<group>"; };
 		4CF6F61B29DDAD190019C1C5 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -217,6 +221,15 @@
 				4CEEB40C29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib */,
 			);
 			path = ProductImagesCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4C92168029F0214B006FA99A /* SellerInformation */ = {
+			isa = PBXGroup;
+			children = (
+				4C92168129F0217D006FA99A /* SellerInformationView.xib */,
+				4C92168329F02191006FA99A /* SellerInformationView.swift */,
+			);
+			path = SellerInformation;
 			sourceTree = "<group>";
 		};
 		4CEEB41129E2E25700ECCE47 /* Router */ = {
@@ -360,6 +373,7 @@
 		C9E9EAFF29D8FB9900400853 /* ScenesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				4C92168029F0214B006FA99A /* SellerInformation */,
 				5C0EF6D029E22E49004C92CB /* Register */,
 				4CEEB40529E2CF2D00ECCE47 /* ProductDetails */,
 				C9E9EB0029D8FBA200400853 /* Login */,
@@ -493,6 +507,7 @@
 				5C46EDE429E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib in Resources */,
 				4C68C61429E81CEC005A4175 /* ProductDetailsView.xib in Resources */,
 				B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */,
+				4C92168229F0217D006FA99A /* SellerInformationView.xib in Resources */,
 				5C0EF6FA29E2EEB4004C92CB /* VerificationScreenViewController.xib in Resources */,
 				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
 				4CEEB40E29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib in Resources */,
@@ -580,6 +595,7 @@
 				4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */,
 				B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */,
 				4CEEB41529E2E56400ECCE47 /* StoreRouter.swift in Sources */,
+				4C92168429F02191006FA99A /* SellerInformationView.swift in Sources */,
 				4C3557D329DB8E0F00703789 /* StoreAssemply.swift in Sources */,
 				5C0EF6F829E2EEB4004C92CB /* VerificationViewModel.swift in Sources */,
 				4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */,
