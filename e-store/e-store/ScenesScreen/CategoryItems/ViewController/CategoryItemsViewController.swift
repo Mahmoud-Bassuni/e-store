@@ -29,18 +29,24 @@ class CategoryItemsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        itemsCollectionView.layer.cornerRadius = 10
-        itemsCollectionView.layer.backgroundColor = Asset.grayColor
-        let layout = itemsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
-                layout?.sectionInset = UIEdgeInsets(top: 25, left: 25, bottom: 15, right: 25)
-        
-        itemsCollectionView.dataSource = self
-        itemsCollectionView.delegate = self
+        setUpCollectionView()
+        registerCells()
         
         //getting the data
         self.items = itemsViewModel.getData()
         
-        //registering my cells
+    }
+    
+    func setUpCollectionView(){
+        itemsCollectionView.layer.cornerRadius = 10
+        itemsCollectionView.layer.backgroundColor = Asset.grayColor
+        let layout = itemsCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.sectionInset = UIEdgeInsets(top: 25, left: 25, bottom: 15, right: 25)
+        itemsCollectionView.dataSource = self
+        itemsCollectionView.delegate = self
+    }
+    
+    func registerCells(){
         let cellNib = UINib(nibName: "ItemsCollectionViewCell", bundle: nil)
         itemsCollectionView.register(cellNib, forCellWithReuseIdentifier: "ItemsCollectionViewCell")
         itemsCollectionView.reloadData()

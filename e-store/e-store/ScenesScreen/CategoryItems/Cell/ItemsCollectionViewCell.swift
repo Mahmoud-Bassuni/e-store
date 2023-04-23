@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import Shared_UI
 
 class ItemsCollectionViewCell: UICollectionViewCell {
-    //MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet private weak var itemName: UILabel!
     @IBOutlet private weak var itemImg: UIImageView!
     @IBOutlet private weak var itemPrice: UILabel!
@@ -20,9 +21,9 @@ class ItemsCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    public func setupOutlets(product: CategoryItem){
+    public func setupOutlets(product: CategoryItem) {
         itemName.text = product.name
-        itemImg.image = product.img.image
+        itemImg.setImage(for: product.imgURL, placeHolderImage: UIImage(named: "airPods1") ?? UIImage())
         itemName.text = product.name
         itemPrice.text = "Rp. "+String(product.price)
         itemReviews.text = String(product.reviews) + " Reviews"
