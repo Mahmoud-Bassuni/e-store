@@ -11,7 +11,7 @@ import Foundation
 public class Validator {
     
     static func isValidUsername(username: String) -> Bool {
-        
+        //requires to contain lowercase and uppercase and numbers
         let usernameRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9._-]{3,}$"
         if let range = username.range(of: usernameRegex, options: .regularExpression) {
             print(range)
