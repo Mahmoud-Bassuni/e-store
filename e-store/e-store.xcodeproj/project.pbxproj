@@ -19,6 +19,8 @@
 		4CEEB40929E2CF6700ECCE47 /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB40729E2CF6700ECCE47 /* ProductDetailsViewController.xib */; };
 		4CEEB40D29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB40B29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift */; };
 		4CEEB40E29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEEB40C29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib */; };
+		4C92168229F0217D006FA99A /* SellerInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C92168129F0217D006FA99A /* SellerInformationView.xib */; };
+		4C92168429F02191006FA99A /* SellerInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C92168329F02191006FA99A /* SellerInformationView.swift */; };
 		4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */; };
 		4CEEB41529E2E56400ECCE47 /* StoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */; };
 		4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6F61B29DDAD190019C1C5 /* Assets.swift */; };
@@ -37,8 +39,12 @@
 		5C46EDE429E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C46EDE129E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib */; };
 		5C46EDE529E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C46EDE229E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift */; };
 		5C46EDE629E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C46EDE329E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift */; };
+		5C543C6029F01D7D008294AB /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C543C5F29F01D7D008294AB /* ReviewView.swift */; };
+		5C543C6429F02BB2008294AB /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C543C6229F02BB2008294AB /* ReviewTableViewCell.swift */; };
+		5C543C6529F02BB2008294AB /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C543C6329F02BB2008294AB /* ReviewTableViewCell.xib */; };
 		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
 		5CBD37A529E844660032EE04 /* IQManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD37A429E844660032EE04 /* IQManager.swift */; };
+		5CC286DE29F0C305008D0AF3 /* ReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC286DD29F0C305008D0AF3 /* ReviewView.xib */; };
 		B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384A29BA608F00179020 /* SceneDelegate.swift */; };
 		B62D384D29BA608F00179020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D384C29BA608F00179020 /* ViewController.swift */; };
 		B62D385029BA608F00179020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62D384E29BA608F00179020 /* Main.storyboard */; };
@@ -95,6 +101,8 @@
 		4CEEB40729E2CF6700ECCE47 /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
 		4CEEB40B29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		4CEEB40C29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImagesCollectionViewCell.xib; sourceTree = "<group>"; };
+		4C92168129F0217D006FA99A /* SellerInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SellerInformationView.xib; sourceTree = "<group>"; };
+		4C92168329F02191006FA99A /* SellerInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerInformationView.swift; sourceTree = "<group>"; };
 		4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
 		4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRouter.swift; sourceTree = "<group>"; };
 		4CF6F61B29DDAD190019C1C5 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -111,7 +119,11 @@
 		5C46EDE129E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetUserNameAndPasswordViewController.xib; sourceTree = "<group>"; };
 		5C46EDE229E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUserNameAndPasswordViewModel.swift; sourceTree = "<group>"; };
 		5C46EDE329E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUserNameAndPasswordViewController.swift; sourceTree = "<group>"; };
+		5C543C5F29F01D7D008294AB /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		5C543C6229F02BB2008294AB /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		5C543C6329F02BB2008294AB /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		5CBD37A429E844660032EE04 /* IQManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQManager.swift; sourceTree = "<group>"; };
+		5CC286DD29F0C305008D0AF3 /* ReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewView.xib; sourceTree = "<group>"; };
 		B49575E65FE76E7CB37BDD90 /* libPods-e-store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-e-store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384529BA608F00179020 /* e-store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B62D384829BA608F00179020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +198,7 @@
 		4C68C60E29E81B5C005A4175 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				5C543C6629F0C291008294AB /* ReviewView */,
 				4C68C61529E82DBB005A4175 /* ProductDetailsView */,
 			);
 			path = CustomViews;
@@ -196,6 +209,7 @@
 			children = (
 				4C68C61329E81CEC005A4175 /* ProductDetailsView.xib */,
 				4C68C60F29E81BAA005A4175 /* ProductDetailsView.swift */,
+				4CEEB40A29E2D06700ECCE47 /* ProductImagesCollectionViewCell */,
 			);
 			path = ProductDetailsView;
 			sourceTree = "<group>";
@@ -204,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				4C68C60E29E81B5C005A4175 /* CustomViews */,
-				4CEEB40A29E2D06700ECCE47 /* ProductImagesCollectionViewCell */,
 				4C68C60D29E81B47005A4175 /* ProductDetailsViewController */,
 			);
 			path = ProductDetails;
@@ -217,6 +230,15 @@
 				4CEEB40C29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib */,
 			);
 			path = ProductImagesCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		4C92168029F0214B006FA99A /* SellerInformation */ = {
+			isa = PBXGroup;
+			children = (
+				4C92168129F0217D006FA99A /* SellerInformationView.xib */,
+				4C92168329F02191006FA99A /* SellerInformationView.swift */,
+			);
+			path = SellerInformation;
 			sourceTree = "<group>";
 		};
 		4CEEB41129E2E25700ECCE47 /* Router */ = {
@@ -290,6 +312,25 @@
 			path = ProfilePassword;
 			sourceTree = "<group>";
 		};
+		5C543C6129F02B81008294AB /* ReviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5C543C6229F02BB2008294AB /* ReviewTableViewCell.swift */,
+				5C543C6329F02BB2008294AB /* ReviewTableViewCell.xib */,
+			);
+			path = ReviewCell;
+			sourceTree = "<group>";
+		};
+		5C543C6629F0C291008294AB /* ReviewView */ = {
+			isa = PBXGroup;
+			children = (
+				5C543C5F29F01D7D008294AB /* ReviewView.swift */,
+				5CC286DD29F0C305008D0AF3 /* ReviewView.xib */,
+				5C543C6129F02B81008294AB /* ReviewCell */,
+			);
+			path = ReviewView;
+			sourceTree = "<group>";
+		};
 		642276AD4B1ECEC35FF695A4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,6 +401,7 @@
 		C9E9EAFF29D8FB9900400853 /* ScenesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				4C92168029F0214B006FA99A /* SellerInformation */,
 				5C0EF6D029E22E49004C92CB /* Register */,
 				4CEEB40529E2CF2D00ECCE47 /* ProductDetails */,
 				C9E9EB0029D8FBA200400853 /* Login */,
@@ -493,8 +535,11 @@
 				5C46EDE429E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib in Resources */,
 				4C68C61429E81CEC005A4175 /* ProductDetailsView.xib in Resources */,
 				B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */,
+				4C92168229F0217D006FA99A /* SellerInformationView.xib in Resources */,
 				5C0EF6FA29E2EEB4004C92CB /* VerificationScreenViewController.xib in Resources */,
 				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
+				5C543C6529F02BB2008294AB /* ReviewTableViewCell.xib in Resources */,
+				5CC286DE29F0C305008D0AF3 /* ReviewView.xib in Resources */,
 				4CEEB40E29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib in Resources */,
 				B62D385229BA609100179020 /* Assets.xcassets in Resources */,
 				4CEEB40929E2CF6700ECCE47 /* ProductDetailsViewController.xib in Resources */,
@@ -565,6 +610,7 @@
 			files = (
 				4C59744229DDB6F7005F7CD3 /* AppDelegate.swift in Sources */,
 				5CBD37A529E844660032EE04 /* IQManager.swift in Sources */,
+				5C543C6029F01D7D008294AB /* ReviewView.swift in Sources */,
 				5C46EDE529E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift in Sources */,
 				5C0EF6D629E22F12004C92CB /* RegisterAccountScreenViewController.swift in Sources */,
 				C9E9EB0229D8FBB300400853 /* LoginViewModel.swift in Sources */,
@@ -580,8 +626,10 @@
 				4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */,
 				B62D384B29BA608F00179020 /* SceneDelegate.swift in Sources */,
 				4CEEB41529E2E56400ECCE47 /* StoreRouter.swift in Sources */,
+				4C92168429F02191006FA99A /* SellerInformationView.swift in Sources */,
 				4C3557D329DB8E0F00703789 /* StoreAssemply.swift in Sources */,
 				5C0EF6F829E2EEB4004C92CB /* VerificationViewModel.swift in Sources */,
+				5C543C6429F02BB2008294AB /* ReviewTableViewCell.swift in Sources */,
 				4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */,
 				5C0EF6D729E22F12004C92CB /* RegisterAccountViewModel.swift in Sources */,
 			);
