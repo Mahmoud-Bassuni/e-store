@@ -15,16 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        
         guard  (scene as? UIWindowScene) != nil else { return }
         
-        guard let sceneWindow = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: sceneWindow)
-        var appManager = DependencyManager.shared
-        appManager.setupAssemplers()
-        guard let viewModel = appManager.sharedContainer.resolve(LoginViewModel.self) else { return }
-        let loginScreenUINavigationController = UINavigationController(rootViewController: LoginScreenViewController(loginViewModel: viewModel))
-        window.rootViewController = loginScreenUINavigationController
-        window.makeKeyAndVisible()
-        self.window = window
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
