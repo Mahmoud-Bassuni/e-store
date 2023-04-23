@@ -20,11 +20,11 @@
             <rect key="frame" x="0.0" y="0.0" width="335" height="2165"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcK-SW-zA5">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcK-SW-zA5">
                     <rect key="frame" x="25" y="84" width="285" height="2081"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="OEx-Ma-ajL">
-                            <rect key="frame" x="0.0" y="0.0" width="285" height="1795"/>
+                            <rect key="frame" x="0.0" y="0.0" width="285" height="1551"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ez2-Kv-PD8" customClass="ProductDetailsView" customModule="e_store" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="285" height="405"/>
@@ -40,7 +40,7 @@
                                         <constraint firstAttribute="height" constant="1" id="yGV-c2-gYO"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rwe-ey-W5o">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rwe-ey-W5o" customClass="SellerInformationView" customModule="e_store" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="466" width="285" height="45"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
@@ -68,22 +68,22 @@
                                         <constraint firstAttribute="height" constant="1" id="w3r-Rm-xNk"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-lj-bfr">
-                                    <rect key="frame" x="0.0" y="848" width="285" height="620"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaD-lj-bfr" customClass="ReviewView" customModule="e_store" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="848" width="285" height="376"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="620" id="K7l-47-SmL"/>
+                                        <constraint firstAttribute="height" constant="376" id="K7l-47-SmL"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJi-Lf-cWO" customClass="FeaturedProductView" customModule="e_store" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="1498" width="285" height="25"/>
+                                    <rect key="frame" x="0.0" y="1254" width="285" height="25"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="25" id="6il-70-AV6"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qc0-st-R33" customClass="FeaturedProductView" customModule="e_store" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="1553" width="285" height="242"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qc0-st-R33" customClass="FeaturedProductSlider" customModule="e_store" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="1309" width="285" height="242"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="242" id="SHe-2G-uzA"/>
