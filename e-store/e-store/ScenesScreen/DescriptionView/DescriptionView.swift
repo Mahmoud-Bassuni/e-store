@@ -31,9 +31,6 @@ class DescriptionView: UIView {
     // MARK: - Functions
     
     private func commonInit() {
-        Bundle.main.loadNibNamed("DescriptionView", owner: self)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleHeight]
+        fromNib(type: DescriptionView.self)
     }
 }

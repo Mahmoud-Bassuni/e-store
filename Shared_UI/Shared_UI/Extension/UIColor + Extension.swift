@@ -23,4 +23,7 @@ public extension UIColor {
     static var navyBlackColor: UIColor {
         UIColor(red: 12/255, green: 26/255, blue: 48/255, alpha: 1)
     }
+    static var lightBlack: UIColor {
+        UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
+    }
 }

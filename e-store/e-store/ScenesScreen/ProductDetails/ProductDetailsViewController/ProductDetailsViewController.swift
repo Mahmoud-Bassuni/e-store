@@ -11,8 +11,9 @@ import Shared_UI
 class ProductDetailsViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak private var productDetailsView: ProductDetailsView!
+    @IBOutlet private weak var productDetailsView: ProductDetailsView!
 
+    @IBOutlet private weak var featuredProductStackView: UIStackView!
     // MARK: - Properties
     
     // MARK: - Lifecycle
@@ -21,6 +22,7 @@ class ProductDetailsViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationItems()
         setupproductDetailsView()
+        setupFeaturedProductStackView()
     }
     
     // MARK: - Functions
@@ -50,5 +52,11 @@ class ProductDetailsViewController: UIViewController {
     }
     @objc private func cartTapped() {
         // TODO:- Implement me
+    }
+    
+    private func setupFeaturedProductStackView() {
+        featuredProductStackView.layer.cornerRadius = 10
+        featuredProductStackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        featuredProductStackView.layer.masksToBounds = true
     }
 }

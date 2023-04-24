@@ -42,17 +42,17 @@ class FeaturedProductSlider: UIView {
                                            productPrice: 20,
                                            productRate: 4.5,
                                            productReviewsNumber: 20),
-                      FeaturedProductModel(productImage: UIImage(named: Asset.airpodsRemovebgPreview.name) ?? UIImage(),
+                      FeaturedProductModel(productImage: UIImage(named: Asset.carRemovebgPreview.name) ?? UIImage(),
                                                          productName: "airpodsRemovebgPreview",
                                                          productPrice: 20,
                                                          productRate: 4.5,
                                                          productReviewsNumber: 20),
-                      FeaturedProductModel(productImage: UIImage(named: Asset.airpodsRemovebgPreview.name) ?? UIImage(),
+                      FeaturedProductModel(productImage: UIImage(named: Asset.headphoneRemovebgPreview.name) ?? UIImage(),
                                                          productName: "airpodsRemovebgPreview",
                                                          productPrice: 20,
                                                          productRate: 4.5,
                                                          productReviewsNumber: 20),
-                      FeaturedProductModel(productImage: UIImage(named: Asset.airpodsRemovebgPreview.name) ?? UIImage(),
+                      FeaturedProductModel(productImage: UIImage(named: Asset.applewatchRemovebgPreview.name) ?? UIImage(),
                                                          productName: "airpodsRemovebgPreview",
                                                          productPrice: 20,
                                                          productRate: 4.5,
@@ -63,6 +63,12 @@ class FeaturedProductSlider: UIView {
         featuredProductCollectionView.dataSource = self
         featuredProductCollectionView.delegate = self
     }
+    
+    private func setupUi() {
+        //featuredProductCollectionView.
+    }
+    
+    
     
 }
 
@@ -88,7 +94,7 @@ extension FeaturedProductSlider: UICollectionViewDelegateFlowLayout {
         CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        0
+        15
     }
 }
 

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailsViewController" customModule="e_store" customModuleProvider="target">
             <connections>
+                <outlet property="featuredProductStackView" destination="u8U-he-ptz" id="gTO-QY-QQe"/>
                 <outlet property="productDetailsView" destination="ez2-Kv-PD8" id="qsF-pV-KzE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,7 +25,7 @@
                     <rect key="frame" x="25" y="84" width="285" height="2081"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="OEx-Ma-ajL">
-                            <rect key="frame" x="0.0" y="0.0" width="285" height="1551"/>
+                            <rect key="frame" x="0.0" y="0.0" width="285" height="1631"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ez2-Kv-PD8" customClass="ProductDetailsView" customModule="e_store" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="285" height="405"/>
@@ -54,7 +55,7 @@
                                         <constraint firstAttribute="height" constant="1" id="F9v-7j-cBY"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9P-Zf-LPg">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9P-Zf-LPg" customClass="DescriptionView" customModule="e_store" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="572" width="285" height="215"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
@@ -63,7 +64,7 @@
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvw-o5-qbN">
                                     <rect key="frame" x="0.0" y="817" width="285" height="1"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="w3r-Rm-xNk"/>
                                     </constraints>
@@ -75,21 +76,35 @@
                                         <constraint firstAttribute="height" constant="376" id="K7l-47-SmL"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJi-Lf-cWO" customClass="FeaturedProductView" customModule="e_store" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="1254" width="285" height="25"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="u8U-he-ptz">
+                                    <rect key="frame" x="0.0" y="1254" width="285" height="297"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJi-Lf-cWO" customClass="FeaturedProductView" customModule="e_store" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="285" height="25"/>
+                                            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="6il-70-AV6"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qc0-st-R33" customClass="FeaturedProductSlider" customModule="e_store" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="55" width="285" height="242"/>
+                                            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="242" id="SHe-2G-uzA"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pq-fK-BEK" customClass="AddToCartView" customModule="e_store" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="1581" width="285" height="50"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="6il-70-AV6"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qc0-st-R33" customClass="FeaturedProductSlider" customModule="e_store" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="1309" width="285" height="242"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="242" id="SHe-2G-uzA"/>
+                                        <constraint firstAttribute="height" constant="50" id="yoU-oN-vUD"/>
                                     </constraints>
                                 </view>
                             </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="ez2-Kv-PD8" firstAttribute="leading" secondItem="OEx-Ma-ajL" secondAttribute="leading" id="IPf-kZ-R4Q"/>
                                 <constraint firstAttribute="trailing" secondItem="ez2-Kv-PD8" secondAttribute="trailing" id="eIx-Fb-FTf"/>
@@ -97,6 +112,7 @@
                             </constraints>
                         </stackView>
                     </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="OEx-Ma-ajL" secondAttribute="trailing" id="3ah-VH-kl7"/>
                         <constraint firstItem="OEx-Ma-ajL" firstAttribute="top" secondItem="NcK-SW-zA5" secondAttribute="top" id="K4z-3u-mKQ"/>
