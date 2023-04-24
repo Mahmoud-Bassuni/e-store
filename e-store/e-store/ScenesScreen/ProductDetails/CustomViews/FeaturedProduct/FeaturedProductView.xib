@@ -17,11 +17,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpW-rg-Bxb">
                     <rect key="frame" x="0.0" y="0.0" width="579" height="82"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="148" translatesAutoresizingMaskIntoConstraints="NO" id="mnX-Mt-Y0S">
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="mnX-Mt-Y0S">
                             <rect key="frame" x="0.0" y="0.0" width="579" height="82"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Featured Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOr-zj-egN">
-                                    <rect key="frame" x="0.0" y="0.0" width="369.33333333333331" height="82"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="387.33333333333331" height="82"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
