@@ -20,41 +20,53 @@
             <rect key="frame" x="0.0" y="0.0" width="342" height="209"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z0A-hB-xZz">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aE-WC-Jk5">
                     <rect key="frame" x="0.0" y="0.0" width="342" height="209"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0n-cA-e00">
-                            <rect key="frame" x="0.0" y="0.0" width="342" height="19.333333333333332"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9L-Pg-C2F">
-                            <rect key="frame" x="0.0" y="34.333333333333329" width="342" height="174.66666666666669"/>
-                            <mutableString key="text">The speaker unit contains a diaphragm that is precision-grown from NAC Audio bio-cellulose, making it stiffer, lighter and stronger than regular PET speaker units, and allowing the sound-producing diaphragm to vibrate without the levels of distortion found in other speakers. The speaker unit contains a diaphragm that is precision-grown from NAC Audio bio-cellulose, making it stiffer, lighter and stronger than regular PET speaker units, and allowing the sound-producing diaphragm to vibrate without the levels of distortion found in other speakers. </mutableString>
-                            <color key="textColor" systemColor="labelColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z0A-hB-xZz">
+                            <rect key="frame" x="0.0" y="0.0" width="342" height="209"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0n-cA-e00">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="19.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9L-Pg-C2F">
+                                    <rect key="frame" x="0.0" y="34.333333333333329" width="342" height="174.66666666666669"/>
+                                    <mutableString key="text">The speaker unit contains a diaphragm that is precision-grown from NAC Audio bio-cellulose, making it stiffer, lighter and stronger than regular PET speaker units, and allowing the sound-producing diaphragm to vibrate without the levels of distortion found in other speakers. The speaker unit contains a diaphragm that is precision-grown from NAC Audio bio-cellulose, making it stiffer, lighter and stronger than regular PET speaker units, and allowing the sound-producing diaphragm to vibrate without the levels of distortion found in other speakers. </mutableString>
+                                    <color key="textColor" red="0.047058823529411764" green="0.10196078431372549" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </stackView>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Z0A-hB-xZz" firstAttribute="leading" secondItem="0aE-WC-Jk5" secondAttribute="leading" id="7Ph-VA-Eym"/>
+                        <constraint firstAttribute="bottom" secondItem="Z0A-hB-xZz" secondAttribute="bottom" id="fuZ-Gh-Ar3"/>
+                        <constraint firstAttribute="trailing" secondItem="Z0A-hB-xZz" secondAttribute="trailing" id="lu6-y3-RoO"/>
+                        <constraint firstItem="Z0A-hB-xZz" firstAttribute="top" secondItem="0aE-WC-Jk5" secondAttribute="top" id="uum-Yb-wzR"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Z0A-hB-xZz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="g5S-WG-aA6"/>
-                <constraint firstItem="Z0A-hB-xZz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="heL-KB-iAg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Z0A-hB-xZz" secondAttribute="bottom" id="k0R-t4-9XP"/>
-                <constraint firstItem="Z0A-hB-xZz" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="tJN-rY-LdT"/>
+                <constraint firstItem="0aE-WC-Jk5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hzb-3G-V0K"/>
+                <constraint firstItem="0aE-WC-Jk5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="OB1-Dd-e1Z"/>
+                <constraint firstAttribute="bottom" secondItem="0aE-WC-Jk5" secondAttribute="bottom" id="fNv-cD-D3y"/>
+                <constraint firstAttribute="trailing" secondItem="0aE-WC-Jk5" secondAttribute="trailing" id="woC-Y8-vOF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="119.08396946564885" y="3.8732394366197185"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
