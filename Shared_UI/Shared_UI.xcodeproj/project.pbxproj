@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C108D6529EEB76300BC3943 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C108D6429EEB76300BC3943 /* UIView + Extension.swift */; };
+		4C113B5A29F6C8E70034B260 /* DecoratedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C113B5929F6C8E70034B260 /* DecoratedView.swift */; };
 		4C1A192429C36C1200EDE3FD /* UIButton + Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A192329C36C1200EDE3FD /* UIButton + Style.swift */; };
 		4C1A192729C3719A00EDE3FD /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A192629C3719A00EDE3FD /* UIColor + Extension.swift */; };
 		4C1A192B29C37D7900EDE3FD /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A192A29C37D7900EDE3FD /* UIFont + Extension.swift */; };
@@ -24,6 +25,7 @@
 		0F7F013CA1D212ABB3A3F185 /* Pods-Shared_UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared_UI.debug.xcconfig"; path = "Target Support Files/Pods-Shared_UI/Pods-Shared_UI.debug.xcconfig"; sourceTree = "<group>"; };
 		35BC811A1A219933E5882A5C /* Pods-Shared_UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared_UI.release.xcconfig"; path = "Target Support Files/Pods-Shared_UI/Pods-Shared_UI.release.xcconfig"; sourceTree = "<group>"; };
 		4C108D6429EEB76300BC3943 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView + Extension.swift"; path = "../../../Shared_UI/Shared_UI/Extension/UIView + Extension.swift"; sourceTree = "<group>"; };
+		4C113B5929F6C8E70034B260 /* DecoratedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DecoratedView.swift; path = ../../../Shared_UI/Shared_UI/DecoratedView/DecoratedView.swift; sourceTree = "<group>"; };
 		4C1A192329C36C1200EDE3FD /* UIButton + Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Style.swift"; sourceTree = "<group>"; };
 		4C1A192629C3719A00EDE3FD /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		4C1A192A29C37D7900EDE3FD /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C113B5829F6C8DE0034B260 /* DecoratedView */ = {
+			isa = PBXGroup;
+			children = (
+				4C113B5929F6C8E70034B260 /* DecoratedView.swift */,
+			);
+			path = DecoratedView;
+			sourceTree = "<group>";
+		};
 		4C1A192229C36A8800EDE3FD /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +102,7 @@
 		B62D386D29BA635400179020 /* Shared_UI */ = {
 			isa = PBXGroup;
 			children = (
+				4C113B5829F6C8DE0034B260 /* DecoratedView */,
 				4C1A192529C3717300EDE3FD /* Extension */,
 				4C1A192229C36A8800EDE3FD /* Style */,
 				B62D386E29BA635400179020 /* Shared_UI.h */,
@@ -236,6 +247,7 @@
 				4C1A192729C3719A00EDE3FD /* UIColor + Extension.swift in Sources */,
 				4C6A0F1D29D050D400E2B937 /* UIImage + Extension.swift in Sources */,
 				C975C2F229E77B00002D8BB8 /* UIViewController + Extension.swift in Sources */,
+				4C113B5A29F6C8E70034B260 /* DecoratedView.swift in Sources */,
 				4C6A0F1B29D04ECD00E2B937 /* UITextField + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
