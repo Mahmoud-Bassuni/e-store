@@ -9,6 +9,8 @@ import UIKit
 
 class FeaturedProductView: UIView {
 
+    // MARK: - init
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -18,11 +20,9 @@ class FeaturedProductView: UIView {
         super.init(coder: coder)
         commonInit()
     }
-    
+    // MARK: - Functions
+
     private func commonInit() {
        fromNib(type: FeaturedProductView.self)
     }
-    
-    
-    
 }

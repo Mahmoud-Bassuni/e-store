@@ -12,7 +12,6 @@ class ProductDetailsViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet private weak var productDetailsView: ProductDetailsView!
-
     @IBOutlet private weak var featuredProductStackView: UIStackView!
     // MARK: - Properties
     

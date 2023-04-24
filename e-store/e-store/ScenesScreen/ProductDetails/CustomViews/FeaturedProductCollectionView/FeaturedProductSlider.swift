@@ -9,9 +9,16 @@ import UIKit
 
 class FeaturedProductSlider: UIView {
     
+    // MARK: - Outlets
+
     @IBOutlet weak var featuredProductCollectionView: UICollectionView!
     
+    // MARK: - Properties
+
     var dataSource: [FeaturedProductModel] = []
+    
+    // MARK: - init
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -28,6 +35,8 @@ class FeaturedProductSlider: UIView {
         setupFeaturedProductCollectionView()
     }
     
+    // MARK: - Functions
+
     private func commonInit() {
         fromNib(type: FeaturedProductSlider.self)
     }
@@ -63,14 +72,9 @@ class FeaturedProductSlider: UIView {
         featuredProductCollectionView.dataSource = self
         featuredProductCollectionView.delegate = self
     }
-    
-    private func setupUi() {
-        //featuredProductCollectionView.
-    }
-    
-    
-    
 }
+
+// MARK: - Extension for data source
 
 extension FeaturedProductSlider: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -85,10 +89,10 @@ extension FeaturedProductSlider: UICollectionViewDataSource {
           return  UICollectionViewCell()
         }
     }
-    
-    
-    
 }
+
+// MARK: - Extension for delegate
+
 extension FeaturedProductSlider: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width / 2, height: collectionView.frame.height)
