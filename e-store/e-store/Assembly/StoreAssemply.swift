@@ -18,17 +18,23 @@ class StoreAssemply: Assembly {
     }
     // MARK: - Functions
     func assemble(container: Swinject.Container) {
+        sharedContainer.register(AppRouterProtocol.self) { resolver in
+            AppRouter(resolver: resolver)
+        }
+        sharedContainer.register(StoreRouterProtocol.self) { resolver in
+            StoreRouter(resolver: resolver)
+        }
         sharedContainer.register(LoginViewModel.self) { _ in
             LoginViewModel()
         }
-        sharedContainer.register(RegisterAccountViewModel.self) { _ in
-            RegisterAccountViewModel()
+        sharedContainer.register(RegisterAccountViewModel.self) { resolver in
+            RegisterAccountViewModel(storeRouter: StoreRouter(resolver: resolver))
         }
-        sharedContainer.register(VerificationViewModel.self) { _ in
-            VerificationViewModel()
+        sharedContainer.register(VerificationViewModel.self) { resolver in
+            VerificationViewModel(storeRouter: StoreRouter(resolver: resolver))
         }
-        sharedContainer.register(SetUserNameAndPasswordViewModel.self) { _ in
-            SetUserNameAndPasswordViewModel()
+        sharedContainer.register(SetUserNameAndPasswordViewModel.self) { resolver in
+            SetUserNameAndPasswordViewModel(storeRouter: StoreRouter(resolver: resolver))
         }
     }
 }

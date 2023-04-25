@@ -5,13 +5,14 @@
 //  Created by Hassan on 09/04/2023.
 //
 import Foundation
+import UIKit
 
 // MARK: - ProtocolRegisterAccountViewModelInput
 
 protocol RegisterAccountViewModelInput {
     
     func updateEmailOrPhone(emailOrPhone: String )
-    
+    func showVerification(viewController: ViewControllerType)
 }
 
 // MARK: - ProtocolRegisterAccountViewModelOutput
@@ -19,7 +20,7 @@ protocol RegisterAccountViewModelInput {
 protocol RegisterAccountViewModelOutput {
    
     func checkConfigButton(callback: @escaping (Bool) -> Void)
-    func checkEmailOrPhone()-> Bool
+    func checkEmailOrPhone() -> Bool
 }
 
 // MARK: - RegisterAccountViewModel
@@ -28,7 +29,10 @@ class RegisterAccountViewModel {
 
     private var emailOrPhone = ""
     private var checkButtonEnable : (Bool) -> Void = { _ in }
-
+    private var storeRouter: StoreRouter
+    init( storeRouter: StoreRouter) {
+        self.storeRouter = storeRouter
+    }
     func updateButtonState() {
         
         let isEmailOrPhoneValid = !emailOrPhone.isEmpty
@@ -45,7 +49,10 @@ extension RegisterAccountViewModel: RegisterAccountViewModelInput {
         self.emailOrPhone = emailOrPhone
         updateButtonState()
     }
-    
+    func showVerification(viewController: ViewControllerType) {
+        storeRouter.showVerification(viewController: viewController)
+    }
+
 }
 
 // MARK: - RegisterAccountViewModelOutput

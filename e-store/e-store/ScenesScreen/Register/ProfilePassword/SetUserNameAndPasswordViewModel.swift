@@ -29,7 +29,10 @@ class SetUserNameAndPasswordViewModel {
     private var passwordText = ""
     private var referalCodeText = ""
     private var checkButtonEnable : (Bool) -> Void = { _ in }
-    
+    private var storeRouter: StoreRouter
+    init( storeRouter: StoreRouter) {
+        self.storeRouter = storeRouter
+    }
     func updateButtonState() {
         
         let isFullNameTextValid = !fullNameText.isEmpty

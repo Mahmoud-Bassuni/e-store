@@ -7,7 +7,7 @@
 import UIKit
 import Shared_UI
 
-class RegisterAccountScreenViewController: UIViewController {
+class RegisterAccountScreenViewController: UIViewController{
 
     // MARK: Outlets
     
@@ -17,6 +17,7 @@ class RegisterAccountScreenViewController: UIViewController {
     // MARK: Proprites
     
     var registerViewModel: RegisterAccountViewModel
+
     // MARK: Init
     
     init(registerViewModel: RegisterAccountViewModel) {
@@ -63,11 +64,12 @@ extension RegisterAccountScreenViewController {
 
 extension RegisterAccountScreenViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
-        if registerViewModel.checkEmailOrPhone() {
-            push(viewController: StoreRouter.shared.showVerification())
-        } else {
-            showAlert(msg: "username or phoneNumber is wrong syntax")
-        }
+        registerViewModel.showVerification(viewController: self)
+//        if registerViewModel.checkEmailOrPhone() {
+////            push(viewController: StoreRouter.shared.showVerification())
+//        } else {
+//            showAlert(msg: "username or phoneNumber is wrong syntax")
+//        }
     }
     
 }

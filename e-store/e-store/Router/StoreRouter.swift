@@ -9,35 +9,33 @@ import UIKit
 import Swinject
 
 protocol StoreRouterProtocol {
-    func showRegisterAccount() -> ViewControllerType
-    func showVerification() -> ViewControllerType
-    func showUsernameAndPassword() -> ViewControllerType
+    func showRegisterAccount(viewController: ViewControllerType)
+    func showVerification(viewController: ViewControllerType)
+    func showUsernameAndPassword(viewController: ViewControllerType)
 }
 
 struct StoreRouter : StoreRouterProtocol {
-    static let shared = StoreRouter()
-    private let appManager = DependencyManager.shared
     private let resolver : Resolver
-    init() {
-        appManager.setupAssemplers()
-        resolver = appManager.sharedContainer
+    init(resolver: Resolver) {
+        self.resolver = resolver
     }
-    func showRegisterAccount() -> ViewControllerType {
-        guard let viewModel = resolver.resolve(RegisterAccountViewModel.self)else {
-            fatalError("error resolve RegisterAccountViewModel")
-        }
-        return RegisterAccountScreenViewController(registerViewModel: viewModel )
+    func showRegisterAccount(viewController: ViewControllerType) {
+        guard let viewModel = resolver.resolve(RegisterAccountViewModel.self)else { return }
+       let viewCont =  RegisterAccountScreenViewController(registerViewModel: viewModel )
+        viewController.push(viewController: viewCont as! ViewControllerType, animated: true)
     }
-     func showVerification() -> ViewControllerType {
+     func showVerification(viewController: ViewControllerType) {
          guard let verificationViewModel = resolver.resolve(VerificationViewModel.self) else {
-             fatalError("error resolve VerificationViewModel")
-         }
-         return VerificationScreenViewController(verificationViewModel: verificationViewModel )
+return         }
+        let viewCont =  VerificationScreenViewController(verificationViewModel: verificationViewModel )
+         
+         viewController.present(viewToPresent: viewCont, animated: true, completion: nil)
+
     }
-    func showUsernameAndPassword() -> ViewControllerType {
+    func showUsernameAndPassword(viewController: ViewControllerType) {
        guard let setUserNameAndPasswordViewModel = resolver.resolve(SetUserNameAndPasswordViewModel.self)else {
-            fatalError("error resolve SetUserNameAndPasswordViewModel")
-        }
-       return SetUserNameAndPasswordViewController(setUserNameAndPasswordViewModel: setUserNameAndPasswordViewModel  )
+return        }
+        let viewCont =  SetUserNameAndPasswordViewController(setUserNameAndPasswordViewModel: setUserNameAndPasswordViewModel  )
+        viewController.push(viewController: viewCont, animated: true)
     }
 }

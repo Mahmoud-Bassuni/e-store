@@ -26,7 +26,10 @@ class VerificationViewModel {
 
     private var text = ["","","","" ]
     private var checkButtonEnable : (Bool) -> Void = { _ in }
-
+    private var storeRouter: StoreRouter
+    init( storeRouter: StoreRouter) {
+        self.storeRouter = storeRouter
+    }
     func updateButtonState() {
         
         let isText1Valid = !text[0].isEmpty

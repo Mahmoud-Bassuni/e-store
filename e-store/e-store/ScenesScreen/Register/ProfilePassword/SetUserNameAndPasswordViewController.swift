@@ -68,7 +68,7 @@ extension SetUserNameAndPasswordViewController {
 extension SetUserNameAndPasswordViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
         if setUserNameAndPasswordViewModel.checkTextFieldCode() {
-            popToRoot()
+//            popToRoot()
         } else {
             showAlert(msg: "password or full name syntax wrong ")
         }
