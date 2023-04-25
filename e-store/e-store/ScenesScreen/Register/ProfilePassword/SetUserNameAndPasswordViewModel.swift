@@ -12,7 +12,7 @@ protocol SetUserNameAndPasswordViewModelInput {
     func updateReferalCodeText(_ text: String )
     func updatePasswordText(_ text: String )
     func updateFullNameText(_ text: String )
-
+    func popToRoot(viewController: ViewControllerType)
 }
 
 // MARK: - ProtocolSetUserNameAndPasswordViewModelOutput
@@ -45,6 +45,9 @@ class SetUserNameAndPasswordViewModel {
 
 // MARK: - SetUserNameAndPasswordViewModelInput
 extension SetUserNameAndPasswordViewModel: SetUserNameAndPasswordViewModelInput {
+    func popToRoot(viewController: ViewControllerType){
+        storeRouter.popToRoot(viewController: viewController)
+    }
     func updateReferalCodeText(_ text: String) {
         referalCodeText = text
     }

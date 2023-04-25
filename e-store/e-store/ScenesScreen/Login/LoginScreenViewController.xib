@@ -88,7 +88,12 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hI-SG-G8V">
                     <rect key="frame" x="289" y="753.66666666666663" width="84" height="34.333333333333371"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Sign Up">
+                        <color key="baseForegroundColor" red="0.21176470588235294" green="0.41176470588235292" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="signUpButtonAction:" destination="-1" eventType="touchUpInside" id="XWM-bu-Ipt"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

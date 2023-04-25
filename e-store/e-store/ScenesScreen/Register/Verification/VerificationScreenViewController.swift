@@ -69,9 +69,9 @@ extension VerificationScreenViewController {
 // MARK: Actions
 extension VerificationScreenViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
+
         if verificationViewModel.checkTextFieldCode() {
-//            push(viewController: StoreRouter.shared.showUsernameAndPassword())
-            
+            verificationViewModel.showUsernameAndPassword(viewController: self)
         }
             else {
             showAlert(msg: "code syntax wrong ")

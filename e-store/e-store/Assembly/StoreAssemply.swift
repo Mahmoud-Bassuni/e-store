@@ -24,8 +24,8 @@ class StoreAssemply: Assembly {
         sharedContainer.register(StoreRouterProtocol.self) { resolver in
             StoreRouter(resolver: resolver)
         }
-        sharedContainer.register(LoginViewModel.self) { _ in
-            LoginViewModel()
+        sharedContainer.register(LoginViewModel.self) { resolver in
+            LoginViewModel(storeRouter: StoreRouter(resolver: resolver))
         }
         sharedContainer.register(RegisterAccountViewModel.self) { resolver in
             RegisterAccountViewModel(storeRouter: StoreRouter(resolver: resolver))

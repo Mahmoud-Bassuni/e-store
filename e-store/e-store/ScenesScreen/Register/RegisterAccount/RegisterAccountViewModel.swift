@@ -13,6 +13,8 @@ protocol RegisterAccountViewModelInput {
     
     func updateEmailOrPhone(emailOrPhone: String )
     func showVerification(viewController: ViewControllerType)
+    func popToRoot(viewController: ViewControllerType)
+
 }
 
 // MARK: - ProtocolRegisterAccountViewModelOutput
@@ -52,7 +54,9 @@ extension RegisterAccountViewModel: RegisterAccountViewModelInput {
     func showVerification(viewController: ViewControllerType) {
         storeRouter.showVerification(viewController: viewController)
     }
-
+    func popToRoot(viewController: ViewControllerType) {
+        storeRouter.popToRoot(viewController: viewController)
+    }
 }
 
 // MARK: - RegisterAccountViewModelOutput

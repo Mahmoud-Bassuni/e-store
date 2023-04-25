@@ -20,8 +20,8 @@ struct AppRouter : AppRouterProtocol {
         self.resolver = resolver
     }
     func startJourny(window: UIWindow) {
-        guard let viewModel = resolver.resolve(RegisterAccountViewModel.self)else { return }
-        let viewController =  RegisterAccountScreenViewController(registerViewModel: viewModel )
+        guard let viewModel = resolver.resolve(LoginViewModel.self)else { return }
+        let viewController =  LoginScreenViewController(loginViewModel: viewModel)
         window.rootViewController = UINavigationController(rootViewController: viewController)
         window.makeKeyAndVisible()
     }

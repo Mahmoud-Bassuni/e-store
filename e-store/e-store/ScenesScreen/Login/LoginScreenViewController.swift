@@ -17,6 +17,7 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
+    
     // MARK: Proprites
     var loginViewModel : LoginViewModel
     // MARK: Init
@@ -30,7 +31,11 @@ class LoginScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @IBAction func signUpButtonAction(_ sender: UIButton) {
+        loginViewModel.showRegisterAccount(viewController: self)
+    }
     @IBAction func submitBtnAction(_ sender: Any) {
+        
         loginViewModel.checkUser { msg in
             switch(msg) {
             case .validateError : self.showAlert(msg: "Email and Password aren't Valid!")

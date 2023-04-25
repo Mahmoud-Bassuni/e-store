@@ -7,7 +7,7 @@
 import UIKit
 import Shared_UI
 
-class RegisterAccountScreenViewController: UIViewController{
+class RegisterAccountScreenViewController: UIViewController {
 
     // MARK: Outlets
     
@@ -38,6 +38,7 @@ class RegisterAccountScreenViewController: UIViewController{
         bindViewModel()
     }
     
+    
 }
 
 // MARK: Bind view model
@@ -64,14 +65,16 @@ extension RegisterAccountScreenViewController {
 
 extension RegisterAccountScreenViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
-        registerViewModel.showVerification(viewController: self)
-//        if registerViewModel.checkEmailOrPhone() {
-////            push(viewController: StoreRouter.shared.showVerification())
-//        } else {
-//            showAlert(msg: "username or phoneNumber is wrong syntax")
-//        }
+
+        if registerViewModel.checkEmailOrPhone() {
+            registerViewModel.showVerification(viewController: self)
+        } else {
+            showAlert(msg: "username or phoneNumber is wrong syntax")
+        }
     }
-    
+    @IBAction func singInButtonPressed(_ sender: UIButton) {
+        registerViewModel.popToRoot(viewController: self)
+    }
 }
 // MARK: - Update TextField
 extension RegisterAccountScreenViewController {

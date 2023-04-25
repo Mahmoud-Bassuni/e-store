@@ -10,7 +10,7 @@ import UIKit
 protocol VerificationViewModelInput {
     
     func updateTextFieldCode(_ textField: UITextField )
-
+    func showUsernameAndPassword(viewController: ViewControllerType)
 }
 
 // MARK: - ProtocolVerificationViewModelOutput
@@ -51,10 +51,13 @@ extension VerificationViewModel: VerificationViewModelInput {
         updateButtonState()
        
     }
+    func showUsernameAndPassword(viewController: ViewControllerType) {
+        storeRouter.showUsernameAndPassword(viewController: viewController)
+    }
     
 }
 
-// MARK: - VerificationViewModelInput
+// MARK: - VerificationViewModelOutput
 extension VerificationViewModel: VerificationViewModelOutput {
     func checkTextFieldCode() -> Bool {
         return Validator.hasOneDigit(input: text[0]) && Validator.hasOneDigit(input: text[1]) && Validator.hasOneDigit(input: text[2]) && Validator.hasOneDigit(input: text[3]) 
