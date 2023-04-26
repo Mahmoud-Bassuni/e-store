@@ -10,6 +10,12 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
+    // MARK: - Properties
+    
+    static let identifier = String(describing: MainTabBarController.self)
+    
+    // MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setControllers()
@@ -17,6 +23,8 @@ class MainTabBarController: UITabBarController {
         setTabBarItemsImage()
         setTabBarItemsColor()
     }
+    
+    // MARK: - Functions
     
     private func setControllers() {
         let controllers = controllersToSet()
