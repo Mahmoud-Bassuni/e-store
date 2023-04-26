@@ -264,6 +264,8 @@
 		4C68C60E29E81B5C005A4175 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				4C92168029F0214B006FA99A /* SellerInformation */,
+				4C92168529F03B88006FA99A /* DescriptionView */,
 				4C113B5B29F6CCA10034B260 /* AddToCartView */,
 				5C543C6629F0C291008294AB /* ReviewView */,
 				4C310DE729F543110061C069 /* FeaturedProductCollectionView */,
@@ -479,8 +481,6 @@
 		C9E9EAFF29D8FB9900400853 /* ScenesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				4C92168529F03B88006FA99A /* DescriptionView */,
-				4C92168029F0214B006FA99A /* SellerInformation */,
 				5C0EF6D029E22E49004C92CB /* Register */,
 				4CEEB40529E2CF2D00ECCE47 /* ProductDetails */,
 				C9E9EB0029D8FBA200400853 /* Login */,
