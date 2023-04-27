@@ -8,6 +8,8 @@
 import UIKit
 import Swinject
 
+import Swinject
+
 protocol StoreRouterProtocol {
     func showRegisterAccount(viewController: ViewControllerType)
     func showVerification(viewController: ViewControllerType)
