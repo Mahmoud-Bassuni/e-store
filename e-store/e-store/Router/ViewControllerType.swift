@@ -16,7 +16,7 @@ protocol ViewControllerType {
 }
 
 extension UIViewController: ViewControllerType {
-     
+    
     func push(viewController: ViewControllerType, animated: Bool = true) {
         guard let viewController = viewController as? UIViewController else {return}
         navigationController?.pushViewController(viewController, animated: animated)
@@ -31,7 +31,7 @@ extension UIViewController: ViewControllerType {
     }
     
     func present(viewToPresent: ViewControllerType, animated: Bool = true, completion: (() -> Void)? = {}) {
-        self.present( (viewToPresent as! UIViewController), animated: animated, completion: completion)
+        self.present(viewToPresent as! UIViewController, animated: animated, completion: completion)
     }
     
     func dismissView(animated: Bool = true, completion: (() -> Void)? = {}) {

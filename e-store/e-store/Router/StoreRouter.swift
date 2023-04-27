@@ -5,8 +5,7 @@
 //  Created by Ahmed Atef on 09/04/2023.
 //
 
-import UIKit
-import Swinject
+import Foundation
 
 import Swinject
 
