@@ -327,7 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */,
-				5C8CD90629F737970065CF3F /* AppRouter.swift */,
 				4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */,
 				5C8CD90B29F882CE0065CF3F /* AppRouter.swift */,
 			);
@@ -349,9 +348,9 @@
 		5C0EF6D029E22E49004C92CB /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				5C0EF6D829E22F27004C92CB /* RegisterAccount */,
-				5C0EF6F429E2EEA2004C92CB /* Verification */,
-				5C46EDE029E38C9C00D72406 /* ProfilePassword */,
+                   5C46EDE029E38C9C00D72406 /* ProfilePassword */,
+                   5C0EF6F429E2EEA2004C92CB /* Verification */,
+                   5C0EF6D829E22F27004C92CB /* RegisterAccount */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -708,7 +707,6 @@
 				5C46EDE529E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift in Sources */,
 				5C0EF6D629E22F12004C92CB /* RegisterAccountScreenViewController.swift in Sources */,
 				4C310DE629F4A2BE0061C069 /* FeaturedProductView.swift in Sources */,
-				5C8CD90729F737970065CF3F /* AppRouter.swift in Sources */,
 				C9E9EB0229D8FBB300400853 /* LoginViewModel.swift in Sources */,
 				5C0EF6F929E2EEB4004C92CB /* VerificationScreenViewController.swift in Sources */,
 				4CEEB40D29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.swift in Sources */,

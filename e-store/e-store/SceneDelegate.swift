@@ -19,7 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         DependencyManager.shared.sharedContainer.resolve(AppRouterProtocol.self)?.startJourny(window: window)
       
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
