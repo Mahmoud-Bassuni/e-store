@@ -12,14 +12,14 @@ protocol SetUserNameAndPasswordViewModelInput {
     func updateReferalCodeText(_ text: String )
     func updatePasswordText(_ text: String )
     func updateFullNameText(_ text: String )
-    func popToRoot(viewController: ViewControllerType)
+    func showLogin(viewController: ViewControllerType)
 }
 
 // MARK: - ProtocolSetUserNameAndPasswordViewModelOutput
 protocol SetUserNameAndPasswordViewModelOutput {
-    
+    func checkConfirmationButton (viewController: ViewControllerType,callback: @escaping () -> Void)
     func checkConfigButton(callback: @escaping (Bool) -> Void)
-    func checkTextFieldCode() -> Bool
+    func checkTextField() -> Bool
 
 }
 
@@ -45,7 +45,7 @@ class SetUserNameAndPasswordViewModel {
 
 // MARK: - SetUserNameAndPasswordViewModelInput
 extension SetUserNameAndPasswordViewModel: SetUserNameAndPasswordViewModelInput {
-    func popToRoot(viewController: ViewControllerType) {
+    func showLogin(viewController: ViewControllerType) {
         storeRouter.popToRoot(viewController: viewController)
     }
     func updateReferalCodeText(_ text: String) {
@@ -66,8 +66,18 @@ extension SetUserNameAndPasswordViewModel: SetUserNameAndPasswordViewModelInput 
 
 // MARK: - SetUserNameAndPasswordViewModelInput
 extension SetUserNameAndPasswordViewModel: SetUserNameAndPasswordViewModelOutput {
-    func checkTextFieldCode() -> Bool {
-        Validator.isValidPassword(password: passwordText) &&         Validator.isValidFullName(fullName: fullNameText)
+    
+    func checkConfirmationButton (viewController: ViewControllerType,callback: @escaping () -> Void) {
+        if checkTextField() {
+            showLogin(viewController: viewController)
+        } else {
+           callback()
+        }
+    }
+    
+    internal func checkTextField() -> Bool {
+        Validator.isValidPassword(password: passwordText) &&
+        Validator.isValidFullName(fullName: fullNameText)
     }
     
     func checkConfigButton(callback: @escaping (Bool) -> Void) {

@@ -46,7 +46,7 @@ extension RegisterAccountScreenViewController {
     
     private func bindViewModel() {
         registerViewModel.checkConfigButton { [weak self] enable in
-            self?.submitButton.applyEnableOrDisableButton(enable: enable)
+            self?.submitButton.isEnableButtonStyle = enable
         }
     }
     
@@ -60,10 +60,8 @@ extension RegisterAccountScreenViewController {
 extension RegisterAccountScreenViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
 
-        if registerViewModel.checkEmailOrPhone() {
-            registerViewModel.showVerification(viewController: self)
-        } else {
-            showAlert(msg: "username or phoneNumber is wrong syntax")
+        registerViewModel.checkContinueButton(viewController: self) {
+            self.showAlert(msg: "username or phoneNumber is wrong syntax")
         }
     }
     @IBAction func singInButtonPressed(_ sender: UIButton) {

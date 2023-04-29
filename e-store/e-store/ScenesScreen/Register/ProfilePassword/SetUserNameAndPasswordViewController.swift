@@ -45,7 +45,7 @@ class SetUserNameAndPasswordViewController: UIViewController {
 extension SetUserNameAndPasswordViewController {
     private func bindViewModel() {
         setUserNameAndPasswordViewModel.checkConfigButton { [weak self] enable in
-            self?.submitButton.applyEnableOrDisableButton(enable: enable)
+            self?.submitButton.isEnableButtonStyle = enable
         }
     }
     
@@ -62,11 +62,11 @@ extension SetUserNameAndPasswordViewController {
 // MARK: Actions
 extension SetUserNameAndPasswordViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
-        if setUserNameAndPasswordViewModel.checkTextFieldCode() {
-            setUserNameAndPasswordViewModel.popToRoot(viewController: self)
-        } else {
-            showAlert(msg: "password or full name syntax wrong ")
+        setUserNameAndPasswordViewModel.checkConfirmationButton(viewController: self) {
+            self.showAlert(msg: "password or full name syntax wrong ")
+            
         }
+        
     }
 }
 // MARK: - Update TextField

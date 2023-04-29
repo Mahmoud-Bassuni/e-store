@@ -4,7 +4,7 @@
 //
 //  Created by Hassan on 09/04/2023.
 //
-import Foundation
+import UIKit
 
 // MARK: - ProtocolVerificationViewModelInput
 protocol VerificationViewModelInput {
@@ -15,7 +15,7 @@ protocol VerificationViewModelInput {
 
 // MARK: - ProtocolVerificationViewModelOutput
 protocol VerificationViewModelOutput {
-    
+    func checkContinueButton (viewController: ViewControllerType,callback: @escaping () -> Void)
     func checkConfigButton(callback: @escaping (Bool) -> Void)
     func checkTextFieldCode() -> Bool
 
@@ -59,7 +59,16 @@ extension VerificationViewModel: VerificationViewModelInput {
 
 // MARK: - VerificationViewModelOutput
 extension VerificationViewModel: VerificationViewModelOutput {
-    func checkTextFieldCode() -> Bool {
+    
+    func checkContinueButton (viewController: ViewControllerType,callback: @escaping () -> Void){
+        if checkTextFieldCode() {
+            showUsernameAndPassword(viewController: viewController)
+        } else {
+           callback()
+        }
+    }
+    
+    internal func checkTextFieldCode() -> Bool {
         return Validator.hasOneDigit(input: text[0]) &&
         Validator.hasOneDigit(input: text[1]) &&
         Validator.hasOneDigit(input: text[2]) &&

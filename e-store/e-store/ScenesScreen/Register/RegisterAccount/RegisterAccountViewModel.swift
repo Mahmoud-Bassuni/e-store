@@ -19,7 +19,8 @@ protocol RegisterAccountViewModelInput {
 // MARK: - ProtocolRegisterAccountViewModelOutput
 
 protocol RegisterAccountViewModelOutput {
-   
+    
+    func checkContinueButton (viewController: ViewControllerType,callback: @escaping () -> Void)
     func checkConfigButton(callback: @escaping (Bool) -> Void)
     func checkEmailOrPhone() -> Bool
 }
@@ -61,7 +62,16 @@ extension RegisterAccountViewModel: RegisterAccountViewModelInput {
 // MARK: - RegisterAccountViewModelOutput
 
 extension RegisterAccountViewModel: RegisterAccountViewModelOutput {
-    func checkEmailOrPhone() -> Bool {
+    
+    func checkContinueButton (viewController: ViewControllerType,callback: @escaping () -> Void){
+        if checkEmailOrPhone() {
+            showVerification(viewController: viewController)
+        } else {
+           callback()
+        }
+    }
+    
+    internal func checkEmailOrPhone() -> Bool {
         Validator.isValidEmail(email: emailOrPhone) || Validator.isValidPhoneNumber(phoneNumber: emailOrPhone)
     }
     
