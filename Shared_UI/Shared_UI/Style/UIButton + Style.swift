@@ -9,6 +9,15 @@ import Foundation
 import UIKit
 
 extension UIButton {
+    
+   public func applyEnableOrDisableButton(enable: Bool) {
+        isEnabled = enable
+        if enable {
+            selectStyle(style: .blueButton)
+        } else {
+            selectStyle(style: .grayButton)
+        }
+    }
     public enum ButtonStyle {
         case blueButton
         case lightBlueButton

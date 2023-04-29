@@ -49,12 +49,7 @@ extension VerificationScreenViewController {
    
     private func bindViewModel() {
         verificationViewModel.checkConfigButton { [weak self] enable in
-            self?.submitButton.isEnabled = enable
-            if enable {
-                self?.submitButton.selectStyle(style: .blueButton)
-            } else {
-                self?.submitButton.selectStyle(style: .grayButton)
-            }
+            self?.submitButton.applyEnableOrDisableButton(enable: enable)
         }
     }
     
@@ -72,8 +67,7 @@ extension VerificationScreenViewController {
 
         if verificationViewModel.checkTextFieldCode() {
             verificationViewModel.showUsernameAndPassword(viewController: self)
-        }
-            else {
+        } else {
             showAlert(msg: "code syntax wrong ")
         }
     }

@@ -60,7 +60,10 @@ extension VerificationViewModel: VerificationViewModelInput {
 // MARK: - VerificationViewModelOutput
 extension VerificationViewModel: VerificationViewModelOutput {
     func checkTextFieldCode() -> Bool {
-        return Validator.hasOneDigit(input: text[0]) && Validator.hasOneDigit(input: text[1]) && Validator.hasOneDigit(input: text[2]) && Validator.hasOneDigit(input: text[3]) 
+        return Validator.hasOneDigit(input: text[0]) &&
+        Validator.hasOneDigit(input: text[1]) &&
+        Validator.hasOneDigit(input: text[2]) &&
+        Validator.hasOneDigit(input: text[3]) 
     }
         
     func checkConfigButton(callback: @escaping (Bool) -> Void) {

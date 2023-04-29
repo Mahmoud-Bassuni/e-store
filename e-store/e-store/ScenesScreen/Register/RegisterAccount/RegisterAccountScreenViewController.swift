@@ -37,8 +37,7 @@ class RegisterAccountScreenViewController: UIViewController {
         bindTextField()
         bindViewModel()
     }
-    
-    
+        
 }
 
 // MARK: Bind view model
@@ -47,12 +46,7 @@ extension RegisterAccountScreenViewController {
     
     private func bindViewModel() {
         registerViewModel.checkConfigButton { [weak self] enable in
-            self?.submitButton.isEnabled = enable
-            if enable {
-                self?.submitButton.selectStyle(style: .blueButton)
-            } else {
-                self?.submitButton.selectStyle(style: .grayButton)
-            }
+            self?.submitButton.applyEnableOrDisableButton(enable: enable)
         }
     }
     

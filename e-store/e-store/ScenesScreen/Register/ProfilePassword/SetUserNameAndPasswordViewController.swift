@@ -45,12 +45,7 @@ class SetUserNameAndPasswordViewController: UIViewController {
 extension SetUserNameAndPasswordViewController {
     private func bindViewModel() {
         setUserNameAndPasswordViewModel.checkConfigButton { [weak self] enable in
-            self?.submitButton.isEnabled = enable
-            if enable {
-                self?.submitButton.selectStyle(style: .blueButton)
-            } else {
-                self?.submitButton.selectStyle(style: .grayButton)
-            }
+            self?.submitButton.applyEnableOrDisableButton(enable: enable)
         }
     }
     

@@ -77,7 +77,7 @@ extension LoginScreenViewController {
 
     private func bindViewModel() {
         loginViewModel.checkConfigButton { [weak self] enable in
-            self?.submitButton.isEnabled = enable
+            self?.submitButton.applyEnableOrDisableButton(enable: enable)
         }
     }
 
