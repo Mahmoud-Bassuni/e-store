@@ -62,7 +62,7 @@ extension SetUserNameAndPasswordViewController {
 // MARK: Actions
 extension SetUserNameAndPasswordViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
-        setUserNameAndPasswordViewModel.submitRegister(viewController: self) {
+        setUserNameAndPasswordViewModel.register(viewController: self) {
             self.showAlert(msg: "password or full name syntax wrong ")
             
         }
