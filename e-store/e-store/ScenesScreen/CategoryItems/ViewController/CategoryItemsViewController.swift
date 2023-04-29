@@ -37,6 +37,26 @@ class CategoryItemsViewController: UIViewController {
         
     }
     
+    private func setupNavigationItems() {
+         
+        let backArrow = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(backArrowTapped))
+         
+        backArrow.tintColor = UIColor.navyBlackColor
+        navigationItem.leftBarButtonItem = backArrow
+        
+        let cart = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(cartTapped))
+        cart.tintColor = UIColor.navyBlackColor
+        navigationItem.rightBarButtonItem = cart
+     }
+    
+    @objc private func backArrowTapped() {
+         // TODO:- Implement me
+     }
+    
+    @objc private func cartTapped() {
+         // TODO:- Implement me
+     }
+    
     func setUpCollectionView(){
         itemsCollectionView.layer.cornerRadius = 10
         itemsCollectionView.layer.backgroundColor = Asset.grayColor
