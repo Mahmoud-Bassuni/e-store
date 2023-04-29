@@ -17,7 +17,7 @@ protocol SetUserNameAndPasswordViewModelInput {
 
 // MARK: - ProtocolSetUserNameAndPasswordViewModelOutput
 protocol SetUserNameAndPasswordViewModelOutput {
-    func submit (viewController: ViewControllerType,callback: @escaping () -> Void)
+    func submitRegister (viewController: ViewControllerType,callback: @escaping () -> Void)
     func checkConfigButton(callback: @escaping (Bool) -> Void)
     func checkTextField() -> Bool
 
@@ -67,7 +67,7 @@ extension SetUserNameAndPasswordViewModel: SetUserNameAndPasswordViewModelInput 
 // MARK: - SetUserNameAndPasswordViewModelInput
 extension SetUserNameAndPasswordViewModel: SetUserNameAndPasswordViewModelOutput {
     
-    func submit (viewController: ViewControllerType,callback: @escaping () -> Void) {
+    func submitRegister (viewController: ViewControllerType,callback: @escaping () -> Void) {
         if checkTextField() {
             showLogin(viewController: viewController)
         } else {

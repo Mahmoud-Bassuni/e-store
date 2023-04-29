@@ -20,7 +20,7 @@ protocol RegisterAccountViewModelInput {
 
 protocol RegisterAccountViewModelOutput {
     
-    func submit (viewController: ViewControllerType,callback: @escaping () -> Void)
+    func submitUserName (viewController: ViewControllerType,callback: @escaping () -> Void)
     func checkConfigButton(callback: @escaping (Bool) -> Void)
     func checkEmailOrPhone() -> Bool
 }
@@ -63,7 +63,7 @@ extension RegisterAccountViewModel: RegisterAccountViewModelInput {
 
 extension RegisterAccountViewModel: RegisterAccountViewModelOutput {
     
-    func submit (viewController: ViewControllerType,callback: @escaping () -> Void) {
+    func submitUserName (viewController: ViewControllerType,callback: @escaping () -> Void) {
         if checkEmailOrPhone() {
             showVerification(viewController: viewController)
         } else {

@@ -15,7 +15,7 @@ protocol VerificationViewModelInput {
 
 // MARK: - ProtocolVerificationViewModelOutput
 protocol VerificationViewModelOutput {
-    func submit (viewController: ViewControllerType,callback: @escaping () -> Void)
+    func submitVerificationCode (viewController: ViewControllerType,callback: @escaping () -> Void)
     func checkConfigButton(callback: @escaping (Bool) -> Void)
     func checkTextFieldCode() -> Bool
 
@@ -60,7 +60,7 @@ extension VerificationViewModel: VerificationViewModelInput {
 // MARK: - VerificationViewModelOutput
 extension VerificationViewModel: VerificationViewModelOutput {
     
-    func submit (viewController: ViewControllerType,callback: @escaping () -> Void) {
+    func submitVerificationCode (viewController: ViewControllerType,callback: @escaping () -> Void) {
         if checkTextFieldCode() {
             showUsernameAndPassword(viewController: viewController)
         } else {

@@ -64,7 +64,7 @@ extension VerificationScreenViewController {
 // MARK: Actions
 extension VerificationScreenViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
-        verificationViewModel.submit(viewController: self) {
+        verificationViewModel.submitVerificationCode(viewController: self) {
             self.showAlert(msg: "code syntax wrong ")
         }
         
