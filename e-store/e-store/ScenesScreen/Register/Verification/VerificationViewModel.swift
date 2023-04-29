@@ -4,7 +4,7 @@
 //
 //  Created by Hassan on 09/04/2023.
 //
-import UIKit
+import Foundation
 
 // MARK: - ProtocolVerificationViewModelInput
 protocol VerificationViewModelInput {
