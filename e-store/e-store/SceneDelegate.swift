@@ -13,8 +13,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
        
-        guard  (scene as? UIWindowScene) != nil else { return }
-        
+        guard let sceneWindow = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: sceneWindow)
+        DependencyManager.shared.setupAssemplers()
+        self.window = window
+        DependencyManager.shared.sharedContainer.resolve(AppRouterProtocol.self)?.startJourny(window: window)
+      
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

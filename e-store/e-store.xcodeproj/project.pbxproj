@@ -53,6 +53,7 @@
 		5C543C6029F01D7D008294AB /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C543C5F29F01D7D008294AB /* ReviewView.swift */; };
 		5C543C6429F02BB2008294AB /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C543C6229F02BB2008294AB /* ReviewTableViewCell.swift */; };
 		5C543C6529F02BB2008294AB /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C543C6329F02BB2008294AB /* ReviewTableViewCell.xib */; };
+		5C8CD90C29F882CE0065CF3F /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8CD90B29F882CE0065CF3F /* AppRouter.swift */; };
 		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
 		5CBD37A529E844660032EE04 /* IQManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD37A429E844660032EE04 /* IQManager.swift */; };
 		5CC286DE29F0C305008D0AF3 /* ReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC286DD29F0C305008D0AF3 /* ReviewView.xib */; };
@@ -153,6 +154,7 @@
 		5C543C5F29F01D7D008294AB /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		5C543C6229F02BB2008294AB /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		5C543C6329F02BB2008294AB /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
+		5C8CD90B29F882CE0065CF3F /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		5CBD37A429E844660032EE04 /* IQManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQManager.swift; sourceTree = "<group>"; };
 		5CC286DD29F0C305008D0AF3 /* ReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewView.xib; sourceTree = "<group>"; };
 		B49575E65FE76E7CB37BDD90 /* libPods-e-store.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-e-store.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +278,8 @@
 		4C68C60E29E81B5C005A4175 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				4C92168029F0214B006FA99A /* SellerInformation */,
+				4C92168529F03B88006FA99A /* DescriptionView */,
 				4C113B5B29F6CCA10034B260 /* AddToCartView */,
 				5C543C6629F0C291008294AB /* ReviewView */,
 				4C310DE729F543110061C069 /* FeaturedProductCollectionView */,
@@ -336,6 +340,7 @@
 			children = (
 				4CEEB41229E2E27500ECCE47 /* ViewControllerType.swift */,
 				4CEEB41429E2E56400ECCE47 /* StoreRouter.swift */,
+				5C8CD90B29F882CE0065CF3F /* AppRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -536,8 +541,6 @@
 		C9E9EAFF29D8FB9900400853 /* ScenesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				4C92168529F03B88006FA99A /* DescriptionView */,
-				4C92168029F0214B006FA99A /* SellerInformation */,
 				5C0EF6D029E22E49004C92CB /* Register */,
 				4CEEB40529E2CF2D00ECCE47 /* ProductDetails */,
 				C9BBABE029E6057C009A2650 /* CategoryItems */,
@@ -788,7 +791,7 @@
 				5C0EF6F829E2EEB4004C92CB /* VerificationViewModel.swift in Sources */,
 				5C543C6429F02BB2008294AB /* ReviewTableViewCell.swift in Sources */,
 				C9508C3929E23346008E8C37 /* LoginScreenViewController.swift in Sources */,
-				C94D166A29EA0F5E00338AF8 /* CategoryItem.swift in Sources */,
+				5C8CD90C29F882CE0065CF3F /* AppRouter.swift in Sources */,
 				4C3557DA29DB917400703789 /* DependencyManager.swift in Sources */,
 				5C0EF6D729E22F12004C92CB /* RegisterAccountViewModel.swift in Sources */,
 				4C113B5F29F6CCD50034B260 /* AddToCartView.swift in Sources */,
@@ -973,7 +976,6 @@
 				INFOPLIST_FILE = "e-store/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1003,7 +1005,6 @@
 				INFOPLIST_FILE = "e-store/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

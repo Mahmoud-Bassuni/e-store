@@ -14,6 +14,9 @@ protocol LoginViewModelInput {
 
 protocol LoginViewModelOutput {
     func checkConfigButton(callback: @escaping (Bool) -> Void)
+    func validUsername() -> Bool
+    func validPassword() -> Bool
+    func checkUser(completion:@escaping (LoginMessage) -> Void)
 }
 
 // MARK: LoginViewModel
@@ -66,7 +69,7 @@ extension LoginViewModel: LoginViewModelOutput {
 extension LoginViewModel {
     
     func checkUser(completion:@escaping (LoginMessage) -> Void) {
-        var checkUsernameAndPassword = checkUsernameAndPassword()
+        let checkUsernameAndPassword = checkUsernameAndPassword()
         if(!checkUsernameAndPassword) {
             completion(.validateError)
         } else {
@@ -77,7 +80,7 @@ extension LoginViewModel {
                     completion(.success)
                 case .failure(let error):
                     print("Login failed, error: \(error)")
-                    completion(.failure(error.localizedDescription))
+                    completion(.failure(error.description))
                 }
             }
         }
@@ -89,8 +92,8 @@ extension LoginViewModel {
 extension LoginViewModel {
     
     func checkUsernameAndPassword() -> Bool {
-        var emailValid :Bool = validUsername()
-        var passwordValid :Bool = validPassword()
+        let emailValid :Bool = validUsername()
+        let passwordValid :Bool = validPassword()
         if( (emailValid && passwordValid) == false) {
             return false
        }
