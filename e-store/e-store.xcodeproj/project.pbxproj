@@ -358,9 +358,9 @@
 		5C0EF6D029E22E49004C92CB /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				5C46EDE029E38C9C00D72406 /* ProfilePassword */,
-				5C0EF6F429E2EEA2004C92CB /* Verification */,
-				5C0EF6D829E22F27004C92CB /* RegisterAccount */,
+                5C46EDE029E38C9C00D72406 /* ProfilePassword */,
+                5C0EF6F429E2EEA2004C92CB /* Verification */,
+                5C0EF6D829E22F27004C92CB /* RegisterAccount */,
 			);
 			path = Register;
 			sourceTree = "<group>";
