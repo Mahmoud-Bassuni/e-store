@@ -60,7 +60,7 @@ extension RegisterAccountScreenViewController {
 extension RegisterAccountScreenViewController {
     @IBAction func continueButtonPressed(_ sender: UIButton) {
 
-        registerViewModel.checkContinueButton(viewController: self) {
+        registerViewModel.submit(viewController: self) {
             self.showAlert(msg: "username or phoneNumber is wrong syntax")
         }
     }
