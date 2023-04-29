@@ -26,4 +26,18 @@ public extension UIColor {
     static var lightBlack: UIColor {
         UIColor(red: 0, green: 0, blue: 0, alpha: 0.05)
     }
+    static var lightGreenColor: UIColor {
+        UIColor(red: 0.894, green: 0.953, blue: 0.918, alpha: 1)
+    }
+    static var lightRedColor: UIColor {
+        UIColor(red: 1, green: 0.925, blue: 0.91, alpha: 1)
+    }
+    static var lightYellowColor: UIColor {
+        UIColor(red: 1, green: 0.965, blue: 0.894, alpha: 1)
+    }
+    static var lightPurpleColor: UIColor {
+        UIColor(red: 0.945, green: 0.929, blue: 0.988, alpha: 1)
+    }
+    
+    
 }
