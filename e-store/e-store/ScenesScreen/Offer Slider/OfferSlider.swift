@@ -12,23 +12,16 @@ class OfferSlider: UIView {
     
     @IBOutlet private var contentView: UIView!
     @IBOutlet private weak var offerCollectionView: UICollectionView!
-//    @IBOutlet private weak var productName: UILabel!
-//    @IBOutlet private weak var productPrice: UILabel!
-//    @IBOutlet private weak var productRate: UILabel!
-//    @IBOutlet private weak var productReviewsNumber: UILabel!
     
     // MARK: - Properties
     
-    private var productImages: [UIImage] = []
-    private var timer: Timer?
-    private var currentIndex: Int = 0
+    private var itemsOffer: [OfferModel] = []
     
     // MARK: - Life cycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        setupUi()
         setupProductImagesCollectionView()
         registerCell()
     }
@@ -36,7 +29,6 @@ class OfferSlider: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
-        setupUi()
         setupProductImagesCollectionView()
         registerCell()
     }
@@ -47,13 +39,7 @@ class OfferSlider: UIView {
         fromNib(type: OfferSlider.self)
     }
     
-    private func setupUi() {
-//        productPrice.textColor = UIColor.scarletColor
-//        [productRate, productReviewsNumber, productName].forEach {
-//            $0?.textColor = UIColor.navyBlackColor
-//        }
-//        productImagesCollectionView.layer.cornerRadius = 10
-    }
+
     
     private  func setupProductImagesCollectionView() {
         offerCollectionView.dataSource = self
@@ -67,11 +53,9 @@ class OfferSlider: UIView {
     }
     
     func setupProductImagesList() {
-        productImages.append(UIImage(named: Asset.applewatchRemovebgPreview.name) ?? UIImage())
-        productImages.append(UIImage(named: Asset.headphoneRemovebgPreview.name) ?? UIImage())
-        productImages.append(UIImage(named: Asset.airpodsRemovebgPreview.name) ?? UIImage())
-        productImages.append(UIImage(named: Asset.flowerRemovebgPreview.name) ?? UIImage())
-        productImages.append(UIImage(named: Asset.carRemovebgPreview.name) ?? UIImage())
+        itemsOffer.append(OfferModel(title: "Gatis Ongkir Selama PPKM!", description: "Periode Mei - Agustus 2021"))
+        itemsOffer.append(OfferModel(title: "Gatis Ongkir Selama PPKM!", description: "Periode Mei - Agustus 2021"))
+        itemsOffer.append(OfferModel(title: "Gatis Ongkir Selama PPKM!", description: "Periode Mei - Agustus 2021"))
     }
      
 }
@@ -80,16 +64,16 @@ class OfferSlider: UIView {
 
 extension OfferSlider: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        productImages.count
+        itemsOffer.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "OfferCollectionViewCell",
             for: indexPath) as? OfferCollectionViewCell {
-//            cell.setupCell(productImage: productImages[indexPath.row],
-//                           imagesCounter: indexPath.row + 1,
-//                           totalImagesNumber: productImages.count)
+            let item = itemsOffer[indexPath.row]
+            cell.setupCell(title: item.title, description: item.description, photo: item.photo)
+            cell.setupUIView()
             return cell
         } else {
             return UICollectionViewCell()

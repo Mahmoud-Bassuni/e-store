@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,7 +25,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="315" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-5F-pjJ">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-5F-pjJ">
                         <rect key="frame" x="0.0" y="0.0" width="315" height="150"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="young-authentic-charismatic-real-people-woman-against-wall-pointing-with-forefingers-copy-space-expressing-excitement-desire 1" translatesAutoresizingMaskIntoConstraints="NO" id="sct-ji-pDu">
@@ -62,7 +61,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
                             <constraint firstItem="3tD-qX-1dy" firstAttribute="leading" secondItem="v4H-5F-pjJ" secondAttribute="leading" id="DGb-Gl-5gA"/>
                             <constraint firstAttribute="height" constant="150" id="FIF-cp-pCA"/>
@@ -85,13 +83,17 @@
                 <constraint firstAttribute="trailing" secondItem="v4H-5F-pjJ" secondAttribute="trailing" id="fLO-om-OLN"/>
             </constraints>
             <size key="customSize" width="315" height="150"/>
+            <connections>
+                <outlet property="descriptionOfferLabel" destination="OSW-6T-eb8" id="J2v-s5-iDk"/>
+                <outlet property="mainView" destination="v4H-5F-pjJ" id="ih4-Wc-JYL"/>
+                <outlet property="photoOfferImage" destination="sct-ji-pDu" id="qBb-Sa-LZg"/>
+                <outlet property="subView" destination="3tD-qX-1dy" id="wIJ-z3-gsi"/>
+                <outlet property="titleOfferLabel" destination="0Eh-GJ-21t" id="H0Q-aS-o6M"/>
+            </connections>
             <point key="canvasLocation" x="159.54198473282443" y="54.929577464788736"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="young-authentic-charismatic-real-people-woman-against-wall-pointing-with-forefingers-copy-space-expressing-excitement-desire 1" width="206" height="150"/>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
