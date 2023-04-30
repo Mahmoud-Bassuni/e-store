@@ -27,6 +27,7 @@ internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
   internal static let bmRemovebgPreview = ImageAsset(name: "BM-removebg-preview")
   internal static let home = ImageAsset(name: "Home ")
+  internal static let offerBackground = ImageAsset(name: "OfferBackground")
   internal static let shieldDone = ImageAsset(name: "Shield Done")
   internal static let accountPicture = ImageAsset(name: "account-picture")
   internal static let airpodsRemovebgPreview = ImageAsset(name: "airpods-removebg-preview")
