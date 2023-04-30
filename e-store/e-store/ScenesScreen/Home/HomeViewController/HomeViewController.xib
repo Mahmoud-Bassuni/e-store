@@ -28,14 +28,14 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bmE-6M-JVg">
                                     <rect key="frame" x="0.0" y="0.0" width="293" height="377"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGh-Ch-JFD">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGh-Ch-JFD" userLabel="Search Bar">
                                             <rect key="frame" x="0.0" y="0.0" width="293" height="50"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="zXW-7t-u5T"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwO-s0-lhi">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwO-s0-lhi" userLabel="Free Shipping">
                                             <rect key="frame" x="0.0" y="80" width="293" height="150"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -45,14 +45,14 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qfg-XG-Zq5">
                                             <rect key="frame" x="0.0" y="260" width="293" height="117"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amv-h1-DKq">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amv-h1-DKq" userLabel="Categories">
                                                     <rect key="frame" x="0.0" y="0.0" width="293" height="25"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="uAh-DG-tn1"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-3w-RiX">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-3w-RiX" userLabel="Categories Collection View">
                                                     <rect key="frame" x="0.0" y="41" width="293" height="76"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -69,14 +69,14 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ma4-cF-M1o">
                                             <rect key="frame" x="0.0" y="0.0" width="293" height="292"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24n-lf-C8V">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24n-lf-C8V" userLabel="Featured Product">
                                                     <rect key="frame" x="0.0" y="0.0" width="293" height="25"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="WRg-WE-At9"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSS-JP-nVw">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSS-JP-nVw" userLabel="Featured Product collection view">
                                                     <rect key="frame" x="0.0" y="50" width="293" height="242"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -88,21 +88,21 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="pkH-Mr-nUf">
                                             <rect key="frame" x="0.0" y="332" width="293" height="463"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvL-FJ-6vj">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvL-FJ-6vj" userLabel="C02 - Cable Multifuntion">
                                                     <rect key="frame" x="0.0" y="0.0" width="293" height="150"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="M6s-4H-8u4"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-Bm-6b9">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfd-Bm-6b9" userLabel="Best Sellers">
                                                     <rect key="frame" x="0.0" y="173" width="293" height="25"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="R25-4X-gVp"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgk-In-m1C">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgk-In-m1C" userLabel="Best Sellers Collection View">
                                                     <rect key="frame" x="0.0" y="221" width="293" height="242"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -120,15 +120,17 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="250" id="CUF-Kr-Gji"/>
                                                     </constraints>
+                                                    <string key="userLabel">Modular
+Headphone</string>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fP7-8k-BEO">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fP7-8k-BEO" userLabel="New Arrivals">
                                                     <rect key="frame" x="0.0" y="273" width="293" height="25"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="eOC-Nc-TVA"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4Y-vo-Urz">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4Y-vo-Urz" userLabel="New Arrivals Collection View">
                                                     <rect key="frame" x="0.0" y="321" width="293" height="242"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -140,14 +142,14 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Mbw-dJ-9Rc">
                                             <rect key="frame" x="0.0" y="1438" width="293" height="292"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0H-Vq-7aw">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0H-Vq-7aw" userLabel="Top Rated Product">
                                                     <rect key="frame" x="0.0" y="0.0" width="293" height="25"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="THg-UF-Gex"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flc-BX-ZMR">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flc-BX-ZMR" userLabel="Top Rated Product Collection View">
                                                     <rect key="frame" x="0.0" y="50" width="293" height="242"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -159,14 +161,14 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="BBk-ke-LOu">
                                             <rect key="frame" x="0.0" y="1770" width="293" height="292"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gis-1U-nAM">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gis-1U-nAM" userLabel="Special Offers">
                                                     <rect key="frame" x="0.0" y="0.0" width="293" height="25"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="DQe-fd-Roi"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEh-MS-RZp">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEh-MS-RZp" userLabel="Special Offers Collection View">
                                                     <rect key="frame" x="0.0" y="50" width="293" height="242"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -180,7 +182,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FRd-vG-TRs">
                                     <rect key="frame" x="0.0" y="2539" width="293" height="355"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4C-KC-ffI">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4C-KC-ffI" userLabel="Latest News">
                                             <rect key="frame" x="0.0" y="0.0" width="293" height="355"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
