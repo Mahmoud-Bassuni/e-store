@@ -54,10 +54,6 @@
 		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
 		5CBD37A529E844660032EE04 /* IQManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD37A429E844660032EE04 /* IQManager.swift */; };
 		5CC286DE29F0C305008D0AF3 /* ReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC286DD29F0C305008D0AF3 /* ReviewView.xib */; };
-		5CF3C40B29FD9FFD008F5A0B /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3C40929FD9FFC008F5A0B /* DescriptionView.xib */; };
-		5CF3C40C29FD9FFD008F5A0B /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3C40A29FD9FFC008F5A0B /* DescriptionView.swift */; };
-		5CF3C41029FDA009008F5A0B /* SellerInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3C40E29FDA009008F5A0B /* SellerInformationView.xib */; };
-		5CF3C41129FDA009008F5A0B /* SellerInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3C40F29FDA009008F5A0B /* SellerInformationView.swift */; };
 		5CF3C41429FDA93B008F5A0B /* OfferSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3C41329FDA93B008F5A0B /* OfferSlider.xib */; };
 		5CF3C41629FDA996008F5A0B /* OfferSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3C41529FDA996008F5A0B /* OfferSlider.swift */; };
 		5CF3C41A29FDAAB7008F5A0B /* OfferCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3C41829FDAAB7008F5A0B /* OfferCollectionViewCell.swift */; };
@@ -154,10 +150,6 @@
 		5C8CD90B29F882CE0065CF3F /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		5CBD37A429E844660032EE04 /* IQManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQManager.swift; sourceTree = "<group>"; };
 		5CC286DD29F0C305008D0AF3 /* ReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewView.xib; sourceTree = "<group>"; };
-		5CF3C40929FD9FFC008F5A0B /* DescriptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
-		5CF3C40A29FD9FFC008F5A0B /* DescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
-		5CF3C40E29FDA009008F5A0B /* SellerInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SellerInformationView.xib; sourceTree = "<group>"; };
-		5CF3C40F29FDA009008F5A0B /* SellerInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellerInformationView.swift; sourceTree = "<group>"; };
 		5CF3C41329FDA93B008F5A0B /* OfferSlider.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferSlider.xib; sourceTree = "<group>"; };
 		5CF3C41529FDA996008F5A0B /* OfferSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferSlider.swift; sourceTree = "<group>"; };
 		5CF3C41829FDAAB7008F5A0B /* OfferCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -278,8 +270,6 @@
 		4C68C60E29E81B5C005A4175 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				5CF3C40D29FDA009008F5A0B /* SellerInformation */,
-				5CF3C40829FD9FFC008F5A0B /* DescriptionView */,
 				4C113B5B29F6CCA10034B260 /* AddToCartView */,
 				5C543C6629F0C291008294AB /* ReviewView */,
 				4C310DE729F543110061C069 /* FeaturedProductCollectionView */,
@@ -414,24 +404,6 @@
 				5C543C6129F02B81008294AB /* ReviewCell */,
 			);
 			path = ReviewView;
-			sourceTree = "<group>";
-		};
-		5CF3C40829FD9FFC008F5A0B /* DescriptionView */ = {
-			isa = PBXGroup;
-			children = (
-				5CF3C40929FD9FFC008F5A0B /* DescriptionView.xib */,
-				5CF3C40A29FD9FFC008F5A0B /* DescriptionView.swift */,
-			);
-			path = DescriptionView;
-			sourceTree = "<group>";
-		};
-		5CF3C40D29FDA009008F5A0B /* SellerInformation */ = {
-			isa = PBXGroup;
-			children = (
-				5CF3C40E29FDA009008F5A0B /* SellerInformationView.xib */,
-				5CF3C40F29FDA009008F5A0B /* SellerInformationView.swift */,
-			);
-			path = SellerInformation;
 			sourceTree = "<group>";
 		};
 		5CF3C41229FDA888008F5A0B /* Offer Slider */ = {
@@ -663,7 +635,6 @@
 				5C46EDE429E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib in Resources */,
 				5CF3C41429FDA93B008F5A0B /* OfferSlider.xib in Resources */,
 				4C68C61429E81CEC005A4175 /* ProductDetailsView.xib in Resources */,
-				5CF3C40B29FD9FFD008F5A0B /* DescriptionView.xib in Resources */,
 				B62D385529BA609100179020 /* LaunchScreen.storyboard in Resources */,
 				5C0EF6FA29E2EEB4004C92CB /* VerificationScreenViewController.xib in Resources */,
 				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
@@ -675,7 +646,6 @@
 				4C310DE429F4A2AB0061C069 /* FeaturedProductView.xib in Resources */,
 				4CEEB40929E2CF6700ECCE47 /* ProductDetailsViewController.xib in Resources */,
 				C9508C3829E23346008E8C37 /* LoginScreenViewController.xib in Resources */,
-				5CF3C41029FDA009008F5A0B /* SellerInformationView.xib in Resources */,
 				B62D385029BA608F00179020 /* Main.storyboard in Resources */,
 				4C310DED29F5437A0061C069 /* FeaturedProductSlider.xib in Resources */,
 				5CF3C41B29FDAAB7008F5A0B /* OfferCollectionViewCell.xib in Resources */,
@@ -763,9 +733,7 @@
 				B62D384D29BA608F00179020 /* ViewController.swift in Sources */,
 				4C310DF429F5A2380061C069 /* FeaturedProductModel.swift in Sources */,
 				4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */,
-				5CF3C40C29FD9FFD008F5A0B /* DescriptionView.swift in Sources */,
 				C92A974829F193380013E44D /* LoginMessage.swift in Sources */,
-				5CF3C41129FDA009008F5A0B /* SellerInformationView.swift in Sources */,
 				5C46EDE629E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift in Sources */,
 				C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */,
 				4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */,
