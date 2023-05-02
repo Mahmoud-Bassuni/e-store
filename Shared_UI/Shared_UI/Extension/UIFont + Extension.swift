@@ -10,6 +10,6 @@ import UIKit
 
 extension UIFont {
     static var buttonFont: UIFont {
-        UIFont(name: "Helvetica", size: 14) ?? UIFont()
+        UIFont(name: "DMSans-Medium", size: 14) ?? UIFont()
     }
 }
