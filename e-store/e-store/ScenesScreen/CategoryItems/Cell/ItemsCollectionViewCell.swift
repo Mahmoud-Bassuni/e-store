@@ -21,7 +21,7 @@ class ItemsCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    public func setupOutlets(product: CategoryItem) {
+    public func bindOutlets(product: CategoryItem) {
         itemName.text = product.name
         itemImg.setImage(for: product.imgURL, placeHolderImage: UIImage(named: "airPods1") ?? UIImage())
         itemName.text = product.name

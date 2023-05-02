@@ -47,6 +47,13 @@ class CategoryItemsViewController: UIViewController {
         let cart = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(cartTapped))
         cart.tintColor = UIColor.navyBlackColor
         navigationItem.rightBarButtonItem = cart
+        
+//        let subtitleLabel = UILabel()
+//        subtitleLabel.text = "Subtitle"
+//        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
+//        subtitleLabel.textColor = UIColor.gray
+//
+//        self.navigationItem.titleView = subtitleLabel
      }
     
     @objc private func backArrowTapped() {
@@ -84,7 +91,7 @@ extension CategoryItemsViewController: UICollectionViewDelegate, UICollectionVie
         let cell = itemsCollectionView.dequeueReusableCell(withReuseIdentifier: "ItemsCollectionViewCell", for: indexPath) as! ItemsCollectionViewCell
         cell.layer.cornerRadius = 10
         let item = items[indexPath.row]
-        cell.setupOutlets(product: item)
+        cell.bindOutlets(product: item)
         return cell
     }
     
