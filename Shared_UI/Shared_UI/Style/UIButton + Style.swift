@@ -9,6 +9,20 @@ import Foundation
 import UIKit
 
 extension UIButton {
+    
+    public var isEnableButtonStyle: Bool {
+        get{
+            self.isEnableButtonStyle
+        }
+        set (newValue){
+            isUserInteractionEnabled = newValue
+            if newValue {
+                selectStyle(style: .blueButton)
+            } else {
+                selectStyle(style: .grayButton)
+            }
+        }
+    }
     public enum ButtonStyle {
         case blueButton
         case lightBlueButton
@@ -34,9 +48,11 @@ extension UIButton {
 }
 // MARK: - setup button styles
 extension UIButton {
-    
-    private func configureCommonStyles() {
+    public override convenience init(frame: CGRect) {
+        self.init(frame: frame)
         titleLabel?.font = UIFont.buttonFont
+    }
+    private func configureCommonStyles() {
         layer.cornerRadius = 10
         layer.masksToBounds = true
         NSLayoutConstraint.activate([

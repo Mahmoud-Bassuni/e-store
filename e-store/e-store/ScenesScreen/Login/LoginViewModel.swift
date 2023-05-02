@@ -10,6 +10,8 @@ import Domain
 protocol LoginViewModelInput {
     func updateEmail(email: String)
     func updatePassword(password: String)
+    func showRegisterAccount(viewController: ViewControllerType)
+
 }
 
 protocol LoginViewModelOutput {
@@ -25,7 +27,10 @@ class LoginViewModel {
     private var username = ""
     private var password = ""
     private var checkButtonEable : (Bool) -> Void = { _ in }
-
+    private var storeRouter: StoreRouter
+    init( storeRouter: StoreRouter) {
+        self.storeRouter = storeRouter
+    }
     func updateButtonState() {
 
         let isEmailValid = !username.isEmpty
@@ -47,7 +52,10 @@ extension LoginViewModel: LoginViewModelInput {
         self.password = password
         updateButtonState()
     }
-    
+    func showRegisterAccount(viewController: ViewControllerType) {
+        storeRouter.showRegisterAccount(viewController: viewController)
+    }
+
 }
 // MARK: LoginViewModelInput
 extension LoginViewModel: LoginViewModelOutput {
@@ -86,8 +94,6 @@ extension LoginViewModel {
         }
     }
 }
-
-
 
 extension LoginViewModel {
     
