@@ -7,9 +7,6 @@
 import Foundation
 import UIKit
 
-import Foundation
-import UIKit
-
 public extension UIColor {
     static var mediumBlueColor: UIColor {
         UIColor(red: 54/255, green: 105/255, blue: 201/255, alpha: 1)
