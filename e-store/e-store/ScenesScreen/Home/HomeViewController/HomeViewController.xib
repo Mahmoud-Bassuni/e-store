@@ -28,7 +28,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bmE-6M-JVg">
                                     <rect key="frame" x="0.0" y="0.0" width="293" height="377"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGh-Ch-JFD" userLabel="Search Bar">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGh-Ch-JFD" userLabel="Search Bar" customClass="SearchBarView" customModule="e_store" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="293" height="50"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -45,14 +45,14 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qfg-XG-Zq5">
                                             <rect key="frame" x="0.0" y="260" width="293" height="117"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amv-h1-DKq" userLabel="Categories">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amv-h1-DKq" userLabel="Categories" customClass="CategoriesBar" customModule="e_store" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="293" height="25"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="uAh-DG-tn1"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-3w-RiX" userLabel="Categories Collection View">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-3w-RiX" userLabel="Categories Collection View" customClass="CategoriesSlider" customModule="e_store" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="41" width="293" height="76"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
