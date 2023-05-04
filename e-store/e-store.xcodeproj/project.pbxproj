@@ -272,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				4C42E82329FE938400D3DC34 /* BestSellersView */,
+				5CAA266829FFCFD400212846 /* OfferBanner */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -330,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				4C42E82229FE937100D3DC34 /* CustomViews */,
-				5CAA266829FFCFD400212846 /* OfferBanner */,
 				4C929F5629F95CAF00FD696F /* HomeViewController */,
 			);
 			path = Home;
