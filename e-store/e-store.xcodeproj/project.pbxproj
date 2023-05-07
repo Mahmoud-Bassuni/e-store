@@ -29,6 +29,8 @@
 		4C929F4829F93AC100FD696F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C929F4729F93AC100FD696F /* MainTabBarController.swift */; };
 		4C929F5429F95CA600FD696F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C929F5229F95CA600FD696F /* HomeViewController.swift */; };
 		4C929F5529F95CA600FD696F /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C929F5329F95CA600FD696F /* HomeViewController.xib */; };
+		4C977F5B29FF24A300724AB5 /* SpecialOffersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C977F5A29FF24A300724AB5 /* SpecialOffersView.xib */; };
+		4C977F5D29FF24B000724AB5 /* SpecialOffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C977F5C29FF24B000724AB5 /* SpecialOffersView.swift */; };
 		4CDF6C9C29FD7A0F00A72197 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF6C9A29FD7A0F00A72197 /* DescriptionView.swift */; };
 		4CDF6C9D29FD7A0F00A72197 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDF6C9B29FD7A0F00A72197 /* DescriptionView.xib */; };
 		4CDF6CA029FD7A1900A72197 /* SellerInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDF6C9E29FD7A1900A72197 /* SellerInformationView.xib */; };
@@ -133,6 +135,8 @@
 		4C929F4729F93AC100FD696F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4C929F5229F95CA600FD696F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4C929F5329F95CA600FD696F /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		4C977F5A29FF24A300724AB5 /* SpecialOffersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecialOffersView.xib; sourceTree = "<group>"; };
+		4C977F5C29FF24B000724AB5 /* SpecialOffersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialOffersView.swift; sourceTree = "<group>"; };
 		4CDF6C9A29FD7A0F00A72197 /* DescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		4CDF6C9B29FD7A0F00A72197 /* DescriptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
 		4CDF6C9E29FD7A1900A72197 /* SellerInformationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SellerInformationView.xib; sourceTree = "<group>"; };
@@ -331,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				4C42E82229FE937100D3DC34 /* CustomViews */,
+				4C977F5829FF247100724AB5 /* SpecialOffers */,
 				4C929F5629F95CAF00FD696F /* HomeViewController */,
 			);
 			path = Home;
@@ -343,6 +348,23 @@
 				4C929F5329F95CA600FD696F /* HomeViewController.xib */,
 			);
 			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		4C977F5829FF247100724AB5 /* SpecialOffers */ = {
+			isa = PBXGroup;
+			children = (
+				4C977F5929FF247C00724AB5 /* SpecialOfferView */,
+			);
+			path = SpecialOffers;
+			sourceTree = "<group>";
+		};
+		4C977F5929FF247C00724AB5 /* SpecialOfferView */ = {
+			isa = PBXGroup;
+			children = (
+				4C977F5A29FF24A300724AB5 /* SpecialOffersView.xib */,
+				4C977F5C29FF24B000724AB5 /* SpecialOffersView.swift */,
+			);
+			path = SpecialOfferView;
 			sourceTree = "<group>";
 		};
 		4CDF6C8F29FD78E200A72197 /* DescriptionView */ = {
@@ -699,6 +721,7 @@
 				4CEEB40E29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib in Resources */,
 				4C310DF229F543B30061C069 /* FeaturedProductCollectionViewCell.xib in Resources */,
 				B62D385229BA609100179020 /* Assets.xcassets in Resources */,
+				4C977F5B29FF24A300724AB5 /* SpecialOffersView.xib in Resources */,
 				4C310DE429F4A2AB0061C069 /* FeaturedProductView.xib in Resources */,
 				4CDF6CA029FD7A1900A72197 /* SellerInformationView.xib in Resources */,
 				4CEEB40929E2CF6700ECCE47 /* ProductDetailsViewController.xib in Resources */,
@@ -791,6 +814,7 @@
 				4C310DF429F5A2380061C069 /* FeaturedProductModel.swift in Sources */,
 				4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */,
 				C92A974829F193380013E44D /* LoginMessage.swift in Sources */,
+				4C977F5D29FF24B000724AB5 /* SpecialOffersView.swift in Sources */,
 				5C46EDE629E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift in Sources */,
 				C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */,
 				4CEEB41329E2E27500ECCE47 /* ViewControllerType.swift in Sources */,
