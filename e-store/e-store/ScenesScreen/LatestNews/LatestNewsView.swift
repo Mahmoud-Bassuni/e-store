@@ -8,39 +8,33 @@
 import UIKit
 
 class LatestNewsView: UIView {
-
+    
     @IBOutlet weak var latestNewsTableView: UITableView!
     
     var dataSource:[LatestNewsModel] = []
+    var viewModel = LatestNewsViewModel()
+    
+    init(viewModel: LatestNewsViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: CGRect.zero)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
         setUpTableView()
-        setUpDataSourceList()
-
+        dataSource = viewModel.setUpDataSourceList()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
         setUpTableView()
-        setUpDataSourceList()
+        dataSource = viewModel.setUpDataSourceList()
     }
     
     func commonInit() {
         fromNib(type: LatestNewsView.self)
-    }
-    
-    func setUpDataSourceList(){
-        dataSource = [LatestNewsModel(newsImage: UIImage(named: "avatar") ?? UIImage(),
-                                      newsTitle: "Philosophy That Addresses Topics Such As Goodness",
-                                      newsDesc: "Agar tetap kinclong, bodi motor ten...", newsDate: "13 Jan 2021"),
-                      LatestNewsModel(newsImage: UIImage(named: "avatar") ?? UIImage(),
-                                      newsTitle: "Philosophy That Addresses Topics Such As Goodness",
-                                      newsDesc: "Agar tetap kinclong, bodi motor ten...", newsDate: "13 Jan 2021"),
-                      LatestNewsModel(newsImage: UIImage(named: "avatar") ?? UIImage(),
-                                      newsTitle: "Philosophy That Addresses Topics Such As Goodness",
-                                      newsDesc: "Agar tetap kinclong, bodi motor ten...", newsDate: "13 Jan 2021") ]
     }
     
     func setUpTableView() {

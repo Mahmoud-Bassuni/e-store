@@ -182,7 +182,7 @@ Headphone</string>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FRd-vG-TRs">
                                     <rect key="frame" x="0.0" y="2539" width="293" height="355"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4C-KC-ffI" userLabel="Latest News">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4C-KC-ffI" userLabel="Latest News" customClass="LatestNewsView" customModule="e_store" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="293" height="355"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
