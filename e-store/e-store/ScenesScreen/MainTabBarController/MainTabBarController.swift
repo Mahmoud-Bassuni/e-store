@@ -33,8 +33,8 @@ class MainTabBarController: UITabBarController {
     private func controllersToSet() -> [UIViewController] {
         // these controllers just for test
         let productDetails = ProductDetailsViewController()
-        let verification = VerificationScreenViewController()
-        return [productDetails, verification]
+        let home = HomeViewController()
+        return [productDetails, home]
     }
     private func setTabBarItemsTitle() {
         let titles = ["HOME", "WISHLIST", "ORDER", "ACCOUNT"]
