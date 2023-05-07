@@ -25,16 +25,3 @@ class DecoratedView: UIView {
         
     }
 }
-
-extension UIView {
-    @IBInspectable var height: CGFloat {
-        get {
-            self.height
-        }
-        set {
-            NSLayoutConstraint.activate([
-                heightAnchor.constraint(equalToConstant: newValue)
-            ])
-        }
-    }
-}
