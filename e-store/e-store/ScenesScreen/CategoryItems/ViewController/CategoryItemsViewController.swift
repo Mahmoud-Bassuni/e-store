@@ -48,12 +48,6 @@ class CategoryItemsViewController: UIViewController {
         cart.tintColor = UIColor.navyBlackColor
         navigationItem.rightBarButtonItem = cart
         
-//        let subtitleLabel = UILabel()
-//        subtitleLabel.text = "Subtitle"
-//        subtitleLabel.font = UIFont.systemFont(ofSize: 12)
-//        subtitleLabel.textColor = UIColor.gray
-//
-//        self.navigationItem.titleView = subtitleLabel
      }
     
     @objc private func backArrowTapped() {
