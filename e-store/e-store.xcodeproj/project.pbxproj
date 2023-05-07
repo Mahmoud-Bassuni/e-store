@@ -272,7 +272,6 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
-        4C42E82929FE9CF900D3DC34 /* NewArrivalsView */ = {
 		4C42E82229FE937100D3DC34 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +281,7 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+        
 		4C42E82329FE938400D3DC34 /* BestSellersView */ = {
 			isa = PBXGroup;
 			children = (
