@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct FeaturedProductModel {
-    var productImage: UIImage
+    var productImageName: String
     var productName: String
     var productPrice: Double
     var productRate: Float

@@ -27,7 +27,7 @@ class FeaturedProductCollectionViewCell: UICollectionViewCell {
     }
 
     func setupCell(featuredProductModel: FeaturedProductModel) {
-        self.productImage.image = featuredProductModel.productImage
+        self.productImage.image = UIImage(named: featuredProductModel.productImageName)
         self.productName.text = featuredProductModel.productName
         self.productPrice.text = "\(featuredProductModel.productPrice)"
         self.productRate.text = "\(featuredProductModel.productRate)"
