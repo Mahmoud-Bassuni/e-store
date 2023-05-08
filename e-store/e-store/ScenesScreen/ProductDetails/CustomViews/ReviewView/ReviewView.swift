@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ReviewView: UIView {
     
@@ -17,23 +19,32 @@ class ReviewView: UIView {
     
     // MARK: - Properties
     
-    var text = ["hassan", "ahmed" , "zeyad"]
+    var viewModel: ReviewViewModel
     
     // MARK: - Life cycle
     
+    init(frame: CGRect, viewModel: ReviewViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: frame)
+        
+    }
+    
     override init(frame: CGRect) {
+        self.viewModel = ReviewViewModel()
         super.init(frame: frame)
         commonInit()
         updateUI()
         setupTableView()
-
+        bindTableView()
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.viewModel = ReviewViewModel()
         super.init(coder: aDecoder)
         commonInit()
         updateUI()
         setupTableView()
+        bindTableView()
     }
     
     func commonInit() {
@@ -43,8 +54,6 @@ class ReviewView: UIView {
         seeAllReviewButton.selectStyle(style: .whiteButton)
     }
     func setupTableView() {
-        reviewTableView.delegate = self
-        reviewTableView.dataSource = self
         reviewTableView.register(
             UINib(nibName: "ReviewTableViewCell", bundle: nil),
             forCellReuseIdentifier: "ReviewTableViewCell")
@@ -56,18 +65,12 @@ extension ReviewView : UITableViewDelegate {
     
 }
 
-// MARK: - ReviewViewTableDataSource
-extension ReviewView : UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        text.count
-    }
+// MARK: - Bind View Model
+extension ReviewView {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell", for: indexPath)
-                as? ReviewTableViewCell else { return UITableViewCell() }
-        
-        cell.setupCell(comment: text[indexPath.row])
-        return cell
+    private func bindTableView(){
+        viewModel.dataSource.bind(to: reviewTableView.rx.items(cellIdentifier: "ReviewTableViewCell", cellType: ReviewTableViewCell.self)) { indexPath, data, cell in
+            cell.setupCell(comment: data)
+        }.disposed(by: viewModel.disposeBag)
     }
-   
 }
