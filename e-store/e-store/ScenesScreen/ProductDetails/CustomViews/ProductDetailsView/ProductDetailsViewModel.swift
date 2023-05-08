@@ -23,7 +23,11 @@ class ProductDetailsViewModel {
     // MARK: - Functions
 
     func setupProductImagesList() {
-        let imagesName = [Asset.applewatchRemovebgPreview.name, Asset.headphoneRemovebgPreview.name, Asset.airpodsRemovebgPreview.name, Asset.flowerRemovebgPreview.name, Asset.carRemovebgPreview.name]
+        let imagesName = [Asset.applewatchRemovebgPreview.name,
+                          Asset.headphoneRemovebgPreview.name,
+                          Asset.airpodsRemovebgPreview.name,
+                          Asset.flowerRemovebgPreview.name,
+                          Asset.carRemovebgPreview.name]
         dataSource.accept(imagesName)
     }
     
