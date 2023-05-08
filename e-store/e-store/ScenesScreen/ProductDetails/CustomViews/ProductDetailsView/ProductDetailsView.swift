@@ -21,28 +21,36 @@ class ProductDetailsView: UIView {
     
     // MARK: - Properties
     
-    private var productImages: [UIImage] = []
     private var timer: Timer?
     private var currentIndex: Int = 0
+    private let viewModel: ProductDetailsViewModel
     
     // MARK: - Life cycle
+     init(frame: CGRect, viewModel: ProductDetailsViewModel) {
+         self.viewModel = viewModel
+         super.init(frame: frame)
+    }
     
     override init(frame: CGRect) {
+        self.viewModel = ProductDetailsViewModel()
         super.init(frame: frame)
         commonInit()
         setupUi()
         setupProductImagesCollectionView()
         registerCell()
         setupCollectionViewTimer()
+        bindCollectionView()
     }
     
     required init?(coder: NSCoder) {
+        self.viewModel = ProductDetailsViewModel()
         super.init(coder: coder)
         commonInit()
         setupUi()
         setupProductImagesCollectionView()
         registerCell()
         setupCollectionViewTimer()
+        bindCollectionView()
     }
     
     // MARK: - Functions
@@ -60,21 +68,12 @@ class ProductDetailsView: UIView {
     }
     
     private  func setupProductImagesCollectionView() {
-        productImagesCollectionView.dataSource = self
         productImagesCollectionView.delegate = self
     }
     
     private func registerCell() {
         productImagesCollectionView.register(UINib(nibName: ProductImagesCollectionViewCell.identifier, bundle: nil)
                                              , forCellWithReuseIdentifier: ProductImagesCollectionViewCell.identifier)
-    }
-    
-    func setupProductImagesList() {
-        productImages.append(UIImage(named: Asset.applewatchRemovebgPreview.name) ?? UIImage())
-        productImages.append(UIImage(named: Asset.headphoneRemovebgPreview.name) ?? UIImage())
-        productImages.append(UIImage(named: Asset.airpodsRemovebgPreview.name) ?? UIImage())
-        productImages.append(UIImage(named: Asset.flowerRemovebgPreview.name) ?? UIImage())
-        productImages.append(UIImage(named: Asset.carRemovebgPreview.name) ?? UIImage())
     }
     
     private func setupCollectionViewTimer() {
@@ -85,7 +84,7 @@ class ProductDetailsView: UIView {
     }
     
     @objc private func moveToNext() {
-        currentIndex = (currentIndex < productImages.count - 1) ? (currentIndex + 1) :  0
+        currentIndex = (currentIndex < viewModel.dataSource.value.count - 1) ? (currentIndex + 1) :  0
         productImagesCollectionView.scrollToItem(at: IndexPath(row: currentIndex, section: 0),
                                                  at: .centeredHorizontally,
                                                  animated: true)
@@ -94,29 +93,24 @@ class ProductDetailsView: UIView {
 
 // MARK: - ProductDetailsView extension
 
-extension ProductDetailsView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        productImages.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: ProductImagesCollectionViewCell.identifier,
-            for: indexPath) as? ProductImagesCollectionViewCell {
-            cell.setupCell(productImage: productImages[indexPath.row],
-                           imagesCounter: indexPath.row + 1,
-                           totalImagesNumber: productImages.count)
-            return cell
-        } else {
-            return UICollectionViewCell()
-        }
-    }
-}
 extension ProductDetailsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         0
+    }
+}
+
+extension ProductDetailsView {
+    private func bindCollectionView() {
+        viewModel.dataSource.bind(to: productImagesCollectionView
+            .rx
+            .items(cellIdentifier: ProductImagesCollectionViewCell.identifier, cellType: ProductImagesCollectionViewCell.self)) { indexPath, data, cell in
+            cell.setupCell(productImageName: data,
+                           imagesCounter: indexPath + 1,
+                           totalImagesNumber: self.viewModel.dataSource.value.count)
+            
+        }
     }
 }
