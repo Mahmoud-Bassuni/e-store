@@ -31,7 +31,7 @@ class SpecialOffersCollectionViewCell: UICollectionViewCell {
     }
 
     func setupCell(specialOffersModel: SpecialOffersModel) {
-        self.productImage.image = specialOffersModel.productImage
+        self.productImage.image = UIImage(named: specialOffersModel.productImageName)
         self.productName.text = specialOffersModel.productName
         self.productPrice.text = "\(specialOffersModel.productPrice)"
         self.productPriceBeforeOffer.text = "\(specialOffersModel.productPriceBeforeOffer)"

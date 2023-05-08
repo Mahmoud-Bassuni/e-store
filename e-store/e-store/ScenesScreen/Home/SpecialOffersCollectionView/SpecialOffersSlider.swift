@@ -15,23 +15,26 @@ class SpecialOffersSlider: UIView {
     
     // MARK: - Properties
     
-    var dataSource: [SpecialOffersModel] = []
-    
+    private let viewModel: SpecialOffersViewModel
     // MARK: - init
     
+    init(frame: CGRect, viewModel: SpecialOffersViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: frame)
+    }
     override init(frame: CGRect) {
+        viewModel = SpecialOffersViewModel()
         super.init(frame: frame)
         commonInit()
         registerCell()
-        setupDataSourceList()
         setupFeaturedProductCollectionView()
     }
     
     required init?(coder: NSCoder) {
+        viewModel = SpecialOffersViewModel()
         super.init(coder: coder)
         commonInit()
         registerCell()
-        setupDataSourceList()
         setupFeaturedProductCollectionView()
     }
     
@@ -45,30 +48,6 @@ class SpecialOffersSlider: UIView {
                                              , forCellWithReuseIdentifier: SpecialOffersCollectionViewCell.identifier)
     }
     
-    func setupDataSourceList() {
-        dataSource = [SpecialOffersModel(productImage: UIImage(named: Asset.airpodsRemovebgPreview.name) ?? UIImage(),
-                                         productName: "airpodsRemovebgPreview",
-                                         productPrice: 1500000,
-                                         productPriceBeforeOffer: 100000,
-                                         productRate: 4.5,
-                                         productReviewsNumber: 20),
-                      SpecialOffersModel(productImage: UIImage(named: Asset.carRemovebgPreview.name) ?? UIImage(),
-                                         productName: "airpodsRemovebgPreview",
-                                         productPrice: 20, productPriceBeforeOffer: 80,
-                                         productRate: 4.5,
-                                         productReviewsNumber: 20),
-                      SpecialOffersModel(productImage: UIImage(named: Asset.headphoneRemovebgPreview.name) ?? UIImage(),
-                                         productName: "airpodsRemovebgPreview",
-                                         productPrice: 20, productPriceBeforeOffer: 90,
-                                         productRate: 4.5,
-                                         productReviewsNumber: 20),
-                      SpecialOffersModel(productImage: UIImage(named: Asset.applewatchRemovebgPreview.name) ?? UIImage(),
-                                         productName: "airpodsRemovebgPreview",
-                                         productPrice: 20, productPriceBeforeOffer: 99,
-                                         productRate: 4.5,
-                                         productReviewsNumber: 20)
-        ]
-    }
     private func setupFeaturedProductCollectionView() {
         specialOffersCollectionView.dataSource = self
         specialOffersCollectionView.delegate = self
@@ -79,12 +58,12 @@ class SpecialOffersSlider: UIView {
 
 extension SpecialOffersSlider: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dataSource.count
+        viewModel.dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SpecialOffersCollectionViewCell.identifier, for: indexPath) as? SpecialOffersCollectionViewCell {
-            cell.setupCell(specialOffersModel: dataSource[indexPath.row])
+            cell.setupCell(specialOffersModel: viewModel.dataSource[indexPath.row])
             return cell
         } else {
             return  UICollectionViewCell()

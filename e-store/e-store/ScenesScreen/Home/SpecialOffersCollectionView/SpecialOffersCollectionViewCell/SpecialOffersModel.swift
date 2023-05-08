@@ -10,7 +10,7 @@ import UIKit
 
 struct SpecialOffersModel {
     
-    var productImage: UIImage
+    var productImageName: String
     var productName: String
     var productPrice: Double
     var productPriceBeforeOffer: Double
