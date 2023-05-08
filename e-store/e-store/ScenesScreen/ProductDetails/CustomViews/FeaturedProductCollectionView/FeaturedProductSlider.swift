@@ -6,37 +6,47 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class FeaturedProductSlider: UIView {
     
     // MARK: - Outlets
-
-    @IBOutlet weak var featuredProductCollectionView: UICollectionView!
+    
+    @IBOutlet private weak var featuredProductCollectionView: UICollectionView!
     
     // MARK: - Properties
-
-    var dataSource: [FeaturedProductModel] = []
+    
+    private let viewModel: FeaturedProductViewModel
     
     // MARK: - init
-
+    
+    init(frame: CGRect, viewModel: FeaturedProductViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: frame)
+    }
+    
     override init(frame: CGRect) {
+        self.viewModel = FeaturedProductViewModel()
         super.init(frame: frame)
         commonInit()
         registerCell()
-        setupDataSourceList()
         setupFeaturedProductCollectionView()
+        bindFeaturedProductCollectionView()
     }
     
     required init?(coder: NSCoder) {
+        self.viewModel = FeaturedProductViewModel()
         super.init(coder: coder)
         commonInit()
         registerCell()
-        setupDataSourceList()
+        
         setupFeaturedProductCollectionView()
+        bindFeaturedProductCollectionView()
     }
     
     // MARK: - Functions
-
+    
     private func commonInit() {
         fromNib(type: FeaturedProductSlider.self)
     }
@@ -45,49 +55,8 @@ class FeaturedProductSlider: UIView {
                                                , forCellWithReuseIdentifier: FeaturedProductCollectionViewCell.identifier)
     }
     
-    func setupDataSourceList() {
-        dataSource = [FeaturedProductModel(productImage: UIImage(named: Asset.airpodsRemovebgPreview.name) ?? UIImage(),
-                                           productName: "airpodsRemovebgPreview",
-                                           productPrice: 20,
-                                           productRate: 4.5,
-                                           productReviewsNumber: 20),
-                      FeaturedProductModel(productImage: UIImage(named: Asset.carRemovebgPreview.name) ?? UIImage(),
-                                                         productName: "airpodsRemovebgPreview",
-                                                         productPrice: 20,
-                                                         productRate: 4.5,
-                                                         productReviewsNumber: 20),
-                      FeaturedProductModel(productImage: UIImage(named: Asset.headphoneRemovebgPreview.name) ?? UIImage(),
-                                                         productName: "airpodsRemovebgPreview",
-                                                         productPrice: 20,
-                                                         productRate: 4.5,
-                                                         productReviewsNumber: 20),
-                      FeaturedProductModel(productImage: UIImage(named: Asset.applewatchRemovebgPreview.name) ?? UIImage(),
-                                                         productName: "airpodsRemovebgPreview",
-                                                         productPrice: 20,
-                                                         productRate: 4.5,
-                                                         productReviewsNumber: 20)
-        ]
-    }
     private func setupFeaturedProductCollectionView() {
-        featuredProductCollectionView.dataSource = self
         featuredProductCollectionView.delegate = self
-    }
-}
-
-// MARK: - Extension for data source
-
-extension FeaturedProductSlider: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        dataSource.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedProductCollectionViewCell.identifier, for: indexPath) as? FeaturedProductCollectionViewCell {
-            cell.setupCell(featuredProductModel: dataSource[indexPath.row])
-            return cell
-        } else {
-          return  UICollectionViewCell()
-        }
     }
 }
 
@@ -102,3 +71,15 @@ extension FeaturedProductSlider: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - Bind View Model
+extension FeaturedProductSlider {
+    func bindFeaturedProductCollectionView() {
+        viewModel.dataSource
+            .bind(to: featuredProductCollectionView
+                .rx
+                .items(cellIdentifier: FeaturedProductCollectionViewCell.identifier,
+                       cellType: FeaturedProductCollectionViewCell.self)) { _, model, cell in
+                cell.setupCell(featuredProductModel: model)
+            }.disposed(by: viewModel.disposeBag)
+    }
+}
