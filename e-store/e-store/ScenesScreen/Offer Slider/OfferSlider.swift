@@ -15,7 +15,7 @@ class OfferSlider: UIView {
     
     // MARK: - Properties
     
-    private var itemsOffer: [OfferModel] = []
+    private var viewModel = OfferViewModel()
     
     // MARK: - Life cycle
     
@@ -49,14 +49,9 @@ class OfferSlider: UIView {
     private func registerCell() {
         offerCollectionView.register(UINib(nibName: "OfferCollectionViewCell", bundle: nil)
                                              , forCellWithReuseIdentifier: "OfferCollectionViewCell")
-        setupProductImagesList()
     }
     
-    func setupProductImagesList() {
-        itemsOffer.append(OfferModel(title: "Gatis Ongkir Selama PPKM!", description: "Periode Mei - Agustus 2021"))
-        itemsOffer.append(OfferModel(title: "Gatis Ongkir Selama PPKM!", description: "Periode Mei - Agustus 2021"))
-        itemsOffer.append(OfferModel(title: "Gatis Ongkir Selama PPKM!", description: "Periode Mei - Agustus 2021"))
-    }
+    
      
 }
 
@@ -64,14 +59,14 @@ class OfferSlider: UIView {
 
 extension OfferSlider: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        itemsOffer.count
+        viewModel.itemsOffer.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "OfferCollectionViewCell",
             for: indexPath) as? OfferCollectionViewCell {
-            let item = itemsOffer[indexPath.row]
+            let item = viewModel.itemsOffer[indexPath.row]
             cell.setupCell(title: item.title, description: item.description, photo: item.photo)
             cell.setupUIView()
             return cell
