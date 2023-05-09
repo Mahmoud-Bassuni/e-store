@@ -6,7 +6,8 @@
 //
 import UIKit
 import Shared_UI
-
+import RxSwift
+import RxCocoa
 class VerificationScreenViewController: UIViewController {
     
     // MARK: Outlets
@@ -20,7 +21,8 @@ class VerificationScreenViewController: UIViewController {
     // MARK: Proprites
     
     var verificationViewModel: VerificationViewModel
-    
+    let disposeBag = DisposeBag()
+
     // MARK: Init
     
     init(verificationViewModel: VerificationViewModel) {
@@ -41,6 +43,7 @@ class VerificationScreenViewController: UIViewController {
         bindViewModel()
         codeTextField1.becomeFirstResponder()
         setDelegates()
+        continueButtonPressed()
     }
     
     private func setDelegates() {
@@ -55,42 +58,62 @@ class VerificationScreenViewController: UIViewController {
 extension VerificationScreenViewController {
     
     private func bindViewModel() {
-        verificationViewModel.checkConfigButton { [weak self] enable in
-            self?.submitButton.isEnableButtonStyle = enable
-        }
+        verificationViewModel.checkConfigButton.subscribe(onNext: { [weak self] enable in
+                    self?.submitButton.isEnableButtonStyle = enable
+                }) .disposed(by: disposeBag)
+        
     }
     
     private func bindTextField() {
-        codeTextField1.addTarget(self, action:#selector(updateTextField), for: .editingChanged)
-        codeTextField2.addTarget(self, action:#selector(updateTextField), for: .editingChanged)
-        codeTextField3.addTarget(self, action:#selector(updateTextField), for: .editingChanged)
-        codeTextField4.addTarget(self, action:#selector(updateTextField), for: .editingChanged)
+        codeTextField1.rx.controlEvent(.editingChanged)
+                   .asObservable()
+                   .map { self.codeTextField1.text ?? "" }
+                   .subscribe(onNext: { textCode in
+                       self.verificationViewModel.updateTextFieldCode.onNext(.first(textCode ))
+                       textCode.count == 1 ? self.moveToNext(self.codeTextField1) : self.moveToPrevious(self.codeTextField1)
+                   }).disposed(by: disposeBag)
+               codeTextField2.rx.controlEvent(.editingChanged)
+                   .asObservable()
+                   .map { self.codeTextField2.text ?? "" }
+                   .subscribe(onNext: { textCode in
+                       self.verificationViewModel.updateTextFieldCode.onNext(.second(textCode ))
+                       textCode.count == 1 ? self.moveToNext(self.codeTextField2) : self.moveToPrevious(self.codeTextField2)
+                   }).disposed(by: disposeBag)
+               codeTextField3.rx.controlEvent(.editingChanged)
+                   .asObservable()
+                   .map { self.codeTextField3.text ?? "" }
+                   .subscribe(onNext: { textCode in
+                       self.verificationViewModel.updateTextFieldCode.onNext(.third(textCode ))
+                       textCode.count == 1 ? self.moveToNext(self.codeTextField3) : self.moveToPrevious(self.codeTextField3)
+                   }).disposed(by: disposeBag)
+               codeTextField4.rx.controlEvent(.editingChanged)
+                   .asObservable()
+                   .map { self.codeTextField4.text ?? "" }
+                   .subscribe(onNext: { textCode in
+                       self.verificationViewModel.updateTextFieldCode.onNext(.fourth(textCode ))
+                       textCode.count == 1 ? self.moveToNext(self.codeTextField4) : self.moveToPrevious(self.codeTextField4)
+                   }).disposed(by: disposeBag)
     }
 }
 
 // MARK: Actions
 extension VerificationScreenViewController {
-    @IBAction func continueButtonPressed(_ sender: UIButton) {
-        verificationViewModel.submitVerificationCode(viewController: self) {
-            self.showAlert(msg: "code syntax wrong ")
-        }
-        
-    }
+    func continueButtonPressed() {
+           submitButton.rx.controlEvent(.touchUpInside).asObservable()
+               .subscribe( onNext : {
+                   self.verificationViewModel.submitVerificationCode(viewController: self) {
+                       self.showAlert(msg: "code syntax wrong ")
+                   }
+               })
+               .disposed(by: disposeBag)
+           
+       }
     
 }
 
 // MARK: - Update TextField
 
 extension VerificationScreenViewController {
-    
-    @objc private func updateTextField(_ textField: UITextField) {
-        verificationViewModel.updateTextFieldCode( textField)
-        
-        textField.text?.count == 1
-        ? moveToNext(textField)
-        : moveToPrevious(textField)
-
-    }
     
     private func moveToNext(_ textField: UITextField) {
         switch textField {
