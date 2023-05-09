@@ -5,12 +5,12 @@
 //  Created by Hassan on 09/04/2023.
 //
 import Foundation
-
+import RxSwift
+import RxCocoa
 // MARK: - ProtocolRegisterAccountViewModelInput
 
 protocol RegisterAccountViewModelInput {
     
-    func updateEmailOrPhone(emailOrPhone: String )
     func showVerification(viewController: ViewControllerType)
     func popToRoot(viewController: ViewControllerType)
 
@@ -21,7 +21,6 @@ protocol RegisterAccountViewModelInput {
 protocol RegisterAccountViewModelOutput {
     
     func submitUserName (viewController: ViewControllerType,callback: @escaping () -> Void)
-    func checkConfigButton(callback: @escaping (Bool) -> Void)
     func checkEmailOrPhone() -> Bool
 }
 
@@ -30,27 +29,33 @@ protocol RegisterAccountViewModelOutput {
 class RegisterAccountViewModel {
 
     private var emailOrPhone = ""
-    private var checkButtonEnable : (Bool) -> Void = { _ in }
     private var storeRouter: StoreRouter
+    let disposeBag = DisposeBag()
+    let updateEmailOrPhone = PublishSubject<String>()
+    let checkConfigButton = ReplaySubject<Bool>.create(bufferSize: 1)
+    
     init( storeRouter: StoreRouter) {
         self.storeRouter = storeRouter
+        updateUsername()
     }
-    func updateButtonState() {
-        
+     private func updateUsername() {
+        updateEmailOrPhone.subscribe(onNext: { username in
+            self.emailOrPhone = username
+            self.updateButtonState()
+        }).disposed(by: disposeBag)
+         updateButtonState()
+    }
+    private func updateButtonState() {
         let isEmailOrPhoneValid = !emailOrPhone.isEmpty
-        checkButtonEnable(isEmailOrPhoneValid)
-        
+        checkConfigButton.onNext(isEmailOrPhoneValid)
     }
+    
 }
 
 // MARK: - RegisterAccountViewModelInput
 
 extension RegisterAccountViewModel: RegisterAccountViewModelInput {
     
-    func updateEmailOrPhone(emailOrPhone: String) {
-        self.emailOrPhone = emailOrPhone
-        updateButtonState()
-    }
     func showVerification(viewController: ViewControllerType) {
         storeRouter.showVerification(viewController: viewController)
     }
@@ -74,10 +79,5 @@ extension RegisterAccountViewModel: RegisterAccountViewModelOutput {
     internal func checkEmailOrPhone() -> Bool {
         Validator.isValidEmail(email: emailOrPhone) || Validator.isValidPhoneNumber(phoneNumber: emailOrPhone)
     }
-    
-    func checkConfigButton(callback: @escaping (Bool) -> Void) {
-        checkButtonEnable = callback
-        updateButtonState()
-    }
-    
+  
 }

@@ -6,17 +6,21 @@
 //
 import UIKit
 import Shared_UI
-
+import RxSwift
+import RxCocoa
 class RegisterAccountScreenViewController: UIViewController {
 
     // MARK: Outlets
     
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var singInButton: UIButton!
+
     @IBOutlet weak var emailOrPhoneTextField: CustomTextField!
     
     // MARK: Proprites
     
     var registerViewModel: RegisterAccountViewModel
+    let disposeBag = DisposeBag()
 
     // MARK: Init
     
@@ -36,6 +40,7 @@ class RegisterAccountScreenViewController: UIViewController {
        
         bindTextField()
         bindViewModel()
+        buttonPressed()
     }
         
 }
@@ -45,33 +50,39 @@ class RegisterAccountScreenViewController: UIViewController {
 extension RegisterAccountScreenViewController {
     
     private func bindViewModel() {
-        registerViewModel.checkConfigButton { [weak self] enable in
-            self?.submitButton.isEnableButtonStyle = enable
-        }
+        registerViewModel.checkConfigButton.subscribe(onNext: { enable in
+            self.submitButton.isEnableButtonStyle = enable
+            
+        }).disposed(by: disposeBag)
     }
     
     private func bindTextField() {
-        emailOrPhoneTextField.addTarget(self, action:#selector(updateEmailOrPhoneTextField), for: .editingChanged)
+        emailOrPhoneTextField.rx.controlEvent(.editingChanged).asObservable()
+            .map { self.emailOrPhoneTextField.text ?? "" }
+            .subscribe(onNext: { userName in
+                self.registerViewModel.updateEmailOrPhone.onNext(userName)
+            }).disposed(by: disposeBag)
     }
 }
 
 // MARK: Actions
 
 extension RegisterAccountScreenViewController {
-    @IBAction func continueButtonPressed(_ sender: UIButton) {
+    private func buttonPressed() {
 
-        registerViewModel.submitUserName(viewController: self) {
-            self.showAlert(msg: "username or phoneNumber is wrong syntax")
-        }
+        submitButton.rx.controlEvent(.touchUpInside).asObservable()
+            .subscribe( onNext : {
+                self.registerViewModel.submitUserName(viewController: self.self) {
+                self.showAlert(msg: "username or phoneNumber is wrong syntax")
+            }
+            })
+            .disposed(by: disposeBag)
+        singInButton.rx.controlEvent(.touchUpInside).asObservable()
+            .subscribe( onNext : {
+                self.registerViewModel.popToRoot(viewController: self)
+            })
+            .disposed(by: disposeBag)
     }
-    @IBAction func singInButtonPressed(_ sender: UIButton) {
-        registerViewModel.popToRoot(viewController: self)
-    }
-}
-// MARK: - Update TextField
-extension RegisterAccountScreenViewController {
-  
-    @objc func updateEmailOrPhoneTextField (textField: UITextField) {
-        registerViewModel.updateEmailOrPhone(emailOrPhone: textField.text ?? "" )
-    }
+    
+    
 }
