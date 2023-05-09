@@ -5,20 +5,17 @@
 //  Created by Hassan on 10/04/2023.
 //
 import Foundation
-
+import RxSwift
+import RxCocoa
 // MARK: - ProtocolSetUserNameAndPasswordViewModelInput
 protocol SetUserNameAndPasswordViewModelInput {
     
-    func updateReferalCodeText(_ text: String )
-    func updatePasswordText(_ text: String )
-    func updateFullNameText(_ text: String )
     func showLogin(viewController: ViewControllerType)
 }
 
 // MARK: - ProtocolSetUserNameAndPasswordViewModelOutput
 protocol SetUserNameAndPasswordViewModelOutput {
     func register (viewController: ViewControllerType,callback: @escaping () -> Void)
-    func checkConfigButton(callback: @escaping (Bool) -> Void)
     func checkTextField() -> Bool
 
 }
@@ -28,17 +25,37 @@ class SetUserNameAndPasswordViewModel {
     private var fullNameText = ""
     private var passwordText = ""
     private var referalCodeText = ""
-    private var checkButtonEnable : (Bool) -> Void = { _ in }
     private var storeRouter: StoreRouter
+    let disposeBag = DisposeBag()
+    var updateReferalCodeText = PublishSubject<String>()
+    var updatePasswordText = PublishSubject<String>()
+    var updateFullNameText = PublishSubject<String>()
+    let checkConfigButton = ReplaySubject<Bool>.create(bufferSize: 1)
     init( storeRouter: StoreRouter) {
         self.storeRouter = storeRouter
+        updateTextField()
+    }
+    private func updateTextField() {
+        updateFullNameText.subscribe(onNext: { fullName in
+            self.fullNameText = fullName
+            self.updateButtonState()
+        }).disposed(by: disposeBag)
+        updatePasswordText.subscribe(onNext: { password in
+            self.passwordText = password
+            self.updateButtonState()
+        }).disposed(by: disposeBag)
+        updateReferalCodeText.subscribe(onNext: { referalCode in
+            self.referalCodeText = referalCode
+            self.updateButtonState()
+        }).disposed(by: disposeBag)
+        updateButtonState()
     }
     func updateButtonState() {
         
         let isFullNameTextValid = !fullNameText.isEmpty
         let isPasswordTextValid = !passwordText.isEmpty
         let isbuttonEnable = isFullNameTextValid && isPasswordTextValid 
-        checkButtonEnable(isbuttonEnable)
+        checkConfigButton.onNext(isbuttonEnable)
         
     }
 }
@@ -47,19 +64,6 @@ class SetUserNameAndPasswordViewModel {
 extension SetUserNameAndPasswordViewModel: SetUserNameAndPasswordViewModelInput {
     func showLogin(viewController: ViewControllerType) {
         storeRouter.popToRoot(viewController: viewController)
-    }
-    func updateReferalCodeText(_ text: String) {
-        referalCodeText = text
-    }
-    
-    func updatePasswordText(_ text: String) {
-        passwordText = text
-        updateButtonState()
-    }
-    
-    func updateFullNameText(_ text: String) {
-        fullNameText = text
-        updateButtonState()
     }
     
 }
@@ -80,8 +84,4 @@ extension SetUserNameAndPasswordViewModel: SetUserNameAndPasswordViewModelOutput
         Validator.isValidFullName(fullName: fullNameText)
     }
     
-    func checkConfigButton(callback: @escaping (Bool) -> Void) {
-        checkButtonEnable = callback
-        updateButtonState()
-    }
 }
