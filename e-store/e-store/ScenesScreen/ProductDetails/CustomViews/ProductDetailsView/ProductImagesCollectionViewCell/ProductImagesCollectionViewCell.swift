@@ -17,8 +17,8 @@ class ProductImagesCollectionViewCell: UICollectionViewCell {
     static let identifier = String(describing: ProductImagesCollectionViewCell.self)
     
     // MARK: - Functions
-    func setupCell(productImage: UIImage, imagesCounter: Int, totalImagesNumber: Int) {
-        self.productImage.image = productImage
+    func setupCell(productImageName: String, imagesCounter: Int, totalImagesNumber: Int) {
+        self.productImage.image = UIImage(named: productImageName)
         self.imagesCounter.text = "\(imagesCounter)"
         self.totalImagesNumber.text = "/\(totalImagesNumber)"
     }

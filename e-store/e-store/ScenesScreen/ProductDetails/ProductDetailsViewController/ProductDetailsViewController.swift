@@ -11,8 +11,9 @@ import Shared_UI
 class ProductDetailsViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet private weak var productDetailsView: ProductDetailsView!
+    
     @IBOutlet private weak var featuredProductStackView: UIStackView!
+    
     // MARK: - Properties
     
     // MARK: - Lifecycle
@@ -20,15 +21,11 @@ class ProductDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationItems()
-        setupproductDetailsView()
         setupFeaturedProductStackView()
     }
     
     // MARK: - Functions
     
-    private func setupproductDetailsView() {
-        productDetailsView.setupProductImagesList()
-    }
     private func setupNavigationItems() {
         navigationItem.title = "Detail Product"
         let arrow = UIBarButtonItem(image: UIImage(named: Asset.arrow.name),
