@@ -6,65 +6,80 @@
 //
 import Foundation
 import Domain
+import RxCocoa
+import RxSwift
 
 protocol LoginViewModelInput {
-    func updateEmail(email: String)
-    func updatePassword(password: String)
+    
+    func updateUsername()
+    func updatePassword()
     func showRegisterAccount(viewController: ViewControllerType)
-
+    
 }
 
 protocol LoginViewModelOutput {
-    func checkConfigButton(callback: @escaping (Bool) -> Void)
+    
     func validUsername() -> Bool
     func validPassword() -> Bool
     func checkUser(completion:@escaping (LoginMessage) -> Void)
+    
 }
 
 // MARK: LoginViewModel
 class LoginViewModel {
+    
     private var domain = UserUseCase()
     private var username = ""
     private var password = ""
-    private var checkButtonEable : (Bool) -> Void = { _ in }
     private var storeRouter: StoreRouter
+    let disposeBag = DisposeBag()
+    var updateUsernameText = PublishSubject<String>()
+    var updatePasswordText = PublishSubject<String>()
+    let checkConfigButton = ReplaySubject<Bool>.create(bufferSize: 1)
+    
     init( storeRouter: StoreRouter) {
         self.storeRouter = storeRouter
+        updateUsername()
+        updatePassword()
     }
+    
     func updateButtonState() {
 
         let isEmailValid = !username.isEmpty
         let isPasswordValid = !password.isEmpty
         let isButtonEnable = isEmailValid && isPasswordValid
-        checkButtonEable(isButtonEnable)
+        checkConfigButton.onNext(isButtonEnable)
     }
 }
 
 // MARK: LoginViewModelInput
 extension LoginViewModel: LoginViewModelInput {
 
-    func updateEmail(email: String) {
-        self.username = email
+    func updateUsername() {
+        updateUsernameText.subscribe(onNext: { username in
+            self.username = username
+            self.updateButtonState()
+        }).disposed(by: disposeBag)
         updateButtonState()
     }
 
-    func updatePassword(password: String) {
-        self.password = password
+    func updatePassword() {
+        updatePasswordText.subscribe(onNext: { password in
+            self.password = password
+            self.updateButtonState()
+        }).disposed(by: disposeBag)
         updateButtonState()
     }
+    
     func showRegisterAccount(viewController: ViewControllerType) {
         storeRouter.showRegisterAccount(viewController: viewController)
     }
 
 }
+
 // MARK: LoginViewModelInput
 extension LoginViewModel: LoginViewModelOutput {
 
-    func checkConfigButton(callback: @escaping (Bool) -> Void) {
-        self.checkButtonEable = callback
-        self.updateButtonState()
-    }
-    
     func validUsername() -> Bool {
         Validator.isValidUsername(username: self.username)
     }

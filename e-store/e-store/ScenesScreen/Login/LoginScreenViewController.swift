@@ -8,6 +8,8 @@
 import UIKit
 import Domain
 import Shared_UI
+import RxSwift
+import RxCocoa
 
 class LoginScreenViewController: UIViewController {
 
@@ -20,6 +22,8 @@ class LoginScreenViewController: UIViewController {
     
     // MARK: Proprites
     var loginViewModel : LoginViewModel
+    let disposeBag = DisposeBag()
+    
     // MARK: Init
 
     init(loginViewModel: LoginViewModel) {
@@ -31,9 +35,11 @@ class LoginScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Actions
     @IBAction func signUpButtonAction(_ sender: UIButton) {
         loginViewModel.showRegisterAccount(viewController: self)
     }
+    
     @IBAction func submitBtnAction(_ sender: Any) {
         
         loginViewModel.checkUser { msg in
@@ -46,6 +52,7 @@ class LoginScreenViewController: UIViewController {
             }
         }
     }
+    
     // MARK: LifeCycle
     override func viewDidLoad() {
         
@@ -76,25 +83,22 @@ class LoginScreenViewController: UIViewController {
 extension LoginScreenViewController {
 
     private func bindViewModel() {
-        loginViewModel.checkConfigButton { [weak self] enable in
-            self?.submitButton.isEnableButtonStyle = enable
-        }
+        loginViewModel.checkConfigButton.subscribe(onNext: { enable in
+            self.submitButton.isEnableButtonStyle = enable
+        }).disposed(by: disposeBag)
     }
 
     private func bindTextFields() {
-        emailPhoneTextField.addTarget(self, action: #selector(updateEmailTextField), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(updatePasswordTextField), for: .editingChanged)
+        
+        emailPhoneTextField.rx.text
+            .orEmpty
+            .bind(to: loginViewModel.updateUsernameText)
+            .disposed(by: disposeBag)
 
-    }
-}
+        passwordTextField.rx.text
+            .orEmpty
+            .bind(to: loginViewModel.updatePasswordText)
+            .disposed(by: disposeBag)
 
-// MARK: Actions
-extension LoginScreenViewController {
-    @objc func updateEmailTextField(textField: UITextField) {
-        loginViewModel.updateEmail(email: textField.text ?? "")
-    }
-
-    @objc func updatePasswordTextField(textField: UITextField) {
-        loginViewModel.updatePassword(password: textField.text ?? "")
     }
 }

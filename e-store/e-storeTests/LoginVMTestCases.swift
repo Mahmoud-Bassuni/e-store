@@ -27,7 +27,7 @@ final class LoginVMTestCases: XCTestCase {
             isEnable = isenable
         }
         // When
-        sut.updateEmail(email: "aaaa")
+        sut.updateUsername(email: "aaaa")
         sut.updatePassword(password: "aaaa1223")
         // Then
         XCTAssertTrue(isEnable ?? false)
@@ -40,7 +40,7 @@ final class LoginVMTestCases: XCTestCase {
             isEnable = isenable
         }
         // When
-        sut.updateEmail(email: "aaa1212")
+        sut.updateUsername(email: "aaa1212")
         sut.updatePassword(password: "")
         // Then
         XCTAssertFalse(isEnable ?? true)
@@ -53,7 +53,7 @@ final class LoginVMTestCases: XCTestCase {
             isEnable = isenable
         }
         // When
-        sut.updateEmail(email: "")
+        sut.updateUsername(email: "")
         sut.updatePassword(password: "aaaa1223")
         // Then
         XCTAssertFalse(isEnable ?? true)
@@ -66,7 +66,7 @@ final class LoginVMTestCases: XCTestCase {
             isEnable = isenable
         }
         // When
-        sut.updateEmail(email: "")
+        sut.updateUsername(email: "")
         sut.updatePassword(password: "")
         // Then
         XCTAssertFalse(isEnable ?? true)
