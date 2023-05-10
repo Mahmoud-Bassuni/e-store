@@ -22,9 +22,6 @@ class DecoratedView: UIView {
         layer.shadowColor = UIColor.lightBlack.cgColor
         layer.shadowOpacity = 1
         layer.shadowOffset = CGSize(width: 0, height: 1)
-        NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 242)
-        ])
+        
     }
-    
 }
