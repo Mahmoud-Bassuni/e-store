@@ -27,3 +27,18 @@ extension UIView {
             return view
         }
 }
+
+// MARK: - Extension for view height
+
+extension UIView {
+    @IBInspectable var height: CGFloat {
+        get {
+            self.height
+        }
+        set {
+            NSLayoutConstraint.activate([
+                heightAnchor.constraint(equalToConstant: newValue)
+            ])
+        }
+    }
+}
