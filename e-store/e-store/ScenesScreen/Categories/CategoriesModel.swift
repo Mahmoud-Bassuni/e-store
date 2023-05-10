@@ -11,5 +11,5 @@ import UIKit
 struct CategoriesModel {
     var categoryImage: UIImage
     var categoryName: String
-    var imageView: UIColor
+    var categoriesImageView: UIColor
 }

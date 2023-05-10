@@ -9,9 +9,9 @@ import UIKit
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var categoryImage: UIImageView!
-    @IBOutlet weak var categoryName: UILabel!
-    @IBOutlet weak var imageView: UIView!
+    @IBOutlet private weak var categoryImage: UIImageView!
+    @IBOutlet private weak var categoryName: UILabel!
+    @IBOutlet private weak var categoryImageView: UIView!
     static let identifier = String(describing: CategoriesCollectionViewCell.self)
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,8 +21,8 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     func setupCell(categoriesModel: CategoriesModel) {
         self.categoryImage.image = categoriesModel.categoryImage
         self.categoryName.text = categoriesModel.categoryName
-        self.imageView.backgroundColor =  categoriesModel.imageView
-        self.imageView.layer.cornerRadius = 10
+        self.categoryImageView.backgroundColor =  categoriesModel.categoriesImageView
+        self.categoryImageView.layer.cornerRadius = 10
     }
 
 }

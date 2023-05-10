@@ -26,9 +26,7 @@ class CategoriesSlider: UIView {
         registerCell()
         setupCategoriesCollectionView()
         dataSource = viewModel.setUpDataSourceList()
-        let layout = UICollectionViewFlowLayout()
-                layout.scrollDirection = .horizontal
-                categoriesCollectionView.collectionViewLayout = layout
+        setUpLayout()
     }
     
     required init?(coder: NSCoder) {
@@ -37,9 +35,7 @@ class CategoriesSlider: UIView {
         registerCell()
         setupCategoriesCollectionView()
         dataSource = viewModel.setUpDataSourceList()
-        let layout = UICollectionViewFlowLayout()
-                layout.scrollDirection = .horizontal
-                categoriesCollectionView.collectionViewLayout = layout
+        setUpLayout()
     }
     // MARK: - Functions
 
@@ -55,6 +51,12 @@ class CategoriesSlider: UIView {
     private func setupCategoriesCollectionView() {
         categoriesCollectionView.dataSource = self
         categoriesCollectionView.delegate = self
+    }
+    
+    private func setUpLayout() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        categoriesCollectionView.collectionViewLayout = layout
     }
     
 }
