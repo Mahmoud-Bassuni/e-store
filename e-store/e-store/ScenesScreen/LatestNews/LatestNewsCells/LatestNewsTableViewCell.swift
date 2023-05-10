@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import Shared_UI
 
 class LatestNewsTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var newsTitle: UILabel!
+    @IBOutlet private weak var newsTitle: UILabel!
     
-    @IBOutlet weak var newsDescription: UILabel!
+    @IBOutlet private weak var newsDescription: UILabel!
     
-    @IBOutlet weak var newsDate: UILabel!
+    @IBOutlet private weak var newsDate: UILabel!
     
-    @IBOutlet weak var newsImage: UIImageView!
+    @IBOutlet private weak var newsImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +31,7 @@ class LatestNewsTableViewCell: UITableViewCell {
     
     func bindCell(latestNewsModel: LatestNewsModel){
         self.newsDate.text = latestNewsModel.newsDate
-        self.newsImage.image = latestNewsModel.newsImage
+        newsImage.setImage(for: latestNewsModel.newsImageURL, placeHolderImage: UIImage(named: "avatar") ?? UIImage())
         self.newsTitle.text = latestNewsModel.newsTitle
         self.newsDescription.text = latestNewsModel.newsDesc
     }

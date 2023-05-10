@@ -12,7 +12,7 @@ class LatestNewsView: UIView {
     @IBOutlet weak var latestNewsTableView: UITableView!
     
     var dataSource:[LatestNewsModel] = []
-    var viewModel = LatestNewsViewModel()
+    var viewModel: LatestNewsViewModel
     
     init(viewModel: LatestNewsViewModel) {
         self.viewModel = viewModel
@@ -20,6 +20,7 @@ class LatestNewsView: UIView {
     }
     
     override init(frame: CGRect) {
+        self.viewModel = LatestNewsViewModel()
         super.init(frame: frame)
         commonInit()
         setUpTableView()
@@ -27,6 +28,7 @@ class LatestNewsView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.viewModel = LatestNewsViewModel()
         super.init(coder: aDecoder)
         commonInit()
         setUpTableView()

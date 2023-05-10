@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct LatestNewsModel{
-    var newsImage: UIImage
+    var newsImageURL: String
     var newsTitle: String
     var newsDesc: String
     var newsDate: String
