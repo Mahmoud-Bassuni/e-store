@@ -42,6 +42,8 @@ internal enum Asset {
   internal static let shopImage = ImageAsset(name: "shop Image")
   internal static let vector = ImageAsset(name: "vector")
   internal static let wishlist = ImageAsset(name: "wishlist")
+    internal static let grayColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1).cgColor
+    internal static let airPods1 = ImageAsset(name: "airPods1")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

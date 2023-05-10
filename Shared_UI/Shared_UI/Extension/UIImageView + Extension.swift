@@ -17,7 +17,7 @@ protocol ImageDownloadable {
 
 extension UIImageView: ImageDownloadable {
 
-    func setImage(for stringUrl: String, placeHolderImage: UIImage) {
+    public func setImage(for stringUrl: String, placeHolderImage: UIImage) {
         let url = URL(string: stringUrl)
         kf.setImage(with: url, placeholder: placeHolderImage)
     }

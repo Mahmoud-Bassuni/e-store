@@ -36,5 +36,8 @@ class StoreAssemply: Assembly {
         sharedContainer.register(SetUserNameAndPasswordViewModel.self) { resolver in
             SetUserNameAndPasswordViewModel(storeRouter: StoreRouter(resolver: resolver))
         }
+        sharedContainer.register(ItemsViewModel.self) { _ in
+            ItemsViewModel()
+        }
     }
 }
