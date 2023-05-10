@@ -11,21 +11,22 @@ import UIKit
 class CategoriesViewModel {
     func setUpDataSourceList() -> [CategoriesModel] {
         return [CategoriesModel(categoryImage:
-                                            UIImage(systemName: "carrot")?.withTintColor(.green,renderingMode: .alwaysOriginal) ?? UIImage(), categoryName: "Food", categoriesImageView: UIColor.lightGreenColor),
-                          CategoriesModel(categoryImage: UIImage(systemName: "gift")?.withTintColor(.red,renderingMode: .alwaysOriginal) ?? UIImage(),
+                                    "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg", categoryName: "Food", categoriesImageView: UIColor.lightGreenColor),
+                          CategoriesModel(categoryImage:
+                                            "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
                                           categoryName: "Gift", categoriesImageView: UIColor.lightRedColor),
                           
                           CategoriesModel(categoryImage:
-                                            UIImage(systemName: "tshirt")?.withTintColor(.orange,renderingMode: .alwaysOriginal) ?? UIImage(),
+                                            "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
                                           categoryName: "Fashion", categoriesImageView: UIColor.lightYellowColor),
                           CategoriesModel(categoryImage:
-                                            UIImage(systemName: "airpodspro")?.withTintColor(.purple,renderingMode: .alwaysOriginal) ?? UIImage(),
+                                            "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
                                           categoryName: "Gadget",  categoriesImageView: UIColor.lightPurpleColor),
                           CategoriesModel(categoryImage:
-                                            UIImage(systemName: "laptopcomputer")?.withTintColor(.green,renderingMode: .alwaysOriginal) ?? UIImage(),
+                                            "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
                                           categoryName: "Computer",  categoriesImageView: UIColor.lightGreenColor),
                           CategoriesModel(categoryImage:
-                                            UIImage(systemName: "giftcard")?.withTintColor(.purple,renderingMode: .alwaysOriginal) ?? UIImage(),
+                                            "https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg",
                                           categoryName: "Souvenir",  categoriesImageView: UIColor.lightRedColor)
                           
             ]

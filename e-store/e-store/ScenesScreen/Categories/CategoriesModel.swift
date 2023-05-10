@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct CategoriesModel {
-    var categoryImage: UIImage
+    var categoryImage: String
     var categoryName: String
     var categoriesImageView: UIColor
 }

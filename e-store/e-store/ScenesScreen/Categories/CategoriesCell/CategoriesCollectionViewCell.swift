@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Shared_UI
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
 
@@ -19,7 +20,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
 
     func setupCell(categoriesModel: CategoriesModel) {
-        self.categoryImage.image = categoriesModel.categoryImage
+        self.categoryImage.setImage(for: categoriesModel.categoryImage, placeHolderImage: UIImage(systemName: "carrot") ?? UIImage())
         self.categoryName.text = categoriesModel.categoryName
         self.categoryImageView.backgroundColor =  categoriesModel.categoriesImageView
         self.categoryImageView.layer.cornerRadius = 10

@@ -12,7 +12,7 @@ class CategoriesSlider: UIView {
     
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     var dataSource: [CategoriesModel] = []
-    var viewModel = CategoriesViewModel()
+    var viewModel: CategoriesViewModel
     // MARK: - init
 
     init(viewModel: CategoriesViewModel) {
@@ -21,6 +21,7 @@ class CategoriesSlider: UIView {
     }
     
     override init(frame: CGRect) {
+        self.viewModel = CategoriesViewModel()
         super.init(frame: frame)
         commonInit()
         registerCell()
@@ -30,6 +31,7 @@ class CategoriesSlider: UIView {
     }
     
     required init?(coder: NSCoder) {
+        self.viewModel = CategoriesViewModel()
         super.init(coder: coder)
         commonInit()
         registerCell()
