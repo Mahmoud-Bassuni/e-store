@@ -11,11 +11,33 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupNavigationItems()
         // Do any additional setup after loading the view.
     }
 
-
+    private func setupNavigationItems() {
+        navigationItem.title = "Mega Mall"
+        let bell = UIBarButtonItem(image: UIImage(systemName: "bell"),
+                                    style: .plain,
+                                    target: self,
+                                    action: #selector(bellTapped))
+        bell.tintColor = UIColor.black
+        let cart = UIBarButtonItem(image: UIImage(systemName: "cart"),
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(cartTapped))
+        [bell, cart].forEach {
+            $0.tintColor = UIColor.navyBlackColor
+        }
+        navigationItem.rightBarButtonItems = [cart, bell]
+    }
+    
+    @objc private func bellTapped() {
+        // TODO:- Implement me
+    }
+    @objc private func cartTapped() {
+        // TODO:- Implement me
+    }
     /*
     // MARK: - Navigation
 
