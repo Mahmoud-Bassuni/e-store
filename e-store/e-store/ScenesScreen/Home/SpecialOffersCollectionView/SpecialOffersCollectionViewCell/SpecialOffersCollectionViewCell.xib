@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
+        </array>
+        <array key="DMSans-Medium.ttf">
+            <string>DMSans-Medium</string>
+        </array>
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SpecialOffersCollectionViewCell" customModule="e_store" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="182" height="268"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="182" height="268"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4O-Py-bJi" customClass="DecoratedView" customModule="Shared_UI">
+                        <rect key="frame" x="0.0" y="4" width="182" height="260"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fJL-NR-3pq">
+                                <rect key="frame" x="12.666666666666671" y="15" width="151" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="eqt-tL-Lce"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baR-J5-YNy">
+                                <rect key="frame" x="12.666666666666664" y="120" width="40" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Key-in-x5r"/>
+                                    <constraint firstAttribute="width" constant="40" id="cwH-cu-dmC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10.5" translatesAutoresizingMaskIntoConstraints="NO" id="89b-E2-7G1">
+                                <rect key="frame" x="10" y="165" width="157" height="95"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iTP-3W-grw">
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="TMA-2 HD Wireless" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="j0j-CQ-6rU">
+                                                <rect key="frame" x="0.0" y="0.0" width="157" height="21.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="DMSans-Medium" family="DM Sans" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 1.000.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tN-Yh-MSQ">
+                                                <rect key="frame" x="0.0" y="26.333333333333346" width="157" height="15.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jQ-gR-kAi">
+                                                <rect key="frame" x="0.0" y="47" width="157" height="13"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 1.500.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djm-I7-cob">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="13"/>
+                                                        <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="10"/>
+                                                        <color key="textColor" red="0.76862745098039209" green="0.77254901960784317" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hg9-oL-zf6">
+                                                        <rect key="frame" x="0.0" y="6" width="62" height="1"/>
+                                                        <color key="backgroundColor" red="0.76862745098039209" green="0.77254901960784317" blue="0.76862745098039209" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="v9P-6l-1z4"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Hg9-oL-zf6" firstAttribute="leading" secondItem="djm-I7-cob" secondAttribute="leading" id="1pj-Ed-tM9"/>
+                                                    <constraint firstItem="djm-I7-cob" firstAttribute="top" secondItem="3jQ-gR-kAi" secondAttribute="top" id="9k1-ur-LrR"/>
+                                                    <constraint firstAttribute="height" constant="13" id="GVJ-zu-58z"/>
+                                                    <constraint firstItem="Hg9-oL-zf6" firstAttribute="trailing" secondItem="djm-I7-cob" secondAttribute="trailing" id="OQh-XF-lWA"/>
+                                                    <constraint firstItem="djm-I7-cob" firstAttribute="leading" secondItem="3jQ-gR-kAi" secondAttribute="leading" id="Ovm-b5-bPM"/>
+                                                    <constraint firstAttribute="bottom" secondItem="djm-I7-cob" secondAttribute="bottom" id="jnN-Tf-0sl"/>
+                                                    <constraint firstItem="Hg9-oL-zf6" firstAttribute="centerY" secondItem="3jQ-gR-kAi" secondAttribute="centerY" id="zHM-e7-IBP"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="f8p-lZ-JKn"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="yuG-0M-vhH">
+                                        <rect key="frame" x="0.0" y="70.666666666666657" width="157" height="24.333333333333329"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qqs-zl-h4X">
+                                                <rect key="frame" x="0.0" y="0.0" width="121" height="24.333333333333332"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="4.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vu-9I-JUX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="14" height="24.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="10"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="86 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRV-Ti-F5p">
+                                                        <rect key="frame" x="24" y="0.0" width="97" height="24.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="10"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QF9-RX-zmr">
+                                                <rect key="frame" x="154" y="0.0" width="3" height="24.333333333333332"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="3" id="Upd-jl-xlr"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="dots-vertical"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fJL-NR-3pq" secondAttribute="trailing" constant="18.5" id="3cR-XQ-vhJ"/>
+                            <constraint firstAttribute="trailing" secondItem="89b-E2-7G1" secondAttribute="trailing" constant="15" id="9qr-IA-Bue"/>
+                            <constraint firstItem="fJL-NR-3pq" firstAttribute="bottom" secondItem="baR-J5-YNy" secondAttribute="bottom" id="NYw-GJ-ope"/>
+                            <constraint firstItem="fJL-NR-3pq" firstAttribute="top" secondItem="w4O-Py-bJi" secondAttribute="top" constant="15" id="UaC-ww-WRY"/>
+                            <constraint firstItem="89b-E2-7G1" firstAttribute="leading" secondItem="w4O-Py-bJi" secondAttribute="leading" constant="10" id="Y9A-zE-g6e"/>
+                            <constraint firstItem="89b-E2-7G1" firstAttribute="top" secondItem="fJL-NR-3pq" secondAttribute="bottom" constant="25" id="ZP5-L8-icc"/>
+                            <constraint firstItem="baR-J5-YNy" firstAttribute="leading" secondItem="fJL-NR-3pq" secondAttribute="leading" id="aOE-eY-1ZK"/>
+                            <constraint firstItem="fJL-NR-3pq" firstAttribute="leading" secondItem="w4O-Py-bJi" secondAttribute="leading" constant="12.5" id="vUz-fe-xqo"/>
+                            <constraint firstAttribute="bottom" secondItem="89b-E2-7G1" secondAttribute="bottom" id="vZ2-Og-r5w"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="height">
+                                <real key="value" value="260"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="w4O-Py-bJi" secondAttribute="bottom" constant="4" id="9CR-0h-Nxb"/>
+                <constraint firstItem="w4O-Py-bJi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AUv-BB-VDi"/>
+                <constraint firstItem="w4O-Py-bJi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Ygu-AF-8uT"/>
+                <constraint firstAttribute="trailing" secondItem="w4O-Py-bJi" secondAttribute="trailing" id="r78-Yz-cDf"/>
+            </constraints>
+            <size key="customSize" width="182" height="296"/>
+            <connections>
+                <outlet property="productImage" destination="fJL-NR-3pq" id="cjC-Mx-snr"/>
+                <outlet property="productName" destination="j0j-CQ-6rU" id="g7d-Bj-iKd"/>
+                <outlet property="productPrice" destination="4tN-Yh-MSQ" id="UB5-us-nf5"/>
+                <outlet property="productPriceBeforeOffer" destination="djm-I7-cob" id="7pF-2q-dEn"/>
+                <outlet property="productRate" destination="5vu-9I-JUX" id="fQ2-It-oVb"/>
+                <outlet property="productReviewsNumber" destination="WRV-Ti-F5p" id="Sqc-qu-Kfh"/>
+                <outlet property="saleLabel" destination="baR-J5-YNy" id="h7l-DD-ajk"/>
+                <outlet property="specialOfferView" destination="w4O-Py-bJi" id="vmU-y3-E5p"/>
+            </connections>
+            <point key="canvasLocation" x="200" y="-44.366197183098592"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="dots-vertical" width="3" height="14"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DMSans-Bold.ttf">
+            <string>DMSans-Bold</string>
+        </array>
+        <array key="DMSans-Regular.ttf">
+            <string>DMSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OfferCollectionViewCell" id="gTV-IL-0wX" customClass="OfferCollectionViewCell" customModule="e_store" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="315" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="315" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4H-5F-pjJ">
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="150"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="young-authentic-charismatic-real-people-woman-against-wall-pointing-with-forefingers-copy-space-expressing-excitement-desire 1" translatesAutoresizingMaskIntoConstraints="NO" id="sct-ji-pDu">
+                                <rect key="frame" x="109" y="0.0" width="206" height="150"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tD-qX-1dy">
+                                <rect key="frame" x="0.0" y="0.0" width="191" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="VIe-ai-6rz">
+                                        <rect key="frame" x="24" y="32" width="143" height="86"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gatis Ongkir Selama PPKM!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Eh-GJ-21t">
+                                                <rect key="frame" x="0.0" y="0.0" width="143" height="66.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="DMSans-Bold" family="DM Sans" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Periode Mei - Agustus 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSW-6T-eb8">
+                                                <rect key="frame" x="0.0" y="68.666666666666671" width="143" height="17.333333333333329"/>
+                                                <fontDescription key="fontDescription" name="DMSans-Regular" family="DM Sans" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.41176470590000003" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VIe-ai-6rz" secondAttribute="bottom" constant="32" id="1hQ-SB-fPU"/>
+                                    <constraint firstAttribute="trailing" secondItem="VIe-ai-6rz" secondAttribute="trailing" constant="24" id="B1L-M0-mU5"/>
+                                    <constraint firstItem="VIe-ai-6rz" firstAttribute="leading" secondItem="3tD-qX-1dy" secondAttribute="leading" constant="24" id="JBR-aV-j0j"/>
+                                    <constraint firstItem="VIe-ai-6rz" firstAttribute="top" secondItem="3tD-qX-1dy" secondAttribute="top" constant="32" id="ekV-fJ-lzI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="3tD-qX-1dy" firstAttribute="leading" secondItem="v4H-5F-pjJ" secondAttribute="leading" id="DGb-Gl-5gA"/>
+                            <constraint firstAttribute="height" constant="150" id="FIF-cp-pCA"/>
+                            <constraint firstItem="3tD-qX-1dy" firstAttribute="top" secondItem="v4H-5F-pjJ" secondAttribute="top" id="NQn-hO-lCO"/>
+                            <constraint firstItem="sct-ji-pDu" firstAttribute="top" secondItem="v4H-5F-pjJ" secondAttribute="top" id="R31-Zd-MTM"/>
+                            <constraint firstAttribute="trailing" secondItem="sct-ji-pDu" secondAttribute="trailing" id="TMl-Ax-LWa"/>
+                            <constraint firstAttribute="bottom" secondItem="sct-ji-pDu" secondAttribute="bottom" id="fSk-0i-VHs"/>
+                            <constraint firstAttribute="bottom" secondItem="3tD-qX-1dy" secondAttribute="bottom" id="g1C-3Y-Wfa"/>
+                            <constraint firstAttribute="width" constant="315" id="hSB-eV-qM5"/>
+                            <constraint firstAttribute="trailing" secondItem="3tD-qX-1dy" secondAttribute="trailing" constant="124" id="lbE-LY-Y7b"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="v4H-5F-pjJ" secondAttribute="bottom" id="Ilb-K3-uLp"/>
+                <constraint firstItem="v4H-5F-pjJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Rja-QY-Yg1"/>
+                <constraint firstItem="v4H-5F-pjJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TZF-zo-lNc"/>
+                <constraint firstAttribute="trailing" secondItem="v4H-5F-pjJ" secondAttribute="trailing" id="fLO-om-OLN"/>
+            </constraints>
+            <size key="customSize" width="315" height="150"/>
+            <connections>
+                <outlet property="descriptionOfferLabel" destination="OSW-6T-eb8" id="J2v-s5-iDk"/>
+                <outlet property="mainView" destination="v4H-5F-pjJ" id="ih4-Wc-JYL"/>
+                <outlet property="photoOfferImage" destination="sct-ji-pDu" id="qBb-Sa-LZg"/>
+                <outlet property="subView" destination="3tD-qX-1dy" id="wIJ-z3-gsi"/>
+                <outlet property="titleOfferLabel" destination="0Eh-GJ-21t" id="H0Q-aS-o6M"/>
+            </connections>
+            <point key="canvasLocation" x="159.54198473282443" y="54.929577464788736"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="young-authentic-charismatic-real-people-woman-against-wall-pointing-with-forefingers-copy-space-expressing-excitement-desire 1" width="206" height="150"/>
+    </resources>
+</document>
