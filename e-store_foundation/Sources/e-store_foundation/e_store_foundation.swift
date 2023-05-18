@@ -1,6 +1,8 @@
-public struct E_store_foundation {
-    public private(set) var text = "Hello, World!"
+import Shared_UI
+import UIKit
 
-    public init() {
+class Test: UIViewController  {
+    func fireAlert() {
+        showAlert(msg: "Done ... ")
     }
 }
