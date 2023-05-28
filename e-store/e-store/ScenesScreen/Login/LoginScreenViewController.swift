@@ -42,15 +42,7 @@ class LoginScreenViewController: UIViewController {
     
     @IBAction func submitBtnAction(_ sender: Any) {
         
-        loginViewModel.checkUser { msg in
-            switch(msg) {
-            case .validateError : self.showAlert(msg: "Email and Password aren't Valid!")
-            case .failure(let error):
-                self.showAlert(msg: error)
-            case .success:
-                self.showAlert(msg: "Validated")
-            }
-        }
+        loginViewModel.checkUser()
     }
     
     // MARK: LifeCycle
@@ -83,9 +75,21 @@ class LoginScreenViewController: UIViewController {
 extension LoginScreenViewController {
 
     private func bindViewModel() {
-        loginViewModel.checkConfigButton.subscribe(onNext: { enable in
-            self.submitButton.isEnableButtonStyle = enable
+        
+        loginViewModel.submitResponse
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { msg in
+            switch(msg) {
+            case .validateError : self.showAlert(msg: "Email and Password aren't Valid!")
+            case .failure(let error):
+                self.showAlert(msg: error)
+            case .success:
+                self.showAlert(msg: "Validated")
+            }
         }).disposed(by: disposeBag)
+        
+        loginViewModel.checkConfigButton.bind(to: submitButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 
     private func bindTextFields() {

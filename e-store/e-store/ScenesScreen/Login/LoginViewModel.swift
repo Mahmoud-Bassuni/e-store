@@ -11,8 +11,6 @@ import RxSwift
 
 protocol LoginViewModelInput {
     
-    func updateUsername()
-    func updatePassword()
     func showRegisterAccount(viewController: ViewControllerType)
     
 }
@@ -21,7 +19,7 @@ protocol LoginViewModelOutput {
     
     func validUsername() -> Bool
     func validPassword() -> Bool
-    func checkUser(completion:@escaping (LoginMessage) -> Void)
+    func checkUser()
     
 }
 
@@ -29,47 +27,32 @@ protocol LoginViewModelOutput {
 class LoginViewModel {
     
     private var domain = UserUseCase()
-    private var username = ""
-    private var password = ""
     private var storeRouter: StoreRouter
     let disposeBag = DisposeBag()
-    var updateUsernameText = PublishSubject<String>()
-    var updatePasswordText = PublishSubject<String>()
-    let checkConfigButton = ReplaySubject<Bool>.create(bufferSize: 1)
+    var updateUsernameText = BehaviorRelay<String>(value: "")
+    var updatePasswordText = BehaviorRelay<String>(value: "")
+    var submitResponse = PublishSubject<LoginMessage>()
+    let checkConfigButton = BehaviorRelay<Bool>(value: false)
     
     init( storeRouter: StoreRouter) {
         self.storeRouter = storeRouter
-        updateUsername()
-        updatePassword()
+        
+        Observable.combineLatest(updateUsernameText.asObservable(), updatePasswordText.asObservable()).subscribe(onNext:{ [weak self] (updateUsernameText, updatePasswordText) in
+            guard let self = self else {return}
+            self.checkConfigButton.accept(self.updateButtonState(username: updateUsernameText, password: updatePasswordText))
+        }).disposed(by: disposeBag)
+        
     }
     
-    func updateButtonState() {
-
+    func updateButtonState(username:String, password: String) -> Bool {
         let isEmailValid = !username.isEmpty
         let isPasswordValid = !password.isEmpty
-        let isButtonEnable = isEmailValid && isPasswordValid
-        checkConfigButton.onNext(isButtonEnable)
+        return isEmailValid && isPasswordValid
     }
 }
 
 // MARK: LoginViewModelInput
 extension LoginViewModel: LoginViewModelInput {
-
-    func updateUsername() {
-        updateUsernameText.subscribe(onNext: { username in
-            self.username = username
-            self.updateButtonState()
-        }).disposed(by: disposeBag)
-        updateButtonState()
-    }
-
-    func updatePassword() {
-        updatePasswordText.subscribe(onNext: { password in
-            self.password = password
-            self.updateButtonState()
-        }).disposed(by: disposeBag)
-        updateButtonState()
-    }
     
     func showRegisterAccount(viewController: ViewControllerType) {
         storeRouter.showRegisterAccount(viewController: viewController)
@@ -81,29 +64,30 @@ extension LoginViewModel: LoginViewModelInput {
 extension LoginViewModel: LoginViewModelOutput {
 
     func validUsername() -> Bool {
-        Validator.isValidUsername(username: self.username)
+        Validator.isValidUsername(username: updateUsernameText.value)
     }
     
     func validPassword() -> Bool {
-        Validator.isValidPassword(password: self.password)
+        Validator.isValidPassword(password: updatePasswordText.value)
     }
 }
+
 // MARK: get data from domain
 extension LoginViewModel {
     
-    func checkUser(completion:@escaping (LoginMessage) -> Void) {
+    func checkUser() {
         let checkUsernameAndPassword = checkUsernameAndPassword()
         if(!checkUsernameAndPassword) {
-            completion(.validateError)
+            submitResponse.onNext(.validateError)
         } else {
-            domain.login(loginInfo: (self.username, self.password)) { result in
+            domain.login(loginInfo: (self.updateUsernameText.value, self.updatePasswordText.value)) { result in
                 switch result {
                 case .success(let token):
                     print("Login successful, token: \(token)")
-                    completion(.success)
+                    self.submitResponse.onNext(.success)
                 case .failure(let error):
                     print("Login failed, error: \(error)")
-                    completion(.failure(error.description))
+                    self.submitResponse.onNext(.failure(error.description))
                 }
             }
         }
