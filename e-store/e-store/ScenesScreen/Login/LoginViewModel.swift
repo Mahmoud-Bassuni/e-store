@@ -6,89 +6,88 @@
 //
 import Foundation
 import Domain
+import RxCocoa
+import RxSwift
 
 protocol LoginViewModelInput {
-    func updateEmail(email: String)
-    func updatePassword(password: String)
+    
     func showRegisterAccount(viewController: ViewControllerType)
-
+    
 }
 
 protocol LoginViewModelOutput {
-    func checkConfigButton(callback: @escaping (Bool) -> Void)
+    
     func validUsername() -> Bool
     func validPassword() -> Bool
-    func checkUser(completion:@escaping (LoginMessage) -> Void)
+    func checkUser()
+    
 }
 
 // MARK: LoginViewModel
 class LoginViewModel {
+    
     private var domain = UserUseCase()
-    private var username = ""
-    private var password = ""
-    private var checkButtonEable : (Bool) -> Void = { _ in }
     private var storeRouter: StoreRouter
+    let disposeBag = DisposeBag()
+    var updateUsernameText = BehaviorRelay<String>(value: "")
+    var updatePasswordText = BehaviorRelay<String>(value: "")
+    var submitResponse = PublishSubject<LoginMessage>()
+    let checkConfigButton = BehaviorRelay<Bool>(value: false)
+    
     init( storeRouter: StoreRouter) {
         self.storeRouter = storeRouter
+        
+        Observable.combineLatest(updateUsernameText.asObservable(), updatePasswordText.asObservable()).subscribe(onNext:{ [weak self] (updateUsernameText, updatePasswordText) in
+            guard let self = self else {return}
+            self.checkConfigButton.accept(self.updateButtonState(username: updateUsernameText, password: updatePasswordText))
+        }).disposed(by: disposeBag)
+        
     }
-    func updateButtonState() {
-
+    
+    func updateButtonState(username:String, password: String) -> Bool {
         let isEmailValid = !username.isEmpty
         let isPasswordValid = !password.isEmpty
-        let isButtonEnable = isEmailValid && isPasswordValid
-        checkButtonEable(isButtonEnable)
+        return isEmailValid && isPasswordValid
     }
 }
 
 // MARK: LoginViewModelInput
 extension LoginViewModel: LoginViewModelInput {
-
-    func updateEmail(email: String) {
-        self.username = email
-        updateButtonState()
-    }
-
-    func updatePassword(password: String) {
-        self.password = password
-        updateButtonState()
-    }
+    
     func showRegisterAccount(viewController: ViewControllerType) {
         storeRouter.showRegisterAccount(viewController: viewController)
     }
 
 }
+
 // MARK: LoginViewModelInput
 extension LoginViewModel: LoginViewModelOutput {
 
-    func checkConfigButton(callback: @escaping (Bool) -> Void) {
-        self.checkButtonEable = callback
-        self.updateButtonState()
-    }
-    
     func validUsername() -> Bool {
-        Validator.isValidUsername(username: self.username)
+        Validator.isValidUsername(username: updateUsernameText.value)
     }
     
     func validPassword() -> Bool {
-        Validator.isValidPassword(password: self.password)
+        Validator.isValidPassword(password: updatePasswordText.value)
     }
 }
+
 // MARK: get data from domain
 extension LoginViewModel {
     
-    func checkUser(completion:@escaping (LoginMessage) -> Void) {
+    func checkUser() {
         let checkUsernameAndPassword = checkUsernameAndPassword()
         if(!checkUsernameAndPassword) {
-            completion(.validateError)
+            submitResponse.onNext(.validateError)
         } else {
-            domain.login(loginInfo: (self.username, self.password)) { result in
+            domain.login(loginInfo: (self.updateUsernameText.value, self.updatePasswordText.value)) { result in
                 switch result {
                 case .success(let token):
                     print("Login successful, token: \(token)")
-                    completion(.success)
+                    self.submitResponse.onNext(.success)
                 case .failure(let error):
                     print("Login failed, error: \(error)")
-                    completion(.failure(error.description))
+                    self.submitResponse.onNext(.failure(error.description))
                 }
             }
         }

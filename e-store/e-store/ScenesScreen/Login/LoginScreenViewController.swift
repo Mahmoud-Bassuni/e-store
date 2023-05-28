@@ -8,6 +8,8 @@
 import UIKit
 import Domain
 import Shared_UI
+import RxSwift
+import RxCocoa
 
 class LoginScreenViewController: UIViewController {
 
@@ -20,6 +22,8 @@ class LoginScreenViewController: UIViewController {
     
     // MARK: Proprites
     var loginViewModel : LoginViewModel
+    let disposeBag = DisposeBag()
+    
     // MARK: Init
 
     init(loginViewModel: LoginViewModel) {
@@ -31,21 +35,16 @@ class LoginScreenViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Actions
     @IBAction func signUpButtonAction(_ sender: UIButton) {
         loginViewModel.showRegisterAccount(viewController: self)
     }
+    
     @IBAction func submitBtnAction(_ sender: Any) {
         
-        loginViewModel.checkUser { msg in
-            switch(msg) {
-            case .validateError : self.showAlert(msg: "Email and Password aren't Valid!")
-            case .failure(let error):
-                self.showAlert(msg: error)
-            case .success:
-                self.showAlert(msg: "Validated")
-            }
-        }
+        loginViewModel.checkUser()
     }
+    
     // MARK: LifeCycle
     override func viewDidLoad() {
         
@@ -76,25 +75,34 @@ class LoginScreenViewController: UIViewController {
 extension LoginScreenViewController {
 
     private func bindViewModel() {
-        loginViewModel.checkConfigButton { [weak self] enable in
-            self?.submitButton.isEnableButtonStyle = enable
-        }
+        
+        loginViewModel.submitResponse
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { msg in
+            switch(msg) {
+            case .validateError : self.showAlert(msg: "Email and Password aren't Valid!")
+            case .failure(let error):
+                self.showAlert(msg: error)
+            case .success:
+                self.showAlert(msg: "Validated")
+            }
+        }).disposed(by: disposeBag)
+        
+        loginViewModel.checkConfigButton.bind(to: submitButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 
     private func bindTextFields() {
-        emailPhoneTextField.addTarget(self, action: #selector(updateEmailTextField), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(updatePasswordTextField), for: .editingChanged)
+        
+        emailPhoneTextField.rx.text
+            .orEmpty
+            .bind(to: loginViewModel.updateUsernameText)
+            .disposed(by: disposeBag)
 
-    }
-}
+        passwordTextField.rx.text
+            .orEmpty
+            .bind(to: loginViewModel.updatePasswordText)
+            .disposed(by: disposeBag)
 
-// MARK: Actions
-extension LoginScreenViewController {
-    @objc func updateEmailTextField(textField: UITextField) {
-        loginViewModel.updateEmail(email: textField.text ?? "")
-    }
-
-    @objc func updatePasswordTextField(textField: UITextField) {
-        loginViewModel.updatePassword(password: textField.text ?? "")
     }
 }

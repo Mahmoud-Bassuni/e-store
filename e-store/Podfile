@@ -1,6 +1,8 @@
 target 'e-store' do
   
   workspace 'e-store.xcworkspace'
+  pod 'RxSwift','6.5.0'
+  pod 'RxCocoa','6.5.0'
 end
 target 'Shared_UI' do
   xcodeproj '../shared_UI/shared_UI'
