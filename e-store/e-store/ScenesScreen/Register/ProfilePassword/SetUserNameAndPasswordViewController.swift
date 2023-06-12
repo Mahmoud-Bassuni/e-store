@@ -6,6 +6,8 @@
 //
 import UIKit
 import Shared_UI
+import RxSwift
+import RxCocoa
 class SetUserNameAndPasswordViewController: UIViewController {
 
     // MARK: Outlets
@@ -18,7 +20,7 @@ class SetUserNameAndPasswordViewController: UIViewController {
     // MARK: Proprites
     
     var setUserNameAndPasswordViewModel: SetUserNameAndPasswordViewModel
-    
+    let disposeBag = DisposeBag()
     // MARK: Init
     
     init(setUserNameAndPasswordViewModel: SetUserNameAndPasswordViewModel) {
@@ -37,6 +39,7 @@ class SetUserNameAndPasswordViewController: UIViewController {
        
         bindTextField()
         bindViewModel()
+        continueButtonPressed()
     }
     
 }
@@ -44,16 +47,29 @@ class SetUserNameAndPasswordViewController: UIViewController {
 // MARK: Bind view model
 extension SetUserNameAndPasswordViewController {
     private func bindViewModel() {
-        setUserNameAndPasswordViewModel.checkConfigButton { [weak self] enable in
+        setUserNameAndPasswordViewModel.checkConfigButton.subscribe(onNext: { [weak self] enable in
             self?.submitButton.isEnableButtonStyle = enable
-        }
+        }).disposed(by: disposeBag)
     }
     
     private func bindTextField() {
+        
         passwordTextField.applyPasswordTextField()
-        referalCodeTextField.addTarget(self, action:#selector(updateReferalCodeTextField), for: .editingChanged)
-        passwordTextField.addTarget(self, action:#selector(updatePasswordTextField), for: .editingChanged)
-        fullNameTextField.addTarget(self, action:#selector(updateFullNameTextField), for: .editingChanged)
+        fullNameTextField.rx.controlEvent(.editingChanged).asObservable()
+            .map {self.fullNameTextField.text ?? ""}
+            .subscribe(onNext: { fullNameText in
+                self.setUserNameAndPasswordViewModel.updateFullNameText.onNext(fullNameText)
+            }).disposed(by: disposeBag)
+        passwordTextField.rx.controlEvent(.editingChanged).asObservable()
+            .map {self.passwordTextField.text ?? ""}
+            .subscribe(onNext: { passwordText in
+                self.setUserNameAndPasswordViewModel.updatePasswordText.onNext(passwordText)
+            }).disposed(by: disposeBag)
+        referalCodeTextField.rx.controlEvent(.editingChanged).asObservable()
+            .map {self.referalCodeTextField.text ?? ""}
+            .subscribe(onNext: { referalCode in
+                self.setUserNameAndPasswordViewModel.updateReferalCodeText.onNext(referalCode)
+            }).disposed(by: disposeBag)
        
     }
     
@@ -61,28 +77,11 @@ extension SetUserNameAndPasswordViewController {
 
 // MARK: Actions
 extension SetUserNameAndPasswordViewController {
-    @IBAction func continueButtonPressed(_ sender: UIButton) {
-        setUserNameAndPasswordViewModel.register(viewController: self) {
-            self.showAlert(msg: "password or full name syntax wrong ")
-            
-        }
-        
+    private func continueButtonPressed() {
+        submitButton.rx.controlEvent(.touchUpInside).asObservable().subscribe(onNext: {
+            self.setUserNameAndPasswordViewModel.register(viewController: self) {
+                self.showAlert(msg: "password or full name syntax wrong ")
+            }
+        }).disposed(by: disposeBag)
     }
-}
-// MARK: - Update TextField
-extension SetUserNameAndPasswordViewController {
-  
-    @objc func updateReferalCodeTextField (textField: UITextField) {
-        
-        setUserNameAndPasswordViewModel.updateReferalCodeText( textField.text ?? "")
-    }
-    @objc func updatePasswordTextField (textField: UITextField) {
-        
-        setUserNameAndPasswordViewModel.updatePasswordText( textField.text ?? "")
-    }
-    @objc func updateFullNameTextField (textField: UITextField) {
-        
-        setUserNameAndPasswordViewModel.updateFullNameText( textField.text ?? "")
-    }
-    
 }
