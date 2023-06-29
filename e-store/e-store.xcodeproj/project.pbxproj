@@ -67,9 +67,9 @@
 		5C46EDE429E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C46EDE129E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib */; };
 		5C46EDE529E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C46EDE229E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift */; };
 		5C46EDE629E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C46EDE329E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift */; };
+		5C49E55D2A4DB0FA003D4F93 /* CommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C49E55C2A4DB0FA003D4F93 /* CommentView.xib */; };
+		5C49E5612A4DB768003D4F93 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C49E5602A4DB768003D4F93 /* CommentView.swift */; };
 		5C543C6029F01D7D008294AB /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C543C5F29F01D7D008294AB /* ReviewView.swift */; };
-		5C543C6429F02BB2008294AB /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C543C6229F02BB2008294AB /* ReviewTableViewCell.swift */; };
-		5C543C6529F02BB2008294AB /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C543C6329F02BB2008294AB /* ReviewTableViewCell.xib */; };
 		5C8CD90C29F882CE0065CF3F /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8CD90B29F882CE0065CF3F /* AppRouter.swift */; };
 		5CA58B7929CCFF5100102C1C /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5CA58B7829CCFF5100102C1C /* Domain */; };
 		5CAA266A29FFD06E00212846 /* OfferBanner.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CAA266929FFD06E00212846 /* OfferBanner.xib */; };
@@ -187,9 +187,9 @@
 		5C46EDE129E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetUserNameAndPasswordViewController.xib; sourceTree = "<group>"; };
 		5C46EDE229E38CAB00D72406 /* SetUserNameAndPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUserNameAndPasswordViewModel.swift; sourceTree = "<group>"; };
 		5C46EDE329E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUserNameAndPasswordViewController.swift; sourceTree = "<group>"; };
+		5C49E55C2A4DB0FA003D4F93 /* CommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentView.xib; sourceTree = "<group>"; };
+		5C49E5602A4DB768003D4F93 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		5C543C5F29F01D7D008294AB /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
-		5C543C6229F02BB2008294AB /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
-		5C543C6329F02BB2008294AB /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		5C8CD90B29F882CE0065CF3F /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		5CAA266929FFD06E00212846 /* OfferBanner.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferBanner.xib; sourceTree = "<group>"; };
 		5CAA266B29FFD08600212846 /* OfferBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferBanner.swift; sourceTree = "<group>"; };
@@ -550,21 +550,21 @@
 			path = ProfilePassword;
 			sourceTree = "<group>";
 		};
-		5C543C6129F02B81008294AB /* ReviewCell */ = {
+		5C49E55B2A4DB0CB003D4F93 /* commentView */ = {
 			isa = PBXGroup;
 			children = (
-				5C543C6229F02BB2008294AB /* ReviewTableViewCell.swift */,
-				5C543C6329F02BB2008294AB /* ReviewTableViewCell.xib */,
+				5C49E55C2A4DB0FA003D4F93 /* CommentView.xib */,
+				5C49E5602A4DB768003D4F93 /* CommentView.swift */,
 			);
-			path = ReviewCell;
+			path = commentView;
 			sourceTree = "<group>";
 		};
 		5C543C6629F0C291008294AB /* ReviewView */ = {
 			isa = PBXGroup;
 			children = (
+				5C49E55B2A4DB0CB003D4F93 /* commentView */,
 				5C543C5F29F01D7D008294AB /* ReviewView.swift */,
 				5CC286DD29F0C305008D0AF3 /* ReviewView.xib */,
-				5C543C6129F02B81008294AB /* ReviewCell */,
 			);
 			path = ReviewView;
 			sourceTree = "<group>";
@@ -808,6 +808,7 @@
 				4C113B5D29F6CCC60034B260 /* AddToCartView.xib in Resources */,
 				5C0EF6E729E23B9B004C92CB /* DMSans-Bold.ttf in Resources */,
 				4C977F5529FEC64B00724AB5 /* TopRatedProductView.xib in Resources */,
+				5C49E55D2A4DB0FA003D4F93 /* CommentView.xib in Resources */,
 				5C46EDE429E38CAB00D72406 /* SetUserNameAndPasswordViewController.xib in Resources */,
 				5CF3C41429FDA93B008F5A0B /* OfferSlider.xib in Resources */,
 				4C68C61429E81CEC005A4175 /* ProductDetailsView.xib in Resources */,
@@ -815,7 +816,6 @@
 				4C42E82529FE93A900D3DC34 /* BestSellersView.xib in Resources */,
 				5C0EF6FA29E2EEB4004C92CB /* VerificationScreenViewController.xib in Resources */,
 				B62D387A29BA678300179020 /* GoogleService-Info.plist in Resources */,
-				5C543C6529F02BB2008294AB /* ReviewTableViewCell.xib in Resources */,
 				5CC286DE29F0C305008D0AF3 /* ReviewView.xib in Resources */,
 				4C42E82B29FE9D2600D3DC34 /* NewArrivalsView.xib in Resources */,
 				4CEEB40E29E2D0B100ECCE47 /* ProductImagesCollectionViewCell.xib in Resources */,
@@ -922,6 +922,7 @@
 				4C42E82D29FE9D3300D3DC34 /* NewArrivalsView.swift in Sources */,
 				4CF6F61D29DDAD190019C1C5 /* Assets.swift in Sources */,
 				C92A974829F193380013E44D /* LoginMessage.swift in Sources */,
+				5C49E5612A4DB768003D4F93 /* CommentView.swift in Sources */,
 				4C977F5D29FF24B000724AB5 /* SpecialOffersView.swift in Sources */,
 				5C46EDE629E38CAB00D72406 /* SetUserNameAndPasswordViewController.swift in Sources */,
 				C9E9EB0529D8FBF300400853 /* Validator.swift in Sources */,
@@ -931,7 +932,6 @@
 				4CDF6CA129FD7A1900A72197 /* SellerInformationView.swift in Sources */,
 				4C3557D329DB8E0F00703789 /* StoreAssemply.swift in Sources */,
 				5C0EF6F829E2EEB4004C92CB /* VerificationViewModel.swift in Sources */,
-				5C543C6429F02BB2008294AB /* ReviewTableViewCell.swift in Sources */,
 				4CDF6C9C29FD7A0F00A72197 /* DescriptionView.swift in Sources */,
 				C9508C3929E23346008E8C37 /* LoginScreenViewController.swift in Sources */,
 				5C8CD90C29F882CE0065CF3F /* AppRouter.swift in Sources */,

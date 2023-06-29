@@ -73,7 +73,7 @@
                                     <rect key="frame" x="0.0" y="848" width="285" height="376"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="376" id="K7l-47-SmL"/>
+                                        <constraint firstAttribute="height" priority="750" constant="376" id="K7l-47-SmL"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="u8U-he-ptz">
